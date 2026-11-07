@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posta // Red Predictiva de Pernocta y Tacógrafo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --surface-subtle: #F1F5F9;
+      --border: #E2E8F0;
+      --border-strong: #CBD5E1;
+      
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #94A3B8;
+
+      --brand-blue: #0284C7;
+      --brand-blue-subtle: #E0F2FE;
+
+      --status-success-bg: #ECFDF5;
+      --status-success-text: #065F46;
+      --status-success-border: #A7F3D0;
+
+      --status-warning-bg: #FFFBEB;
+      --status-warning-text: #92400E;
+      --status-warning-border: #FDE68A;
+
+      --status-danger-bg: #FEF2F2;
+      --status-danger-text: #991B1B;
+      --status-danger-border: #FECACA;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-variant-numeric: tabular-nums;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text-primary);
+    }
+
+    .brand-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-left: 10px;
+      padding-left: 10px;
+      border-left: 1px solid var(--border);
+      font-weight: 400;
+    }
+
+    .header-meta {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10B981;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 1fr 390px;
+      gap: 20px;
+      padding: 24px 28px;
+      flex: 1;
+      max-width: 1600px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel-header {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #FAFAFC;
+    }
+
+    .panel-title {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-secondary);
+    }
+
+    .map-stage {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 540px;
+    }
+
+    .stage-toolbar {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .segmented-control {
+      display: inline-flex;
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2px;
+    }
+
+    .segment-btn {
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .segment-btn.active {
+      background: var(--surface);
+      color: var(--text-primary);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      font-weight: 600;
+    }
+
+    .canvas-container {
+      flex: 1;
+      position: relative;
+      background: #F8FAFC;
+    }
+
+    #simCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .map-overlay-info {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      color: var(--text-secondary);
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .unit-profile {
+      padding: 18px;
+    }
+
+    .unit-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 14px;
+    }
+
+    .unit-id {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .unit-type {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .pill {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      letter-spacing: 0.3px;
+    }
+
+    .pill-success {
+      background: var(--status-success-bg);
+      color: var(--status-success-text);
+      border-color: var(--status-success-border);
+    }
+
+    .pill-danger {
+      background: var(--status-danger-bg);
+      color: var(--status-danger-text);
+      border-color: var(--status-danger-border);
+    }
+
+    .tacho-card {
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px;
+      margin-bottom: 16px;
+    }
+
+    .tacho-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .tacho-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .tacho-value.danger {
+      color: #DC2626;
+    }
+
+    .meter-track {
+      height: 6px;
+      background: #E2E8F0;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+
+    .meter-bar {
+      height: 100%;
+      background: #0284C7;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+
+    .meter-bar.danger {
+      background: #DC2626;
+    }
+
+    .meter-footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .directive-card {
+      padding: 14px;
+      border-radius: 6px;
+      border: 1px solid;
+      margin-bottom: 16px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .directive-card.optimal {
+      background: var(--status-success-bg);
+      border-color: var(--status-success-border);
+      color: var(--status-success-text);
+    }
+
+    .directive-card.violation {
+      background: var(--status-danger-bg);
+      border-color: var(--status-danger-border);
+      color: var(--status-danger-text);
+    }
+
+    .directive-title {
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 6px;
+    }
+
+    .directive-detail {
+      font-size: 12px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .log-panel {
+      flex: 1;
+    }
+
+    .log-list {
+      padding: 10px 14px;
+      font-size: 11px;
+      color: var(--text-secondary);
+      max-height: 160px;
+      overflow-y: auto;
+      line-height: 1.6;
+    }
+
+    .log-entry {
+      display: flex;
+      gap: 10px;
+      padding: 3px 0;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .log-entry:last-child {
+      border-bottom: none;
+    }
+
+    .log-ts {
+      color: var(--text-muted);
+      width: 55px;
+      flex-shrink: 0;
+    }
+
+    .log-tag {
+      font-weight: 600;
+      width: 70px;
+      flex-shrink: 0;
+    }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 14px 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      footer {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .kpi {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .kpi-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .kpi-value {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand-wrap">
+      <svg class="brand-logo-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="7" fill="#0F172A"/>
+        <path d="M10 23V9H17.5C20.5376 9 23 11.2386 23 14C23 16.7614 20.5376 19 17.5 19H10" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="16.5" cy="14" r="2" fill="#0284C7"/>
+      </svg>
+      <div>
+        <span class="brand-title">Posta</span>
+        <span class="brand-subtitle">Red Predictiva de Pernocta y Tacógrafo</span>
+      </div>
+    </div>
+
+    <div class="header-meta">
+      <div class="live-badge font-mono">
+        <span class="status-dot"></span>
+        <span>Corredor AP-7 (Zaragoza — Barcelona)</span>
+      </div>
+      <div class="font-mono">19:12 CET</div>
+    </div>
+  </header>
+
+  <main class="workspace">
+
+    <section class="panel map-stage">
+      <div class="stage-toolbar">
+        <div class="segmented-control">
+          <button id="btnOpt" class="segment-btn active" onclick="setMode('predictive')">
+            Red Posta (Coordinada)
+          </button>
+          <button id="btnConv" class="segment-btn" onclick="setMode('blind')">
+            Planificación Estática Convencional
+          </button>
+        </div>
+
+        <button class="segment-btn" style="background: var(--surface); border: 1px solid var(--border);" onclick="resetSim()">
+          Reiniciar Flujo
+        </button>
+      </div>
+
+      <div class="canvas-container">
+        <canvas id="simCanvas"></canvas>
+
+        <div class="map-overlay-info font-mono">
+          Tráfico pesado activo en radio 100km: <strong>78 unidades monitorizadas</strong>
+        </div>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+
+      <div class="panel unit-profile">
+        <div class="unit-top">
+          <div>
+            <div class="unit-id font-mono">Vehículo #ES-4820</div>
+            <div class="unit-type">Flota: Transportes Ebro • Articulado 40t</div>
+          </div>
+          <span id="badgeCompliance" class="pill pill-success font-mono">CONFORME</span>
+        </div>
+
+        <div class="tacho-card">
+          <div class="tacho-header font-mono">
+            <span>Conducción continua restante</span>
+            <span>Máx. 4h 30m</span>
+          </div>
+          <div id="clockDisplay" class="tacho-value font-mono">00:36:40</div>
+          <div class="meter-track">
+            <div id="meterProgress" class="meter-bar" style="width: 84%;"></div>
+          </div>
+          <div class="meter-footer font-mono">
+            <span>Tiempo consumido: 03h 53m</span>
+            <span>Margen de maniobra legal: 36 min</span>
+          </div>
+        </div>
+
+        <div id="instructionCard" class="directive-card optimal">
+          <div id="instructionTitle" class="directive-title">Desvío de pernocta preventivo</div>
+          <div id="instructionText">
+            Se proyecta saturación del 100% en Área A (Alfajarín) por convergencia de 38 camiones en los próximos 25 minutos. 
+            <strong>Ruta reasignada por el motor Posta a Área B (Fraga)</strong> con plaza asegurada antes del límite legal.
+          </div>
+          <div class="directive-detail font-mono">
+            <span id="lblDest">Destino: Área B (Fraga)</span>
+            <span id="lblSlot" style="font-weight: 600;">Plaza: Disponible (100%)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel log-panel">
+        <div class="panel-header">
+          <span class="panel-title">Registro Telemático de Incidentes</span>
+          <span class="font-mono" style="font-size: 11px; color: var(--text-muted);">Canal FMS</span>
+        </div>
+        <div id="eventLog" class="log-list font-mono">
+          <div class="log-entry">
+            <span class="log-ts">19:10:14</span>
+            <span class="log-tag" style="color: #0284C7;">INFO</span>
+            <span>Unidad #ES-4820 sincronizada con motor Posta v1.2.</span>
+          </div>
+          <div class="log-entry">
+            <span class="log-ts">19:11:02</span>
+            <span class="log-tag" style="color: #D97706;">ALERTA</span>
+            <span>Densidad crítica en Área A: demanda supera capacidad nominal.</span>
+          </div>
+          <div class="log-entry">
+            <span class="log-ts">19:11:45</span>
+            <span class="log-tag" style="color: #059669;">DESVÍO</span>
+            <span>Cálculo de alternativa: Nodo Fraga Oeste seleccionado.</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    <div class="kpi">
+      <span class="kpi-label">Índice de Cumplimiento Legal</span>
+      <span class="kpi-value font-mono">100.0%</span>
+    </div>
+    <div class="kpi">
+      <span class="kpi-label">Sanciones Económicas Proyectadas</span>
+      <span id="kpiFine" class="kpi-value font-mono" style="color: #059669;">0 €</span>
+    </div>
+    <div class="kpi">
+      <span class="kpi-label">Flotas Agregadas a la Red</span>
+      <span class="kpi-value font-mono">18 empresas</span>
+    </div>
+    <div class="kpi">
+      <span class="kpi-label">Ahorro Anual Estimado / Tractor</span>
+      <span class="kpi-value font-mono">2.850 €</span>
+    </div>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('simCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let mode = 'predictive';
+    let progress = 0;
+    const speed = 0.0022;
+
+    const nodes = {
+      areaA: { name: 'Área A (Alfajarín)', km: 'PK 340', xR: 0.45, yR: 0.40, capacity: 45 },
+      areaB: { name: 'Área B (Fraga Oeste)', km: 'PK 418', xR: 0.82, yR: 0.65, capacity: 70 }
+    };
+
+    function resize() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function setMode(newMode) {
+      mode = newMode;
+      const btnOpt = document.getElementById('btnOpt');
+      const btnConv = document.getElementById('btnConv');
+      const badge = document.getElementById('badgeCompliance');
+      const card = document.getElementById('instructionCard');
+      const title = document.getElementById('instructionTitle');
+      const text = document.getElementById('instructionText');
+      const clock = document.getElementById('clockDisplay');
+      const bar = document.getElementById('meterProgress');
+      const fine = document.getElementById('kpiFine');
+      const dest = document.getElementById('lblDest');
+      const slot = document.getElementById('lblSlot');
+
+      if (mode === 'predictive') {
+        btnOpt.className = 'segment-btn active';
+        btnConv.className = 'segment-btn';
+        badge.className = 'pill pill-success font-mono';
+        badge.innerText = 'CONFORME';
+
+        card.className = 'directive-card optimal';
+        title.innerText = 'Desvío de pernocta preventivo';
+        text.innerHTML = 'Se proyecta saturación del 100% en Área A (Alfajarín) por convergencia de 38 camiones concurrentes. <strong>Ruta reasignada por el motor Posta a Área B (Fraga)</strong> con plaza asegurada antes del límite legal.';
+        dest.innerText = 'Destino: Área B (Fraga)';
+        slot.innerText = 'Plaza: Disponible (100%)';
+        slot.style.color = '#065F46';
+
+        clock.className = 'tacho-value font-mono';
+        clock.innerText = '00:36:40';
+        bar.className = 'meter-bar';
+        fine.innerText = '0 €';
+        fine.style.color = '#059669';
+
+        logMsg('Modo Posta activo. Optimización dinámica de pernocta en vigor.', 'INFO');
+      } else {
+        btnOpt.className = 'segment-btn';
+        btnConv.className = 'segment-btn active';
+        badge.className = 'pill pill-danger font-mono';
+        badge.innerText = 'INFRACCIÓN PROYECTADA';
+
+        card.className = 'directive-card violation';
+        title.innerText = 'Fallo de estacionamiento en destino';
+        text.innerHTML = 'El vehículo mantiene la ruta estática hacia Área A. A su llegada a las 19:44 el área estará colapsada. <strong>El conductor se verá obligado a superar las 4h 30m de conducción continua</strong> para buscar alternativa.';
+        dest.innerText = 'Destino: Área A (Alfajarín)';
+        slot.innerText = 'Plaza: No disponible (Agotada)';
+        slot.style.color = '#991B1B';
+
+        clock.className = 'tacho-value font-mono danger';
+        clock.innerText = '+00:22:15 EXCESO';
+        bar.className = 'meter-bar danger';
+        fine.innerText = '1.001 € (LOTT art. 140)';
+        fine.style.color = '#DC2626';
+
+        logMsg('Alerta de infracción: exceso de conducción previsto en Área A.', 'PELIGRO');
+      }
+    }
+
+    function logMsg(msg, level) {
+      const log = document.getElementById('eventLog');
+      const row = document.createElement('div');
+      row.className = 'log-entry';
+      const time = new Date().toTimeString().split(' ')[0];
+      let color = '#0284C7';
+      if (level === 'PELIGRO') color = '#DC2626';
+      if (level === 'ALERTA') color = '#D97706';
+
+      row.innerHTML = `<span class="log-ts">${time}</span><span class="log-tag" style="color: ${color};">${level}</span><span>${msg}</span>`;
+      log.appendChild(row);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function resetSim() {
+      progress = 0;
+      logMsg('Simulación restablecida al punto kilométrico inicial.', 'INFO');
+    }
+
+    function render() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const w = canvas.width;
+      const h = canvas.height;
+
+      const pOrigin = { x: w * 0.08, y: h * 0.35 };
+      const pFork = { x: w * 0.32, y: h * 0.38 };
+      const pA = { x: w * nodes.areaA.xR, y: h * nodes.areaA.yR };
+      const pB = { x: w * nodes.areaB.xR, y: h * nodes.areaB.yR };
+
+      ctx.strokeStyle = '#E2E8F0';
+      ctx.lineWidth = 6;
+      ctx.lineCap = 'round';
+
+      ctx.beginPath();
+      ctx.moveTo(pOrigin.x, pOrigin.y);
+      ctx.lineTo(pFork.x, pFork.y);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(pFork.x, pFork.y);
+      ctx.lineTo(pA.x, pA.y);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(pFork.x, pFork.y);
+      ctx.bezierCurveTo(w * 0.50, h * 0.58, w * 0.65, h * 0.65, pB.x, pB.y);
+      ctx.stroke();
+
+      if (mode === 'predictive') {
+        ctx.strokeStyle = '#0284C7';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(pOrigin.x, pOrigin.y);
+        ctx.lineTo(pFork.x, pFork.y);
+        ctx.bezierCurveTo(w * 0.50, h * 0.58, w * 0.65, h * 0.65, pB.x, pB.y);
+        ctx.stroke();
+      } else {
+        ctx.strokeStyle = '#DC2626';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(pOrigin.x, pOrigin.y);
+        ctx.lineTo(pFork.x, pFork.y);
+        ctx.lineTo(pA.x, pA.y);
+        ctx.stroke();
+      }
+
+      for (let i = 0; i < 6; i++) {
+        const gp = ((progress * 1.4) + (i * 0.16)) % 1;
+        const gx = pFork.x + (pA.x - pFork.x) * gp;
+        const gy = pFork.y + (pA.y - pFork.y) * gp;
+
+        ctx.fillStyle = '#94A3B8';
+        ctx.beginPath();
+        ctx.arc(gx, gy, 3.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      drawNode(pA, nodes.areaA, mode === 'blind' ? 'colapso' : 'ocupado');
+      drawNode(pB, nodes.areaB, 'disponible');
+
+      let tx, ty;
+      if (progress < 0.32) {
+        const sp = progress / 0.32;
+        tx = pOrigin.x + (pFork.x - pOrigin.x) * sp;
+        ty = pOrigin.y + (pFork.y - pOrigin.y) * sp;
+      } else {
+        const sp = (progress - 0.32) / 0.68;
+        if (mode === 'blind') {
+          tx = pFork.x + (pA.x - pFork.x) * sp;
+          ty = pFork.y + (pA.y - pFork.y) * sp;
+        } else {
+          const t = sp;
+          const p0 = pFork;
+          const p1 = { x: w * 0.50, y: h * 0.58 };
+          const p2 = { x: w * 0.65, y: h * 0.65 };
+          const p3 = pB;
+          tx = Math.pow(1 - t, 3) * p0.x + 3 * Math.pow(1 - t, 2) * t * p1.x + 3 * (1 - t) * Math.pow(t, 2) * p2.x + Math.pow(t, 3) * p3.x;
+          ty = Math.pow(1 - t, 3) * p0.y + 3 * Math.pow(1 - t, 2) * t * p1.y + 3 * (1 - t) * Math.pow(t, 2) * p2.y + Math.pow(t, 3) * p3.y;
+        }
+      }
+
+      ctx.fillStyle = mode === 'predictive' ? '#0284C7' : '#DC2626';
+      ctx.beginPath();
+      ctx.arc(tx, ty, 6, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = '#0F172A';
+      ctx.font = '600 11px "JetBrains Mono"';
+      ctx.fillText('#ES-4820', tx + 10, ty + 4);
+
+      progress += speed;
+      if (progress > 1) progress = 0;
+
+      requestAnimationFrame(render);
+    }
+
+    function drawNode(pt, data, status) {
+      let pinColor = '#059669';
+      let tag = 'Disponibilidad: 85%';
+      let tagColor = '#065F46';
+
+      if (status === 'colapso') {
+        pinColor = '#DC2626';
+        tag = 'Saturación: 104% (Completo)';
+        tagColor = '#991B1B';
+      } else if (status === 'ocupado') {
+        pinColor = '#D97706';
+        tag = 'Ocupación proyectada: 96%';
+        tagColor = '#92400E';
+      }
+
+      ctx.strokeStyle = pinColor;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(pt.x, pt.y, 8, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.fillStyle = pinColor;
+      ctx.beginPath();
+      ctx.arc(pt.x, pt.y, 3.5, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = '#0F172A';
+      ctx.font = '600 12px Inter';
+      ctx.fillText(data.name, pt.x + 16, pt.y - 4);
+
+      ctx.fillStyle = '#64748B';
+      ctx.font = '400 11px "JetBrains Mono"';
+      ctx.fillText(`${data.km} — Capacidad: ${data.capacity} plazas`, pt.x + 16, pt.y + 12);
+
+      ctx.fillStyle = tagColor;
+      ctx.font = '500 11px "JetBrains Mono"';
+      ctx.fillText(tag, pt.x + 16, pt.y + 26);
+    }
+
+    render();
+  </script>
+</body>
+</html>
