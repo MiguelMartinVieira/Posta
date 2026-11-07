@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Antigravity//StartCamp 2026 Calendar//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Start Camp 2026 (Start UC3M)
+X-WR-TIMEZONE:Europe/Madrid
+
+BEGIN:VEVENT
+UID:startcamp-2026-day1@startuc3m.es
+DTSTAMP:20261106T140000Z
+DTSTART;TZID=Europe/Madrid:20261106T180000
+DTEND;TZID=Europe/Madrid:20261106T210000
+SUMMARY:🚀 Start Camp 2026 - Día 1: Acreditaciones, Ideas y Equipos
+DESCRIPTION:Día 1 de Start Camp 2026:\n- 18:00 - 18:30: Llegada y Acreditaciones\n- 18:30 - 19:45: Dinámica de grupo e icebreakers\n- 19:45 - 20:15: Presentación de ideas (pitches 60s) y votación\n- 20:15 - 21:00: Formación de equipos\n\nLugar: Mad Tech Campus (Nave 14 Matadero Madrid, Metro Legazpi)
+LOCATION:Mad Tech Campus (Nave 14, Matadero Madrid), Paseo de la Chopera, 14, 28045 Madrid
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:startcamp-2026-day2@startuc3m.es
+DTSTAMP:20261106T140000Z
+DTSTART;TZID=Europe/Madrid:20261107T090000
+DTEND;TZID=Europe/Madrid:20261107T203000
+SUMMARY:⚙️ Start Camp 2026 - Día 2: Construcción, MVP y Mentorías
+DESCRIPTION:Día 2 de Start Camp 2026:\n- 09:00: Llegada\n- 09:15: Apertura institucional y presentación\n- 09:55: Ponencia ganadoras 2025\n- 10:10: Trabajo en equipo y modelo de negocio\n- 10:40: Café\n- 11:00: Ponencias y mentorías\n- 13:30: Comida (incluida)\n- 14:15 - 20:30: Validación, prototipado y mentorías en sala\n- 20:30: Cierre jornada\n\nLugar: Mad Tech Campus
+LOCATION:Mad Tech Campus (Nave 14, Matadero Madrid), Paseo de la Chopera, 14, 28045 Madrid
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:startcamp-2026-day3@startuc3m.es
+DTSTAMP:20261106T140000Z
+DTSTART;TZID=Europe/Madrid:20261108T090000
+DTEND;TZID=Europe/Madrid:20261108T200000
+SUMMARY:🏆 Start Camp 2026 - Día 3: Pitch Deck y Gran Final ante Jurado
+DESCRIPTION:Día 3 de Start Camp 2026:\n- 09:00: Desayuno de equipo (incluido)\n- 10:00: Ponencia de pitch\n- 10:30: Trabajo en equipo\n- 14:00: Comida (incluida)\n- 15:30: Conclusiones, MVP y diapositivas de pitch\n- 17:45 - 20:00: GRAN FINAL: Presentaciones ante el Jurado (4 min pitch + 2 min Q&A), deliberación y entrega de premios\n\nLugar: Mad Tech Campus
+LOCATION:Mad Tech Campus (Nave 14, Matadero Madrid), Paseo de la Chopera, 14, 28045 Madrid
+STATUS:CONFIRMED
+END:VEVENT
+
+END:VCALENDAR
