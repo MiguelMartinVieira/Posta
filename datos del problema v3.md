@@ -15,22 +15,32 @@
 
 ## 2. Tiempo y gasóleo perdidos buscando sitio
 
-Escenario realista: 45 minutos y 15 km extra al día, durante 230 días al año. Los minutos y los kilómetros son supuestos; los costes por hora y por kilómetro son oficiales.
+Escenario: **30 minutos y 20 km extra al día, durante 230 días al año**, para un camión de larga distancia que duerme fuera. Es el mismo que usa la slide del problema.
+
+- **30 minutos:** es lo mínimo que tardan 2 de cada 3 conductores en encontrar sitio (el 43 % tarda de 30 a 60 min y el 24 %, más de una hora; DEKRA 2026).
+- **20 km:** más de la mitad hace con regularidad 20 km o más extra para encontrar sitio (DEKRA 2026).
+- **Gasóleo:** 30 l/100 km y 1,87 €/l (precio medio del gasóleo A, MITECO, noviembre de 2026; con IVA).
+- **Costes por hora y por kilómetro:** 44,60 €/h y 0,71 €/km para un articulado (Observatorio de costes del Ministerio de Transportes). El coste por km ya incluye el gasóleo.
 
 | | Por camión y año | España (unos 39.000 camiones) |
 | --- | --- | --- |
-| Horas perdidas | 172 h | 6,7 M h |
-| Gasóleo | 1.035 l (unos 1.970 €) | unos 77 M€ |
-| **Coste total** | **10.123 €** | **unos 395 M€** |
+| Horas perdidas | **115 h** (unas 13 jornadas de conducción) | unos 4,5 M h |
+| Kilómetros extra | 4.600 km | unos 179 M km |
+| Gasóleo | **1.380 l (unos 2.600 €)** | unos 54 M l (unos 100 M€) |
+| Coste del tiempo | 5.129 € | unos 200 M€ |
+| Coste de los kilómetros (incluye el gasóleo) | 3.269 € | unos 127 M€ |
+| **Coste total** | **unos 8.400 €** | **unos 330 M€** |
 
-Buscar sitio cuesta **unas 7 veces más que las multas**.
+Buscar sitio cuesta **unas 5–6 veces más que las multas** (59 M€ al año).
+
+**Ojo:** el escenario supone que el camión busca sitio todos los días de trabajo; DEKRA dice «con regularidad». La encuesta de DEKRA es a unos 100 conductores europeos, no solo españoles. Si se usa el precio del gasóleo sin IVA (Observatorio, julio de 2026: 1,63 €/l), el gasóleo baja a unos 2.250 €.
 
 ## 3. Precio: 15 € por camión al mes
 
 | Argumento | Dato |
 | --- | --- |
 | Coste anual | 180 € por camión |
-| Frente a lo que pierde un camión buscando sitio | Es el **1,8 %** de 10.123 € |
+| Frente a lo que pierde un camión buscando sitio | Es el **2,1 %** de unos 8.400 € |
 | Se paga con | **Unas 4 horas de conductor al año** |
 | Una multa leve evitada | 300–400 €, casi **2 años de POSTA** |
 | Comparables | Una noche de aparcamiento seguro cuesta 15–35 €; una plataforma de flota, 15–35 €/vehículo/mes |
@@ -72,7 +82,7 @@ El SOM es el **2,6 % de las tractoras de España** y el 1,3 % del SAM.
 - **El caso de Juan** (sus hábitos son un supuesto): dos veces por semana se pasa unos 15 minutos buscando sitio.
   - En los 28 días que revisa un control acumula unos 8 excesos leves.
   - Eso suma **2.400–3.200 € de golpe**, o 1.680–2.240 € si paga pronto.
-  - Además, pierde unos **10.100 € al año** buscando sitio.
+  - Además, pierde unos **8.400 € al año** buscando sitio (115 h y 1.380 l de gasóleo).
   - POSTA le costaría **180 € al año**.
 
 ## Fuentes
@@ -81,5 +91,7 @@ El SOM es el **2,6 % de las tractoras de España** y el 1,3 % del SAM.
 - [Comisión Europea: estudio sobre aparcamiento seguro (2025)](https://transport.ec.europa.eu/news-events/news/more-safe-and-secure-parking-professional-drivers-needed-eu-study-reveals-2025-04-11_en)
 - [Observatorio de costes del Ministerio de Transportes](https://cdn.transportes.gob.es/portal-web-transportes/transporte-terrestre/actividades-servicios/observatorios-costes-transporte-mercancias/2026/Observatorio%20Costes%20Mercanc%C3%ADas_2026-01%20Enero.pdf)
 - [LOTT, Ley 16/1987](https://www.boe.es/buscar/act.php?id=BOE-A-1987-16760)
+- [DEKRA, informe de seguridad vial 2026](https://www.dekra.com/en/parking-madness-for-long-distance-truckers/): minutos y kilómetros extra buscando sitio
+- [MITECO, precios del gasóleo A (vía repostaje.es)](https://repostaje.es/precios-miteco): 1,87 €/l, noviembre de 2026
 - [Eurostat, tran_r_vehst (Road tractors)](https://ec.europa.eu/eurostat/databrowser/view/tran_r_vehst/default/table?lang=en): parque de cabezas tractoras por país, 2024
 - [Precios de Webfleet (subger.com)](https://subger.com/en/service/webfleet-solutions)
