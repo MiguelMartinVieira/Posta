@@ -1282,18 +1282,14 @@
         <section class="slide" id="slide-ahora" data-title="Por qué ahora" data-section="LA SOLUCIÓN" data-mood="Color">
           <style>
             #slide-ahora .pa-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; flex: 1; min-height: 0; }
-            #slide-ahora .pa-card { background: var(--paper-surface); border: 1px solid var(--paper-border); border-radius: 8px; padding: 24px 24px 18px; display: flex; flex-direction: column; }
+            #slide-ahora .pa-card { position: relative; background: var(--paper-surface); border: 1px solid var(--paper-border); border-radius: 12px; padding: 26px 28px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
             #slide-ahora .pa-card.pa-dark { background: #11141A; border-color: #11141A; color: #FFFFFF; }
-            #slide-ahora .pa-n { font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #FF7A50; }
-            #slide-ahora .pa-big { font-family: var(--font-display); font-weight: 800; font-size: 52px; letter-spacing: -2px; line-height: 1; margin: 16px 0 6px; white-space: nowrap; }
-            #slide-ahora .pa-unit { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--paper-text-muted); }
-            #slide-ahora .pa-dark .pa-unit { color: rgba(255,255,255,0.6); }
-            #slide-ahora .pa-h { font-size: 21px; font-weight: 700; line-height: 1.25; margin: 20px 0 10px; }
-            #slide-ahora .pa-t { font-size: 15px; line-height: 1.5; color: var(--paper-text-muted); }
-            #slide-ahora .pa-dark .pa-t { color: rgba(255,255,255,0.72); }
-            #slide-ahora .pa-src { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--paper-border); font-size: 10.5px; font-style: italic; color: var(--paper-text-dim); line-height: 1.35; }
-            #slide-ahora .pa-dark .pa-src { border-top-color: rgba(255,255,255,0.14); color: rgba(255,255,255,0.5); }
-            #slide-ahora .pa-strip { margin-top: 18px; display: flex; align-items: center; gap: 14px; background: rgba(255,122,80,0.10); border-left: 3px solid #FF7A50; border-radius: 4px; padding: 14px 20px; font-size: 16px; font-weight: 600; color: var(--paper-text-main); }
+            #slide-ahora .pa-n { position: absolute; top: 20px; left: 24px; font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #FF7A50; }
+            #slide-ahora .pa-emoji { font-size: 92px; line-height: 1; margin-bottom: 14px; }
+            #slide-ahora .pa-big { font-family: var(--font-display); font-weight: 800; font-size: 54px; letter-spacing: -2.5px; line-height: 1; white-space: nowrap; }
+            #slide-ahora .pa-line { font-size: 20px; font-weight: 700; line-height: 1.3; margin-top: 14px; max-width: 320px; }
+            #slide-ahora .pa-src { position: absolute; bottom: 14px; left: 24px; right: 24px; font-size: 10px; font-style: italic; color: var(--paper-text-dim); }
+            #slide-ahora .pa-dark .pa-src { color: rgba(255,255,255,0.45); }
           </style>
           <div class="meta-bar">
             <div><span class="brand-bullet"></span>LA SOLUCIÓN // 06 · POR QUÉ AHORA</div>
@@ -1303,41 +1299,32 @@
             </div>
           </div>
 
-          <div style="margin-bottom: 22px;">
+          <div style="margin-bottom: 24px;">
             <span class="editorial-kicker">POR QUÉ AHORA</span>
-            <h2 class="editorial-title">EL GASÓLEO ESTÁ MÁS CARO QUE NUNCA, FALTAN CAMIONEROS Y ALEMANIA YA LO ESTÁ RESOLVIENDO. <span style="color: #FF7A50;">ESPAÑA VA TARDE.</span></h2>
+            <h2 class="editorial-title">TODO EMPUJA A HACERLO YA. <span style="color: #FF7A50;">ESPAÑA VA TARDE.</span></h2>
           </div>
 
           <div class="pa-grid">
             <div class="pa-card pa-dark">
               <span class="pa-n">01 · GASÓLEO</span>
+              <div class="pa-emoji">⛽</div>
               <div class="pa-big" style="color: #FF7A50;">2.600 €</div>
-              <span class="pa-unit">al año por camión, solo buscando sitio</span>
-              <div class="pa-h">Cada kilómetro dando vueltas cuesta más que nunca</div>
-              <p class="pa-t">Con el gasóleo tan alto, los kilómetros y el ralentí buscando dónde parar se comen el margen de autónomos y flotas pequeñas.</p>
-              <p class="pa-src">Estimación POSTA: DEKRA 2026 (km extra) y MITECO (precio del gasóleo, noviembre de 2026)</p>
+              <div class="pa-line">al año por camión, solo buscando sitio</div>
+              <p class="pa-src">DEKRA 2026 · MITECO, nov. 2026</p>
             </div>
             <div class="pa-card">
               <span class="pa-n">02 · ALEMANIA YA LO HACE</span>
-              <div class="pa-big">DE</div>
-              <span class="pa-unit">ocupación medida en sus autopistas</span>
-              <div class="pa-h">Allí el camionero ya sabe dónde hay sitio</div>
-              <p class="pa-t">Toll Collect y HERE miden la ocupación de las áreas alemanas, y sus autopistas tienen paneles que avisan de las plazas libres. En España no hay nada igual.</p>
-              <p class="pa-src">Fuentes: Toll Collect, HERE, transport-online.de, VerkehrsRundschau</p>
+              <div class="pa-emoji" style="font-size: 120px;">🇩🇪</div>
+              <div class="pa-line" style="font-size: 22px;">Allí ya saben dónde hay sitio.<br><span style="color: #FF7A50;">Aquí, no.</span></div>
+              <p class="pa-src">Toll Collect + HERE</p>
             </div>
             <div class="pa-card">
               <span class="pa-n">03 · FALTAN CAMIONEROS</span>
+              <div class="pa-emoji">🚛</div>
               <div class="pa-big">502.000</div>
-              <span class="pa-unit">camioneros que faltan en Europa (13 %)</span>
-              <div class="pa-h">Sin sitio seguro para parar, nadie quiere el oficio</div>
-              <p class="pa-t">La IRU señala el aparcamiento seguro entre lo que hoy decide si un conductor entra o se queda. Y con menos camioneros, cada hora perdida buscando sitio es un porte que no se hace.</p>
-              <p class="pa-src">Fuente: IRU, Global Driver Shortage Report 2025 (junio de 2026)</p>
+              <div class="pa-line">camioneros faltan en Europa</div>
+              <p class="pa-src">IRU, Global Driver Shortage Report 2025 (jun. 2026)</p>
             </div>
-          </div>
-
-          <div class="pa-strip">
-            <span style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #FF7A50;">VENTANA</span>
-            <span>Quien mida España primero se queda con los datos. Por eso arrancamos con un piloto en la AP-7 en el cuarto trimestre de 2026.</span>
           </div>
         </section>
 
