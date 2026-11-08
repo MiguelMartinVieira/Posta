@@ -748,6 +748,110 @@
       color: #11141A;
       text-transform: uppercase;
     }
+    /* ===== SLIDE 5 · QUÉ ES POSTA (flujo visual) ===== */
+    .qp-flow {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 56px 1.22fr 56px 1fr;
+      align-items: center;
+      min-height: 0;
+      position: relative;
+    }
+    .qp-col-label {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--paper-text-dim);
+      margin-bottom: 14px;
+    }
+    .qp-chip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 16px;
+      background: var(--paper-surface);
+      border: 1px solid var(--paper-border);
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .qp-chip svg { flex-shrink: 0; color: var(--paper-text-muted); }
+    .qp-chip.is-loop {
+      background: #FFF4EF;
+      border-color: rgba(226, 109, 70, 0.45);
+      color: var(--accent-warm);
+    }
+    .qp-chip.is-loop svg { color: var(--accent-warm); }
+    .qp-arrow { display: flex; justify-content: center; color: var(--paper-text-dim); }
+
+    /* Tarjeta central: la respuesta */
+    .qp-core {
+      background: #11141A;
+      color: #FFFFFF;
+      border-radius: 14px;
+      padding: 24px 26px 22px;
+      box-shadow: 0 24px 50px -24px rgba(17, 20, 26, 0.55);
+      position: relative;
+    }
+    .qp-core-top {
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.2px;
+      text-transform: uppercase; color: #A1A1AA;
+    }
+    .qp-core-area { font-family: var(--font-display); font-size: 21px; font-weight: 700; margin: 14px 0 2px; letter-spacing: -0.3px; }
+    .qp-core-sub { font-size: 13px; color: #A1A1AA; }
+    .qp-core-big { display: flex; align-items: baseline; gap: 14px; margin: 18px 0 4px; }
+    .qp-core-big .num {
+      font-family: var(--font-mono); font-variant-numeric: tabular-nums;
+      font-size: 76px; font-weight: 700; line-height: 1; letter-spacing: -3px; color: #FF7A50;
+    }
+    .qp-core-big .lbl { font-size: 15px; font-weight: 600; line-height: 1.3; color: #E5E7EB; }
+    /* mini timeline de ocupación */
+    .qp-bars { display: flex; align-items: flex-end; gap: 5px; height: 64px; margin-top: 18px; }
+    .qp-bars span { flex: 1; background: rgba(255,255,255,0.16); border-radius: 2px 2px 0 0; }
+    .qp-bars span.now { background: rgba(255,255,255,0.55); }
+    .qp-bars span.eta { background: #FF7A50; }
+    .qp-bars-axis {
+      display: flex; justify-content: space-between; margin-top: 7px;
+      font-family: var(--font-mono); font-size: 10.5px; color: #71717A; font-variant-numeric: tabular-nums;
+    }
+    .qp-bars-axis b { color: #FFFFFF; font-weight: 700; }
+    .qp-bars-axis b.eta { color: #FF7A50; }
+
+    /* Salidas */
+    .qp-out {
+      border: 1px solid var(--paper-border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      background: #FFFFFF;
+    }
+    .qp-out-head { display: flex; align-items: center; gap: 10px; }
+    .qp-out-tag {
+      font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 1px;
+      padding: 4px 9px; border-radius: 5px; background: #11141A; color: #FFFFFF;
+    }
+    .qp-out-head span:last-child { font-size: 15px; font-weight: 700; }
+    .qp-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .qp-pills span {
+      font-size: 12px; font-weight: 600; color: var(--paper-text-muted);
+      border: 1px solid var(--paper-border); background: var(--paper-surface);
+      padding: 4px 10px; border-radius: 999px;
+    }
+
+    /* Bucle de mejora */
+    .qp-loop { position: relative; height: 58px; margin-top: -24px; flex-shrink: 0; }
+    .qp-loop svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .qp-loop-label {
+      position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 0);
+      background: #FFFFFF; padding: 0 14px;
+      font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--accent-warm); white-space: nowrap;
+    }
+    .qp-loop-label i { font-style: normal; color: var(--paper-text-dim); margin: 0 8px; }
   </style>
 </head>
 <body>
@@ -855,11 +959,11 @@
           <div class="grid-problem-2x2">
             <div class="card-clean" style="padding: 22px 28px 18px 28px;">
               <div>
-                <span class="editorial-kicker" style="margin-bottom: 4px;">FALTAN PLAZAS</span>
-                <div class="stat-hero-number" style="color: var(--accent-warm); font-size: 62px; line-height: 1; white-space: nowrap;">43.500</div>
-                <div style="font-size: 13.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 8px;">Camiones sin plaza cada noche</div>
+                <span class="editorial-kicker" style="margin-bottom: 4px;">ESTRÉS</span>
+                <div class="stat-hero-number" style="color: var(--accent-warm); font-size: 62px; line-height: 1; white-space: nowrap;">85 %</div>
+                <div style="font-size: 13.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 8px;">El aparcamiento, su primera causa de estrés</div>
               </div>
-              <p style="font-size: 10.5px; color: var(--paper-text-dim); line-height: 1.35; font-style: italic; padding-top: 10px; border-top: 1px solid rgba(229, 231, 235, 0.7); margin-top: 8px;">Fuente: Comisión Europea, informe sobre aparcamientos seguros (2025)</p>
+              <p style="font-size: 10.5px; color: var(--paper-text-dim); line-height: 1.35; font-style: italic; padding-top: 10px; border-top: 1px solid rgba(229, 231, 235, 0.7); margin-top: 8px;">Fuente: Trucker Path, encuesta a más de 5.400 camioneros (EE. UU., 2018). Por delante de las normas de horas de conducción (63 %)</p>
             </div>
 
             <div class="card-clean" style="padding: 22px 28px 18px 28px;">
@@ -943,48 +1047,91 @@
             </div>
           </div>
 
-          <div style="margin-bottom: 24px;">
+          <div style="margin-bottom: 18px;">
             <span class="editorial-kicker">QUÉ ES POSTA</span>
             <h2 class="editorial-title">LA RED DE INFORMACIÓN QUE PREDICE SI HABRÁ SITIO CUANDO LLEGUES.</h2>
           </div>
 
-          <div class="grid-editorial-3">
-            <div class="card-clean" style="justify-content: flex-start;">
-              <span class="editorial-kicker">01 · QUÉ HACE</span>
-              <div style="font-size: 17px; font-weight: 700; margin: 10px 0 8px; line-height: 1.3;">Ocupación ahora y a tu hora de llegada</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5;">
-                Mostramos en tiempo real cuánta demanda tiene cada área de servicio y predecimos cuántas plazas libres habrá cuando llegue cada camión.
-              </p>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5; margin-top: 8px;">
-                No damos certezas: gestionamos la incertidumbre y decimos qué probabilidad hay de encontrar sitio.
-              </p>
+          <div class="qp-flow">
+            <!-- 1 · ENTRA -->
+            <div>
+              <div class="qp-col-label">Lo que escuchamos</div>
+              <div class="qp-chip">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>
+                Áreas de servicio
+              </div>
+              <div class="qp-chip">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19 10 5M20 19 14 5M12 7v2M12 13v2"/></svg>
+                Tráfico DGT
+              </div>
+              <div class="qp-chip">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="12" height="9" rx="1"/><path d="M14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+                Flotas conectadas
+              </div>
+              <div class="qp-chip is-loop">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
+                Cada consulta de llegada
+              </div>
             </div>
 
-            <div class="card-clean" style="justify-content: flex-start;">
-              <span class="editorial-kicker">02 · POR QUÉ MEJORA SOLA</span>
-              <div style="font-size: 17px; font-weight: 700; margin: 10px 0 8px; line-height: 1.3;">Cada consulta es un dato de demanda futura</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5;">
-                Cuando un camión nos pregunta dónde parar, también nos dice cuándo va a llegar. Más consultas, mejor predicción; mejor predicción, más usuarios.
-              </p>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5; margin-top: 8px;">
-                Empezamos con datos de las áreas, de la DGT y de las primeras flotas.
-              </p>
+            <div class="qp-arrow">
+              <svg width="40" height="14" viewBox="0 0 40 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 7h36M31 1l6 6-6 6"/></svg>
             </div>
 
-            <div class="card-clean" style="justify-content: flex-start;">
-              <span class="editorial-kicker">03 · CÓMO LLEGA</span>
-              <div style="font-size: 17px; font-weight: 700; margin: 10px 0 8px; line-height: 1.3;">Una API y una app</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5;">
-                <strong style="color: var(--paper-text-main);">API</strong> para navegadores y plataformas de flota, como Google Maps, TomTom o Webfleet.
-              </p>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5; margin-top: 8px;">
-                <strong style="color: var(--paper-text-main);">App</strong> para transitarios, empresas de logística con flota y autónomos.
-              </p>
+            <!-- 2 · LA RESPUESTA -->
+            <div class="qp-core">
+              <div class="qp-core-top">
+                <span>Predicción Posta</span>
+                <img src="assets/logo/posta-logo-horizontal-dark.svg" alt="POSTA" style="height: 12px; width: auto;">
+              </div>
+              <div class="qp-core-area">Área A-2 · km 270</div>
+              <div class="qp-core-sub">Llegas a las 21:18 · te quedan 1 h 40 min de conducción</div>
+              <div class="qp-core-big">
+                <span class="num">82%</span>
+                <span class="lbl">de probabilidad<br>de encontrar sitio</span>
+              </div>
+              <div class="qp-bars" aria-hidden="true">
+                <span style="height: 30%"></span>
+                <span style="height: 38%"></span>
+                <span class="now" style="height: 46%"></span>
+                <span style="height: 55%"></span>
+                <span style="height: 63%"></span>
+                <span style="height: 72%"></span>
+                <span class="eta" style="height: 78%"></span>
+                <span style="height: 88%"></span>
+                <span style="height: 96%"></span>
+                <span style="height: 100%"></span>
+              </div>
+              <div class="qp-bars-axis">
+                <span>18:00</span><b>AHORA</b><span>20:00</span><b class="eta">21:18</b><span>23:00</span>
+              </div>
+            </div>
+
+            <div class="qp-arrow">
+              <svg width="40" height="14" viewBox="0 0 40 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 7h36M31 1l6 6-6 6"/></svg>
+            </div>
+
+            <!-- 3 · SALE -->
+            <div>
+              <div class="qp-col-label">Cómo llega</div>
+              <div class="qp-out">
+                <div class="qp-out-head"><span class="qp-out-tag">API</span><span>Navegadores y flotas</span></div>
+                <div class="qp-pills"><span>Google Maps</span><span>TomTom</span><span>Webfleet</span></div>
+              </div>
+              <div class="qp-out">
+                <div class="qp-out-head"><span class="qp-out-tag">APP</span><span>Quien mueve la carga</span></div>
+                <div class="qp-pills"><span>Transitarios</span><span>Logística con flota</span><span>Autónomos</span></div>
+              </div>
             </div>
           </div>
 
-          <div class="editorial-quote" style="margin-top: 20px;">
-            «Respondemos a una pregunta que hasta hoy no tenía respuesta: ¿habrá sitio cuando llegue?»
+          <!-- Bucle: cada consulta mejora la predicción -->
+          <div class="qp-loop">
+            <svg viewBox="0 0 1258 58" preserveAspectRatio="none" fill="none">
+              <path d="M1080 0 V30 Q1080 46 1064 46 H194 Q178 46 178 30 V6" stroke="#E26D46" stroke-width="1.6" stroke-dasharray="5 6" vector-effect="non-scaling-stroke"/>
+              <path d="M171 13 178 4 185 13" stroke="#E26D46" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <div class="qp-loop-label">Más consultas<i>→</i>mejor predicción<i>→</i>más usuarios</div>
           </div>
         </section>
 
