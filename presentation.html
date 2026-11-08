@@ -688,10 +688,11 @@
       backdrop-filter: blur(14px);
       z-index: 200;
       display: none;
-      padding: 50px;
+      padding: 40px;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      overflow-y: auto;
     }
 
     #overview-modal.open {
@@ -851,6 +852,7 @@
       text-transform: uppercase; color: var(--accent-warm); white-space: nowrap;
     }
     .qp-loop-label i { font-style: normal; color: var(--paper-text-dim); margin: 0 8px; }
+
     /* ===== SLIDE · PROPUESTA DE VALOR (quién gana qué) ===== */
     .pv-grid {
       flex: 1;
@@ -925,6 +927,174 @@
       border: 1px solid var(--paper-border); background: #FFFFFF; padding: 4px 10px; border-radius: 999px;
     }
     .pv-strip .qp-pills { display: flex; gap: 6px; }
+
+    /* ==========================================================================
+       ANEXO // Q&A DUE DILIGENCE SLIDES
+       ========================================================================== */
+    .anexo-header {
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+    .anexo-qa-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(226, 109, 70, 0.12);
+      color: var(--accent-warm);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      padding: 3px 9px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .anexo-question-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      line-height: 1.15;
+      color: var(--paper-text-main);
+      text-transform: uppercase;
+    }
+    .anexo-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      flex: 1;
+      min-height: 0;
+    }
+    .anexo-card {
+      background: var(--paper-surface);
+      border: 1px solid var(--paper-border);
+      border-radius: 8px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 0;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+    }
+    .anexo-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent-warm);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .anexo-tag.blue {
+      color: var(--accent-blue);
+    }
+    .anexo-tag.dark {
+      color: #1E293B;
+    }
+    .anexo-card-heading {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--paper-text-main);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .anexo-stat-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--paper-border);
+    }
+    .anexo-stat-num {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--paper-text-main);
+      line-height: 1;
+      letter-spacing: -1px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .anexo-stat-desc {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--paper-text-muted);
+      line-height: 1.3;
+    }
+    .anexo-card-text {
+      font-size: 13.5px;
+      color: var(--paper-text-muted);
+      line-height: 1.48;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .anexo-card-text p {
+      margin: 0;
+    }
+    .anexo-card-text strong {
+      color: var(--paper-text-main);
+      font-weight: 700;
+    }
+    .anexo-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid var(--paper-border);
+    }
+    .anexo-chip {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 7px;
+      border-radius: 4px;
+      background: #FFFFFF;
+      border: 1px solid var(--paper-border);
+      color: var(--paper-text-main);
+    }
+    .anexo-chip.warm {
+      background: rgba(226, 109, 70, 0.08);
+      border-color: rgba(226, 109, 70, 0.25);
+      color: #C2410C;
+    }
+    .anexo-chip.blue {
+      background: rgba(2, 132, 199, 0.08);
+      border-color: rgba(2, 132, 199, 0.25);
+      color: #0369A1;
+    }
+    .anexo-box-fail {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      border-radius: 6px;
+      padding: 9px 12px;
+      margin-bottom: 9px;
+      font-size: 12.5px;
+      line-height: 1.4;
+      color: #991B1B;
+    }
+    .anexo-box-fail strong {
+      color: #7F1D1D;
+    }
+    .anexo-box-win {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: 6px;
+      padding: 9px 12px;
+      font-size: 12.5px;
+      line-height: 1.4;
+      color: #166534;
+    }
+    .anexo-box-win strong {
+      color: #14532D;
+    }
   </style>
 </head>
 <body>
@@ -2017,6 +2187,267 @@
           </div>
         </section>
 
+        <!-- ================================================================
+             BLOQUE 6: ANEXO // Q&A DUE DILIGENCE
+             Respuestas estratégicas a las preguntas clave del Comité / Jurado
+             ================================================================ -->
+
+        <!-- 6.1. PREGUNTA 1: PRIMER CLIENTE & ESTRATEGIA RUTA A RUTA -->
+        <section class="slide" id="slide-15" data-title="Primer Cliente: Ruta a Ruta" data-section="ANEXO" data-mood="Color" style="padding: 36px 50px 30px 50px;">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>ANEXO // Q&amp;A 01 · GO-TO-MARKET &amp; PRIMER CLIENTE</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>DUE DILIGENCE · ESTRATEGIA DE PENETRACIÓN</span>
+              <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
+            </div>
+          </div>
+
+          <div class="anexo-header">
+            <span class="anexo-qa-badge">PREGUNTA // «¿CÓMO CONSEGUIMOS EL PRIMER CLIENTE?»</span>
+            <h2 class="anexo-question-title">RESPUESTA: RUTA A RUTA. NOS HACEMOS ESPECIALISTAS EN ALGUNAS Y POCO A POCO ABRIMOS A LOS DEMÁS.</h2>
+          </div>
+
+          <div class="anexo-grid-3">
+            <!-- Columna 1 -->
+            <div class="anexo-card">
+              <div>
+                <span class="anexo-tag">01 · CORREDOR HIPERCRÍTICO</span>
+                <h3 class="anexo-card-heading">AP-7 y La Jonquera</h3>
+                <div class="anexo-stat-row">
+                  <div class="anexo-stat-num" style="color: var(--accent-warm);">12.000</div>
+                  <div class="anexo-stat-desc">camiones cruzan la frontera a diario (98% colapso nocturno)</div>
+                </div>
+                <div class="anexo-card-text">
+                  <p><strong>Cero dispersión geográfica:</strong> No intentamos cubrir toda España el Día 1. Dominamos los 200 km con mayor saturación y mayor dolor del transporte europeo.</p>
+                  <p><strong>Problema en grado máximo:</strong> A partir de las 20:00 h, todas las áreas entre Girona y Francia están llenas. Resolver este tramo convence a cualquier gestor al instante.</p>
+                </div>
+              </div>
+              <div class="anexo-chips">
+                <span class="anexo-chip warm">AP-7 MEDITERRÁNEO</span>
+                <span class="anexo-chip">200 KM FOCO</span>
+                <span class="anexo-chip">LA JONQUERA</span>
+              </div>
+            </div>
+
+            <!-- Columna 2 -->
+            <div class="anexo-card" style="border-color: rgba(226, 109, 70, 0.4); background: #FFFFFF;">
+              <div>
+                <span class="anexo-tag blue">02 · EL INTERLOCUTOR QUE PAGA</span>
+                <h3 class="anexo-card-heading">Flotas Medianas (15–50 camiones)</h3>
+                <div class="anexo-stat-row">
+                  <div class="anexo-stat-num" style="color: var(--accent-blue);">8.400 €</div>
+                  <div class="anexo-stat-desc">coste anual que pierde cada camión buscando dónde parar</div>
+                </div>
+                <div class="anexo-card-text">
+                  <p><strong>Venta B2B al Jefe de Tráfico:</strong> Quien paga las multas de tacógrafo (hasta 2.000 € e inmovilización, art. 138 LOTT) es la empresa, no el conductor asalariado.</p>
+                  <p><strong>Piloto Alpha cerrado:</strong> 120 camiones en ruta regular hacia Europa. A 15 €/mes, una sola sanción evitada (400 €) amortiza más de 2 años de servicio.</p>
+                </div>
+              </div>
+              <div class="anexo-chips">
+                <span class="anexo-chip blue">VENTA B2B</span>
+                <span class="anexo-chip">120 TRUCKS ALPHA</span>
+                <span class="anexo-chip">ROI 9,6X</span>
+              </div>
+            </div>
+
+            <!-- Columna 3 -->
+            <div class="anexo-card">
+              <div>
+                <span class="anexo-tag dark">03 · EXPANSIÓN ORGÁNICA</span>
+                <h3 class="anexo-card-heading">Apertura Progresiva a la Red</h3>
+                <div class="anexo-stat-row">
+                  <div class="anexo-stat-num">3 Fases</div>
+                  <div class="anexo-stat-desc">de corredor a corredor con coste marginal cercano a cero</div>
+                </div>
+                <div class="anexo-card-text">
+                  <p><strong>Contagio de flota:</strong> Las mismas flotas de la AP-7 operan la A-1 (Irún) y A-2; son ellas quienes nos piden activar sus siguientes rutas.</p>
+                  <p><strong>Canal telemático:</strong> Conectados a Webfleet y Frotcom, habilitar nuevas rutas sobre flotas existentes es inmediato y sin fricción de instalación.</p>
+                </div>
+              </div>
+              <div class="anexo-chips">
+                <span class="anexo-chip">Q4 2026: AP-7</span>
+                <span class="anexo-chip">Q1 2027: A-1 IRÚN</span>
+                <span class="anexo-chip">Q3 2027: FRANCIA A9</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6.2. PREGUNTA 2: COMPETENCIA & QUÉ NOS HACE DIFERENTES -->
+        <section class="slide" id="slide-16" data-title="Competencia: Por qué POSTA" data-section="ANEXO" data-mood="Color" style="padding: 36px 50px 30px 50px;">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>ANEXO // Q&amp;A 02 · MODELO COMPETITIVO &amp; DEFENSA</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>DUE DILIGENCE · BARRERAS DE ENTRADA</span>
+              <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
+            </div>
+          </div>
+
+          <div class="anexo-header">
+            <span class="anexo-qa-badge">PREGUNTA // «COMPETENCIA: LA MAYORÍA HAN FRACASADO, ¿QUÉ OS HACE DIFERENTES?»</span>
+            <h2 class="anexo-question-title">FRACASARON POR PREGUNTAR AL CHÓFER. POSTA MIDE DONDE DUERME EL 95%.</h2>
+          </div>
+
+          <div class="anexo-grid-3">
+            <!-- Columna 1 -->
+            <div class="anexo-card">
+              <div>
+                <span class="anexo-tag">DIFERENCIAL 01 · CANAL &amp; AUTOMATIZACIÓN</span>
+                <h3 class="anexo-card-heading">B2B Pasivo vs. Crowdsourcing B2C</h3>
+                
+                <div class="anexo-box-fail">
+                  <strong>✕ Apps fallidas (estilo Waze):</strong> Exigían que el camionero reportara sitios libres a mano a las 23:00 con frío o lluvia. Nadie lo hacía, la red quedaba vacía y la app moría.
+                </div>
+                
+                <div class="anexo-box-win">
+                  <strong>✓ Modelo POSTA:</strong> 100% pasivo. La empresa paga y planifica en su TMS; el algoritmo lee el tacógrafo G2V2. El conductor no introduce datos a mano.
+                </div>
+
+                <div class="anexo-card-text" style="margin-top: 10px;">
+                  <p>Quien sufre las multas (hasta 2.000 €) y el coste del desvío es la <strong>empresa</strong>, no el conductor asalariado. Resolvemos un dolor financiero directo.</p>
+                </div>
+              </div>
+              <div class="anexo-chips">
+                <span class="anexo-chip warm">CERO CROWDSOURCING</span>
+                <span class="anexo-chip">VENTA A FLOTAS</span>
+              </div>
+            </div>
+
+            <!-- Columna 2 -->
+            <div class="anexo-card" style="border-color: rgba(226, 109, 70, 0.4); background: #FFFFFF;">
+              <div>
+                <span class="anexo-tag blue">DIFERENCIAL 02 · CALIDAD DEL DATO LOCAL</span>
+                <h3 class="anexo-card-heading">Dato Medido vs. Estimación Remota</h3>
+                
+                <div class="anexo-box-fail">
+                  <strong>✕ LKW.APP / TIMOCOM:</strong> Solo tienen datos en Alemania (gratis por Toll Collect). En España no tienen sensores y solo "estiman" o adivinan sin calibración en terreno.
+                </div>
+                
+                <div class="anexo-box-win">
+                  <strong>✓ Modelo POSTA:</strong> Primer operador centrado en medir físicamente la red vial española mediante telemetría concurrente y visión artificial.
+                </div>
+
+                <div class="anexo-card-text" style="margin-top: 10px;">
+                  <p>Socio de datos del <strong>Punto de Acceso Nacional (RD 450/2026)</strong>. <em>«LKW.APP adivina si hay sitio en España; POSTA lo sabe porque lo mide.»</em></p>
+                </div>
+              </div>
+              <div class="anexo-chips">
+                <span class="anexo-chip blue">DATOS EN ESPAÑA</span>
+                <span class="anexo-chip">RD 450/2026</span>
+                <span class="anexo-chip">AUDITORÍA FÍSICA</span>
+              </div>
+            </div>
+
+            <!-- Columna 3 -->
+            <div class="anexo-card">
+              <div>
+                <span class="anexo-tag dark">DIFERENCIAL 03 · ALCANCE DEL MERCADO</span>
+                <h3 class="anexo-card-heading">El 95% Convencional vs. Nicho Cerrado</h3>
+                
+                <div class="anexo-box-fail">
+                  <strong>✕ Bosch SSTPA / Mowiz:</strong> Solo gestionan sus propios parkings cerrados de 25–35 €/noche. En España apenas hay 13 parkings SSTPA para 258.000 tractoras.
+                </div>
+                
+                <div class="anexo-box-win">
+                  <strong>✓ Modelo POSTA:</strong> Plataforma universal. Integra parkings seguros de pago y predice las miles de áreas convencionales donde duerme el 95% de la flota.
+                </div>
+
+                <div class="anexo-card-text" style="margin-top: 10px;">
+                  <p><strong>Timing regulatorio:</strong> El tacógrafo digital G2V2 y la inspección de 56 días han eliminado la tolerancia que permitía improvisar en el pasado.</p>
+                </div>
+              </div>
+              <div class="anexo-chips">
+                <span class="anexo-chip">ÁREAS CONVENCIONALES</span>
+                <span class="anexo-chip">G2V2 56 DÍAS</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6.3. PREGUNTA 3: ARQUITECTURA DE DATOS & COLD START -->
+        <section class="slide" id="slide-17" data-title="Primeros Datos: Cold Start" data-section="ANEXO" data-mood="Color" style="padding: 36px 50px 30px 50px;">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>ANEXO // Q&amp;A 03 · ARQUITECTURA DE DATOS &amp; COLD START</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>DUE DILIGENCE · PIRÁMIDE DE INGESTA</span>
+              <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
+            </div>
+          </div>
+
+          <div class="anexo-header">
+            <span class="anexo-qa-badge">PREGUNTA // «¿CÓMO CONSEGUÍS LOS PRIMEROS DATOS?»</span>
+            <h2 class="anexo-question-title">DEL DATO ABIERTO AL EFECTO RED: 3 CAPAS SIN ESPERAR AL HARDWARE.</h2>
+          </div>
+
+          <div class="anexo-grid-3">
+            <!-- Columna 1 -->
+            <div class="anexo-card">
+              <div>
+                <span class="anexo-tag">CAPA 01 · DÍA 1 // ZERO HARDWARE</span>
+                <h3 class="anexo-card-heading">APIs Públicas y Privadas</h3>
+                <div class="anexo-stat-row">
+                  <div class="anexo-stat-num" style="color: var(--accent-warm);">0 €</div>
+                  <div class="anexo-stat-desc">inversión física para arrancar el modelo predictivo el Día 1</div>
+                </div>
+                <div class="anexo-card-text">
+                  <p><strong>DGT y Ministerio:</strong> Espiras de aforo de tráfico en tiempo real, cámaras públicas DGT en autovías e incidencias/cortes viales oficiales.</p>
+                  <p><strong>Punto de Acceso Nacional (RD 450/2026):</strong> Censo oficial de áreas de descanso y parkings seguros.</p>
+                  <p><strong>APIs de Parkings y Petroleras:</strong> Ocupación digital y barrera de Mowiz, OnTurtle, Bosch SSTPA, Travis y estaciones de servicio.</p>
+                </div>
+              </div>
+              <div class="anexo-chips">
+                <span class="anexo-chip warm">DGT OPEN DATA</span>
+                <span class="anexo-chip">RD 450/2026</span>
+                <span class="anexo-chip">PARKINGS SSTPA</span>
+              </div>
+            </div>
+
+            <!-- Columna 2 -->
+            <div class="anexo-card" style="border-color: rgba(226, 109, 70, 0.4); background: #FFFFFF;">
+              <div>
+                <span class="anexo-tag blue">CAPA 02 · EFECTO RED // TELEMÁTICA</span>
+                <h3 class="anexo-card-heading">Demanda Concurrente FMS</h3>
+                <div class="anexo-stat-row">
+                  <div class="anexo-stat-num" style="color: var(--accent-blue);">90 min</div>
+                  <div class="anexo-stat-desc">anticipación al colapso físico agregando datos de tacógrafo</div>
+                </div>
+                <div class="anexo-card-text">
+                  <p><strong>Conexión API telemática:</strong> Enlace con Webfleet y Geotab en las flotas piloto bajo la directiva <em>EU Data Act</em>.</p>
+                  <p><strong>Agregación de demanda en ruta:</strong> Si 40 camiones circulan hacia Francia por la AP-7 y a 30 se les agota el tiempo legal a la vez cerca de Girona, POSTA anticipa el colapso antes de que lleguen.</p>
+                  <p><strong>Quien ve las consultas predice el futuro:</strong> El efecto red surge de saber dónde necesitarán parar todos a la vez.</p>
+                </div>
+              </div>
+              <div class="anexo-chips">
+                <span class="anexo-chip blue">WEBFLEET &amp; GEOTAB</span>
+                <span class="anexo-chip">TACÓGRAFO G2V2</span>
+                <span class="anexo-chip">EFECTO RED</span>
+              </div>
+            </div>
+
+            <!-- Columna 3 -->
+            <div class="anexo-card">
+              <div>
+                <span class="anexo-tag dark">CAPA 03 · CÚSPIDE // MOAT FÍSICO</span>
+                <h3 class="anexo-card-heading">Edge AI en Cuellos de Botella</h3>
+                <div class="anexo-stat-row">
+                  <div class="anexo-stat-num">100%</div>
+                  <div class="anexo-stat-desc">precisión auditada con visión artificial local de bajo coste</div>
+                </div>
+                <div class="anexo-card-text">
+                  <p><strong>Micro-cámaras de visión artificial:</strong> Despliegue quirúrgico de sensores solares autónomos en los 10 accesos críticos del corredor piloto (AP-7 / La Jonquera).</p>
+                  <p><strong>Calibración del algoritmo:</strong> El dato físico medido entrena y afina los modelos neuronales de toda la red nacional.</p>
+                  <p><strong>Barrera inexpugnable:</strong> Blindamos una ventaja física local que ningún competidor de software remoto puede franquear.</p>
+                </div>
+              </div>
+              <div class="anexo-chips">
+                <span class="anexo-chip">EDGE AI SOLAR</span>
+                <span class="anexo-chip">SENSORES LPR</span>
+                <span class="anexo-chip">BARRERA FÍSICA</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
     </div>
@@ -2043,7 +2474,7 @@
   <div id="overview-modal">
     <div style="margin-bottom: 20px; text-align: center;">
       <h3 style="font-family: var(--font-display); font-size: 20px; color: #FFFFFF; text-transform: uppercase;">Estructura de la Presentación</h3>
-      <p style="font-size: 12px; color: #94A3B8; margin-top: 4px;">13 Diapositivas · Selecciona para saltar</p>
+      <p style="font-size: 12px; color: #94A3B8; margin-top: 4px;">15 Diapositivas + 3 Anexos Q&amp;A · Selecciona para saltar</p>
     </div>
     <div class="overview-grid" id="overview-grid-container"></div>
   </div>
@@ -2208,8 +2639,8 @@
           }
         }
 
-        // Disparar animación si es la contraportada (Slide 14 / Última diapositiva)
-        if (activeSlide.id === 'slide-14' || current === total - 1) {
+        // Disparar animación si es la contraportada (Slide 14)
+        if (activeSlide.id === 'slide-14') {
           triggerContraportadaAnim();
         } else {
           clearAnimTimeouts();
@@ -2273,7 +2704,7 @@
           const item = document.createElement('div');
           item.className = `overview-item ${isBw ? 'is-bw' : ''} ${i === current ? 'current' : ''}`;
           item.innerHTML = `
-            <div class="ov-num">0${i + 1} // ${sec}</div>
+            <div class="ov-num">${String(i + 1).padStart(2, '0')} // ${sec}</div>
             <div class="ov-title">${title}</div>
             <div style="font-size: 10px; color: #94A3B8;">Click para saltar</div>
           `;
