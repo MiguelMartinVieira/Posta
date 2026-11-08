@@ -1397,36 +1397,64 @@
             </div>
           </div>
 
-          <div style="margin-bottom: 24px;">
+          <style>
+            #slide-8 .me-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 28px; flex: 1; min-height: 0; }
+            #slide-8 .me-price { background: #11141A; color: #FFFFFF; border-radius: 6px; padding: 34px 36px; display: flex; flex-direction: column; justify-content: space-between; }
+            #slide-8 .me-price .editorial-kicker { color: #FF7A50; }
+            #slide-8 .me-big { font-family: var(--font-display); font-weight: 800; font-size: 150px; line-height: 0.9; letter-spacing: -6px; color: #FF7A50; white-space: nowrap; }
+            #slide-8 .me-unit { font-family: var(--font-display); font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: 1px; margin-top: 14px; }
+            #slide-8 .me-pill { display: inline-block; border: 1px solid rgba(255,255,255,0.25); border-radius: 999px; padding: 6px 14px; font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: 0.5px; margin-right: 8px; }
+            #slide-8 .me-bars { display: flex; flex-direction: column; justify-content: center; gap: 26px; padding: 30px 34px; }
+            #slide-8 .me-row-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+            #slide-8 .me-row-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--paper-text-main); }
+            #slide-8 .me-row-value { font-family: var(--font-display); font-weight: 800; font-size: 34px; letter-spacing: -1px; color: var(--paper-text-main); white-space: nowrap; }
+            #slide-8 .me-track { height: 14px; background: var(--paper-border); border-radius: 999px; overflow: hidden; }
+            #slide-8 .me-fill { height: 100%; border-radius: 999px; background: var(--paper-text-main); min-width: 10px; }
+            #slide-8 .me-posta .me-row-label, #slide-8 .me-posta .me-row-value { color: #FF7A50; }
+            #slide-8 .me-posta .me-fill { background: #FF7A50; }
+            #slide-8 .me-claim { font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 1.25; text-transform: uppercase; color: var(--paper-text-main); border-top: 1px solid var(--paper-border); padding-top: 20px; }
+          </style>
+
+          <div style="margin-bottom: 22px;">
             <span class="editorial-kicker">UN SOLO PRECIO</span>
             <h2 class="editorial-title">PAGA LA EMPRESA. POR CAMIÓN, CADA MES.</h2>
           </div>
 
-          <div class="grid-editorial-split">
-            <div class="card-clean" style="border-left: 3px solid var(--accent-warm); padding: 36px;">
+          <div class="me-grid">
+            <div class="me-price">
               <span class="editorial-kicker">SUSCRIPCIÓN DE FLOTA</span>
-              <div class="stat-hero-number" style="color: var(--accent-warm); margin: 14px 0; font-size: 96px;">15 €</div>
-              <div style="font-size: 16px; font-weight: 700; text-transform: uppercase;">Por camión / mes</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 10px; line-height: 1.5;">
-                Ocupación prevista, paradas según el tacógrafo y alertas, dentro del software de flota que ya usa la empresa.
-              </p>
+              <div>
+                <div class="me-big">15 €</div>
+                <div class="me-unit">Por camión / mes</div>
+              </div>
+              <div>
+                <span class="me-pill">180 € / AÑO</span>
+                <span class="me-pill">SIN COMISIONES</span>
+              </div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 22px;">
+            <div class="card-clean me-bars">
+              <span class="editorial-kicker">AL AÑO, POR CAMIÓN</span>
+
               <div>
-                <div class="stat-hero-number" style="font-size: 40px;">180 €</div>
-                <div class="stat-hero-label">Al año por camión</div>
+                <div class="me-row-head"><span class="me-row-label">Lo que pierde buscando sitio</span><span class="me-row-value">8.400 €</span></div>
+                <div class="me-track"><div class="me-fill" style="width: 100%;"></div></div>
               </div>
+
               <div>
-                <div class="stat-hero-number" style="font-size: 40px;">1,8 %</div>
-                <div class="stat-hero-label">De los 10.123 € que pierde un camión al año buscando sitio</div>
+                <div class="me-row-head"><span class="me-row-label">Una multa leve</span><span class="me-row-value">300–400 €</span></div>
+                <div class="me-track"><div class="me-fill" style="width: 4.8%;"></div></div>
               </div>
-              <div>
-                <div class="stat-hero-number" style="font-size: 40px;">300–400 €</div>
-                <div class="stat-hero-label">Una multa leve evitada paga casi 2 años</div>
+
+              <div class="me-posta">
+                <div class="me-row-head"><span class="me-row-label">POSTA</span><span class="me-row-value">180 €</span></div>
+                <div class="me-track"><div class="me-fill" style="width: 2.1%;"></div></div>
               </div>
+
+              <div class="me-claim">POSTA cuesta el <span style="color: #FF7A50;">2,1 %</span> de lo que se pierde buscando sitio.</div>
             </div>
           </div>
+          <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 12px; line-height: 1.35; font-style: italic;">Estimación POSTA: 30 min y 20 km extra al día durante 230 días (DEKRA 2026; Observatorio de costes del Ministerio de Transportes). Multa leve: LOTT, según prensa.</p>
         </section>
 
         <!-- 3.2. MERCADO -->
