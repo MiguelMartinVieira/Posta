@@ -647,11 +647,13 @@
         <section class="slide active" id="slide-1" data-title="Portada" data-section="LA IDEA" data-mood="Color">
           <div class="meta-bar" style="color: var(--accent-warm);">
             <div><span class="brand-bullet"></span>STARTCAMP 2026 · MADRID</div>
-            <div>POSTA</div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 18px; width: auto;">
+            </div>
           </div>
 
-          <div id="portada-posta" class="portada-anim-item" style="margin-bottom: 20px; text-align: center;">
-            <h1 class="editorial-hero-title" style="letter-spacing: -3.5px; margin: 0; text-align: center;">POSTA</h1>
+          <div id="portada-posta" class="portada-anim-item" style="margin-bottom: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="hero-posta-logo" style="height: 72px; width: auto; max-width: 90%; object-fit: contain;">
           </div>
 
           <!-- Pareja de Fotos Reales: Miguel primero (izq), Marius después (der) -->
@@ -1105,7 +1107,10 @@
         <section class="slide" id="slide-9" data-title="Qué Hemos Hecho" data-section="LA EMPRESA" data-mood="Color">
           <div class="meta-bar">
             <div><span class="brand-bullet"></span>LA EMPRESA // 08 · QUÉ HEMOS HECHO</div>
-            <div>VALIDACIÓN REAL EN 48 HORAS</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>VALIDACIÓN REAL EN 48 HORAS</span>
+              <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
+            </div>
           </div>
 
           <div style="margin-bottom: 24px;">
@@ -1147,7 +1152,10 @@
         <section class="slide" id="slide-10" data-title="Roadmap" data-section="LA EMPRESA" data-mood="Color">
           <div class="meta-bar">
             <div><span class="brand-bullet"></span>LA EMPRESA // 09 · ROADMAP</div>
-            <div>EJECUCIÓN A 12 MESES</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>EJECUCIÓN A 12 MESES</span>
+              <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
+            </div>
           </div>
 
           <div style="margin-bottom: 24px;">
@@ -1186,7 +1194,10 @@
         <section class="slide" id="slide-11" data-title="Equipo" data-section="LA EMPRESA" data-mood="Color">
           <div class="meta-bar">
             <div><span class="brand-bullet"></span>LA EMPRESA // 10 · EQUIPO</div>
-            <div>TALENTO COMPLEMENTARIO</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>TALENTO COMPLEMENTARIO</span>
+              <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
+            </div>
           </div>
 
           <div style="margin-bottom: 24px;">
@@ -1261,7 +1272,9 @@
             <!-- Paso 3 y 4: Frase y Logo Final (justo encima y en el centro con Scrim de Alto Contraste) -->
             <div class="contraportada-finale" id="contra-finale">
               <div class="contraportada-scrim"></div>
-              <div class="contra-posta-brand">POSTA</div>
+              <div class="contra-posta-brand" style="display: flex; justify-content: center; align-items: center; margin-bottom: 22px;">
+                <img src="assets/logo/posta-logo-horizontal-dark.svg" alt="POSTA" class="contra-posta-logo" style="height: 84px; width: auto; max-width: 90%; object-fit: contain; filter: drop-shadow(0 4px 28px rgba(0, 0, 0, 0.95));">
+              </div>
               <div class="contra-subtag">«LA RED DE INFORMACIÓN Y PREDICCIÓN AL SERVICIO DE PERSONAS»</div>
             </div>
 
@@ -1462,7 +1475,7 @@
           clearAnimTimeouts();
         }
 
-        // Si es la diapositiva del algoritmo (Slide 5), recalcular lienzo y activar simulación
+        // Si es la diapositiva del algoritmo (Slide 5: Cómo Funciona), recalcular lienzo y activar simulación
         if (activeSlide.id === 'slide-5') {
           if (previousIdx < 4) {
             setSlideSimMode('conventional');
@@ -1470,9 +1483,10 @@
             setSlideSimMode('predictive');
           }
           setTimeout(() => {
+            resizeSpainCanvas();
             resizeSimCanvas();
             if (!simAnimId) renderSlideSim();
-          }, 60);
+          }, 30);
         }
       }
 
@@ -1579,7 +1593,8 @@
       }
 
       // =========================================================================
-      // SIMULADOR NATIVO SLIDE 5: MAPA DE ESPAÑA (GRANDE) + ZOOM HUB MEDINYÀ (PEQUEÑO)
+      // =========================================================================
+      // SIMULADOR NATIVO SLIDE 4: MAPA DE ESPAÑA (GRANDE) + ZOOM HUB MEDINYÀ (PEQUEÑO)
       // =========================================================================
       let slideSimMode = 'conventional';
       let simAnimId = null;
@@ -1675,15 +1690,12 @@
       }
 
       function resizeSpainCanvas() {
-        if (!spainCanvas) return;
-        const rect = spainCanvas.parentElement.getBoundingClientRect();
-        const dpr = window.devicePixelRatio || 1;
-        spainCanvas.width = rect.width * dpr;
-        spainCanvas.height = rect.height * dpr;
-        if (spainCtx) {
-          spainCtx.resetTransform();
-          spainCtx.scale(dpr, dpr);
-        }
+        if (!spainCanvas || !spainCanvas.parentElement) return;
+        const w = spainCanvas.parentElement.clientWidth;
+        const h = spainCanvas.parentElement.clientHeight;
+        if (!w || !h) return;
+        spainCanvas.width = w;
+        spainCanvas.height = h;
       }
 
       // 2. ZOOM LOCAL: HUB MEDINYÀ (PEQUEÑO - DERECHA)
@@ -1691,25 +1703,23 @@
       const simCtx = simCanvas ? simCanvas.getContext('2d') : null;
       let simSweepAngle = 0;
 
+      // 5 camiones en el cruce de Medinyà (AP-7 y A-2)
       const simTrucks = [
-        { id: "ES-4820", t: 0.58, speed: 0.0011, slot: 3 },
-        { id: "PT-9104", t: 0.38, speed: 0.0013, slot: 1 },
-        { id: "FR-3321", t: 0.22, speed: 0.0010, slot: 5 },
-        { id: "DE-7719", t: 0.15, speed: 0.0009, slot: 4 },
-        { id: "ES-1194", t: 0.48, speed: 0.0014, slot: 2 }
+        { id: "ES-4820", route: 0, t: 0.62, speed: 0.0011, slot: 3 },
+        { id: "PT-9104", route: 0, t: 0.35, speed: 0.0013, slot: 1 },
+        { id: "FR-3321", route: 1, t: 0.25, speed: 0.0010, slot: 5 },
+        { id: "DE-7719", route: 1, t: 0.70, speed: 0.0009, slot: 4 },
+        { id: "ES-1194", route: 0, t: 0.82, speed: 0.0014, slot: 2 }
       ];
 
       function resizeSimCanvas() {
-        if (simCanvas) {
-          const rect = simCanvas.parentElement.getBoundingClientRect();
-          const dpr = window.devicePixelRatio || 1;
-          simCanvas.width = rect.width * dpr;
-          simCanvas.height = rect.height * dpr;
-          if (simCtx) {
-            simCtx.resetTransform();
-            simCtx.scale(dpr, dpr);
-          }
-        }
+        if (!simCanvas || !simCanvas.parentElement) return;
+        const w = simCanvas.parentElement.clientWidth;
+        const h = simCanvas.parentElement.clientHeight;
+        if (!w || !h) return;
+        simCanvas.width = w;
+        simCanvas.height = h;
+        resizeSpainCanvas();
       }
 
       window.setSlideSimMode = function(m) {
@@ -1867,10 +1877,17 @@
       // RENDERIZADO DEL MAPA DE ESPAÑA (GRANDE)
       function renderSpainMap() {
         if (!spainCanvas || !spainCtx) return;
-        const rect = spainCanvas.getBoundingClientRect();
-        const w = rect.width;
-        const h = rect.height;
-        if (w === 0 || h === 0) return;
+        const container = spainCanvas.parentElement;
+        if (!container) return;
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        if (!w || !h) return;
+
+        // Auto-sincronizar resolución de búfer si el contenedor acaba de hacerse visible
+        if (spainCanvas.width !== w || spainCanvas.height !== h) {
+          spainCanvas.width = w;
+          spainCanvas.height = h;
+        }
 
         spainCtx.clearRect(0, 0, w, h);
 
@@ -1892,7 +1909,7 @@
         }
 
         // 1. Rejilla telemática sutil
-        spainCtx.strokeStyle = 'rgba(255, 255, 255, 0.025)';
+        spainCtx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
         spainCtx.lineWidth = 1;
         for (let x = 0; x < w; x += 36) {
           spainCtx.beginPath(); spainCtx.moveTo(x, 0); spainCtx.lineTo(x, h); spainCtx.stroke();
@@ -1901,14 +1918,14 @@
           spainCtx.beginPath(); spainCtx.moveTo(0, y); spainCtx.lineTo(w, y); spainCtx.stroke();
         }
 
-        // 2. Silueta de España
+        // 2. Silueta de la Península Ibérica
         const poly = spainCoastGeo.map(p => project(p[0], p[1]));
         spainCtx.beginPath();
         poly.forEach((pt, i) => i === 0 ? spainCtx.moveTo(pt[0], pt[1]) : spainCtx.lineTo(pt[0], pt[1]));
         spainCtx.closePath();
-        spainCtx.fillStyle = '#080C14';
+        spainCtx.fillStyle = '#0E131E';
         spainCtx.fill();
-        spainCtx.strokeStyle = 'rgba(56, 189, 248, 0.35)';
+        spainCtx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
         spainCtx.lineWidth = 1.5;
         spainCtx.stroke();
 
@@ -1916,8 +1933,8 @@
         const islMallorca = project(2.9, 39.6);
         const islMenorca = project(4.1, 40.0);
         const islIbiza = project(1.4, 38.9);
-        spainCtx.fillStyle = '#080C14';
-        spainCtx.strokeStyle = 'rgba(56, 189, 248, 0.35)';
+        spainCtx.fillStyle = '#0E131E';
+        spainCtx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
         [[islMallorca, 6], [islMenorca, 3.5], [islIbiza, 3.5]].forEach(([pt, r]) => {
           spainCtx.beginPath();
           spainCtx.arc(pt[0], pt[1], r, 0, Math.PI * 2);
@@ -1925,28 +1942,28 @@
           spainCtx.stroke();
         });
 
-        // 3. Corredores de transporte
+        // 3. Corredores de transporte troncales
         const projCorridors = {};
         Object.keys(spainCorridorsGeo).forEach(k => {
           const pts = spainCorridorsGeo[k].map(p => project(p[0], p[1]));
           projCorridors[k] = pts;
           spainCtx.beginPath();
           pts.forEach((pt, i) => i === 0 ? spainCtx.moveTo(pt[0], pt[1]) : spainCtx.lineTo(pt[0], pt[1]));
-          spainCtx.strokeStyle = k === 'AP7' ? 'rgba(56, 189, 248, 0.45)' : 'rgba(255, 255, 255, 0.15)';
+          spainCtx.strokeStyle = k === 'AP7' ? 'rgba(56, 189, 248, 0.65)' : 'rgba(255, 255, 255, 0.2)';
           spainCtx.lineWidth = k === 'AP7' ? 2.5 : 1.5;
           spainCtx.stroke();
         });
 
         // Etiquetas de corredores en el mapa
         spainCtx.font = '700 8px "JetBrains Mono"';
-        spainCtx.fillStyle = 'rgba(56, 189, 248, 0.6)';
+        spainCtx.fillStyle = 'rgba(56, 189, 248, 0.7)';
         const ap7Mid = project(0.5, 40.4);
         spainCtx.fillText("AP-7 MEDITERRÁNEO", ap7Mid[0] + 8, ap7Mid[1]);
         const a2Mid = project(0.2, 41.6);
-        spainCtx.fillStyle = 'rgba(148, 163, 184, 0.5)';
+        spainCtx.fillStyle = 'rgba(148, 163, 184, 0.6)';
         spainCtx.fillText("A-2", a2Mid[0], a2Mid[1] - 6);
 
-        // 4. Camiones en tránsito (36 vehículos en movimiento)
+        // 4. Camiones en tránsito (36 vehículos en movimiento continuo)
         spainPulse += 0.035;
         spainFleet.forEach((trk, idx) => {
           trk.t += trk.speed * trk.dir;
@@ -1961,12 +1978,12 @@
           const isBlocked = slideSimMode === 'conventional' && isNearMedinya;
 
           spainCtx.beginPath();
-          spainCtx.arc(pos[0], pos[1], isBlocked ? 3.5 : 2.2, 0, Math.PI * 2);
-          spainCtx.fillStyle = isBlocked ? (Math.sin(Date.now() / 130 + idx) > 0 ? '#EF4444' : '#F59E0B') : (slideSimMode === 'predictive' ? '#38BDF8' : '#94A3B8');
+          spainCtx.arc(pos[0], pos[1], isBlocked ? 3.5 : 2.5, 0, Math.PI * 2);
+          spainCtx.fillStyle = isBlocked ? (Math.sin(Date.now() / 130 + idx) > 0 ? '#EF4444' : '#F59E0B') : (slideSimMode === 'predictive' ? '#38BDF8' : '#CBD5E1');
           spainCtx.fill();
         });
 
-        // 5. Nodos de la Red
+        // 5. Nodos Logísticos de la Red
         spainHubsGeo.forEach(hub => {
           const pos = project(hub.lon, hub.lat);
           if (hub.target) {
@@ -1989,23 +2006,30 @@
           } else {
             spainCtx.beginPath();
             spainCtx.arc(pos[0], pos[1], 3, 0, Math.PI * 2);
-            spainCtx.fillStyle = '#E2E8F0';
+            spainCtx.fillStyle = '#FFFFFF';
             spainCtx.fill();
 
             spainCtx.font = '600 8px "JetBrains Mono"';
-            spainCtx.fillStyle = 'rgba(255, 255, 255, 0.65)';
+            spainCtx.fillStyle = 'rgba(255, 255, 255, 0.75)';
             spainCtx.fillText(hub.id, pos[0] + 5, pos[1] + 3);
           }
         });
       }
 
-      // RENDERIZADO DEL ZOOM DE NODO: EAS MEDINYÀ (PEQUEÑO)
+      // RENDERIZADO DEL ZOOM DE NODO: EAS MEDINYÀ CON SU CRUCE VIAL
       function renderHubZoom() {
         if (!simCanvas || !simCtx) return;
-        const rect = simCanvas.getBoundingClientRect();
-        const w = rect.width;
-        const h = rect.height;
-        if (w === 0 || h === 0) return;
+        const container = simCanvas.parentElement;
+        if (!container) return;
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        if (!w || !h) return;
+
+        // Auto-sincronizar búfer al tamaño de contenedor
+        if (simCanvas.width !== w || simCanvas.height !== h) {
+          simCanvas.width = w;
+          simCanvas.height = h;
+        }
 
         simCtx.clearRect(0, 0, w, h);
 
@@ -2013,7 +2037,7 @@
         const cy = h * 0.50;
         const maxR = Math.min(w, h) * 0.42;
 
-        // Rejilla telemática
+        // 1. Rejilla telemática
         simCtx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
         simCtx.lineWidth = 1;
         for (let x = 0; x < w; x += 28) {
@@ -2023,7 +2047,7 @@
           simCtx.beginPath(); simCtx.moveTo(0, y); simCtx.lineTo(w, y); simCtx.stroke();
         }
 
-        // Anillos radar
+        // 2. Anillos radar
         [0.4, 0.7, 1.0].forEach((step, idx) => {
           const r = maxR * step;
           simCtx.beginPath();
@@ -2036,7 +2060,7 @@
           simCtx.fillText(["20 KM", "40 KM", "60 KM"][idx], cx + 4, cy - r + 8);
         });
 
-        // Barrido radar
+        // 3. Haz de barrido radar 360°
         simSweepAngle += 0.024;
         if (simSweepAngle > Math.PI * 2) simSweepAngle = 0;
         const grad = simCtx.createRadialGradient(cx, cy, 0, cx, cy, maxR);
@@ -2050,22 +2074,39 @@
         simCtx.fillStyle = grad;
         simCtx.fill();
 
-        // Corredores viales
-        simCtx.strokeStyle = 'rgba(255, 255, 255, 0.12)';
-        simCtx.lineWidth = 5;
-        simCtx.beginPath();
-        simCtx.moveTo(cx - maxR * 1.1, cy + maxR * 0.7);
-        simCtx.lineTo(cx + maxR * 1.1, cy - maxR * 0.7);
-        simCtx.stroke();
+        // 4. EL CRUCE: DOS CORREDORES VIALES CRUZÁNDOSE EN EL NODO (AP-7 y A-2 / C-25)
+        const ap7_p1 = { x: cx - maxR * 1.15, y: cy + maxR * 0.70 };
+        const ap7_p2 = { x: cx + maxR * 1.15, y: cy - maxR * 0.70 };
+        const a2_p1  = { x: cx - maxR * 1.05, y: cy - maxR * 0.65 };
+        const a2_p2  = { x: cx + maxR * 1.05, y: cy + maxR * 0.65 };
 
-        simCtx.strokeStyle = '#0F172A';
-        simCtx.lineWidth = 2.5;
-        simCtx.beginPath();
-        simCtx.moveTo(cx - maxR * 1.1, cy + maxR * 0.7);
-        simCtx.lineTo(cx + maxR * 1.1, cy - maxR * 0.7);
-        simCtx.stroke();
+        function drawHwy(pA, pB, label, lx, ly) {
+          // Borde exterior
+          simCtx.strokeStyle = 'rgba(255, 255, 255, 0.14)';
+          simCtx.lineWidth = 5;
+          simCtx.beginPath();
+          simCtx.moveTo(pA.x, pA.y);
+          simCtx.lineTo(pB.x, pB.y);
+          simCtx.stroke();
 
-        // Estación Central
+          // Asfalto interior
+          simCtx.strokeStyle = '#0B0F17';
+          simCtx.lineWidth = 2.5;
+          simCtx.beginPath();
+          simCtx.moveTo(pA.x, pA.y);
+          simCtx.lineTo(pB.x, pB.y);
+          simCtx.stroke();
+
+          // Rótulo del corredor
+          simCtx.fillStyle = 'rgba(148, 163, 184, 0.55)';
+          simCtx.font = '700 7px "JetBrains Mono"';
+          simCtx.fillText(label, lx, ly);
+        }
+
+        drawHwy(ap7_p1, ap7_p2, "AP-7 (CORREDOR MEDITERRÁNEO)", cx - maxR * 1.1, cy + maxR * 0.68 - 6);
+        drawHwy(a2_p1, a2_p2, "A-2 / C-25 (ENLACE)", cx - maxR * 1.0, cy - maxR * 0.60 + 10);
+
+        // 5. Estación Central en el centro del cruce
         simCtx.fillStyle = '#0E131C';
         simCtx.strokeStyle = slideSimMode === 'predictive' ? '#0284C7' : '#EF4444';
         simCtx.lineWidth = 2;
@@ -2087,11 +2128,11 @@
         simCtx.fillText(slideSimMode === 'predictive' ? "8 SURTIDORES · 0M ESPERA" : "8 SURTIDORES · COLAPSO", cx, cy + 33);
         simCtx.textAlign = 'left';
 
-        // Cola de camiones parados en modo convencional
+        // 6. Cola de camiones parados en modo convencional
         if (slideSimMode === 'conventional') {
           const blink = Math.sin(Date.now() / 150) > 0;
           for (let q = 0; q < 4; q++) {
-            const qx = cx - 22 - (q * 11);
+            const qx = cx - 20 - (q * 10);
             const qy = cy + 12 + (q * 5);
             simCtx.fillStyle = '#EF4444';
             simCtx.fillRect(qx - 2.5, qy - 2.5, 5, 5);
@@ -2103,23 +2144,48 @@
           }
           simCtx.fillStyle = '#FCA5A5';
           simCtx.font = '700 7px "JetBrains Mono"';
-          simCtx.fillText("COLA 4 TRUCKS (38M)", cx - 105, cy + 30);
+          simCtx.fillText("COLA 4 TRUCKS (38M)", cx - 110, cy + 30);
         }
 
-        // Camiones aproximándose
+        // 7. Camiones aproximándose por ambos corredores del cruce
         simTrucks.forEach((trk, idx) => {
           trk.t += trk.speed;
           if (trk.t > 1) trk.t = 0;
 
-          const p1 = { x: cx - maxR * 1.1, y: cy + maxR * 0.7 };
-          const p2 = { x: cx + maxR * 1.1, y: cy - maxR * 0.7 };
-          const tx = p1.x + (p2.x - p1.x) * trk.t;
-          const ty = p1.y + (p2.y - p1.y) * trk.t;
+          const pA = trk.route === 1 ? a2_p1 : ap7_p1;
+          const pB = trk.route === 1 ? a2_p2 : ap7_p2;
+          const tx = pA.x + (pB.x - pA.x) * trk.t;
+          const ty = pA.y + (pB.y - pA.y) * trk.t;
+
+          const dist = Math.hypot(tx - cx, ty - cy);
+          if (dist <= maxR) {
+            simCtx.strokeStyle = slideSimMode === 'predictive' ? 'rgba(56, 189, 248, 0.25)' : 'rgba(239, 68, 68, 0.22)';
+            simCtx.lineWidth = 1;
+            simCtx.setLineDash([2, 3]);
+            simCtx.beginPath();
+            simCtx.moveTo(cx, cy);
+            simCtx.lineTo(tx, ty);
+            simCtx.stroke();
+            simCtx.setLineDash([]);
+          }
 
           simCtx.fillStyle = slideSimMode === 'predictive' ? '#38BDF8' : (idx === 0 ? '#EF4444' : '#F59E0B');
           simCtx.beginPath();
           simCtx.arc(tx, ty, 3.5, 0, Math.PI * 2);
           simCtx.fill();
+
+          // Rótulo compacto del camión
+          simCtx.fillStyle = 'rgba(6, 8, 11, 0.88)';
+          simCtx.strokeStyle = 'rgba(255, 255, 255, 0.12)';
+          simCtx.lineWidth = 1;
+          simCtx.beginPath();
+          simCtx.roundRect(tx + 5, ty - 8, 46, 14, 2);
+          simCtx.fill();
+          simCtx.stroke();
+
+          simCtx.fillStyle = '#FFFFFF';
+          simCtx.font = '700 6px "JetBrains Mono"';
+          simCtx.fillText(trk.id, tx + 8, ty + 1);
         });
       }
 
