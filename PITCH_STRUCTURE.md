@@ -111,13 +111,13 @@
   * **SAM**: `97 M€` · 538.844 tractoras en España, Francia y Portugal.
   * **SOM**: `1,2 M€` · 6.750 camiones en España a 3 años (15 flotas directas + 3 plataformas).
 
-#### 09. Competencia
-* **Kicker**: `EL NEGOCIO // 08 · COMPETENCIA`
-* **Titular**: **«POR QUÉ NADIE HACE ESTO HOY.»**
-* **Comparativa de 3 bloques**:
-  * *GPS Tradicional (Webfleet / Geotab)*: Solo ven su propia flota, ciegos a la carretera externa.
-  * *Directorios App (Truckfly)*: Comentarios estáticos, sin reserva ni enlace a tacógrafo.
-  * *POSTA*: Red predictiva multi-flota que cruza tacógrafos concurrentes con plaza garantizada.
+#### 09. Go-To-Market & Crecimiento (La Pirámide de Posta)
+* **Kicker**: `EL NEGOCIO // 08 · GO-TO-MARKET & ESCALA`
+* **Titular**: **«DEL DATO ABIERTO A LA BARRERA FÍSICA INEXPUGNABLE.»**
+* **La Pirámide de Crecimiento en 3 Pisos**:
+  * **Piso 1 (La Base del Algoritmo · Día 1)**: Ingesta universal de todas las APIs del ecosistema sin fricción ni hardware (Google Maps Platform, Gobierno de España / DGT, Ayuntamientos / Open Data, Telemática FMS Webfleet/Geotab, Parkings SSTPA Mowiz/Bosch, AEMET). Zero inversión física.
+  * **Piso 2 (El Núcleo del Negocio · Efecto Red)**: La red de información que surge porque todas las flotas preguntan simultáneamente a POSTA. Al agregar la demanda concurrente de ruta y tiempos de tacógrafo, anticipamos el colapso 90 minutos antes que nadie. Quien ve las consultas de todos predice el futuro.
+  * **Piso 3 (La Cúspide · Eficiencia Extrema & Moat Físico)**: Despliegue de hardware propio en el mercado (cámaras con visión artificial / Edge AI y sensores LPR) en áreas convencionales y descampados. Pasamos del dato estimado al dato medido físicamente al 100%, convirtiendo a POSTA en proveedor oficial del Punto de Acceso Nacional (RD 450/2026) y blindando una barrera que ningún software remoto (Google / TIMOCOM) puede franquear.
 
 ---
 
