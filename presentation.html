@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posta // Una Historia de Carretera y Personas</title>
+  
+  <!-- Tipografía Editorial Suave: Syne (display con curvas) + Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. TOKENS DE DISEÑO EDITORIAL (ESTILO REVISTA / ARQUITECTÓNICO)
+       Inspirado en la referencia: tipografía suave con curvas, minimalismo,
+       y cambio de mood entre diapositivas en color y diapositiva algoritmo en B&N.
+       ========================================================================== */
+    :root {
+      /* Modo Normal / Diapositivas Humanas (Papel Editorial Blanco / Acentos Cálidos) */
+      --paper-bg: #FFFFFF;
+      --paper-surface: #F8F9FA;
+      --paper-border: #E5E7EB;
+      --paper-text-main: #11141A;
+      --paper-text-muted: #64748B;
+      --paper-text-dim: #94A3B8;
+
+      /* Acento Cálido Humano */
+      --accent-warm: #E26D46; /* Terracota cálido editorial */
+      --accent-amber: #D97706; /* Ámbar de cabina */
+      --accent-blue: #0284C7;  /* Azul Posta */
+
+      /* Mood Blanco y Negro (El Algoritmo / La Máquina) */
+      --bw-bg: #090B0E;
+      --bw-surface: #12161E;
+      --bw-border: rgba(255, 255, 255, 0.14);
+      --bw-text-main: #FFFFFF;
+      --bw-text-muted: #A1A1AA;
+
+      /* Fuentes */
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --slide-ratio: 16 / 9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #E2E8F0;
+      font-family: var(--font-body);
+      color: var(--paper-text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Escenario 16:9 con Escalado Automático */
+    #viewport {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    #presentation-stage {
+      width: 1366px;
+      height: 768px;
+      max-width: 100%;
+      max-height: 100%;
+      aspect-ratio: var(--slide-ratio);
+      position: relative;
+      background-color: var(--paper-bg);
+      border-radius: 8px;
+      box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    /* ==========================================================================
+       2. ESTRUCTURA DE DIAPOSITIVAS (SLIDES ENGINE)
+       ========================================================================== */
+    .slides-deck {
+      flex: 1;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: 44px 56px;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: scale(0.99) translateY(12px);
+      transition: opacity 280ms cubic-bezier(0.16, 1, 0.3, 1), transform 280ms cubic-bezier(0.16, 1, 0.3, 1), visibility 280ms;
+      background: var(--paper-bg);
+      color: var(--paper-text-main);
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: scale(1) translateY(0);
+    }
+
+    /* ==========================================================================
+       3. CAMBIO DE MOOD: DIAPOSITIVAS EN BLANCO Y NEGRO (EL ALGORITMO)
+       ========================================================================== */
+    .slide.slide-mood-bw {
+      background: var(--bw-bg) !important;
+      color: var(--bw-text-main) !important;
+    }
+
+    .slide.slide-mood-bw .meta-bar {
+      color: var(--bw-text-muted);
+      border-color: var(--bw-border);
+    }
+
+    .slide.slide-mood-bw .editorial-title {
+      color: #FFFFFF;
+    }
+
+    .slide.slide-mood-bw .editorial-desc {
+      color: #D4D4D8;
+    }
+
+    /* ==========================================================================
+       4. COMPONENTES EDITORIALES (ESTILO LUXEMBOURG / REVISTA)
+       ========================================================================== */
+    .meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--paper-text-muted);
+      margin-bottom: 22px;
+      flex-shrink: 0;
+    }
+
+    .meta-bar .brand-bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-warm);
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .slide-mood-bw .meta-bar .brand-bullet {
+      background: #FFFFFF;
+    }
+
+    /* Tipografía Suave con Curvas (Syne) */
+    .editorial-hero-title {
+      font-family: var(--font-display);
+      font-size: 82px;
+      font-weight: 800;
+      letter-spacing: -2.5px;
+      line-height: 0.95;
+      color: var(--paper-text-main);
+      text-transform: uppercase;
+    }
+
+    .editorial-title {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      line-height: 1.1;
+      color: var(--paper-text-main);
+      text-transform: uppercase;
+    }
+
+    .editorial-title.tight {
+      font-size: 34px;
+      letter-spacing: -1px;
+    }
+
+    .editorial-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-warm);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .slide-mood-bw .editorial-kicker {
+      color: #FFFFFF;
+      opacity: 0.7;
+    }
+
+    .editorial-lead {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--paper-text-muted);
+      max-width: 650px;
+    }
+
+    .editorial-quote {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--paper-text-main);
+      border-left: 2px solid var(--accent-warm);
+      padding-left: 18px;
+      margin: 16px 0;
+    }
+
+    .editorial-quote cite {
+      display: block;
+      margin-top: 8px;
+      font-size: 11px;
+      font-style: normal;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--paper-text-muted);
+    }
+
+    /* Marcos de Imagen Editorial */
+    .photo-frame {
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      background: #E2E8F0;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Grillas Editoriales Asimétricas */
+    .grid-editorial-split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      flex: 1;
+    }
+
+    .grid-editorial-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      flex: 1;
+      align-items: stretch;
+    }
+
+    /* Tarjetas de Historia / Dato */
+    .stat-hero {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-hero-number {
+      font-family: var(--font-display);
+      font-size: 58px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -2px;
+      color: var(--paper-text-main);
+    }
+
+    .slide-mood-bw .stat-hero-number {
+      color: #FFFFFF;
+    }
+
+    .stat-hero-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-warm);
+      margin-top: 6px;
+    }
+
+    .slide-mood-bw .stat-hero-label {
+      color: #A1A1AA;
+    }
+
+    .stat-hero-desc {
+      font-size: 13px;
+      color: var(--paper-text-muted);
+      line-height: 1.4;
+      margin-top: 4px;
+    }
+
+    .slide-mood-bw .stat-hero-desc {
+      color: #71717A;
+    }
+
+    /* ==========================================================================
+       5. NAVEGADOR Y CONTROL FLOTANTE DISCRETO
+       ========================================================================== */
+    #toolbar {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(17, 20, 26, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 40px;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      z-index: 100;
+      color: #FFFFFF;
+    }
+
+    .tb-btn {
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: color 140ms ease, background 140ms ease;
+    }
+
+    .tb-btn:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .tb-indicator {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+    }
+
+    .tb-mood-pill {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .tb-mood-pill.mood-bw {
+      background: #FFFFFF;
+      color: #000000;
+    }
+
+    /* Modal de Vista General */
+    #overview-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 12, 16, 0.94);
+      backdrop-filter: blur(14px);
+      z-index: 200;
+      display: none;
+      padding: 60px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #overview-modal.open {
+      display: flex;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    .overview-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 16px;
+      aspect-ratio: var(--slide-ratio);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 140ms ease, border-color 140ms ease;
+    }
+
+    .overview-item.is-bw {
+      background: #11141A;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .overview-item.is-bw .ov-title {
+      color: #FFFFFF;
+    }
+
+    .overview-item:hover, .overview-item.current {
+      border-color: var(--accent-warm);
+      transform: translateY(-4px);
+    }
+
+    .ov-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent-warm);
+      font-weight: 700;
+    }
+
+    .ov-title {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: #11141A;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="viewport">
+    <div id="presentation-stage">
+
+      <!-- ====================================================================
+           SLIDES DECK
+           ==================================================================== -->
+      <main class="slides-deck" id="slides-deck">
+
+        <!-- ================================================================
+             DIAPOSITIVA 1: PORTADA EDITORIAL (ESTILO LUXEMBOURG)
+             Gran tipografía curva, muy poco texto, foto panorámica inferior.
+             ================================================================ -->
+        <section class="slide active" id="slide-1" data-title="Portada" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>8 DE NOVIEMBRE DE 2026 · MADRID</div>
+            <div>STARTCAMP 2026 · PITCH FINAL</div>
+          </div>
+
+          <div style="text-align: center; margin-top: 10px;">
+            <span class="editorial-kicker" style="letter-spacing: 3px;">UNA HISTORIA SOBRE QUIÉNES MUEVEN EUROPA</span>
+            <p style="font-size: 14px; color: var(--paper-text-muted); max-width: 740px; margin: 0 auto 18px auto; line-height: 1.45; text-transform: uppercase; letter-spacing: 0.5px;">
+              300.000 personas transportan todo lo que comemos, vestimos y usamos cada día.<br>
+              Esta noche, más de 70.000 camiones no tienen un lugar seguro donde parar.
+            </p>
+            <h1 class="editorial-hero-title" style="margin-bottom: 22px;">POSTA</h1>
+          </div>
+
+          <!-- Imagen Panorámica Inferior de Autopista / Carretera al Atardecer -->
+          <div class="photo-frame" style="flex: 1; width: 100%; max-height: 380px;">
+            <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1600&auto=format&fit=crop" alt="Carretera al atardecer">
+          </div>
+        </section>
+
+        <!-- ================================================================
+             DIAPOSITIVA 2: LA PERSONA (ANTONIO, 54 AÑOS)
+             Composición editorial con retrato/cabina y cita humana.
+             ================================================================ -->
+        <section class="slide" id="slide-2" data-title="Antonio" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>01 · EL ROSTRO DETRÁS DEL VOLANTE</div>
+            <div>RUTA ALMERÍA — ROTTERDAM</div>
+          </div>
+
+          <div class="grid-editorial-split">
+            <div>
+              <span class="editorial-kicker">16 DÍAS FUERA DE CASA</span>
+              <h2 class="editorial-title" style="margin-bottom: 18px;">
+                ANTONIO TIENE 54 AÑOS.<br>
+                ESTA NOCHE NO SABE DÓNDE VA A DORMIR.
+              </h2>
+              
+              <p class="editorial-lead" style="margin-bottom: 20px;">
+                Son las 21:18 en la AP-7. Le quedan 24 minutos de conducción en el tacógrafo antes de que salte la multa legal. En el área de servicio no cabe un solo camión más.
+              </p>
+
+              <div class="editorial-quote">
+                «La gente ve una máquina de 40 toneladas estorbando. Yo solo pienso en ducharme con agua caliente y volver a casa con mis hijas.»
+                <cite>— ANTONIO MORALES · CONDUCTOR PROFESIONAL</cite>
+              </div>
+            </div>
+
+            <!-- Foto de Cabina / Conductor en Ruta -->
+            <div class="photo-frame" style="height: 100%; max-height: 520px;">
+              <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200&auto=format&fit=crop" alt="Conductor en cabina">
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             DIAPOSITIVA 3: EL DILEMA NOCTURNO (LA SOLEDAD EN LA AP-7)
+             Poco texto, 2 números gigantes, puro contraste.
+             ================================================================ -->
+        <section class="slide" id="slide-3" data-title="El Dilema" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>02 · LA INCERTIDUMBRE</div>
+            <div>FRONTERA DE LA JONQUERA · 23.000 CAMIONES/DÍA</div>
+          </div>
+
+          <div style="margin-bottom: 30px;">
+            <span class="editorial-kicker">EL FALSO DILEMA</span>
+            <h2 class="editorial-title">DORMIR EN UN DESCAMPADO O JUGARSE 1.000 € DE MULTA.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div class="stat-hero">
+                <span class="stat-hero-number">93%</span>
+                <span class="stat-hero-label">Robos Nocturnos</span>
+                <p class="stat-hero-desc">Ocurren en paradas forzosas en arcenes y polígonos oscuros mientras el conductor duerme.</p>
+              </div>
+
+              <div class="stat-hero" style="margin-top: 24px;">
+                <span class="stat-hero-number">75%</span>
+                <span class="stat-hero-label">Multas en Ruta</span>
+                <p class="stat-hero-desc">Se producen por pasarse escasos minutos buscando desesperadamente una plaza libre.</p>
+              </div>
+            </div>
+
+            <div class="photo-frame" style="height: 100%;">
+              <img src="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1000&auto=format&fit=crop" alt="Carretera vacía de noche">
+            </div>
+
+            <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 10px;">
+              <div style="font-size: 24px; font-family: var(--font-display); line-height: 1.3; font-weight: 700; color: var(--paper-text-main); margin-bottom: 16px;">
+                EXIGIMOS PUNTUALIDAD MATEMÁTICA AL TRANSPORTE, PERO LES NEGAMOS UN DESCANSO DIGNO.
+              </div>
+              <p style="font-size: 14px; color: var(--paper-text-muted); line-height: 1.5;">
+                Faltan 390.000 plazas de aparcamiento seguro en Europa. El problema no es el tacógrafo: es la incertidumbre de no tener la plaza asegurada.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             DIAPOSITIVA 4: CAMBIO DE MOOD TOTAL -> EL ALGORITMO (BLANCO Y NEGRO)
+             Estilo brutalista / editorial B&W como la segunda diapo de la referencia.
+             Fondo negro, foto monocromo, texto blanco, precisión técnica.
+             ================================================================ -->
+        <section class="slide slide-mood-bw" id="slide-4" data-title="El Algoritmo" data-mood="B&W">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>03 · EL MOTOR DE CÁLCULO</div>
+            <div>SISTEMA PREDICTIVO CONECTADO AL TACÓGRAFO G2V2</div>
+          </div>
+
+          <div style="text-align: center; margin-bottom: 30px;">
+            <span class="editorial-kicker" style="color: #A1A1AA;">CERTEZA MATEMÁTICA</span>
+            <h2 class="editorial-title" style="font-size: 46px; max-width: 980px; margin: 0 auto;">
+              EL ALGORITMO: PREDECIR EL COLAPSO ANTES DE QUE OCURRA.
+            </h2>
+          </div>
+
+          <!-- 3 Columnas B&W como en la diapositiva oscura de la imagen de referencia -->
+          <div class="grid-editorial-3" style="margin-top: 10px;">
+            <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--bw-border); padding: 26px; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: #71717A;">01 // INGESTA CONTINUA</span>
+                <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: #FFFFFF; margin: 10px 0 8px 0; text-transform: uppercase;">
+                  Telemetría FMS
+                </h3>
+                <p style="font-size: 13px; color: #A1A1AA; line-height: 1.5;">
+                  Lectura agnóstica de tiempos de conducción en cientos de flotas en marcha simultánea.
+                </p>
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: #52525B; margin-top: 14px;">
+                TACÓGRAFO INTELIGENTE G2V2
+              </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--bw-border); padding: 26px; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: #71717A;">02 // CÁLCULO PREDICTIVO</span>
+                <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: #FFFFFF; margin: 10px 0 8px 0; text-transform: uppercase;">
+                  Algoritmo EAS
+                </h3>
+                <p style="font-size: 13px; color: #A1A1AA; line-height: 1.5;">
+                  Anticipa con 90 minutos de margen la saturación de los parkings seguros en los corredores.
+                </p>
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: #52525B; margin-top: 14px;">
+                PRECISIÓN &gt; 94% EN RUTA
+              </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--bw-border); padding: 26px; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: #71717A;">03 // ASIGNACIÓN LEGAL</span>
+                <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: #FFFFFF; margin: 10px 0 8px 0; text-transform: uppercase;">
+                  Reserva & Blindaje
+                </h3>
+                <p style="font-size: 13px; color: #A1A1AA; line-height: 1.5;">
+                  Bloqueo automático de plaza segura y amparo jurídico bajo el Artículo 12 de la UE.
+                </p>
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: #52525B; margin-top: 14px;">
+                CERO SANCIONES EN CARRETERA
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             DIAPOSITIVA 5: VUELTA AL COLOR Y ALIVIO (EL MENSAJE A ANTONIO)
+             El contraste cálido de la tecnología devolviendo la tranquilidad.
+             ================================================================ -->
+        <section class="slide" id="slide-5" data-title="El Alivio" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>04 · LA RESOLUCIÓN HUMANA</div>
+            <div>AP-7 · ÁREA MEDINYÀ SEGURA</div>
+          </div>
+
+          <div class="grid-editorial-split">
+            <div>
+              <span class="editorial-kicker">PAZ MENTAL A 100 KM DE DISTANCIA</span>
+              <h2 class="editorial-title" style="margin-bottom: 20px;">
+                A LAS 18:00 H, ANTONIO YA SABE DÓNDE VA A DORMIR.
+              </h2>
+
+              <p class="editorial-lead" style="margin-bottom: 24px;">
+                Sin tocar un botón. El sistema calcula que La Jonquera se saturará a las 21:00 y le desvía a una plaza vigilada 40 km antes.
+              </p>
+
+              <!-- Notificación limpia de cabina -->
+              <div style="background: var(--paper-surface); border: 1px solid var(--paper-border); border-left: 3px solid var(--accent-warm); padding: 18px 22px; border-radius: 6px;">
+                <div style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--accent-warm); margin-bottom: 4px;">
+                  AVISO EN CABINA // POSTA
+                </div>
+                <div style="font-size: 15px; font-weight: 700; color: var(--paper-text-main);">
+                  «Antonio, tu plaza #47 en Medinyà está garantizada. Tienes ducha caliente, seguridad 24/7 y 44 min de margen legal.»
+                </div>
+              </div>
+            </div>
+
+            <!-- Foto de Área de Descanso Iluminada / Segura -->
+            <div class="photo-frame" style="height: 100%; max-height: 520px;">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop" alt="Logística segura">
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             DIAPOSITIVA 6: EL IMPACTO Y EL MODELO DE NEGOCIO
+             Editorial, tipografía grande, datos concretos.
+             ================================================================ -->
+        <section class="slide" id="slide-6" data-title="Impacto & Negocio" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>05 · MODELO & TRACCIÓN</div>
+            <div>B2B SAAS + TAKE RATE POR PLAZA</div>
+          </div>
+
+          <div style="margin-bottom: 30px;">
+            <span class="editorial-kicker">ESCALABILIDAD REAL</span>
+            <h2 class="editorial-title">UN NEGOCIO B2B BASADO EN LA DIGNIDAD Y EL AHORRO.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div style="background: var(--paper-surface); border: 1px solid var(--paper-border); padding: 26px; border-radius: 6px;">
+              <span class="editorial-kicker" style="color: var(--paper-text-muted);">MERCADO EN ESPAÑA</span>
+              <div class="stat-hero-number" style="margin: 8px 0;">296K</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Camiones Pesados de Servicio Público</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                El 89% ya tiene GPS y telemática instalada, pero el 0% sabe si habrá plaza al llegar.
+              </p>
+            </div>
+
+            <div style="background: var(--paper-surface); border: 1px solid var(--paper-border); padding: 26px; border-radius: 6px;">
+              <span class="editorial-kicker">SUSCRIPCIÓN DE FLOTA</span>
+              <div class="stat-hero-number" style="margin: 8px 0; color: var(--accent-warm);">15 €</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Por Camión / Mes</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                Una sola multa evitada (1.001 €) amortiza 5 años de suscripción de un camión.
+              </p>
+            </div>
+
+            <div style="background: var(--paper-surface); border: 1px solid var(--paper-border); padding: 26px; border-radius: 6px;">
+              <span class="editorial-kicker">VALIDACIÓN STARTCAMP</span>
+              <div class="stat-hero-number" style="margin: 8px 0;">42/50</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Flotas Pagarían Hoy</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                Validado este fin de semana en entrevistas con jefes de tráfico y transportistas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             DIAPOSITIVA 7: CIERRE EDITORIAL (IMPACTO FINAL)
+             Estilo portada Luxembourg: Gran tipografía curva, titular rotundo.
+             ================================================================ -->
+        <section class="slide" id="slide-7" data-title="Cierre" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>STARTCAMP 2026 · FINAL</div>
+            <div>POSTA TECHNOLOGIES · MADRID</div>
+          </div>
+
+          <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; max-width: 900px; margin: 0 auto;">
+            
+            <span class="editorial-kicker" style="letter-spacing: 3px;">NUESTRA MISIÓN</span>
+            
+            <h2 class="editorial-title" style="font-size: 50px; line-height: 1.1; margin-bottom: 24px;">
+              DORMIR EN PAZ NO DEBERÍA SER UN PRIVILEGIO EN LA CARRETERA EUROPEA.
+            </h2>
+
+            <p style="font-size: 18px; color: var(--paper-text-muted); line-height: 1.5; max-width: 680px; margin-bottom: 34px;">
+              Buscamos mentores del sector logístico y el pase a UNEC / Hult Prize para poner en marcha el primer piloto que cuide a los conductores en la frontera.
+            </p>
+
+            <div style="font-family: var(--font-display); font-size: 72px; font-weight: 800; letter-spacing: -2px; color: var(--paper-text-main); margin-bottom: 28px;">
+              POSTA
+            </div>
+
+            <div style="display: flex; gap: 32px; font-size: 12px; font-family: var(--font-mono); color: var(--paper-text-muted); text-transform: uppercase;">
+              <span>PILOTO Q1 2027</span>
+              <span>·</span>
+              <span>MAD TECH CAMPUS</span>
+              <span>·</span>
+              <span style="color: var(--accent-warm);">HULT PRIZE 2026</span>
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Barra de Control Flotante -->
+  <aside id="toolbar">
+    <button class="tb-btn" id="btn-prev" title="Anterior (Flecha Izquierda / Espacio)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <div class="tb-indicator">
+      <span id="slide-num">01</span> / <span id="total-slides-num">07</span>
+    </div>
+    <span class="tb-mood-pill" id="mood-pill">COLOR</span>
+    <button class="tb-btn" id="btn-next" title="Siguiente (Flecha Derecha)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+    <button class="tb-btn" id="btn-overview" title="Vista General (O / Esc)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+    </button>
+  </aside>
+
+  <!-- Modal de Vista General -->
+  <div id="overview-modal">
+    <div style="margin-bottom: 20px; text-align: center;">
+      <h3 style="font-family: var(--font-display); font-size: 22px; color: #FFFFFF; text-transform: uppercase;">Visión General del Pitch</h3>
+      <p style="font-size: 12px; color: #94A3B8; margin-top: 4px;">Selecciona cualquier diapositiva o pulsa [Esc] para volver</p>
+    </div>
+    <div class="overview-grid" id="overview-grid-container"></div>
+  </div>
+
+  <!-- Script de Navegación y Auto-Escalado -->
+  <script>
+    (function() {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const slideNum = document.getElementById('slide-num');
+      const totalSlides = document.getElementById('total-slides-num');
+      const moodPill = document.getElementById('mood-pill');
+      const stage = document.getElementById('presentation-stage');
+      const overviewModal = document.getElementById('overview-modal');
+      const overviewContainer = document.getElementById('overview-grid-container');
+
+      let current = 0;
+      const total = slides.length;
+      totalSlides.textContent = String(total).padStart(2, '0');
+
+      function updateSlide(idx) {
+        if (idx < 0) idx = 0;
+        if (idx >= total) idx = total - 1;
+
+        slides.forEach((s, i) => {
+          s.classList.remove('active');
+        });
+
+        current = idx;
+        const activeSlide = slides[current];
+        activeSlide.classList.add('active');
+
+        // Actualizar indicador
+        slideNum.textContent = String(current + 1).padStart(2, '0');
+
+        // Actualizar Mood Pill (Color vs B&W)
+        const isBw = activeSlide.classList.contains('slide-mood-bw');
+        if (isBw) {
+          moodPill.textContent = 'MOOD: ALGORITMO (B&W)';
+          moodPill.className = 'tb-mood-pill mood-bw';
+        } else {
+          moodPill.textContent = 'MOOD: PERSONAS (COLOR)';
+          moodPill.className = 'tb-mood-pill';
+        }
+      }
+
+      function next() { updateSlide(current + 1); }
+      function prev() { updateSlide(current - 1); }
+
+      function buildOverview() {
+        overviewContainer.innerHTML = '';
+        slides.forEach((s, i) => {
+          const title = s.getAttribute('data-title') || `Slide ${i + 1}`;
+          const isBw = s.classList.contains('slide-mood-bw');
+          const item = document.createElement('div');
+          item.className = `overview-item ${isBw ? 'is-bw' : ''} ${i === current ? 'current' : ''}`;
+          item.innerHTML = `
+            <div class="ov-num">0${i + 1} // ${isBw ? 'B&W' : 'COLOR'}</div>
+            <div class="ov-title">${title}</div>
+            <div style="font-size: 10px; color: #94A3B8;">Click para saltar</div>
+          `;
+          item.addEventListener('click', () => {
+            updateSlide(i);
+            toggleOverview(false);
+          });
+          overviewContainer.appendChild(item);
+        });
+      }
+
+      function toggleOverview(force) {
+        const isOpen = overviewModal.classList.contains('open');
+        const show = force !== undefined ? force : !isOpen;
+        if (show) {
+          buildOverview();
+          overviewModal.classList.add('open');
+        } else {
+          overviewModal.classList.remove('open');
+        }
+      }
+
+      // Teclado
+      window.addEventListener('keydown', (e) => {
+        if (['ArrowRight', ' ', 'PageDown', 'l'].includes(e.key)) {
+          e.preventDefault();
+          next();
+        } else if (['ArrowLeft', 'PageUp', 'h'].includes(e.key)) {
+          e.preventDefault();
+          prev();
+        } else if (['o', 'O'].includes(e.key)) {
+          e.preventDefault();
+          toggleOverview();
+        } else if (e.key === 'Escape') {
+          if (overviewModal.classList.contains('open')) {
+            e.preventDefault();
+            toggleOverview(false);
+          }
+        } else if (['f', 'F'].includes(e.key)) {
+          e.preventDefault();
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(() => {});
+          } else {
+            document.exitFullscreen().catch(() => {});
+          }
+        }
+      });
+
+      document.getElementById('btn-next').addEventListener('click', next);
+      document.getElementById('btn-prev').addEventListener('click', prev);
+      document.getElementById('btn-overview').addEventListener('click', () => toggleOverview());
+      overviewModal.addEventListener('click', (e) => {
+        if (e.target === overviewModal) toggleOverview(false);
+      });
+
+      // Auto-escalado de pantalla
+      function resize() {
+        const vw = window.innerWidth - 32;
+        const vh = window.innerHeight - 32;
+        const scale = Math.min(vw / 1366, vh / 768, 1.25);
+        stage.style.transform = `scale(${scale})`;
+        stage.style.transformOrigin = 'center center';
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+
+      updateSlide(0);
+    })();
+  </script>
+</body>
+</html>
