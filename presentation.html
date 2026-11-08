@@ -1426,17 +1426,20 @@
           <style>
             #slide-9 .me-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 26px; flex: 1; min-height: 0; }
             #slide-9 .me-ticket { position: relative; overflow: hidden; border-radius: 10px; padding: 32px 36px; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between;
-              background: radial-gradient(circle at 85% 15%, rgba(255,255,255,0.22) 0, rgba(255,255,255,0) 45%), linear-gradient(135deg, #FF8A5C 0%, #E26D46 55%, #B94B2A 100%);
-              box-shadow: 0 18px 40px -18px rgba(226, 109, 70, 0.65); }
-            #slide-9 .me-ticket::after { content: ""; position: absolute; right: -60px; bottom: -60px; width: 220px; height: 220px; border-radius: 50%; border: 28px solid rgba(255,255,255,0.10); }
-            #slide-9 .me-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; background: rgba(17,20,26,0.18); border: 1px solid rgba(255,255,255,0.35); padding: 6px 12px; border-radius: 999px; align-self: flex-start; }
-            #slide-9 .me-big { font-family: var(--font-display); font-weight: 800; font-size: 128px; line-height: 0.85; letter-spacing: -5px; white-space: nowrap; }
-            #slide-9 .me-unit { font-family: var(--font-display); font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: 1px; margin-top: 16px; }
+              background:
+                linear-gradient(165deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.03) 28%, rgba(255,255,255,0) 42%),
+                radial-gradient(120% 80% at 20% 110%, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0) 55%),
+                linear-gradient(160deg, #1C1D21 0%, #0A0A0C 55%, #000000 100%);
+              border: 1px solid rgba(255,255,255,0.10);
+              box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -20px 40px rgba(0,0,0,0.6), 0 22px 44px -18px rgba(0,0,0,0.75); }
+            #slide-9 .me-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7DD3FC; background: rgba(2,132,199,0.16); border: 1px solid rgba(56,189,248,0.45); padding: 6px 12px; border-radius: 999px; align-self: flex-start; }
+            #slide-9 .me-big { font-family: var(--font-display); font-weight: 800; font-size: 128px; line-height: 0.85; letter-spacing: -5px; white-space: nowrap; color: #FF7A50; }
+            #slide-9 .me-unit { font-family: var(--font-display); font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: 1px; margin-top: 16px; color: #FFFFFF; }
             #slide-9 .me-foot { display: flex; gap: 10px; position: relative; z-index: 1; }
-            #slide-9 .me-pill { background: #FFFFFF; color: #B94B2A; border-radius: 999px; padding: 7px 14px; font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
-            #slide-9 .me-right { background: var(--paper-surface); border: 1px solid var(--paper-border); border-radius: 10px; padding: 28px 32px; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; }
+            #slide-9 .me-pill { background: rgba(255,255,255,0.08); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.28); border-radius: 999px; padding: 7px 14px; font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+            #slide-9 .me-right { background: linear-gradient(90deg, rgba(2, 132, 199, 0.05) 0%, var(--paper-surface) 45%); border: 1px solid var(--paper-border); border-left: 4px solid #0284C7; border-radius: 10px; padding: 28px 32px; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; }
             #slide-9 .me-waffle { display: grid; grid-template-columns: repeat(10, 25px); grid-auto-rows: 25px; gap: 6px; }
-            #slide-9 .me-waffle span { border-radius: 5px; background: #11141A; }
+            #slide-9 .me-waffle span { border-radius: 5px; background: #1E293B; }
             #slide-9 .me-waffle span.on { background: #FF7A50; box-shadow: 0 0 0 3px rgba(255,122,80,0.25); }
             #slide-9 .me-legend { display: flex; flex-direction: column; gap: 22px; }
             #slide-9 .me-key { display: flex; gap: 12px; align-items: flex-start; }
@@ -1489,9 +1492,9 @@
               </div>
 
               <div class="me-legend">
-                <span class="editorial-kicker">AL AÑO, POR CAMIÓN</span>
+                <span class="editorial-kicker" style="color: #0284C7;">AL AÑO, POR CAMIÓN</span>
                 <div class="me-key">
-                  <span class="me-dot" style="background: #11141A;"></span>
+                  <span class="me-dot" style="background: #1E293B;"></span>
                   <div><div class="me-val">8.400 €</div><div class="me-lab">Lo que pierde buscando sitio</div></div>
                 </div>
                 <div class="me-key">
