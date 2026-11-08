@@ -851,6 +851,80 @@
       text-transform: uppercase; color: var(--accent-warm); white-space: nowrap;
     }
     .qp-loop-label i { font-style: normal; color: var(--paper-text-dim); margin: 0 8px; }
+    /* ===== SLIDE · PROPUESTA DE VALOR (quién gana qué) ===== */
+    .pv-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      min-height: 0;
+    }
+    .pv-card {
+      background: var(--paper-surface);
+      border: 1px solid var(--paper-border);
+      border-radius: 10px;
+      padding: 22px 24px 18px;
+      display: flex;
+      flex-direction: column;
+    }
+    .pv-card.is-payer {
+      background: #11141A;
+      border-color: #11141A;
+      color: #FFFFFF;
+      box-shadow: 0 24px 50px -26px rgba(17, 20, 26, 0.6);
+    }
+    .pv-who { display: flex; align-items: center; gap: 12px; }
+    .pv-icon {
+      width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: #FFFFFF; border: 1px solid var(--paper-border); color: var(--paper-text-main);
+    }
+    .pv-card.is-payer .pv-icon { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); color: #FFFFFF; }
+    .pv-who-name { font-size: 16px; font-weight: 700; line-height: 1.2; }
+    .pv-who-role {
+      font-family: var(--font-mono); font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--paper-text-dim); margin-top: 3px;
+    }
+    .pv-card.is-payer .pv-who-role { color: #FF7A50; }
+    .pv-number {
+      font-family: var(--font-display); font-weight: 800; font-size: 56px; line-height: 1;
+      letter-spacing: -2px; margin-top: 30px; white-space: nowrap; color: var(--paper-text-main);
+    }
+    .pv-card.is-payer .pv-number { color: #FF7A50; }
+    .pv-number.is-word { font-size: 40px; letter-spacing: -1.2px; line-height: 1.02; white-space: normal; }
+    .pv-number-label {
+      font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px;
+      margin-top: 10px; color: var(--paper-text-main);
+    }
+    .pv-card.is-payer .pv-number-label { color: #FFFFFF; }
+    .pv-line { font-size: 15px; line-height: 1.45; color: var(--paper-text-muted); margin-top: auto; padding-top: 18px; }
+    .pv-card.is-payer .pv-line { color: #D4D4D8; }
+    .pv-line strong { color: var(--paper-text-main); font-weight: 700; }
+    .pv-card.is-payer .pv-line strong { color: #FFFFFF; }
+    .pv-source {
+      font-size: 10px; font-style: italic; line-height: 1.35; color: var(--paper-text-dim);
+      border-top: 1px solid rgba(229, 231, 235, 0.7); padding-top: 9px; margin-top: 14px;
+    }
+    .pv-card.is-payer .pv-source { color: #71717A; border-top-color: rgba(255,255,255,0.12); }
+
+    .pv-strip {
+      flex-shrink: 0;
+      display: flex; align-items: center; gap: 18px;
+      margin-top: 16px; padding: 13px 20px;
+      border: 1px dashed rgba(226, 109, 70, 0.55); border-radius: 10px; background: #FFF8F4;
+    }
+    .pv-strip-tag {
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.2px;
+      padding: 4px 9px; border-radius: 5px; background: var(--accent-warm); color: #FFFFFF; flex-shrink: 0;
+    }
+    .pv-strip-text { font-size: 15px; font-weight: 600; }
+    .pv-strip-text span { color: var(--paper-text-muted); font-weight: 500; }
+    .pv-strip .qp-pills { margin: 0 0 0 auto; }
+    .pv-strip .qp-pills span {
+      font-size: 12px; font-weight: 600; color: var(--paper-text-muted);
+      border: 1px solid var(--paper-border); background: #FFFFFF; padding: 4px 10px; border-radius: 999px;
+    }
+    .pv-strip .qp-pills { display: flex; gap: 6px; }
   </style>
 </head>
 <body>
@@ -1278,21 +1352,99 @@
           </div>
         </section>
 
-        <!-- 2.3. POR QUÉ AHORA -->
+        <!-- 2.3. PROPUESTA DE VALOR -->
+        <section class="slide" id="slide-valor" data-title="Propuesta de valor" data-section="LA SOLUCIÓN" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 06 · PROPUESTA DE VALOR</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>POSTA TECHNOLOGIES</span>
+              <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <span class="editorial-kicker">QUIÉN GANA QUÉ</span>
+            <h2 class="editorial-title">CERTEZA PARA LA EMPRESA. <span style="color: var(--accent-warm);">DIGNIDAD PARA EL CONDUCTOR.</span></h2>
+          </div>
+
+          <div class="pv-grid">
+            <!-- CAMIONERO -->
+            <div class="pv-card">
+              <div class="pv-who">
+                <div class="pv-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+                </div>
+                <div>
+                  <div class="pv-who-name">El camionero</div>
+                  <div class="pv-who-role">Quien lo usa</div>
+                </div>
+              </div>
+              <div class="pv-number">115 h</div>
+              <div class="pv-number-label">Al año que hoy pierde buscando sitio</div>
+              <p class="pv-line">Sabe dónde dormir <strong>antes de salir</strong>: ducha, cena y descanso, sin pasarse de horas.</p>
+              <p class="pv-source">Estimación POSTA con datos de DEKRA, informe de seguridad vial 2026</p>
+            </div>
+
+            <!-- EMPRESA -->
+            <div class="pv-card is-payer">
+              <div class="pv-who">
+                <div class="pv-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="12" height="9" rx="1"/><path d="M14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+                </div>
+                <div>
+                  <div class="pv-who-name">La empresa de transporte</div>
+                  <div class="pv-who-role">Quien paga</div>
+                </div>
+              </div>
+              <div class="pv-number">2.000 €</div>
+              <div class="pv-number-label">Máximo por cada multa de tiempos</div>
+              <p class="pv-line">Menos sanciones, <strong>menos km en vacío</strong> y conductores que no se van.</p>
+              <p class="pv-source">Ley de Ordenación de los Transportes Terrestres (LOTT): de 1.001 € a 2.000 € por infracción grave de tiempos</p>
+            </div>
+
+            <!-- ÁREA DE SERVICIO -->
+            <div class="pv-card">
+              <div class="pv-who">
+                <div class="pv-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>
+                </div>
+                <div>
+                  <div class="pv-who-name">El área de servicio</div>
+                  <div class="pv-who-role">Quien recibe al camión</div>
+                </div>
+              </div>
+              <div class="pv-number is-word">Llenos previsibles</div>
+              <div class="pv-number-label">Sabe quién llega y cuándo</div>
+              <p class="pv-line">Menos colas en los accesos y <strong>más camiones que paran a cenar</strong>, no solo a aparcar.</p>
+              <p class="pv-source">Beneficio cualitativo: pendiente de validar con áreas piloto</p>
+            </div>
+          </div>
+
+          <div class="pv-strip">
+            <span class="pv-strip-tag">API</span>
+            <div class="pv-strip-text">Navegadores y plataformas de flota <span>· un dato que hoy no tiene nadie: la ocupación futura</span></div>
+            <div class="qp-pills"><span>Google Maps</span><span>TomTom</span><span>Webfleet</span></div>
+          </div>
+        </section>
+
+        <!-- 2.4. POR QUÉ AHORA -->
         <section class="slide" id="slide-ahora" data-title="Por qué ahora" data-section="LA SOLUCIÓN" data-mood="Color">
           <style>
             #slide-ahora .pa-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; flex: 1; min-height: 0; }
-            #slide-ahora .pa-card { position: relative; background: var(--paper-surface); border: 1px solid var(--paper-border); border-radius: 12px; padding: 26px 28px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+            #slide-ahora .pa-card { background: var(--paper-surface); border: 1px solid var(--paper-border); border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; }
             #slide-ahora .pa-card.pa-dark { background: #11141A; border-color: #11141A; color: #FFFFFF; }
-            #slide-ahora .pa-n { position: absolute; top: 20px; left: 24px; font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #FF7A50; }
-            #slide-ahora .pa-emoji { font-size: 92px; line-height: 1; margin-bottom: 14px; }
+            #slide-ahora .pa-photo { position: relative; flex: 1.15; min-height: 0; background-size: cover; background-position: center; }
+            #slide-ahora .pa-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 40%); }
+            #slide-ahora .pa-n { position: absolute; top: 16px; left: 20px; z-index: 1; font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #FFFFFF; background: rgba(17,20,26,0.75); padding: 5px 10px; border-radius: 4px; }
+            #slide-ahora .pa-flag { position: absolute; right: 16px; bottom: 12px; z-index: 1; font-size: 54px; line-height: 1; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35)); }
+            #slide-ahora .pa-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 18px 22px 12px; }
             #slide-ahora .pa-big { font-family: var(--font-display); font-weight: 800; font-size: 54px; letter-spacing: -2.5px; line-height: 1; white-space: nowrap; }
-            #slide-ahora .pa-line { font-size: 20px; font-weight: 700; line-height: 1.3; margin-top: 14px; max-width: 320px; }
-            #slide-ahora .pa-src { position: absolute; bottom: 14px; left: 24px; right: 24px; font-size: 10px; font-style: italic; color: var(--paper-text-dim); }
+            #slide-ahora .pa-line { font-size: 19px; font-weight: 700; line-height: 1.3; margin-top: 10px; }
+            #slide-ahora .pa-src { margin-top: auto; padding-top: 10px; font-size: 9.5px; font-style: italic; color: var(--paper-text-dim); }
             #slide-ahora .pa-dark .pa-src { color: rgba(255,255,255,0.45); }
           </style>
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 06 · POR QUÉ AHORA</div>
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 07 · POR QUÉ AHORA</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>EL MOMENTO ES 2026</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1306,24 +1458,27 @@
 
           <div class="pa-grid">
             <div class="pa-card pa-dark">
-              <span class="pa-n">01 · GASÓLEO</span>
-              <div class="pa-emoji">⛽</div>
-              <div class="pa-big" style="color: #FF7A50;">2.600 €</div>
-              <div class="pa-line">al año por camión, solo buscando sitio</div>
-              <p class="pa-src">DEKRA 2026 · MITECO, nov. 2026</p>
+              <div class="pa-photo" style="background-image: url('https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Refueling_a_diesel_vehicle_at_a_gas_station_during_the_day_with_focus_on_the_fuel_cap_and_nozzle.jpg/960px-Refueling_a_diesel_vehicle_at_a_gas_station_during_the_day_with_focus_on_the_fuel_cap_and_nozzle.jpg');"><span class="pa-n">01 · GASÓLEO</span></div>
+              <div class="pa-body">
+                <div class="pa-big" style="color: #FF7A50;">2.600 €</div>
+                <div class="pa-line">al año por camión, solo buscando sitio</div>
+                <p class="pa-src">DEKRA 2026 · MITECO, nov. 2026 · Foto: Wikimedia Commons (CC BY 2.0)</p>
+              </div>
             </div>
             <div class="pa-card">
-              <span class="pa-n">02 · ALEMANIA YA LO HACE</span>
-              <div class="pa-emoji" style="font-size: 120px;">🇩🇪</div>
-              <div class="pa-line" style="font-size: 22px;">Allí ya saben dónde hay sitio.<br><span style="color: #FF7A50;">Aquí, no.</span></div>
-              <p class="pa-src">Toll Collect + HERE</p>
+              <div class="pa-photo" style="background-image: url('https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/TK-Kucksiepen1.jpg/960px-TK-Kucksiepen1.jpg');"><span class="pa-n">02 · ALEMANIA YA LO HACE</span><span class="pa-flag">🇩🇪</span></div>
+              <div class="pa-body">
+                <div class="pa-line" style="font-size: 24px; margin-top: 0;">Allí ya saben dónde hay sitio.<br><span style="color: #FF7A50;">Aquí, no.</span></div>
+                <p class="pa-src">Toll Collect + HERE · Foto: área de servicio alemana, Wikimedia Commons (CC0)</p>
+              </div>
             </div>
             <div class="pa-card">
-              <span class="pa-n">03 · FALTAN CAMIONEROS</span>
-              <div class="pa-emoji">🚛</div>
-              <div class="pa-big">502.000</div>
-              <div class="pa-line">camioneros faltan en Europa</div>
-              <p class="pa-src">IRU, Global Driver Shortage Report 2025 (jun. 2026)</p>
+              <div class="pa-photo" style="background-image: url('https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Truckdriver.jpg/960px-Truckdriver.jpg');"><span class="pa-n">03 · FALTAN CAMIONEROS</span></div>
+              <div class="pa-body">
+                <div class="pa-big">502.000</div>
+                <div class="pa-line">camioneros faltan en Europa</div>
+                <p class="pa-src">IRU, Global Driver Shortage Report 2025 (jun. 2026) · Foto: Wikimedia Commons (CC BY-SA 3.0)</p>
+              </div>
             </div>
           </div>
         </section>
@@ -1348,7 +1503,7 @@
             .bm-price { color: #FF7A50; font-weight: 800; }
           </style>
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 07 · POR QUÉ POSTA</div>
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 08 · POR QUÉ POSTA</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>BENCHMARK DE COMPETIDORES</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1381,7 +1536,7 @@
         <!-- 2.5. CON QUIÉN HEMOS HABLADO -->
         <section class="slide" id="slide-8" data-title="Con quién hemos hablado" data-section="LA SOLUCIÓN" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 08 · CON QUIÉN HEMOS HABLADO</div>
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 09 · CON QUIÉN HEMOS HABLADO</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>ENTREVISTAS · NOVIEMBRE 2026</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1456,7 +1611,7 @@
             #slide-10 .me-claim { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.25; text-transform: uppercase; border-top: 1px solid var(--paper-border); padding-top: 18px; }
           </style>
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>EL NEGOCIO // 09 · MODELO ECONÓMICO</div>
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 10 · MODELO ECONÓMICO</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>SUSCRIPCIÓN B2B</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1536,7 +1691,7 @@
             #slide-11 .mk-row.som { background: #FFF6F1; border-color: #FFC2A8; }
           </style>
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>EL NEGOCIO // 10 · MERCADO</div>
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 11 · MERCADO</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>DATOS: EUROSTAT 2024 · CABEZAS TRACTORAS</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1590,7 +1745,7 @@
         <!-- 3.3. GO-TO-MARKET & ESCALA -->
         <section class="slide" id="slide-12" data-title="Go-To-Market" data-section="EL NEGOCIO" data-mood="Color" style="padding: 34px 50px 28px 50px;">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>EL NEGOCIO // 11 · GO-TO-MARKET</div>
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 12 · GO-TO-MARKET</div>
             <div style="display: flex; align-items: center; gap: 12px;">
               <span>MODELO DE ESCALA & EFECTO RED</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1720,7 +1875,7 @@
         <!-- 4.3. EQUIPO -->
         <section class="slide" id="slide-13" data-title="Equipo" data-section="LA EMPRESA" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA EMPRESA // 12 · EQUIPO</div>
+            <div><span class="brand-bullet"></span>LA EMPRESA // 13 · EQUIPO</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>TALENTO COMPLEMENTARIO</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
