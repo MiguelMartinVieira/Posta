@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Posta // Una Historia de Carretera y Personas</title>
+  <title>Posta // Pitch Deck: Una Historia de Personas</title>
   
   <!-- Tipografía Editorial Suave: Syne (display con curvas) + Plus Jakarta Sans + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,12 +12,10 @@
 
   <style>
     /* ==========================================================================
-       1. TOKENS DE DISEÑO EDITORIAL (ESTILO REVISTA / ARQUITECTÓNICO)
-       Inspirado en la referencia: tipografía suave con curvas, minimalismo,
-       y cambio de mood entre diapositivas en color y diapositiva algoritmo en B&N.
+       1. VARIABLES Y TOKENS DE DISEÑO EDITORIAL
        ========================================================================== */
     :root {
-      /* Modo Normal / Diapositivas Humanas (Papel Editorial Blanco / Acentos Cálidos) */
+      /* Mood Editorial Papel (Normal / Color) */
       --paper-bg: #FFFFFF;
       --paper-surface: #F8F9FA;
       --paper-border: #E5E7EB;
@@ -25,19 +23,19 @@
       --paper-text-muted: #64748B;
       --paper-text-dim: #94A3B8;
 
-      /* Acento Cálido Humano */
-      --accent-warm: #E26D46; /* Terracota cálido editorial */
-      --accent-amber: #D97706; /* Ámbar de cabina */
-      --accent-blue: #0284C7;  /* Azul Posta */
+      /* Acentos Cálidos Humanos */
+      --accent-warm: #E26D46;   /* Terracota cálido editorial */
+      --accent-amber: #D97706;  /* Ámbar de cabina */
+      --accent-blue: #0284C7;   /* Azul Posta */
 
       /* Mood Blanco y Negro (El Algoritmo / La Máquina) */
-      --bw-bg: #090B0E;
-      --bw-surface: #12161E;
-      --bw-border: rgba(255, 255, 255, 0.14);
+      --bw-bg: #080A0E;
+      --bw-surface: #11151D;
+      --bw-border: rgba(255, 255, 255, 0.15);
       --bw-text-main: #FFFFFF;
       --bw-text-muted: #A1A1AA;
 
-      /* Fuentes */
+      /* Tipografías */
       --font-display: 'Syne', sans-serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
@@ -100,14 +98,14 @@
     .slide {
       position: absolute;
       inset: 0;
-      padding: 44px 56px;
+      padding: 42px 54px;
       display: flex;
       flex-direction: column;
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      transform: scale(0.99) translateY(12px);
-      transition: opacity 280ms cubic-bezier(0.16, 1, 0.3, 1), transform 280ms cubic-bezier(0.16, 1, 0.3, 1), visibility 280ms;
+      transform: scale(0.99) translateY(10px);
+      transition: opacity 260ms cubic-bezier(0.16, 1, 0.3, 1), transform 260ms cubic-bezier(0.16, 1, 0.3, 1), visibility 260ms;
       background: var(--paper-bg);
       color: var(--paper-text-main);
     }
@@ -119,9 +117,7 @@
       transform: scale(1) translateY(0);
     }
 
-    /* ==========================================================================
-       3. CAMBIO DE MOOD: DIAPOSITIVAS EN BLANCO Y NEGRO (EL ALGORITMO)
-       ========================================================================== */
+    /* Mood B&W */
     .slide.slide-mood-bw {
       background: var(--bw-bg) !important;
       color: var(--bw-text-main) !important;
@@ -129,19 +125,14 @@
 
     .slide.slide-mood-bw .meta-bar {
       color: var(--bw-text-muted);
-      border-color: var(--bw-border);
     }
 
     .slide.slide-mood-bw .editorial-title {
       color: #FFFFFF;
     }
 
-    .slide.slide-mood-bw .editorial-desc {
-      color: #D4D4D8;
-    }
-
     /* ==========================================================================
-       4. COMPONENTES EDITORIALES (ESTILO LUXEMBOURG / REVISTA)
+       3. ELEMENTOS EDITORIALES (MUY POCO TEXTO, CURVAS SUAVES)
        ========================================================================== */
     .meta-bar {
       display: flex;
@@ -150,13 +141,13 @@
       font-size: 11px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
+      letter-spacing: 1.4px;
       color: var(--paper-text-muted);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       flex-shrink: 0;
     }
 
-    .meta-bar .brand-bullet {
+    .brand-bullet {
       width: 6px;
       height: 6px;
       border-radius: 50%;
@@ -165,16 +156,15 @@
       margin-right: 8px;
     }
 
-    .slide-mood-bw .meta-bar .brand-bullet {
+    .slide-mood-bw .brand-bullet {
       background: #FFFFFF;
     }
 
-    /* Tipografía Suave con Curvas (Syne) */
     .editorial-hero-title {
       font-family: var(--font-display);
-      font-size: 82px;
+      font-size: 76px;
       font-weight: 800;
-      letter-spacing: -2.5px;
+      letter-spacing: -2px;
       line-height: 0.95;
       color: var(--paper-text-main);
       text-transform: uppercase;
@@ -182,7 +172,7 @@
 
     .editorial-title {
       font-family: var(--font-display);
-      font-size: 40px;
+      font-size: 38px;
       font-weight: 700;
       letter-spacing: -1.2px;
       line-height: 1.1;
@@ -190,24 +180,19 @@
       text-transform: uppercase;
     }
 
-    .editorial-title.tight {
-      font-size: 34px;
-      letter-spacing: -1px;
-    }
-
     .editorial-kicker {
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 2.2px;
       color: var(--accent-warm);
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       display: block;
     }
 
     .slide-mood-bw .editorial-kicker {
       color: #FFFFFF;
-      opacity: 0.7;
+      opacity: 0.75;
     }
 
     .editorial-lead {
@@ -215,24 +200,24 @@
       font-weight: 400;
       line-height: 1.5;
       color: var(--paper-text-muted);
-      max-width: 650px;
+      max-width: 680px;
     }
 
     .editorial-quote {
       font-family: var(--font-body);
       font-style: italic;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 400;
       line-height: 1.45;
       color: var(--paper-text-main);
-      border-left: 2px solid var(--accent-warm);
-      padding-left: 18px;
-      margin: 16px 0;
+      border-left: 2.5px solid var(--accent-warm);
+      padding-left: 16px;
+      margin: 14px 0;
     }
 
     .editorial-quote cite {
       display: block;
-      margin-top: 8px;
+      margin-top: 6px;
       font-size: 11px;
       font-style: normal;
       font-family: var(--font-mono);
@@ -242,7 +227,6 @@
       color: var(--paper-text-muted);
     }
 
-    /* Marcos de Imagen Editorial */
     .photo-frame {
       border-radius: 6px;
       overflow: hidden;
@@ -257,11 +241,10 @@
       display: block;
     }
 
-    /* Grillas Editoriales Asimétricas */
     .grid-editorial-split {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
+      gap: 36px;
       align-items: center;
       flex: 1;
     }
@@ -269,20 +252,14 @@
     .grid-editorial-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 24px;
       flex: 1;
       align-items: stretch;
     }
 
-    /* Tarjetas de Historia / Dato */
-    .stat-hero {
-      display: flex;
-      flex-direction: column;
-    }
-
     .stat-hero-number {
       font-family: var(--font-display);
-      font-size: 58px;
+      font-size: 54px;
       font-weight: 800;
       line-height: 1;
       letter-spacing: -2px;
@@ -294,7 +271,7 @@
     }
 
     .stat-hero-label {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -306,26 +283,213 @@
       color: #A1A1AA;
     }
 
-    .stat-hero-desc {
-      font-size: 13px;
-      color: var(--paper-text-muted);
-      line-height: 1.4;
-      margin-top: 4px;
-    }
-
-    .slide-mood-bw .stat-hero-desc {
-      color: #71717A;
+    .card-clean {
+      background: var(--paper-surface);
+      border: 1px solid var(--paper-border);
+      padding: 22px;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     /* ==========================================================================
-       5. NAVEGADOR Y CONTROL FLOTANTE DISCRETO
+       4. CONTRAPORTADA ANIMADA: MOSAICO DE ROSTROS
+       ========================================================================== */
+    #contraportada-stage {
+      position: absolute;
+      inset: 0;
+      background: #06080B;
+      color: #FFFFFF;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Mosaico de fondo con 48 fotos 100% distintas */
+    .faces-mosaic-wall {
+      position: absolute;
+      inset: -15px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      gap: 6px;
+      opacity: 0;
+      transform: scale(1.2);
+      transition: opacity 1200ms cubic-bezier(0.16, 1, 0.3, 1), transform 1600ms cubic-bezier(0.16, 1, 0.3, 1), filter 1000ms ease;
+      pointer-events: none;
+      filter: grayscale(85%) contrast(110%) brightness(0.65);
+      background: #06080B;
+    }
+
+    .faces-mosaic-wall.visible {
+      opacity: 0.45;
+      transform: scale(1);
+    }
+
+    .faces-mosaic-wall.dimmed {
+      opacity: 0.22;
+      filter: grayscale(90%) contrast(115%) brightness(0.3);
+      transform: scale(0.98);
+    }
+
+    .mosaic-cell {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 105px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #0D1117;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .mosaic-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Split-Screen 50/50 en GRANDE para Miguel y Marius (sin minitexto biográfico) */
+    .duo-focus-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      z-index: 20;
+      transform: scale(1);
+      opacity: 1;
+      transition: transform 1400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 1000ms ease;
+      background: #06080B;
+    }
+
+    .duo-focus-container.receding {
+      transform: scale(0.25) translateY(40px);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .split-driver-half {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      opacity: 0;
+      transform: scale(1.04);
+      transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1), transform 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #half-miguel {
+      border-right: 2px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .split-driver-half.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .split-driver-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: contrast(106%) brightness(0.95);
+    }
+
+    .split-driver-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 44px 50px;
+      background: linear-gradient(to top, rgba(6, 8, 11, 0.88) 0%, rgba(6, 8, 11, 0.25) 35%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .split-driver-name {
+      font-family: var(--font-display);
+      font-size: 46px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95);
+    }
+
+    /* Bloque de Texto Final de la Contraportada con Scrim Radial de Alto Contraste */
+    .contraportada-finale {
+      position: absolute;
+      z-index: 30;
+      opacity: 0;
+      transform: scale(0.92) translateY(24px);
+      transition: opacity 1000ms cubic-bezier(0.16, 1, 0.3, 1), transform 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
+      max-width: 1200px;
+      padding: 40px 60px;
+      text-align: center;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Scrim radial de máximo contraste para legibilidad absoluta */
+    .contraportada-scrim {
+      position: absolute;
+      inset: -60px -80px;
+      z-index: -1;
+      border-radius: 50%;
+      background: radial-gradient(ellipse 70% 65% at 50% 50%, rgba(6, 8, 11, 0.96) 0%, rgba(6, 8, 11, 0.88) 45%, rgba(6, 8, 11, 0.45) 75%, rgba(6, 8, 11, 0) 100%);
+      pointer-events: none;
+      filter: blur(14px);
+    }
+
+    .contraportada-finale.show {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+
+    .contra-posta-brand {
+      font-family: var(--font-display);
+      font-size: 132px;
+      font-weight: 800;
+      letter-spacing: -6px;
+      line-height: 0.92;
+      color: #FFFFFF;
+      margin: 0 0 20px 0;
+      text-shadow: 0 10px 50px rgba(0, 0, 0, 0.98), 0 3px 12px rgba(0, 0, 0, 0.85);
+    }
+
+    .contra-subtag {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #F1F5F9;
+      text-transform: uppercase;
+      max-width: 960px;
+      line-height: 1.35;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.95);
+    }
+
+    /* ==========================================================================
+       5. BARRA DE CONTROL FLOTANTE DISCRETA
        ========================================================================== */
     #toolbar {
       position: fixed;
-      bottom: 24px;
+      bottom: 22px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(17, 20, 26, 0.88);
+      background: rgba(17, 20, 26, 0.9);
       backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 40px;
@@ -333,7 +497,7 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
       z-index: 100;
       color: #FFFFFF;
     }
@@ -365,19 +529,14 @@
       letter-spacing: 1px;
     }
 
-    .tb-mood-pill {
+    .tb-section-label {
       font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       padding: 2px 8px;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    .tb-mood-pill.mood-bw {
-      background: #FFFFFF;
-      color: #000000;
+      background: rgba(255, 255, 255, 0.12);
     }
 
     /* Modal de Vista General */
@@ -388,7 +547,7 @@
       backdrop-filter: blur(14px);
       z-index: 200;
       display: none;
-      padding: 60px;
+      padding: 50px;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -401,7 +560,7 @@
     .overview-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 16px;
       max-width: 1100px;
       width: 100%;
     }
@@ -410,7 +569,7 @@
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
       border-radius: 6px;
-      padding: 16px;
+      padding: 14px;
       aspect-ratio: var(--slide-ratio);
       cursor: pointer;
       display: flex;
@@ -430,19 +589,19 @@
 
     .overview-item:hover, .overview-item.current {
       border-color: var(--accent-warm);
-      transform: translateY(-4px);
+      transform: translateY(-3px);
     }
 
     .ov-num {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 10px;
       color: var(--accent-warm);
       font-weight: 700;
     }
 
     .ov-title {
       font-family: var(--font-display);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
       color: #11141A;
       text-transform: uppercase;
@@ -454,299 +613,518 @@
   <div id="viewport">
     <div id="presentation-stage">
 
-      <!-- ====================================================================
-           SLIDES DECK
-           ==================================================================== -->
       <main class="slides-deck" id="slides-deck">
 
         <!-- ================================================================
-             DIAPOSITIVA 1: PORTADA EDITORIAL (ESTILO LUXEMBOURG)
-             Gran tipografía curva, muy poco texto, foto panorámica inferior.
+             BLOQUE 1: LA IDEA
              ================================================================ -->
-        <section class="slide active" id="slide-1" data-title="Portada" data-mood="Color">
+
+        <!-- 1.1. PORTADA: Frase sobre la vida de Marius y Miguel -->
+        <section class="slide active" id="slide-1" data-title="Portada" data-section="LA IDEA" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>8 DE NOVIEMBRE DE 2026 · MADRID</div>
-            <div>STARTCAMP 2026 · PITCH FINAL</div>
+            <div><span class="brand-bullet"></span>STARTCAMP 2026 · MADRID</div>
+            <div>POSTA TECHNOLOGIES</div>
           </div>
 
-          <div style="text-align: center; margin-top: 10px;">
-            <span class="editorial-kicker" style="letter-spacing: 3px;">UNA HISTORIA SOBRE QUIÉNES MUEVEN EUROPA</span>
-            <p style="font-size: 14px; color: var(--paper-text-muted); max-width: 740px; margin: 0 auto 18px auto; line-height: 1.45; text-transform: uppercase; letter-spacing: 0.5px;">
-              300.000 personas transportan todo lo que comemos, vestimos y usamos cada día.<br>
-              Esta noche, más de 70.000 camiones no tienen un lugar seguro donde parar.
+          <div style="margin-top: 4px;">
+            <span class="editorial-kicker">LA IDEA // UNA HISTORIA DE CARRETERA</span>
+            <h1 class="editorial-title" style="font-size: 38px; max-width: 1040px; line-height: 1.1; margin-bottom: 10px;">
+              MIGUEL PASA 22 DÍAS AL MES LEJOS DE CASA.<br>
+              MARIUS NO RECUERDA CUÁNDO DURMIÓ TRANQUILO POR ÚLTIMA VEZ.
+            </h1>
+            <p class="editorial-lead" style="max-width: 850px; margin-bottom: 14px;">
+              300.000 camioneros mueven todo lo que comemos y vestimos. Esta noche, 70.000 duermen con miedo a que les rajen la lona.
             </p>
-            <h1 class="editorial-hero-title" style="margin-bottom: 22px;">POSTA</h1>
           </div>
 
-          <!-- Imagen Panorámica Inferior de Autopista / Carretera al Atardecer -->
-          <div class="photo-frame" style="flex: 1; width: 100%; max-height: 380px;">
-            <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1600&auto=format&fit=crop" alt="Carretera al atardecer">
-          </div>
-        </section>
-
-        <!-- ================================================================
-             DIAPOSITIVA 2: LA PERSONA (ANTONIO, 54 AÑOS)
-             Composición editorial con retrato/cabina y cita humana.
-             ================================================================ -->
-        <section class="slide" id="slide-2" data-title="Antonio" data-mood="Color">
-          <div class="meta-bar">
-            <div><span class="brand-bullet"></span>01 · EL ROSTRO DETRÁS DEL VOLANTE</div>
-            <div>RUTA ALMERÍA — ROTTERDAM</div>
-          </div>
-
-          <div class="grid-editorial-split">
-            <div>
-              <span class="editorial-kicker">16 DÍAS FUERA DE CASA</span>
-              <h2 class="editorial-title" style="margin-bottom: 18px;">
-                ANTONIO TIENE 54 AÑOS.<br>
-                ESTA NOCHE NO SABE DÓNDE VA A DORMIR.
-              </h2>
-              
-              <p class="editorial-lead" style="margin-bottom: 20px;">
-                Son las 21:18 en la AP-7. Le quedan 24 minutos de conducción en el tacógrafo antes de que salte la multa legal. En el área de servicio no cabe un solo camión más.
-              </p>
-
-              <div class="editorial-quote">
-                «La gente ve una máquina de 40 toneladas estorbando. Yo solo pienso en ducharme con agua caliente y volver a casa con mis hijas.»
-                <cite>— ANTONIO MORALES · CONDUCTOR PROFESIONAL</cite>
+          <!-- Pareja de Fotos Reales de Miguel y Marius en Gran Formato -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex: 1; max-height: 400px;">
+            <div class="photo-frame" style="height: 100%;">
+              <img src="assets/drivers/miguel.jpg" alt="Miguel en su cabina" style="object-fit: cover; object-position: center 25%;">
+              <div style="position: absolute; bottom: 12px; left: 14px; background: rgba(17, 20, 26, 0.88); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 4px; font-size: 11px; font-family: var(--font-mono); color: #FFF;">
+                MIGUEL · 52 AÑOS · 22 DÍAS FUERA DE CASA AL MES
               </div>
             </div>
-
-            <!-- Foto de Cabina / Conductor en Ruta -->
-            <div class="photo-frame" style="height: 100%; max-height: 520px;">
-              <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200&auto=format&fit=crop" alt="Conductor en cabina">
+            <div class="photo-frame" style="height: 100%;">
+              <img src="assets/drivers/marius.jpg" alt="Marius en el escalón de su camión" style="object-fit: cover; object-position: center 20%;">
+              <div style="position: absolute; bottom: 12px; left: 14px; background: rgba(17, 20, 26, 0.88); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 4px; font-size: 11px; font-family: var(--font-mono); color: #FFF;">
+                MARIUS · 48 AÑOS · RUTA ALMERÍA — PERPIGNAN
+              </div>
             </div>
           </div>
         </section>
 
-        <!-- ================================================================
-             DIAPOSITIVA 3: EL DILEMA NOCTURNO (LA SOLEDAD EN LA AP-7)
-             Poco texto, 2 números gigantes, puro contraste.
-             ================================================================ -->
-        <section class="slide" id="slide-3" data-title="El Dilema" data-mood="Color">
+        <!-- 1.2. PROBLEMA -->
+        <section class="slide" id="slide-2" data-title="El Problema" data-section="LA IDEA" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>02 · LA INCERTIDUMBRE</div>
-            <div>FRONTERA DE LA JONQUERA · 23.000 CAMIONES/DÍA</div>
+            <div><span class="brand-bullet"></span>LA IDEA // 01 · EL PROBLEMA</div>
+            <div>LA JONQUERA · 23.000 CAMIONES/DÍA</div>
           </div>
 
-          <div style="margin-bottom: 30px;">
-            <span class="editorial-kicker">EL FALSO DILEMA</span>
+          <div style="margin-bottom: 24px;">
+            <span class="editorial-kicker">LA ASIMETRÍA CRÍTICA</span>
             <h2 class="editorial-title">DORMIR EN UN DESCAMPADO O JUGARSE 1.000 € DE MULTA.</h2>
           </div>
 
           <div class="grid-editorial-3">
-            <div style="display: flex; flex-direction: column; justify-content: space-between;">
-              <div class="stat-hero">
-                <span class="stat-hero-number">93%</span>
-                <span class="stat-hero-label">Robos Nocturnos</span>
-                <p class="stat-hero-desc">Ocurren en paradas forzosas en arcenes y polígonos oscuros mientras el conductor duerme.</p>
-              </div>
-
-              <div class="stat-hero" style="margin-top: 24px;">
-                <span class="stat-hero-number">75%</span>
-                <span class="stat-hero-label">Multas en Ruta</span>
-                <p class="stat-hero-desc">Se producen por pasarse escasos minutos buscando desesperadamente una plaza libre.</p>
-              </div>
+            <div class="card-clean">
+              <span class="editorial-kicker">INSEGURIDAD</span>
+              <div class="stat-hero-number">93%</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Robos Nocturnos</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                Ocurren mientras duermen en polígonos y arcenes sin vigilancia.
+              </p>
             </div>
 
-            <div class="photo-frame" style="height: 100%;">
-              <img src="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1000&auto=format&fit=crop" alt="Carretera vacía de noche">
+            <div class="card-clean">
+              <span class="editorial-kicker">DÉFICIT EUROPEO</span>
+              <div class="stat-hero-number" style="color: var(--accent-warm);">390K</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Plazas Seguras Faltantes</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                En España solo hay 13 parkings SSTPA certificados para 296.000 camiones.
+              </p>
             </div>
 
-            <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 10px;">
-              <div style="font-size: 24px; font-family: var(--font-display); line-height: 1.3; font-weight: 700; color: var(--paper-text-main); margin-bottom: 16px;">
-                EXIGIMOS PUNTUALIDAD MATEMÁTICA AL TRANSPORTE, PERO LES NEGAMOS UN DESCANSO DIGNO.
-              </div>
-              <p style="font-size: 14px; color: var(--paper-text-muted); line-height: 1.5;">
-                Faltan 390.000 plazas de aparcamiento seguro en Europa. El problema no es el tacógrafo: es la incertidumbre de no tener la plaza asegurada.
+            <div class="card-clean">
+              <span class="editorial-kicker">SANCIÓN INMINENTE</span>
+              <div class="stat-hero-number">75%</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Denuncias en Ruta</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                Causadas por superar escasos minutos buscando dónde meter el tráiler.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 1.3. ¿POR QUÉ AHORA? -->
+        <section class="slide" id="slide-3" data-title="¿Por qué ahora?" data-section="LA IDEA" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA IDEA // 02 · EL MOMENTO</div>
+            <div>PAQUETE DE MOVILIDAD I · REGLAMENTO UE 2020/1054</div>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <span class="editorial-kicker">LA TORMENTA REGULATORIA DE 2026</span>
+            <h2 class="editorial-title">EL TACÓGRAFO G2V2 HA ELIMINADO EL MARGEN DE TOLERANCIA.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div class="card-clean">
+              <span class="editorial-kicker">CONTROL SATELITAL</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Tacógrafo G2V2</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Obligatorio ya en toda la flota internacional. Registra cruces de frontera por satélite en tiempo real.
+              </p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">INSPECCIÓN RETROACTIVA</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">56 Días de Control</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                La Guardia Civil revisa casi dos meses hacia atrás. Cualquier exceso pasado se sanciona hoy.
+              </p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">EMBUDO PIRENAICO</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Saturación Diaria</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                23.455 camiones al día cruzan por La Jonquera e Irún. Las plazas colapsan cada atardecer.
               </p>
             </div>
           </div>
         </section>
 
         <!-- ================================================================
-             DIAPOSITIVA 4: CAMBIO DE MOOD TOTAL -> EL ALGORITMO (BLANCO Y NEGRO)
-             Estilo brutalista / editorial B&W como la segunda diapo de la referencia.
-             Fondo negro, foto monocromo, texto blanco, precisión técnica.
+             BLOQUE 2: LA SOLUCIÓN
              ================================================================ -->
-        <section class="slide slide-mood-bw" id="slide-4" data-title="El Algoritmo" data-mood="B&W">
+
+        <!-- 2.1. PRODUCTO -->
+        <section class="slide" id="slide-4" data-title="Producto" data-section="LA SOLUCIÓN" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>03 · EL MOTOR DE CÁLCULO</div>
-            <div>SISTEMA PREDICTIVO CONECTADO AL TACÓGRAFO G2V2</div>
-          </div>
-
-          <div style="text-align: center; margin-bottom: 30px;">
-            <span class="editorial-kicker" style="color: #A1A1AA;">CERTEZA MATEMÁTICA</span>
-            <h2 class="editorial-title" style="font-size: 46px; max-width: 980px; margin: 0 auto;">
-              EL ALGORITMO: PREDECIR EL COLAPSO ANTES DE QUE OCURRA.
-            </h2>
-          </div>
-
-          <!-- 3 Columnas B&W como en la diapositiva oscura de la imagen de referencia -->
-          <div class="grid-editorial-3" style="margin-top: 10px;">
-            <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--bw-border); padding: 26px; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
-              <div>
-                <span style="font-family: var(--font-mono); font-size: 11px; color: #71717A;">01 // INGESTA CONTINUA</span>
-                <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: #FFFFFF; margin: 10px 0 8px 0; text-transform: uppercase;">
-                  Telemetría FMS
-                </h3>
-                <p style="font-size: 13px; color: #A1A1AA; line-height: 1.5;">
-                  Lectura agnóstica de tiempos de conducción en cientos de flotas en marcha simultánea.
-                </p>
-              </div>
-              <div style="font-family: var(--font-mono); font-size: 11px; color: #52525B; margin-top: 14px;">
-                TACÓGRAFO INTELIGENTE G2V2
-              </div>
-            </div>
-
-            <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--bw-border); padding: 26px; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
-              <div>
-                <span style="font-family: var(--font-mono); font-size: 11px; color: #71717A;">02 // CÁLCULO PREDICTIVO</span>
-                <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: #FFFFFF; margin: 10px 0 8px 0; text-transform: uppercase;">
-                  Algoritmo EAS
-                </h3>
-                <p style="font-size: 13px; color: #A1A1AA; line-height: 1.5;">
-                  Anticipa con 90 minutos de margen la saturación de los parkings seguros en los corredores.
-                </p>
-              </div>
-              <div style="font-family: var(--font-mono); font-size: 11px; color: #52525B; margin-top: 14px;">
-                PRECISIÓN &gt; 94% EN RUTA
-              </div>
-            </div>
-
-            <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--bw-border); padding: 26px; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
-              <div>
-                <span style="font-family: var(--font-mono); font-size: 11px; color: #71717A;">03 // ASIGNACIÓN LEGAL</span>
-                <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: #FFFFFF; margin: 10px 0 8px 0; text-transform: uppercase;">
-                  Reserva & Blindaje
-                </h3>
-                <p style="font-size: 13px; color: #A1A1AA; line-height: 1.5;">
-                  Bloqueo automático de plaza segura y amparo jurídico bajo el Artículo 12 de la UE.
-                </p>
-              </div>
-              <div style="font-family: var(--font-mono); font-size: 11px; color: #52525B; margin-top: 14px;">
-                CERO SANCIONES EN CARRETERA
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ================================================================
-             DIAPOSITIVA 5: VUELTA AL COLOR Y ALIVIO (EL MENSAJE A ANTONIO)
-             El contraste cálido de la tecnología devolviendo la tranquilidad.
-             ================================================================ -->
-        <section class="slide" id="slide-5" data-title="El Alivio" data-mood="Color">
-          <div class="meta-bar">
-            <div><span class="brand-bullet"></span>04 · LA RESOLUCIÓN HUMANA</div>
-            <div>AP-7 · ÁREA MEDINYÀ SEGURA</div>
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 03 · EL PRODUCTO</div>
+            <div>POSTA TECHNOLOGIES</div>
           </div>
 
           <div class="grid-editorial-split">
             <div>
-              <span class="editorial-kicker">PAZ MENTAL A 100 KM DE DISTANCIA</span>
-              <h2 class="editorial-title" style="margin-bottom: 20px;">
-                A LAS 18:00 H, ANTONIO YA SABE DÓNDE VA A DORMIR.
+              <span class="editorial-kicker">PLATAFORMA PREDICTIVA B2B</span>
+              <h2 class="editorial-title" style="margin-bottom: 16px;">
+                LA RED DE PERNOCTA CONECTADA AL TACÓGRAFO.
               </h2>
-
-              <p class="editorial-lead" style="margin-bottom: 24px;">
-                Sin tocar un botón. El sistema calcula que La Jonquera se saturará a las 21:00 y le desvía a una plaza vigilada 40 km antes.
+              <p class="editorial-lead" style="margin-bottom: 20px;">
+                Conectamos la telemetría de flotas para anticipar el colapso de los parkings y asegurar la parada antes de iniciar la marcha.
               </p>
-
-              <!-- Notificación limpia de cabina -->
-              <div style="background: var(--paper-surface); border: 1px solid var(--paper-border); border-left: 3px solid var(--accent-warm); padding: 18px 22px; border-radius: 6px;">
-                <div style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--accent-warm); margin-bottom: 4px;">
-                  AVISO EN CABINA // POSTA
-                </div>
-                <div style="font-size: 15px; font-weight: 700; color: var(--paper-text-main);">
-                  «Antonio, tu plaza #47 en Medinyà está garantizada. Tienes ducha caliente, seguridad 24/7 y 44 min de margen legal.»
-                </div>
+              
+              <div class="editorial-quote">
+                «No instalamos hardware nuevo. Le damos inteligencia a los tacógrafos que los camiones ya llevan.»
               </div>
             </div>
 
-            <!-- Foto de Área de Descanso Iluminada / Segura -->
             <div class="photo-frame" style="height: 100%; max-height: 520px;">
-              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop" alt="Logística segura">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop" alt="Plataforma Posta">
             </div>
           </div>
         </section>
 
-        <!-- ================================================================
-             DIAPOSITIVA 6: EL IMPACTO Y EL MODELO DE NEGOCIO
-             Editorial, tipografía grande, datos concretos.
-             ================================================================ -->
-        <section class="slide" id="slide-6" data-title="Impacto & Negocio" data-mood="Color">
+        <!-- 2.2. CÓMO FUNCIONA (DEMO) -> CAMBIO DE MOOD B&W -->
+        <section class="slide slide-mood-bw" id="slide-5" data-title="Cómo Funciona" data-section="LA SOLUCIÓN" data-mood="B&W">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>05 · MODELO & TRACCIÓN</div>
-            <div>B2B SAAS + TAKE RATE POR PLAZA</div>
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 04 · CÓMO FUNCIONA (DEMO)</div>
+            <div>ALGORITMO PREDICTIVO EAS · MODO MATEMÁTICO</div>
           </div>
 
-          <div style="margin-bottom: 30px;">
-            <span class="editorial-kicker">ESCALABILIDAD REAL</span>
-            <h2 class="editorial-title">UN NEGOCIO B2B BASADO EN LA DIGNIDAD Y EL AHORRO.</h2>
+          <div style="margin-bottom: 24px; text-align: center;">
+            <span class="editorial-kicker" style="color: #A1A1AA;">CERTEZA MATEMÁTICA EN TIEMPO REAL</span>
+            <h2 class="editorial-title" style="font-size: 40px; max-width: 960px; margin: 0 auto;">
+              EL ALGORITMO PREVÉ EL COLAPSO 90 MINUTOS ANTES.
+            </h2>
           </div>
 
           <div class="grid-editorial-3">
-            <div style="background: var(--paper-surface); border: 1px solid var(--paper-border); padding: 26px; border-radius: 6px;">
-              <span class="editorial-kicker" style="color: var(--paper-text-muted);">MERCADO EN ESPAÑA</span>
-              <div class="stat-hero-number" style="margin: 8px 0;">296K</div>
-              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Camiones Pesados de Servicio Público</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
-                El 89% ya tiene GPS y telemática instalada, pero el 0% sabe si habrá plaza al llegar.
+            <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--bw-border); padding: 24px; border-radius: 6px;">
+              <span style="font-family: var(--font-mono); font-size: 11px; color: #71717A;">PASO 01 // LECTURA</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: #FFFFFF; margin: 8px 0;">Telemetría FMS</h3>
+              <p style="font-size: 13px; color: #A1A1AA; line-height: 1.45;">
+                Ingesta del tiempo de conducción restante de cientos de camiones convergiendo hacia la frontera.
               </p>
             </div>
 
-            <div style="background: var(--paper-surface); border: 1px solid var(--paper-border); padding: 26px; border-radius: 6px;">
-              <span class="editorial-kicker">SUSCRIPCIÓN DE FLOTA</span>
-              <div class="stat-hero-number" style="margin: 8px 0; color: var(--accent-warm);">15 €</div>
-              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Por Camión / Mes</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
-                Una sola multa evitada (1.001 €) amortiza 5 años de suscripción de un camión.
+            <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--bw-border); padding: 24px; border-radius: 6px;">
+              <span style="font-family: var(--font-mono); font-size: 11px; color: #71717A;">PASO 02 // CÁLCULO</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: #FFFFFF; margin: 8px 0;">Motor EAS</h3>
+              <p style="font-size: 13px; color: #A1A1AA; line-height: 1.45;">
+                Detecta que el área de La Jonquera colapsará a las 21:00 y calcula el punto óptimo de desvío.
               </p>
             </div>
 
-            <div style="background: var(--paper-surface); border: 1px solid var(--paper-border); padding: 26px; border-radius: 6px;">
-              <span class="editorial-kicker">VALIDACIÓN STARTCAMP</span>
-              <div class="stat-hero-number" style="margin: 8px 0;">42/50</div>
-              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Flotas Pagarían Hoy</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
-                Validado este fin de semana en entrevistas con jefes de tráfico y transportistas.
+            <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--bw-border); padding: 24px; border-radius: 6px;">
+              <span style="font-family: var(--font-mono); font-size: 11px; color: #71717A;">PASO 03 // RESOLUCIÓN</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: #FFFFFF; margin: 8px 0;">Bloqueo Seguro</h3>
+              <p style="font-size: 13px; color: #A1A1AA; line-height: 1.45;">
+                Asigna plaza en SSTPA Medinyà y blinda legalmente al chófer bajo el Artículo 12 de la UE.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2.3. PROPUESTA DE VALOR -->
+        <section class="slide" id="slide-6" data-title="Propuesta de Valor" data-section="LA SOLUCIÓN" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 05 · PROPUESTA DE VALOR</div>
+            <div>IMPACTO INTEGRAL</div>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <span class="editorial-kicker">TRIPLE IMPACTO</span>
+            <h2 class="editorial-title">CERTEZA PARA LA EMPRESA. DIGNIDAD PARA EL CONDUCTOR.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div class="card-clean" style="border-left: 3px solid var(--accent-warm);">
+              <span class="editorial-kicker">EL CONDUCTOR</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Cero Ansiedad</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Sabe con horas de antelación dónde dormirá, con ducha caliente y vallas vigiladas.
+              </p>
+            </div>
+
+            <div class="card-clean" style="border-left: 3px solid var(--accent-blue);">
+              <span class="editorial-kicker">LA FLOTA</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Cero Sanciones</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Evita multas de 1.001 € a 2.000 € y la pérdida del requisito de honorabilidad empresarial.
+              </p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">LOS PARKINGS</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Lleno Predecible</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Monetización anticipada y eliminación de colapsos caóticos en las vías de acceso.
               </p>
             </div>
           </div>
         </section>
 
         <!-- ================================================================
-             DIAPOSITIVA 7: CIERRE EDITORIAL (IMPACTO FINAL)
-             Estilo portada Luxembourg: Gran tipografía curva, titular rotundo.
+             BLOQUE 3: EL NEGOCIO
              ================================================================ -->
-        <section class="slide" id="slide-7" data-title="Cierre" data-mood="Color">
+
+        <!-- 3.1. MODELO ECONÓMICO -->
+        <section class="slide" id="slide-7" data-title="Modelo Económico" data-section="EL NEGOCIO" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>STARTCAMP 2026 · FINAL</div>
-            <div>POSTA TECHNOLOGIES · MADRID</div>
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 06 · MODELO ECONÓMICO</div>
+            <div>B2B SAAS + COMISIÓN POR TRANSACCIÓN</div>
           </div>
 
-          <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; max-width: 900px; margin: 0 auto;">
-            
-            <span class="editorial-kicker" style="letter-spacing: 3px;">NUESTRA MISIÓN</span>
-            
-            <h2 class="editorial-title" style="font-size: 50px; line-height: 1.1; margin-bottom: 24px;">
-              DORMIR EN PAZ NO DEBERÍA SER UN PRIVILEGIO EN LA CARRETERA EUROPEA.
-            </h2>
+          <div style="margin-bottom: 24px;">
+            <span class="editorial-kicker">DOUBLE REVENUE STREAM</span>
+            <h2 class="editorial-title">DOS VÍAS CLARAS DE MONETIZACIÓN.</h2>
+          </div>
 
-            <p style="font-size: 18px; color: var(--paper-text-muted); line-height: 1.5; max-width: 680px; margin-bottom: 34px;">
-              Buscamos mentores del sector logístico y el pase a UNEC / Hult Prize para poner en marcha el primer piloto que cuide a los conductores en la frontera.
-            </p>
-
-            <div style="font-family: var(--font-display); font-size: 72px; font-weight: 800; letter-spacing: -2px; color: var(--paper-text-main); margin-bottom: 28px;">
-              POSTA
+          <div class="grid-editorial-split">
+            <div class="card-clean" style="border-left: 3px solid var(--accent-warm); padding: 30px;">
+              <span class="editorial-kicker">SUSCRIPCIÓN DE FLOTA</span>
+              <div class="stat-hero-number" style="color: var(--accent-warm); margin: 10px 0;">15 €</div>
+              <div style="font-size: 14px; font-weight: 700; text-transform: uppercase;">Por Camión / Mes</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 8px; line-height: 1.5;">
+                Para la empresa de transporte: alertas predictivas, integración con su software actual y control centralizado.
+              </p>
             </div>
 
-            <div style="display: flex; gap: 32px; font-size: 12px; font-family: var(--font-mono); color: var(--paper-text-muted); text-transform: uppercase;">
-              <span>PILOTO Q1 2027</span>
-              <span>·</span>
-              <span>MAD TECH CAMPUS</span>
-              <span>·</span>
-              <span style="color: var(--accent-warm);">HULT PRIZE 2026</span>
+            <div class="card-clean" style="padding: 30px;">
+              <span class="editorial-kicker">TAKE RATE POR RESERVA</span>
+              <div class="stat-hero-number" style="margin: 10px 0;">2,50 €</div>
+              <div style="font-size: 14px; font-weight: 700; text-transform: uppercase;">Por Noche Confirmada</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 8px; line-height: 1.5;">
+                Comisión facturada al área de descanso segura sobre una tarifa media de pernocta de 25 € a 35 €.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3.2. MERCADO -->
+        <section class="slide" id="slide-8" data-title="Mercado" data-section="EL NEGOCIO" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 07 · MERCADO</div>
+            <div>TAMAÑO DE MERCADO</div>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <span class="editorial-kicker">DIMENSIÓN DEL SECTOR</span>
+            <h2 class="editorial-title">UN MERCADO DE 6 MILLONES DE CAMIONES EN LA UE.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div class="card-clean">
+              <span class="editorial-kicker">TAM // EUROPA</span>
+              <div class="stat-hero-number">6,2M</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Camiones en la UE-27</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px;">Mercado total europeo de transporte comercial pesado.</p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">SAM // ESPAÑA</span>
+              <div class="stat-hero-number">296K</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Servicio Público (MDP)</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px;">Camiones pesados españoles que operan para terceros.</p>
+            </div>
+
+            <div class="card-clean" style="border-left: 3px solid var(--accent-warm);">
+              <span class="editorial-kicker">SOM // INICIAL</span>
+              <div class="stat-hero-number" style="color: var(--accent-warm);">68K</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Flotas Internacionales</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px;">Camiones en flotas de >40 vehículos en corredores transfronterizos.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3.3. COMPETENCIA -->
+        <section class="slide" id="slide-9" data-title="Competencia" data-section="EL NEGOCIO" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 08 · COMPETENCIA</div>
+            <div>VENTAJA COMPETITIVA DEFENDIBLE</div>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <span class="editorial-kicker">MAPA COMPETITIVO</span>
+            <h2 class="editorial-title">POR QUÉ NADIE HACE ESTO HOY.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div class="card-clean">
+              <span class="editorial-kicker">GPS TRADICIONAL</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Webfleet / Geotab</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Solo ven su propia flota aislada. Son ciegos a la saturación externa de la carretera.
+              </p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">DIRECTORIOS APP</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Truckfly / Parkings</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Comentarios estáticos. No conectan con el tacógrafo ni garantizan una plaza reservada.
+              </p>
+            </div>
+
+            <div class="card-clean" style="border: 2px solid var(--accent-warm); background: #FFFBF8;">
+              <span class="editorial-kicker">NUESTRA CATEGORÍA</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--accent-warm); margin: 8px 0;">POSTA</h3>
+              <p style="font-size: 13px; color: var(--paper-text-main); font-weight: 500; line-height: 1.45;">
+                Red predictiva multi-flota que cruza tacógrafos concurrentes con reserva SSTPA garantizada.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             BLOQUE 4: LA EMPRESA
+             ================================================================ -->
+
+        <!-- 4.1. QUÉ HEMOS HECHO (RESEARCH) -->
+        <section class="slide" id="slide-10" data-title="Qué Hemos Hecho" data-section="LA EMPRESA" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA EMPRESA // 09 · QUÉ HEMOS HECHO</div>
+            <div>VALIDACIÓN REAL EN 48 HORAS</div>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <span class="editorial-kicker">DISCOVERY DE CAMPO</span>
+            <h2 class="editorial-title">HABLAR CON QUIENES VIVEN LA CARRETERA.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div class="card-clean">
+              <span class="editorial-kicker">ENTREVISTAS EN RUTA</span>
+              <div class="stat-hero-number">2</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Camioneros Internacionales</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                Validaron el miedo nocturno, la soledad y la necesidad absoluta de una plaza asegurada.
+              </p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">GESTIÓN DE FLOTA</span>
+              <div class="stat-hero-number">3</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Gerentes de Transporte</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                Confirmaron el terror a la inmovilización de camiones con carga en frío perecedera.
+              </p>
+            </div>
+
+            <div class="card-clean" style="border-left: 3px solid var(--accent-warm);">
+              <span class="editorial-kicker">INTENCIÓN DE COMPRA</span>
+              <div class="stat-hero-number" style="color: var(--accent-warm);">100%</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Disposición a Pagar</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                «Si me quitas la incertidumbre antes de Girona, pago la cuota sin pensarlo.»
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4.2. ROADMAP -->
+        <section class="slide" id="slide-11" data-title="Roadmap" data-section="LA EMPRESA" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA EMPRESA // 10 · ROADMAP</div>
+            <div>EJECUCIÓN A 12 MESES</div>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <span class="editorial-kicker">PLAN DE ACCIÓN</span>
+            <h2 class="editorial-title">DE STARTCAMP A LOS CORREDORES EUROPEOS.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div class="card-clean" style="border-top: 3px solid var(--accent-warm);">
+              <span class="editorial-kicker">Q4 2026 · INMEDIATO</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Piloto Alpha</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Pruebas con 120 camiones en la AP-7 y los primeros 2 parkings SSTPA asociados en Cataluña.
+              </p>
+            </div>
+
+            <div class="card-clean" style="border-top: 3px solid var(--accent-blue);">
+              <span class="editorial-kicker">Q1-Q2 2027</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Corredor Atlántico</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Integración de conectores FMS y apertura de plazas en el paso de Irún / Biriatou.
+              </p>
+            </div>
+
+            <div class="card-clean" style="border-top: 3px solid var(--paper-text-main);">
+              <span class="editorial-kicker">Q3-Q4 2027</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Escalado UE</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Expansión en el arco mediterráneo francés y aplicación a fondos europeos de transporte.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4.3. EQUIPO -->
+        <section class="slide" id="slide-12" data-title="Equipo" data-section="LA EMPRESA" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA EMPRESA // 11 · EQUIPO</div>
+            <div>TALENTO COMPLEMENTARIO</div>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <span class="editorial-kicker">QUIÉNES SOMOS</span>
+            <h2 class="editorial-title">EL EQUIPO IDÓNEO PARA RESOLVERLO.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div class="card-clean">
+              <span class="editorial-kicker">NEGOCIO & LEGAL</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Estrategia & B2B</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Relación con flotas, unit economics y cumplimiento estricto del régimen sancionador LOTT.
+              </p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">TELEMÁTICA & IA</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Ingeniería & Datos</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Arquitectura del algoritmo EAS y conexión de flujos de tacógrafo satelital G2V2.
+              </p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">PRODUCTO & UX</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Diseño Humanista</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Interacción limpia en cabina para no distraer al conductor mientras conduce.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             BLOQUE 5: CONTRAPORTADA (ANIMACIÓN REAL DE ROSTROS)
+             Miguel -> Marius -> Cientos de caras aleatorias -> Fade frase & logo
+             ================================================================ -->
+        <!-- ================================================================
+             BLOQUE 5: CONTRAPORTADA (ANIMACIÓN REAL DE ROSTROS)
+             Miguel & Marius en GRANDE (50/50) -> Retroceso a Mosaico Aleatorio -> POSTA + Eslogan
+             ================================================================ -->
+        <section class="slide" id="slide-13" data-title="Contraportada" data-section="CONTRAPORTADA" data-mood="Animation" style="padding: 0; background: #06080B;">
+          <div id="contraportada-stage">
+            
+            <!-- Mosaico masivo de 48 caras aleatorizadas de camioneros -->
+            <div class="faces-mosaic-wall" id="mosaic-wall">
+              <!-- Se inyectan 48 celdas vía JS aleatorizadas dinámicamente -->
+            </div>
+
+            <!-- Paso 1 y 2: Dúo de conductores (Miguel y Marius) en GRANDE a pantalla completa (Split 50/50) -->
+            <div class="duo-focus-container" id="duo-container">
+              
+              <!-- Mitad Izquierda: Miguel -->
+              <div class="split-driver-half" id="half-miguel">
+                <img src="assets/drivers/miguel.jpg" alt="Miguel" class="split-driver-img" style="object-position: center 25%;">
+                <div class="split-driver-overlay">
+                  <span class="split-driver-name">MIGUEL</span>
+                </div>
+              </div>
+
+              <!-- Mitad Derecha: Marius -->
+              <div class="split-driver-half" id="half-marius">
+                <img src="assets/drivers/marius.jpg" alt="Marius" class="split-driver-img" style="object-position: center 20%;">
+                <div class="split-driver-overlay">
+                  <span class="split-driver-name">MARIUS</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Paso 3 y 4: Frase y Logo Final (justo encima y en el centro con Scrim de Alto Contraste) -->
+            <div class="contraportada-finale" id="contra-finale">
+              <div class="contraportada-scrim"></div>
+              <div class="contra-posta-brand">POSTA</div>
+              <div class="contra-subtag">«LA RED DE INFORMACIÓN Y PREDICCIÓN AL SERVICIO DE PERSONAS»</div>
             </div>
 
           </div>
@@ -763,9 +1141,9 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
     </button>
     <div class="tb-indicator">
-      <span id="slide-num">01</span> / <span id="total-slides-num">07</span>
+      <span id="slide-num">01</span> / <span id="total-slides-num">13</span>
     </div>
-    <span class="tb-mood-pill" id="mood-pill">COLOR</span>
+    <span class="tb-section-label" id="section-label">LA IDEA</span>
     <button class="tb-btn" id="btn-next" title="Siguiente (Flecha Derecha)">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
     </button>
@@ -777,50 +1155,128 @@
   <!-- Modal de Vista General -->
   <div id="overview-modal">
     <div style="margin-bottom: 20px; text-align: center;">
-      <h3 style="font-family: var(--font-display); font-size: 22px; color: #FFFFFF; text-transform: uppercase;">Visión General del Pitch</h3>
-      <p style="font-size: 12px; color: #94A3B8; margin-top: 4px;">Selecciona cualquier diapositiva o pulsa [Esc] para volver</p>
+      <h3 style="font-family: var(--font-display); font-size: 20px; color: #FFFFFF; text-transform: uppercase;">Estructura de la Presentación</h3>
+      <p style="font-size: 12px; color: #94A3B8; margin-top: 4px;">13 Diapositivas · Selecciona para saltar</p>
     </div>
     <div class="overview-grid" id="overview-grid-container"></div>
   </div>
 
-  <!-- Script de Navegación y Auto-Escalado -->
+  <!-- Script de Navegación, Auto-Escalado y Animación de Contraportada -->
   <script>
     (function() {
       const slides = Array.from(document.querySelectorAll('.slide'));
       const slideNum = document.getElementById('slide-num');
       const totalSlides = document.getElementById('total-slides-num');
-      const moodPill = document.getElementById('mood-pill');
+      const sectionLabel = document.getElementById('section-label');
       const stage = document.getElementById('presentation-stage');
       const overviewModal = document.getElementById('overview-modal');
       const overviewContainer = document.getElementById('overview-grid-container');
+
+      // Elementos de la Contraportada
+      const mosaicWall = document.getElementById('mosaic-wall');
+      const halfMiguel = document.getElementById('half-miguel');
+      const halfMarius = document.getElementById('half-marius');
+      const duoContainer = document.getElementById('duo-container');
+      const contraFinale = document.getElementById('contra-finale');
 
       let current = 0;
       const total = slides.length;
       totalSlides.textContent = String(total).padStart(2, '0');
 
+      // 48 Fotos 100% ÚNICAS y DISTINTAS de camioneros (CERO repetición)
+      const uniqueMosaicPhotos = [];
+      for (let i = 1; i <= 48; i++) {
+        uniqueMosaicPhotos.push(`assets/drivers/unique/mosaic_face_${String(i).padStart(2, '0')}.jpg`);
+      }
+
+      // Algoritmo Fisher-Yates para aleatorizar completamente las fotos de fondo
+      function shuffleArray(arr) {
+        const a = [...arr];
+        for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+      }
+
+      function initMosaic() {
+        mosaicWall.innerHTML = '';
+        // Aleatorizamos para que fotos consecutivas o parecidas nunca queden contiguas
+        const shuffled = shuffleArray(uniqueMosaicPhotos);
+        for (let i = 0; i < shuffled.length; i++) {
+          const url = shuffled[i];
+          const cell = document.createElement('div');
+          cell.className = 'mosaic-cell';
+          cell.innerHTML = `<img src="${url}" loading="eager" alt="Camionero profesional">`;
+          mosaicWall.appendChild(cell);
+        }
+      }
+      initMosaic();
+
+      // Animación de Contraportada (Miguel & Marius en GRANDE -> Retroceso hacia el fondo -> POSTA + Eslogan)
+      let animTimeouts = [];
+      function clearAnimTimeouts() {
+        animTimeouts.forEach(t => clearTimeout(t));
+        animTimeouts = [];
+      }
+
+      function triggerContraportadaAnim() {
+        clearAnimTimeouts();
+        // Re-aleatorizamos el mosaico para máxima variedad cada vez
+        initMosaic();
+
+        // Estado inicial (reset limpio)
+        halfMiguel.classList.remove('show');
+        halfMarius.classList.remove('show');
+        duoContainer.classList.remove('receding');
+        mosaicWall.classList.remove('visible');
+        mosaicWall.classList.remove('dimmed');
+        contraFinale.classList.remove('show');
+
+        // Paso 1: Aparece Miguel en GRANDE comiéndose la mitad izquierda (300ms)
+        animTimeouts.push(setTimeout(() => {
+          halfMiguel.classList.add('show');
+        }, 300));
+
+        // Paso 2: Aparece Marius en GRANDE comiéndose la mitad derecha (1200ms)
+        animTimeouts.push(setTimeout(() => {
+          halfMarius.classList.add('show');
+        }, 1200));
+
+        // Paso 3: RETROCESO / ZOOM OUT: Todo se va hacia el fondo (3000ms)
+        // Miguel y Marius retroceden y se alejan mientras la pared aleatorizada inunda la pantalla
+        animTimeouts.push(setTimeout(() => {
+          mosaicWall.classList.add('visible');
+          duoContainer.classList.add('receding');
+        }, 3000));
+
+        // Paso 4: Aparece POSTA y el eslogan con scrim de máxima legibilidad (4400ms)
+        animTimeouts.push(setTimeout(() => {
+          mosaicWall.classList.add('dimmed');
+          contraFinale.classList.add('show');
+        }, 4400));
+      }
+
       function updateSlide(idx) {
         if (idx < 0) idx = 0;
         if (idx >= total) idx = total - 1;
 
-        slides.forEach((s, i) => {
-          s.classList.remove('active');
-        });
+        slides.forEach((s) => s.classList.remove('active'));
 
         current = idx;
         const activeSlide = slides[current];
         activeSlide.classList.add('active');
 
-        // Actualizar indicador
+        // Actualizar barra de estado
         slideNum.textContent = String(current + 1).padStart(2, '0');
+        const sec = activeSlide.getAttribute('data-section') || 'POSTA';
+        sectionLabel.textContent = sec;
 
-        // Actualizar Mood Pill (Color vs B&W)
-        const isBw = activeSlide.classList.contains('slide-mood-bw');
-        if (isBw) {
-          moodPill.textContent = 'MOOD: ALGORITMO (B&W)';
-          moodPill.className = 'tb-mood-pill mood-bw';
+        // Disparar animación si es la contraportada (Slide 13)
+        if (activeSlide.id === 'slide-13') {
+          triggerContraportadaAnim();
         } else {
-          moodPill.textContent = 'MOOD: PERSONAS (COLOR)';
-          moodPill.className = 'tb-mood-pill';
+          clearAnimTimeouts();
         }
       }
 
@@ -831,11 +1287,12 @@
         overviewContainer.innerHTML = '';
         slides.forEach((s, i) => {
           const title = s.getAttribute('data-title') || `Slide ${i + 1}`;
+          const sec = s.getAttribute('data-section') || '';
           const isBw = s.classList.contains('slide-mood-bw');
           const item = document.createElement('div');
           item.className = `overview-item ${isBw ? 'is-bw' : ''} ${i === current ? 'current' : ''}`;
           item.innerHTML = `
-            <div class="ov-num">0${i + 1} // ${isBw ? 'B&W' : 'COLOR'}</div>
+            <div class="ov-num">0${i + 1} // ${sec}</div>
             <div class="ov-title">${title}</div>
             <div style="font-size: 10px; color: #94A3B8;">Click para saltar</div>
           `;
@@ -858,7 +1315,7 @@
         }
       }
 
-      // Teclado
+      // Atajos de Teclado
       window.addEventListener('keydown', (e) => {
         if (['ArrowRight', ' ', 'PageDown', 'l'].includes(e.key)) {
           e.preventDefault();
@@ -891,7 +1348,7 @@
         if (e.target === overviewModal) toggleOverview(false);
       });
 
-      // Auto-escalado de pantalla
+      // Auto-escalado de pantalla 16:9
       function resize() {
         const vw = window.innerWidth - 32;
         const vh = window.innerHeight - 32;
