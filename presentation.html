@@ -72,8 +72,7 @@
     #presentation-stage {
       width: 1366px;
       height: 768px;
-      max-width: 100%;
-      max-height: 100%;
+      flex-shrink: 0; /* tamaño fijo de diseño: el ajuste a la ventana lo hace resize() con scale() */
       aspect-ratio: var(--slide-ratio);
       position: relative;
       background-color: var(--paper-bg);
@@ -283,8 +282,8 @@
 
     .grid-problem-2x2 {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
       gap: 18px;
       flex: 1;
       margin-top: 18px;
@@ -960,7 +959,7 @@
             <div class="card-clean" style="padding: 22px 26px 18px 26px;">
               <div>
                 <span class="editorial-kicker" style="margin-bottom: 4px;">ESTRÉS</span>
-                <div class="stat-hero-number" style="color: var(--accent-warm); font-size: 86px; line-height: 0.95; letter-spacing: -3px; white-space: nowrap;">85 %</div>
+                <div class="stat-hero-number" style="color: var(--accent-warm); font-size: 60px; line-height: 1; letter-spacing: -2px; white-space: nowrap;">85 %</div>
                 <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 10px;">El aparcamiento, su primera causa de estrés</div>
               </div>
               <p style="font-size: 10.5px; color: var(--paper-text-dim); line-height: 1.35; font-style: italic; padding-top: 10px; border-top: 1px solid rgba(229, 231, 235, 0.7); margin-top: 8px;">Fuente: Trucker Path, encuesta a más de 5.400 camioneros (EE. UU., 2018). Por delante de las normas de horas de conducción (63 %)</p>
@@ -969,7 +968,7 @@
             <div class="card-clean" style="padding: 22px 26px 18px 26px;">
               <div>
                 <span class="editorial-kicker" style="margin-bottom: 4px;">TIEMPO PERDIDO</span>
-                <div class="stat-hero-number" style="font-size: 86px; line-height: 0.95; letter-spacing: -3px; white-space: nowrap;">115 h</div>
+                <div class="stat-hero-number" style="font-size: 60px; line-height: 1; letter-spacing: -2px; white-space: nowrap;">115 h</div>
                 <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 10px;">Al año por camión buscando sitio</div>
               </div>
               <p style="font-size: 10.5px; color: var(--paper-text-dim); line-height: 1.35; font-style: italic; padding-top: 10px; border-top: 1px solid rgba(229, 231, 235, 0.7); margin-top: 8px;">Estimación POSTA con datos de DEKRA, informe de seguridad vial 2026 (encuesta a ~100 conductores)</p>
@@ -979,8 +978,8 @@
               <div>
                 <span class="editorial-kicker" style="margin-bottom: 4px;">GASÓLEO PERDIDO</span>
                 <div style="display: flex; align-items: baseline; gap: 16px;">
-                  <div class="stat-hero-number" style="font-size: 86px; line-height: 0.95; letter-spacing: -3px; white-space: nowrap;">1.380 l</div>
-                  <div class="stat-hero-number" style="font-size: 46px; line-height: 0.95; letter-spacing: -1.5px; color: var(--accent-warm); white-space: nowrap;">≈ 2.600 €</div>
+                  <div class="stat-hero-number" style="font-size: 60px; line-height: 1; letter-spacing: -2px; white-space: nowrap;">1.380 l</div>
+                  <div class="stat-hero-number" style="font-size: 30px; line-height: 1; letter-spacing: -1px; color: var(--accent-warm); white-space: nowrap;">≈ 2.600 €</div>
                 </div>
                 <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 10px;">Al año por camión</div>
               </div>
@@ -990,7 +989,7 @@
             <div class="card-clean" style="padding: 22px 26px 18px 26px;">
               <div>
                 <span class="editorial-kicker" style="margin-bottom: 4px;">MULTAS</span>
-                <div class="stat-hero-number" style="font-size: 86px; line-height: 0.95; letter-spacing: -3px; white-space: nowrap;">83.600</div>
+                <div class="stat-hero-number" style="font-size: 60px; line-height: 1; letter-spacing: -2px; white-space: nowrap;">83.600</div>
                 <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 10px;">Infracciones de tiempos al año</div>
               </div>
               <p style="font-size: 10.5px; color: var(--paper-text-dim); line-height: 1.35; font-style: italic; padding-top: 10px; border-top: 1px solid rgba(229, 231, 235, 0.7); margin-top: 8px;">Fuente: Comisión Europea, SWD(2024) 215 (media 2021–2022); importes: LOTT</p>
