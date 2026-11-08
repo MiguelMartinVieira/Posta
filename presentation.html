@@ -281,6 +281,16 @@
       align-items: stretch;
     }
 
+    .grid-problem-2x2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 18px;
+      flex: 1;
+      margin-top: 18px;
+      min-height: 0;
+    }
+
     .stat-hero-number {
       font-family: var(--font-display);
       font-size: 54px;
@@ -837,53 +847,49 @@
             </div>
           </div>
 
-          <div style="margin-bottom: 24px;">
+          <div style="margin-bottom: 20px;">
             <span class="editorial-kicker">EL PROBLEMA EN CIFRAS</span>
             <h2 class="editorial-title">NO HAY SITIO PARA PARAR, Y BUSCARLO CUESTA HORAS, GASÓLEO Y MULTAS.</h2>
           </div>
 
-          <div class="grid-editorial-3" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
-            <div class="card-clean">
-              <span class="editorial-kicker">ESTRÉS</span>
-              <div class="stat-hero-number" style="color: var(--accent-warm); font-size: 46px; white-space: nowrap;">85 %</div>
-              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">El aparcamiento, su primera causa de estrés</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
-                Es lo que más estresa al camionero, por delante de las normas de horas de conducción (63 %).
-              </p>
-              <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 8px; line-height: 1.35; font-style: italic;">Fuente: Trucker Path, encuesta a más de 5.400 camioneros (EE. UU., 2018)</p>
-            </div>
-
-            <div class="card-clean">
-              <span class="editorial-kicker">TIEMPO PERDIDO</span>
-              <div class="stat-hero-number" style="font-size: 46px; white-space: nowrap;">115 h</div>
-              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Al año por camión buscando sitio</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
-                30 minutos al día durante 230 días: unas 13 jornadas de conducción. 2 de cada 3 conductores tardan más de 30 min en aparcar.
-              </p>
-              <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 8px; line-height: 1.35; font-style: italic;">Estimación POSTA con datos de DEKRA, informe de seguridad vial 2026 (encuesta a ~100 conductores)</p>
-            </div>
-
-            <div class="card-clean">
-              <span class="editorial-kicker">GASÓLEO PERDIDO</span>
+          <div class="grid-problem-2x2">
+            <div class="card-clean" style="padding: 22px 28px 18px 28px;">
               <div>
-                <div class="stat-hero-number" style="font-size: 46px; white-space: nowrap;">1.380 l</div>
-                <div class="stat-hero-number" style="font-size: 26px; white-space: nowrap; color: var(--accent-warm); margin-top: 6px;">≈ 2.600 €</div>
+                <span class="editorial-kicker" style="margin-bottom: 4px;">FALTAN PLAZAS</span>
+                <div class="stat-hero-number" style="color: var(--accent-warm); font-size: 62px; line-height: 1; white-space: nowrap;">43.500</div>
+                <div style="font-size: 13.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 8px;">Camiones sin plaza cada noche</div>
               </div>
-              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Al año por camión</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
-                20 km extra al día para encontrar sitio, a 30 l/100 km y 1,87 €/l.
-              </p>
-              <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 8px; line-height: 1.35; font-style: italic;">Estimación POSTA con datos de DEKRA 2026 (km extra) y MITECO (precio del gasóleo, noviembre de 2026)</p>
+              <p style="font-size: 10.5px; color: var(--paper-text-dim); line-height: 1.35; font-style: italic; padding-top: 10px; border-top: 1px solid rgba(229, 231, 235, 0.7); margin-top: 8px;">Fuente: Comisión Europea, informe sobre aparcamientos seguros (2025)</p>
             </div>
 
-            <div class="card-clean">
-              <span class="editorial-kicker">MULTAS</span>
-              <div class="stat-hero-number" style="font-size: 46px; white-space: nowrap;">83.600</div>
-              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Infracciones de tiempos al año</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
-                Por conducción, pausas y descansos en España. Van de 401 € a 6.000 € cada una.
-              </p>
-              <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 8px; line-height: 1.35; font-style: italic;">Fuente: Comisión Europea, SWD(2024) 215 (media 2021–2022); importes: LOTT</p>
+            <div class="card-clean" style="padding: 22px 28px 18px 28px;">
+              <div>
+                <span class="editorial-kicker" style="margin-bottom: 4px;">TIEMPO PERDIDO</span>
+                <div class="stat-hero-number" style="font-size: 62px; line-height: 1; white-space: nowrap;">115 h</div>
+                <div style="font-size: 13.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 8px;">Al año por camión buscando sitio</div>
+              </div>
+              <p style="font-size: 10.5px; color: var(--paper-text-dim); line-height: 1.35; font-style: italic; padding-top: 10px; border-top: 1px solid rgba(229, 231, 235, 0.7); margin-top: 8px;">Estimación POSTA con datos de DEKRA, informe de seguridad vial 2026 (encuesta a ~100 conductores)</p>
+            </div>
+
+            <div class="card-clean" style="padding: 22px 28px 18px 28px;">
+              <div>
+                <span class="editorial-kicker" style="margin-bottom: 4px;">GASÓLEO PERDIDO</span>
+                <div style="display: flex; align-items: baseline; gap: 16px;">
+                  <div class="stat-hero-number" style="font-size: 62px; line-height: 1; white-space: nowrap;">1.380 l</div>
+                  <div class="stat-hero-number" style="font-size: 34px; line-height: 1; color: var(--accent-warm); white-space: nowrap;">≈ 2.600 €</div>
+                </div>
+                <div style="font-size: 13.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 8px;">Al año por camión</div>
+              </div>
+              <p style="font-size: 10.5px; color: var(--paper-text-dim); line-height: 1.35; font-style: italic; padding-top: 10px; border-top: 1px solid rgba(229, 231, 235, 0.7); margin-top: 8px;">Estimación POSTA con datos de DEKRA 2026 (km extra) y MITECO (precio del gasóleo, noviembre de 2026)</p>
+            </div>
+
+            <div class="card-clean" style="padding: 22px 28px 18px 28px;">
+              <div>
+                <span class="editorial-kicker" style="margin-bottom: 4px;">MULTAS</span>
+                <div class="stat-hero-number" style="font-size: 62px; line-height: 1; white-space: nowrap;">83.600</div>
+                <div style="font-size: 13.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 8px;">Infracciones de tiempos al año</div>
+              </div>
+              <p style="font-size: 10.5px; color: var(--paper-text-dim); line-height: 1.35; font-style: italic; padding-top: 10px; border-top: 1px solid rgba(229, 231, 235, 0.7); margin-top: 8px;">Fuente: Comisión Europea, SWD(2024) 215 (media 2021–2022); importes: LOTT</p>
             </div>
           </div>
 
@@ -1780,6 +1786,10 @@
         const sec = activeSlide.getAttribute('data-section') || 'POSTA';
         sectionLabel.textContent = sec;
 
+        if (window.location.hash !== '#' + activeSlide.id) {
+          history.replaceState(null, '', '#' + activeSlide.id);
+        }
+
         // Configurar estado de portada (Slide 1): sin temporizador, controlado por el usuario
         if (activeSlide.id === 'slide-1') {
           if (previousIdx === 1) {
@@ -2529,7 +2539,22 @@
       window.addEventListener('resize', resize);
       resize();
 
-      updateSlide(0);
+      function getInitialSlide() {
+        const hash = window.location.hash.replace('#', '');
+        if (hash) {
+          const idx = slides.findIndex(s => s.id === hash);
+          if (idx !== -1) return idx;
+        }
+        return 0;
+      }
+
+      window.addEventListener('hashchange', () => {
+        const hash = window.location.hash.replace('#', '');
+        const idx = slides.findIndex(s => s.id === hash);
+        if (idx !== -1 && idx !== current) updateSlide(idx);
+      });
+
+      updateSlide(getInitialSlide());
     })();
   </script>
 </body>
