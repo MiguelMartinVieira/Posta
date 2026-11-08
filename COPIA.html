@@ -1,0 +1,3351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posta // Pitch Deck: Una Historia de Personas</title>
+  
+
+  <style>
+    /* Fuentes del sistema, servidas en local desde assets/fonts/ */
+    @font-face {
+      font-family: 'JetBrains Mono';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('assets/fonts/JetBrainsMono-normal-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('assets/fonts/JetBrainsMono-normal-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('assets/fonts/JetBrainsMono-normal-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('assets/fonts/JetBrainsMono-normal-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('assets/fonts/JetBrainsMono-normal-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('assets/fonts/JetBrainsMono-normal-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-italic-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-italic-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: italic;
+      font-weight: 600;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-italic-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: italic;
+      font-weight: 600;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-italic-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-normal-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-normal-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-normal-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-normal-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-normal-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-normal-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-normal-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-normal-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-normal-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-normal-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-normal-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-normal-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Syne';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('assets/fonts/Syne-normal-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Syne';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('assets/fonts/Syne-normal-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Syne';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('assets/fonts/Syne-normal-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Syne';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('assets/fonts/Syne-normal-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Syne';
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url('assets/fonts/Syne-normal-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Syne';
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url('assets/fonts/Syne-normal-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* ==========================================================================
+       1. VARIABLES Y TOKENS DE DISEÑO EDITORIAL
+       ========================================================================== */
+    :root {
+      /* Mood Editorial Papel (Normal / Color) */
+      --paper-bg: #FFFFFF;
+      --paper-surface: #F8F9FA;
+      --paper-border: #E5E7EB;
+      --paper-text-main: #11141A;
+      --paper-text-muted: #64748B;
+      --paper-text-dim: #94A3B8;
+
+      /* Acentos Cálidos Humanos */
+      --accent-warm: #E26D46;   /* Terracota cálido editorial */
+      --accent-amber: #D97706;  /* Ámbar de cabina */
+      --accent-blue: #0284C7;   /* Azul Posta */
+
+      /* Mood Blanco y Negro (El Algoritmo / La Máquina) */
+      --bw-bg: #080A0E;
+      --bw-surface: #11151D;
+      --bw-border: rgba(255, 255, 255, 0.15);
+      --bw-text-main: #FFFFFF;
+      --bw-text-muted: #A1A1AA;
+
+      /* Tipografías */
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --slide-ratio: 16 / 9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #E2E8F0;
+      font-family: var(--font-body);
+      color: var(--paper-text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Escenario 16:9 con Escalado Automático */
+    #viewport {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    #presentation-stage {
+      width: 1366px;
+      height: 768px;
+      max-width: 100%;
+      max-height: 100%;
+      aspect-ratio: var(--slide-ratio);
+      position: relative;
+      background-color: var(--paper-bg);
+      border-radius: 8px;
+      box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    /* ==========================================================================
+       2. ESTRUCTURA DE DIAPOSITIVAS (SLIDES ENGINE)
+       ========================================================================== */
+    .slides-deck {
+      flex: 1;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: 42px 54px;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: scale(0.99) translateY(10px);
+      transition: opacity 260ms cubic-bezier(0.16, 1, 0.3, 1), transform 260ms cubic-bezier(0.16, 1, 0.3, 1), visibility 260ms;
+      background: var(--paper-bg);
+      color: var(--paper-text-main);
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: scale(1) translateY(0);
+    }
+
+    /* Mood B&W */
+    .slide.slide-mood-bw {
+      background: var(--bw-bg) !important;
+      color: var(--bw-text-main) !important;
+    }
+
+    .slide.slide-mood-bw .meta-bar {
+      color: var(--bw-text-muted);
+    }
+
+    .slide.slide-mood-bw .editorial-title {
+      color: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       3. ELEMENTOS EDITORIALES (MUY POCO TEXTO, CURVAS SUAVES)
+       ========================================================================== */
+    .meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--paper-text-muted);
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+
+    .brand-bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-warm);
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .slide-mood-bw .brand-bullet {
+      background: #FFFFFF;
+    }
+
+    .editorial-hero-title {
+      font-family: var(--font-display);
+      font-size: 76px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 0.95;
+      color: var(--paper-text-main);
+      text-transform: uppercase;
+    }
+
+    .editorial-title {
+      font-family: var(--font-display);
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      line-height: 1.1;
+      color: var(--paper-text-main);
+      text-transform: uppercase;
+    }
+
+    .editorial-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.2px;
+      color: var(--accent-warm);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .slide-mood-bw .editorial-kicker {
+      color: #FFFFFF;
+      opacity: 0.75;
+    }
+
+    .editorial-lead {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--paper-text-muted);
+      max-width: 680px;
+    }
+
+    .editorial-quote {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--paper-text-main);
+      border-left: 2.5px solid var(--accent-warm);
+      padding-left: 16px;
+      margin: 14px 0;
+    }
+
+    .editorial-quote cite {
+      display: block;
+      margin-top: 6px;
+      font-size: 11px;
+      font-style: normal;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--paper-text-muted);
+    }
+
+    .photo-frame {
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      background: #E2E8F0;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Secuencia de Aparición Narrativa en Portada (Slide 1): Miguel -> Marius -> POSTA */
+    .portada-anim-item {
+      opacity: 0;
+      transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    #portada-miguel.portada-anim-item {
+      transform: translateY(22px) scale(0.985);
+    }
+
+    #portada-marius.portada-anim-item {
+      transform: translateY(22px) scale(0.985);
+    }
+
+    #portada-posta.portada-anim-item {
+      transform: translateY(-16px) scale(0.97);
+    }
+
+    .portada-anim-item.show {
+      opacity: 1 !important;
+      transform: translateY(0) scale(1) !important;
+    }
+
+    .grid-editorial-split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+      flex: 1;
+    }
+
+    .grid-editorial-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      flex: 1;
+      align-items: stretch;
+    }
+
+    .stat-hero-number {
+      font-family: var(--font-display);
+      font-size: 54px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -2px;
+      color: var(--paper-text-main);
+    }
+
+    .slide-mood-bw .stat-hero-number {
+      color: #FFFFFF;
+    }
+
+    .stat-hero-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-warm);
+      margin-top: 6px;
+    }
+
+    .slide-mood-bw .stat-hero-label {
+      color: #A1A1AA;
+    }
+
+    .card-clean {
+      background: var(--paper-surface);
+      border: 1px solid var(--paper-border);
+      padding: 22px;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* ==========================================================================
+       4. CONTRAPORTADA ANIMADA: MOSAICO DE ROSTROS
+       ========================================================================== */
+    #contraportada-stage {
+      position: absolute;
+      inset: 0;
+      background: #06080B;
+      color: #FFFFFF;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Mosaico de fondo con 48 fotos 100% distintas */
+    .faces-mosaic-wall {
+      position: absolute;
+      inset: -15px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      gap: 6px;
+      opacity: 0;
+      transform: scale(1.2);
+      transition: opacity 1200ms cubic-bezier(0.16, 1, 0.3, 1), transform 1600ms cubic-bezier(0.16, 1, 0.3, 1), filter 1000ms ease;
+      pointer-events: none;
+      filter: grayscale(40%) contrast(108%) brightness(0.85);
+      background: #06080B;
+    }
+
+    .faces-mosaic-wall.visible {
+      opacity: 0.75;
+      transform: scale(1);
+    }
+
+    .faces-mosaic-wall.dimmed {
+      opacity: 0.58;
+      filter: grayscale(50%) contrast(112%) brightness(0.62);
+      transform: scale(0.99);
+    }
+
+    .mosaic-cell {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 105px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #0D1117;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mosaic-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Split-Screen 50/50 en GRANDE para Miguel y Marius (sin minitexto biográfico) */
+    .duo-focus-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      z-index: 20;
+      transform: scale(1);
+      opacity: 1;
+      transition: transform 1400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 1000ms ease;
+      background: #06080B;
+    }
+
+    .duo-focus-container.receding {
+      transform: scale(0.25) translateY(40px);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .split-driver-half {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      opacity: 0;
+      transform: scale(1.04);
+      transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1), transform 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #half-miguel {
+      border-right: 2px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .split-driver-half.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .split-driver-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: contrast(106%) brightness(0.95);
+    }
+
+    .split-driver-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 44px 50px;
+      background: linear-gradient(to top, rgba(6, 8, 11, 0.88) 0%, rgba(6, 8, 11, 0.25) 35%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .split-driver-name {
+      font-family: var(--font-display);
+      font-size: 46px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95);
+    }
+
+    /* Bloque de Texto Final de la Contraportada con Scrim Radial de Alto Contraste */
+    .contraportada-finale {
+      position: absolute;
+      z-index: 30;
+      opacity: 0;
+      transform: scale(0.92) translateY(24px);
+      transition: opacity 1000ms cubic-bezier(0.16, 1, 0.3, 1), transform 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
+      max-width: 1200px;
+      padding: 40px 60px;
+      text-align: center;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Scrim radial sutil y centrado de máximo contraste para legibilidad absoluta */
+    .contraportada-scrim {
+      position: absolute;
+      inset: -40px -60px;
+      z-index: -1;
+      border-radius: 50%;
+      background: radial-gradient(ellipse 65% 60% at 50% 50%, rgba(6, 8, 11, 0.94) 0%, rgba(6, 8, 11, 0.80) 42%, rgba(6, 8, 11, 0.32) 72%, rgba(6, 8, 11, 0) 100%);
+      pointer-events: none;
+      filter: blur(16px);
+    }
+
+    .contraportada-finale.show {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+
+    .contra-posta-brand {
+      font-family: var(--font-display);
+      font-size: 132px;
+      font-weight: 800;
+      letter-spacing: -6px;
+      line-height: 0.92;
+      color: #FFFFFF;
+      margin: 0 0 16px 0;
+      text-shadow: 0 10px 50px rgba(0, 0, 0, 0.98), 0 3px 12px rgba(0, 0, 0, 0.85);
+    }
+
+    .contra-subtag {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #FF7A50; /* Naranja cálido vibrante de Posta */
+      text-transform: uppercase;
+      max-width: 960px;
+      line-height: 1.35;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.98), 0 2px 10px rgba(255, 122, 80, 0.4);
+    }
+
+    /* ==========================================================================
+       4.1. SLIDE GO-TO-MARKET (PIRÁMIDE DE CRECIMIENTO)
+       ========================================================================== */
+    .gtm-layout {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 26px;
+      align-items: center;
+      margin-top: 4px;
+      min-height: 0;
+    }
+
+    .pyramid-visual-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: #F8FAFC;
+      border: 1px solid var(--paper-border);
+      border-radius: 10px;
+      padding: 14px 12px 12px 12px;
+      height: 100%;
+    }
+
+    .pyramid-svg-container {
+      width: 100%;
+      max-width: 270px;
+      filter: drop-shadow(0 12px 24px rgba(15, 23, 42, 0.08));
+    }
+
+    .pyramid-growth-flow {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #FFFFFF;
+      border: 1px solid var(--paper-border);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--paper-text-muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    .growth-arrow {
+      color: var(--accent-warm);
+      font-weight: 800;
+    }
+
+    .pyramid-tiers-col {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      height: 100%;
+      justify-content: center;
+    }
+
+    .tier-card {
+      background: var(--paper-surface);
+      border: 1px solid var(--paper-border);
+      border-radius: 8px;
+      padding: 10px 16px;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .tier-card:hover {
+      box-shadow: 0 8px 24px -6px rgba(17, 20, 26, 0.07);
+    }
+
+    .tier-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .tier-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .tier-badge-p3 {
+      background: #FFF1EE;
+      color: var(--accent-warm);
+      border: 1px solid rgba(226, 109, 70, 0.28);
+    }
+
+    .tier-badge-p2 {
+      background: #E0F2FE;
+      color: var(--accent-blue);
+      border: 1px solid rgba(2, 132, 199, 0.28);
+    }
+
+    .tier-badge-p1 {
+      background: #F1F5F9;
+      color: #334155;
+      border: 1px solid #CBD5E1;
+    }
+
+    .tier-moat-tag {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 600;
+      color: var(--paper-text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .tier-title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 3px;
+    }
+
+    .tier-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--paper-text-main);
+      text-transform: uppercase;
+      letter-spacing: -0.3px;
+    }
+
+    .tier-desc {
+      font-size: 12px;
+      color: var(--paper-text-muted);
+      line-height: 1.38;
+      max-width: 840px;
+    }
+
+    .tier-desc strong {
+      color: var(--paper-text-main);
+      font-weight: 600;
+    }
+
+    .tier-card-p3 {
+      border-left: 4px solid var(--accent-warm);
+      background: linear-gradient(90deg, rgba(226, 109, 70, 0.04) 0%, var(--paper-surface) 40%);
+    }
+
+    .hardware-chips {
+      display: flex;
+      gap: 8px;
+      margin-top: 7px;
+    }
+
+    .hw-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFFFFF;
+      border: 1px solid rgba(226, 109, 70, 0.22);
+      border-radius: 4px;
+      padding: 4px 9px;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #8C3218;
+    }
+
+    .hw-chip svg {
+      width: 13px;
+      height: 13px;
+      color: var(--accent-warm);
+    }
+
+    .tier-card-p2 {
+      border-left: 4px solid var(--accent-blue);
+      background: linear-gradient(90deg, rgba(2, 132, 199, 0.04) 0%, var(--paper-surface) 40%);
+    }
+
+    .network-chips {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 7px;
+    }
+
+    .net-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFFFFF;
+      border: 1px solid rgba(2, 132, 199, 0.22);
+      border-radius: 4px;
+      padding: 4px 9px;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #0369A1;
+    }
+
+    .net-chip svg {
+      width: 13px;
+      height: 13px;
+      color: var(--accent-blue);
+    }
+
+    .tier-card-p1 {
+      border-left: 4px solid #475569;
+      background: #FFFFFF;
+    }
+
+    .apis-logo-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .api-logo-card {
+      background: #F8FAFC;
+      border: 1px solid var(--paper-border);
+      border-radius: 6px;
+      padding: 7px 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .api-logo-card:hover {
+      border-color: #94A3B8;
+      background: #FFFFFF;
+    }
+
+    .api-logo-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .api-logo-text {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .api-logo-name {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--paper-text-main);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      line-height: 1.2;
+    }
+
+    .api-logo-sub {
+      font-size: 8.5px;
+      color: var(--paper-text-muted);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-family: var(--font-mono);
+    }
+
+    .gtm-footer-bar {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--paper-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 10.5px;
+      color: var(--paper-text-muted);
+    }
+
+    .flywheel-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #F8FAFC;
+      border: 1px solid var(--paper-border);
+      padding: 3px 12px;
+      border-radius: 14px;
+      font-weight: 600;
+    }
+
+    .flywheel-pill strong {
+      color: var(--paper-text-main);
+    }
+
+    /* ==========================================================================
+       5. BARRA DE CONTROL FLOTANTE DISCRETA
+       ========================================================================== */
+    #toolbar {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(17, 20, 26, 0.9);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 40px;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      z-index: 100;
+      color: #FFFFFF;
+    }
+
+    .tb-btn {
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: color 140ms ease, background 140ms ease;
+    }
+
+    .tb-btn:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .tb-indicator {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+    }
+
+    .tb-section-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* Modal de Vista General */
+    #overview-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 12, 16, 0.94);
+      backdrop-filter: blur(14px);
+      z-index: 200;
+      display: none;
+      padding: 50px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #overview-modal.open {
+      display: flex;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    .overview-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 14px;
+      aspect-ratio: var(--slide-ratio);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 140ms ease, border-color 140ms ease;
+    }
+
+    .overview-item.is-bw {
+      background: #11141A;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .overview-item.is-bw .ov-title {
+      color: #FFFFFF;
+    }
+
+    .overview-item:hover, .overview-item.current {
+      border-color: var(--accent-warm);
+      transform: translateY(-3px);
+    }
+
+    .ov-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--accent-warm);
+      font-weight: 700;
+    }
+
+    .ov-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: #11141A;
+      text-transform: uppercase;
+    }
+    
+    /* ==========================================================================
+       MARCO COMÚN DE DIAPOSITIVA (logo, cabecera, sobretítulo, título y pie)
+       Variantes: .frame--light (papel) y .frame--dark (algoritmo B&W)
+       ========================================================================== */
+    :root {
+      --frame-pad-top: 42px;
+      --frame-pad-x: 54px;
+      --frame-pad-bottom: 42px;
+      --frame-header-height: 16px;
+      --frame-header-gap: 20px;
+      --frame-logo-size: 24px;
+      --frame-footer-height: 18px;
+      --frame-footer-bottom: 12px;
+      --frame-title-size: 38px;
+      --frame-kicker-size: 11px;
+      --frame-bw-bg: #090B0E;
+      --frame-bw-text-dim: #71717A;
+    }
+    
+    #presentation-stage {
+      flex: none;
+      max-width: none;
+      max-height: none;
+    }
+    
+    .slide.frame {
+      padding: var(--frame-pad-top) var(--frame-pad-x) var(--frame-pad-bottom);
+    }
+    
+    .frame--light {
+      --frame-logo-bg: #11141A;
+      --frame-logo-node: var(--accent-warm);
+      --frame-logo-ring: transparent;
+      --frame-meta: var(--paper-text-muted);
+      --frame-footer: var(--paper-text-dim);
+      --frame-brand: var(--paper-text-main);
+    }
+    
+    .frame--dark {
+      --frame-logo-bg: var(--frame-bw-bg);
+      --frame-logo-node: #FFFFFF;
+      --frame-logo-ring: rgba(255, 255, 255, 0.2);
+      --frame-meta: var(--bw-text-muted);
+      --frame-footer: var(--frame-bw-text-dim);
+      --frame-brand: var(--bw-text-main);
+    }
+    
+    .slide.frame--dark.slide-mood-bw {
+      background: var(--frame-bw-bg) !important;
+    }
+    
+    .slide.frame .meta-bar {
+      height: var(--frame-header-height);
+      margin-bottom: var(--frame-header-gap);
+      padding-right: calc(var(--frame-logo-size) + 12px);
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      color: var(--frame-meta);
+    }
+    
+    .frame-logo {
+      position: absolute;
+      top: calc(var(--frame-pad-top) + (var(--frame-header-height) - var(--frame-logo-size)) / 2);
+      right: var(--frame-pad-x);
+      width: var(--frame-logo-size);
+      height: var(--frame-logo-size);
+      border-radius: 22%;
+      box-shadow: 0 0 0 1px var(--frame-logo-ring);
+      pointer-events: none;
+      z-index: 40;
+    }
+    
+    .frame-head .editorial-kicker {
+      font-size: var(--frame-kicker-size);
+      margin-bottom: 8px;
+    }
+    
+    .frame-head .editorial-title {
+      font-size: var(--frame-title-size);
+      line-height: 1.1;
+      letter-spacing: -1.2px;
+    }
+    
+    .frame-footer {
+      position: absolute;
+      left: var(--frame-pad-x);
+      right: var(--frame-pad-x);
+      bottom: var(--frame-footer-bottom);
+      height: var(--frame-footer-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 40;
+    }
+    
+    .frame-brand {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--frame-brand);
+    }
+    
+    .frame-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      color: var(--frame-footer);
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- Logo oficial de Posta (DESIGN_SYSTEM.md, sección 3); los colores dependen de la variante del marco -->
+  <svg width="0" height="0" style="position: absolute;" aria-hidden="true">
+    <symbol id="posta-logo" viewBox="0 0 32 32" fill="none">
+      <rect width="32" height="32" rx="7" style="fill: var(--frame-logo-bg);"/>
+      <path d="M10 23V9H17.5C20.5376 9 23 11.2386 23 14C23 16.7614 20.5376 19 17.5 19H10" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+      <circle cx="16.5" cy="14" r="2" style="fill: var(--frame-logo-node);"/>
+    </symbol>
+  </svg>
+
+
+  <div id="viewport">
+    <div id="presentation-stage">
+
+      <main class="slides-deck" id="slides-deck">
+
+        <!-- ================================================================
+             BLOQUE 1: LA IDEA
+             ================================================================ -->
+
+        <!-- 1.1. PORTADA: Miguel -> Marius -> POSTA -->
+        <section class="slide frame frame--light active" id="slide-1" data-title="Portada" data-section="LA IDEA" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>STARTCAMP 2026 · MADRID</div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+            </div>
+          </div>
+
+          <div id="portada-posta" class="portada-anim-item" style="margin-bottom: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="hero-posta-logo" style="height: 72px; width: auto; max-width: 90%; object-fit: contain;">
+          </div>
+
+          <!-- Pareja de Fotos Reales: Miguel primero (izq), Marius después (der) -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex: 1; min-height: 0;">
+            <div id="portada-miguel" class="photo-frame portada-anim-item" style="height: 100%;">
+              <img src="assets/drivers/miguel.jpg" alt="Miguel en su cabina" style="object-fit: cover; object-position: center 25%;">
+              <div style="position: absolute; bottom: 14px; left: 16px; background: rgba(17, 20, 26, 0.88); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); padding: 5px 14px; border-radius: 4px; font-size: 11px; font-family: var(--font-mono); font-weight: 700; letter-spacing: 1px; color: #FFF;">
+                MIGUEL
+              </div>
+            </div>
+            <div id="portada-marius" class="photo-frame portada-anim-item" style="height: 100%;">
+              <img src="assets/drivers/marius.jpg" alt="Marius en el escalón de su camión" style="object-fit: cover; object-position: center 20%;">
+              <div style="position: absolute; bottom: 14px; left: 16px; background: rgba(17, 20, 26, 0.88); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); padding: 5px 14px; border-radius: 4px; font-size: 11px; font-family: var(--font-mono); font-weight: 700; letter-spacing: 1px; color: #FFF;">
+                MARIUS
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 1.2. QUIÉN LO SUFRE -->
+        <section class="slide frame frame--light" id="slide-2" data-title="Quién lo sufre" data-section="LA IDEA" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA IDEA // 01 · QUIÉN LO SUFRE</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>DATOS: DGT · CAMPAÑA DE FEBRERO DE 2026</span>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; flex: 1; min-height: 0; align-items: stretch;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; min-height: 0;">
+              <div class="photo-frame" style="height: 100%;">
+                <img src="assets/drivers/miguel.jpg" alt="Miguel en su cabina" style="object-fit: cover; object-position: center 25%;">
+                <div style="position: absolute; bottom: 12px; left: 12px; background: rgba(17, 20, 26, 0.88); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-family: var(--font-mono); font-weight: 700; letter-spacing: 1px; color: #FFF;">MIGUEL</div>
+              </div>
+              <div class="photo-frame" style="height: 100%;">
+                <img src="assets/drivers/marius.jpg" alt="Marius en el escalón de su camión" style="object-fit: cover; object-position: center 20%;">
+                <div style="position: absolute; bottom: 12px; left: 12px; background: rgba(17, 20, 26, 0.88); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-family: var(--font-mono); font-weight: 700; letter-spacing: 1px; color: #FFF;">MARIUS</div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+              <span class="editorial-kicker">QUIÉN LO SUFRE</span>
+              <h2 class="editorial-title" style="margin-bottom: 28px;">
+                GENTE COMO MIGUEL Y MARIUS SE JUEGA <span style="color: #FF7A50; white-space: nowrap;">UNOS 400&nbsp;€</span> CADA VEZ QUE NO ENCUENTRA SITIO.
+              </h2>
+
+              <div class="card-clean" style="justify-content: flex-start;">
+                <span class="editorial-kicker">Y NO ES RARO</span>
+                <div class="stat-hero-number" style="color: #FF7A50; margin: 6px 0 8px;">1 de cada 8</div>
+                <p style="font-size: 14px; color: var(--paper-text-main); line-height: 1.45; font-weight: 600;">
+                  camioneros que para la DGT acaba multado por tiempos de conducción y descanso.
+                </p>
+                <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45; margin-top: 6px;">
+                  2.878 de 24.143 camiones inspeccionados en una semana. Es la mitad de todas las denuncias a conductores profesionales.
+                </p>
+              </div>
+
+              <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 14px; line-height: 1.4; font-style: italic;">
+                Fuentes: DGT, campaña de control de camiones y autobuses (9–15 de febrero de 2026); entrevista a Marius (2026); LOTT (importe de la multa leve, según prensa).
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 1.3. PROBLEMA -->
+        <section class="slide frame frame--light" id="slide-3" data-title="El Problema" data-section="LA IDEA" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA IDEA // 02 · EL PROBLEMA</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>DATOS: COMISIÓN EUROPEA · DEKRA 2026</span>
+            </div>
+          </div>
+
+          <div class="frame-head" style="margin-bottom: 24px;">
+            <span class="editorial-kicker">EL PROBLEMA EN CIFRAS</span>
+            <h2 class="editorial-title">NO HAY SITIO PARA PARAR, Y BUSCARLO CUESTA HORAS, GASÓLEO Y MULTAS.</h2>
+          </div>
+
+          <div class="grid-editorial-3" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+            <div class="card-clean">
+              <span class="editorial-kicker">ESTRÉS</span>
+              <div class="stat-hero-number" style="color: var(--accent-warm); font-size: 46px; white-space: nowrap;">85 %</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">El aparcamiento, su primera causa de estrés</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                Es lo que más estresa al camionero, por delante de las normas de horas de conducción (63 %).
+              </p>
+              <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 8px; line-height: 1.35; font-style: italic;">Fuente: Trucker Path, encuesta a más de 5.400 camioneros (EE. UU., 2018)</p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">TIEMPO PERDIDO</span>
+              <div class="stat-hero-number" style="font-size: 46px; white-space: nowrap;">115 h</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Al año por camión buscando sitio</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                30 minutos al día durante 230 días: unas 13 jornadas de conducción. 2 de cada 3 conductores tardan más de 30 min en aparcar.
+              </p>
+              <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 8px; line-height: 1.35; font-style: italic;">Estimación POSTA con datos de DEKRA, informe de seguridad vial 2026 (encuesta a ~100 conductores)</p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">GASÓLEO PERDIDO</span>
+              <div>
+                <div class="stat-hero-number" style="font-size: 46px; white-space: nowrap;">1.380 l</div>
+                <div class="stat-hero-number" style="font-size: 26px; white-space: nowrap; color: var(--accent-warm); margin-top: 6px;">≈ 2.600 €</div>
+              </div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Al año por camión</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                20 km extra al día para encontrar sitio, a 30 l/100 km y 1,87 €/l.
+              </p>
+              <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 8px; line-height: 1.35; font-style: italic;">Estimación POSTA con datos de DEKRA 2026 (km extra) y MITECO (precio del gasóleo, noviembre de 2026)</p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">MULTAS</span>
+              <div class="stat-hero-number" style="font-size: 46px; white-space: nowrap;">83.600</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Infracciones de tiempos al año</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                Por conducción, pausas y descansos en España. Van de 401 € a 6.000 € cada una.
+              </p>
+              <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 8px; line-height: 1.35; font-style: italic;">Fuente: Comisión Europea, SWD(2024) 215 (media 2021–2022); importes: LOTT</p>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ================================================================
+             BLOQUE 2: LA SOLUCIÓN
+             ================================================================ -->
+
+        <!-- 2.0. LA SOLUCIÓN IDEAL -->
+        <section class="slide frame frame--light" id="slide-4" data-title="La solución ideal" data-section="LA SOLUCIÓN" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 03 · LA SOLUCIÓN IDEAL</div>
+            <div>EXPLICADO FÁCIL</div>
+          </div>
+
+          <div class="frame-head" style="margin: 0 0 36px;">
+            <span class="editorial-kicker">LA SOLUCIÓN IDEAL</span>
+            <h2 class="editorial-title">QUE CADA CAMIONERO SEPA, ANTES DE SALIR, <span style="color: #FF7A50;">DÓNDE VA A PODER PARAR ESTA NOCHE.</span></h2>
+            <p class="editorial-lead" style="margin-top: 16px; font-size: 19px; max-width: 1000px;">
+              Igual que miramos el tiempo antes de salir de casa, el camionero debería saber si habrá sitio en el área de servicio antes de llegar a ella.
+            </p>
+          </div>
+
+          <div class="grid-editorial-3" style="flex: 1; max-height: 300px;">
+            <div class="card-clean" style="justify-content: flex-start;">
+              <div class="stat-hero-number" style="font-size: 64px; color: #FF7A50;">1</div>
+              <div style="font-size: 24px; font-weight: 700; margin: 18px 0 10px; line-height: 1.3;">Saber antes de llegar</div>
+              <p style="font-size: 17px; color: var(--paper-text-muted); line-height: 1.5;">Cuántas plazas libres habrá en cada área a la hora a la que él va a llegar.</p>
+            </div>
+            <div class="card-clean" style="justify-content: flex-start;">
+              <div class="stat-hero-number" style="font-size: 64px; color: #FF7A50;">2</div>
+              <div style="font-size: 24px; font-weight: 700; margin: 18px 0 10px; line-height: 1.3;">Elegir a tiempo</div>
+              <p style="font-size: 17px; color: var(--paper-text-muted); line-height: 1.5;">Con las horas de conducción que le quedan, parar donde sí habrá sitio.</p>
+            </div>
+            <div class="card-clean" style="justify-content: flex-start;">
+              <div class="stat-hero-number" style="font-size: 64px; color: #FF7A50;">3</div>
+              <div style="font-size: 24px; font-weight: 700; margin: 18px 0 10px; line-height: 1.3;">Llegar tranquilo</div>
+              <p style="font-size: 17px; color: var(--paper-text-muted); line-height: 1.5;">Sin pasarse de horas ni ser multado, y con tiempo para ducharse, cenar y dormir.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2.1. PRODUCTO -->
+        <section class="slide frame frame--light" id="slide-5" data-title="Producto" data-section="LA SOLUCIÓN" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 04 · EL PRODUCTO</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>POSTA TECHNOLOGIES</span>
+            </div>
+          </div>
+
+          <div class="frame-head" style="margin-bottom: 24px;">
+            <span class="editorial-kicker">QUÉ ES POSTA</span>
+            <h2 class="editorial-title">LA RED DE INFORMACIÓN QUE PREDICE SI HABRÁ SITIO CUANDO LLEGUES.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div class="card-clean" style="justify-content: flex-start;">
+              <span class="editorial-kicker">01 · QUÉ HACE</span>
+              <div style="font-size: 17px; font-weight: 700; margin: 10px 0 8px; line-height: 1.3;">Ocupación ahora y a tu hora de llegada</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5;">
+                Mostramos en tiempo real cuánta demanda tiene cada área de servicio y predecimos cuántas plazas libres habrá cuando llegue cada camión.
+              </p>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5; margin-top: 8px;">
+                No damos certezas: gestionamos la incertidumbre y decimos qué probabilidad hay de encontrar sitio.
+              </p>
+            </div>
+
+            <div class="card-clean" style="justify-content: flex-start;">
+              <span class="editorial-kicker">02 · POR QUÉ MEJORA SOLA</span>
+              <div style="font-size: 17px; font-weight: 700; margin: 10px 0 8px; line-height: 1.3;">Cada consulta es un dato de demanda futura</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5;">
+                Cuando un camión nos pregunta dónde parar, también nos dice cuándo va a llegar. Más consultas, mejor predicción; mejor predicción, más usuarios.
+              </p>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5; margin-top: 8px;">
+                Empezamos con datos de las áreas, de la DGT y de las primeras flotas.
+              </p>
+            </div>
+
+            <div class="card-clean" style="justify-content: flex-start;">
+              <span class="editorial-kicker">03 · CÓMO LLEGA</span>
+              <div style="font-size: 17px; font-weight: 700; margin: 10px 0 8px; line-height: 1.3;">Una API y una app</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5;">
+                <strong style="color: var(--paper-text-main);">API</strong> para navegadores y plataformas de flota, como Google Maps, TomTom o Webfleet.
+              </p>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5; margin-top: 8px;">
+                <strong style="color: var(--paper-text-main);">App</strong> para transitarios, empresas de logística con flota y autónomos.
+              </p>
+            </div>
+          </div>
+
+          <div class="editorial-quote" style="margin-top: 20px;">
+            «Respondemos a una pregunta que hasta hoy no tenía respuesta: ¿habrá sitio cuando llegue?»
+          </div>
+        </section>
+
+        <!-- 2.2. CÓMO FUNCIONA (DEMO) -> CAMBIO DE MOOD B&W -->
+        <section class="slide frame frame--dark slide-mood-bw" id="slide-6" data-title="Cómo Funciona" data-section="LA SOLUCIÓN" data-mood="B&W">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 05 · CÓMO FUNCIONA (DEMO)</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>POSTA TECHNOLOGIES</span>
+            </div>
+          </div>
+
+          <div class="frame-head" style="margin-bottom: 10px; display: flex; justify-content: space-between; align-items: flex-end;">
+            <div>
+              <span class="editorial-kicker">CERTEZA MATEMÁTICA EN TIEMPO REAL</span>
+              <h2 class="editorial-title">
+                EL ALGORITMO PREVÉ EL COLAPSO 90 MINUTOS ANTES
+              </h2>
+            </div>
+            
+            <!-- Conmutador de Modo Posta vs Convencional -->
+            <div style="display: flex; gap: 6px;">
+              <button id="slideBtnConv" onclick="setSlideSimMode('conventional')" style="padding: 6px 12px; font-family: var(--font-mono); font-size: 10px; font-weight: 700; border-radius: 4px; border: 1px solid #EF4444; background: rgba(239, 68, 68, 0.2); color: #FEE2E2; cursor: pointer; transition: all 0.2s;">
+                ● A CIEGAS (SIN POSTA)
+              </button>
+              <button id="slideBtnPred" onclick="setSlideSimMode('predictive')" style="padding: 6px 12px; font-family: var(--font-mono); font-size: 10px; font-weight: 700; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); color: #A1A1AA; cursor: pointer; transition: all 0.2s;">
+                POSTA PREDICTIVO
+              </button>
+            </div>
+          </div>
+
+          <!-- Escenario Dividido: Mapa de España en Grande (Izquierda) + Hub y Métricas (Derecha) -->
+          <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 16px; flex: 1; min-height: 0;">
+            
+            <!-- 1. MAPA DE ESPAÑA EN GRANDE (RED NACIONAL) -->
+            <div style="background: #06080B; border: 1px solid var(--bw-border); border-radius: 6px; position: relative; overflow: hidden; display: flex; flex-direction: column; min-height: 480px; height: 100%;">
+              
+              <!-- Cabecera superior del mapa -->
+              <div style="position: absolute; top: 12px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center; z-index: 10; pointer-events: none;">
+                <div style="background: rgba(11, 15, 23, 0.9); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 4px; font-size: 10px; font-family: var(--font-mono); color: #FFF; display: flex; align-items: center; gap: 8px;">
+                  <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent-cyan); display: inline-block;"></span>
+                  <span style="font-weight: 700; letter-spacing: 0.5px;">RED NACIONAL DE NODOS // ESPAÑA</span>
+                </div>
+                <div id="slideSpainTruckBadge" style="background: rgba(11, 15, 23, 0.9); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 4px; font-size: 10px; font-family: var(--font-mono); color: var(--accent-cyan); font-weight: 700;">
+                  420 CAMIONES EN TIEMPO REAL
+                </div>
+              </div>
+
+              <!-- Canvas Principal del Mapa de España en Grande -->
+              <canvas id="slideSpainCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
+
+              <!-- Callout flotante del nodo Medinyà en el mapa -->
+              <div id="slideMedinyaCallout" style="position: absolute; top: 88px; right: 24px; background: rgba(15, 23, 42, 0.92); backdrop-filter: blur(8px); border: 1px solid #EF4444; border-radius: 4px; padding: 6px 12px; font-family: var(--font-mono); font-size: 10px; z-index: 10; pointer-events: none; transition: all 0.25s;">
+                <div id="slideMedinyaCalloutTitle" style="color: #F87171; font-weight: 700;">● NODO MEDINYÀ: SATURADO</div>
+                <div id="slideMedinyaCalloutSub" style="color: #A1A1AA; font-size: 9px; margin-top: 2px;">Cola en acceso AP-7 · 38 min espera</div>
+              </div>
+
+              <!-- Franja inferior de telemetría de corredores -->
+              <div style="position: absolute; bottom: 12px; left: 14px; right: 14px; background: rgba(11, 15, 23, 0.9); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.12); padding: 5px 12px; border-radius: 4px; font-size: 9px; font-family: var(--font-mono); color: #71717A; display: flex; justify-content: space-between; z-index: 10; pointer-events: none;">
+                <span>CORREDORES: AP-7 · A-2 · A-1 · A-4</span>
+                <span style="color: #E2E8F0; font-weight: 600;">14 HUBS MONITOREADOS</span>
+                <span id="slideNetworkPill" style="color: #EF4444; font-weight: 700;">CONGESTIÓN DETECTADA</span>
+              </div>
+            </div>
+
+            <!-- 2. DASHBOARD CONTIGUO: HUB EN PEQUEÑO + IMPACTO DIRECTO ("POCO Y BUENO") -->
+            <div style="background: #0E1219; border: 1px solid var(--bw-border); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+              
+              <!-- Fila 1: Zoom de Nodo (Hub Medinyà en Pequeño) -->
+              <div style="border-bottom: 1px solid var(--bw-border); background: #070A0F; display: flex; flex-direction: column;">
+                <div style="padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06);">
+                  <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: #FFF; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                    <span style="width: 6px; height: 6px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
+                    <span>ZOOM DE NODO // EAS MEDINYÀ</span>
+                  </div>
+                  <div id="slideHubStatusBadge" style="font-family: var(--font-mono); font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 3px; background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.35); color: #F87171;">
+                    8 SURTIDORES · COLAPSO
+                  </div>
+                </div>
+
+                <div style="width: 100%; height: 175px; position: relative; background: #05070B; overflow: hidden;">
+                  <canvas id="slideSimCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
+                </div>
+              </div>
+
+              <!-- Fila 2: Gran Tarjeta Hero de Espera -->
+              <div id="slideHeroCard" style="padding: 14px 20px; border-bottom: 1px solid var(--bw-border); border-left: 3px solid #EF4444; background: rgba(255,255,255,0.02);">
+                <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 1px; color: var(--accent-cyan); text-transform: uppercase;">
+                  PROPUESTA DE VALOR PREDICTIVA
+                </div>
+                <div id="slideHeroVal" class="font-mono" style="font-size: 46px; font-weight: 800; color: #F87171; line-height: 1; margin: 4px 0;">
+                  38 MIN
+                </div>
+                <div id="slideHeroDesc" style="font-size: 12px; color: var(--bw-text-muted); line-height: 1.4;">
+                  Colapso por convergencia simultánea · Camiones esperando con motor al ralentí
+                </div>
+              </div>
+
+              <!-- Fila 3: Rejilla de Impacto Económico / Legal -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--bw-border);">
+                <div style="padding: 12px 18px; border-right: 1px solid var(--bw-border); background: rgba(255,255,255,0.01);">
+                  <span style="font-size: 10px; font-family: var(--font-mono); color: #71717A; text-transform: uppercase; font-weight: 700;">Sanciones Tacógrafo</span>
+                  <div id="slideFineVal" class="font-mono" style="font-size: 18px; font-weight: 700; color: #EF4444; margin-top: 3px;">2.001 € (LOTT)</div>
+                </div>
+                <div style="padding: 12px 18px; background: rgba(255,255,255,0.01);">
+                  <span style="font-size: 10px; font-family: var(--font-mono); color: #71717A; text-transform: uppercase; font-weight: 700;">Diésel al Ralentí</span>
+                  <div id="slideFuelVal" class="font-mono" style="font-size: 18px; font-weight: 700; color: var(--accent-amber); margin-top: 3px;">14,2 L / Camión</div>
+                </div>
+              </div>
+
+              <!-- Fila 4: Curva de Demanda y Ocupación EAS Medinyà -->
+              <div style="display: grid; grid-template-columns: 90px 1fr; gap: 16px; align-items: center; padding: 14px 20px; background: rgba(255,255,255,0.015); flex: 1;">
+                <div style="position: relative; width: 78px; height: 78px; display: flex; align-items: center; justify-content: center;">
+                  <svg width="78" height="78" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="12"/>
+                    <circle id="slideDonutOcc" cx="50" cy="50" r="38" fill="none" stroke="#EF4444" stroke-width="12" stroke-dasharray="238" stroke-dashoffset="119" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                  </svg>
+                  <div style="position: absolute; text-align: center; font-family: var(--font-mono);">
+                    <div id="slideDonutText" style="font-size: 14px; font-weight: 700; color: #FFF;">100%+</div>
+                    <div style="font-size: 7px; color: #71717A; text-transform: uppercase;">SURTIDORES</div>
+                  </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 4px; font-family: var(--font-mono);">
+                  <div style="display: flex; justify-content: space-between; font-size: 9px; text-transform: uppercase;">
+                    <span style="color: #A1A1AA;">Curva de Demanda EAS</span>
+                    <span id="slideDemandStatus" style="color: #EF4444; font-weight: 700;">COLAPSO (+195%)</span>
+                  </div>
+                  <div style="display: flex; align-items: flex-end; height: 38px; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-top: 4px;">
+                    <div id="sd1" style="flex: 1; background: var(--accent-blue); height: 25%; border-radius: 2px 2px 0 0; transition: all 0.3s;"></div>
+                    <div id="sd2" style="flex: 1; background: var(--accent-blue); height: 35%; border-radius: 2px 2px 0 0; transition: all 0.3s;"></div>
+                    <div id="sd3" style="flex: 1; background: #EF4444; height: 96%; border-radius: 2px 2px 0 0; transition: all 0.3s;"></div>
+                    <div id="sd4" style="flex: 1; background: #EF4444; height: 96%; border-radius: 2px 2px 0 0; transition: all 0.3s;"></div>
+                    <div id="sd5" style="flex: 1; background: var(--accent-blue); height: 40%; border-radius: 2px 2px 0 0; transition: all 0.3s;"></div>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; font-size: 8px; color: #71717A;">
+                    <span>+10m</span><span>+20m</span><span>+30m</span><span>+40m</span><span>+50m</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 2.3. POR QUÉ POSTA (BENCHMARK) -->
+        <section class="slide frame frame--light" id="slide-7" data-title="Por qué POSTA" data-section="LA SOLUCIÓN" data-mood="Color">
+          <style>
+            .bm-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; flex: 1; }
+            .bm-table th, .bm-table td { padding: 10px 8px; text-align: center; vertical-align: middle; border-bottom: 1px solid var(--paper-border); }
+            .bm-table thead th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--paper-text-muted); line-height: 1.3; }
+            .bm-table .bm-row { text-align: left; font-size: 13px; font-weight: 700; color: var(--paper-text-main); width: 190px; }
+            .bm-sub { font-weight: 500; color: var(--paper-text-dim); }
+            .bm-y { color: #16A34A; font-size: 20px; font-weight: 800; }
+            .bm-n { color: var(--paper-text-dim); font-size: 18px; }
+            .bm-h { color: var(--accent-amber); font-size: 18px; }
+            .bm-dash { color: var(--paper-text-dim); }
+            .bm-note { display: block; font-size: 10px; color: var(--paper-text-muted); margin-top: 2px; line-height: 1.25; }
+            .bm-txt { font-size: 12px; font-weight: 600; color: var(--paper-text-main); line-height: 1.3; }
+            .bm-table .bm-posta { background: rgba(255, 122, 80, 0.10); border-left: 2px solid #FF7A50; border-right: 2px solid #FF7A50; }
+            .bm-table thead .bm-posta { color: #FF7A50; font-family: var(--font-display); font-size: 18px; border-top: 2px solid #FF7A50; border-radius: 6px 6px 0 0; }
+            .bm-table tbody tr:last-child .bm-posta { border-bottom: 2px solid #FF7A50; }
+            .bm-price { color: #FF7A50; font-weight: 800; }
+          </style>
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 06 · POR QUÉ POSTA</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>BENCHMARK DE COMPETIDORES</span>
+            </div>
+          </div>
+
+          <div class="frame-head" style="margin-bottom: 18px;">
+            <span class="editorial-kicker">POR QUÉ NOSOTROS Y NO OTROS</span>
+            <h2 class="editorial-title">SOLO POSTA MIDE ESPAÑA Y PREDICE SI HABRÁ SITIO CUANDO LLEGUES.</h2>
+          </div>
+
+          <table class="bm-table">
+            <thead>
+              <tr><th></th><th>LKW.APP<br><span class='bm-sub'>TIMOCOM</span></th><th>Bosch Secure<br>Truck Parking</th><th>TRAVIS /<br>Mowiz Truck</th><th>Toll Collect<br>+ HERE</th><th>Webfleet /<br>Frotcom</th><th>Google Maps /<br>TomTom</th><th class="bm-posta">POSTA</th></tr>
+            </thead>
+            <tbody>
+              <tr><th class="bm-row">Ocupación medida en España</th><td><span class="bm-n">✕</span><span class="bm-note">La estima</span></td><td><span class="bm-h">◐</span><span class="bm-note">Solo sus plazas</span></td><td><span class="bm-h">◐</span><span class="bm-note">Solo sus plazas</span></td><td><span class="bm-n">✕</span><span class="bm-note">Solo Alemania</span></td><td><span class="bm-n">✕</span></td><td><span class="bm-n">✕</span></td><td class="bm-posta"><span class="bm-y">✓</span></td></tr>
+              <tr><th class="bm-row">Predicción a la hora de llegada</th><td><span class="bm-y">✓</span><span class="bm-note">Hasta 15 h</span></td><td><span class="bm-n">✕</span></td><td><span class="bm-n">✕</span></td><td><span class="bm-n">✕</span></td><td><span class="bm-n">✕</span></td><td><span class="bm-n">✕</span></td><td class="bm-posta"><span class="bm-y">✓</span></td></tr>
+              <tr><th class="bm-row">API para otras plataformas</th><td><span class="bm-y">✓</span></td><td><span class="bm-y">✓</span><span class="bm-note">Bosch L.OS</span></td><td><span class="bm-h">◐</span><span class="bm-note">TRAVIS sí, Mowiz no</span></td><td><span class="bm-y">✓</span><span class="bm-note">Vía HERE</span></td><td><span class="bm-y">✓</span></td><td><span class="bm-dash">—</span></td><td class="bm-posta"><span class="bm-y">✓</span></td></tr>
+              <tr><th class="bm-row">Reserva de plaza</th><td><span class="bm-y">✓</span><span class="bm-note">Con TRAVIS</span></td><td><span class="bm-y">✓</span></td><td><span class="bm-y">✓</span></td><td><span class="bm-n">✕</span></td><td><span class="bm-h">◐</span><span class="bm-note">Webfleet, con Bosch</span></td><td><span class="bm-n">✕</span></td><td class="bm-posta"><span class="bm-h">◐</span><span class="bm-note">Con socios</span></td></tr>
+              <tr><th class="bm-row">Precio</th><td><span class="bm-txt">Gratis</span></td><td><span class="bm-txt">Por noche</span></td><td><span class="bm-txt">Por noche</span></td><td><span class="bm-txt">Gratis</span></td><td><span class="bm-txt">15–35 €<br>vehículo/mes</span></td><td><span class="bm-txt">Gratis</span></td><td class="bm-posta"><span class="bm-txt bm-price">15 €<br>camión/mes</span></td></tr>
+            </tbody>
+          </table>
+
+          <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 12px; line-height: 1.4;">
+            ✓ sí · ◐ en parte · ✕ no. POSTA: producto en desarrollo, piloto en la AP-7 en el cuarto trimestre de 2026. Fuentes: webs y notas de prensa de cada empresa (2024–2026), transport-online.de, VerkehrsRundschau, ERTICO, subger.com (precios de Webfleet).
+          </p>
+        </section>
+
+        <!-- 2.4. CON QUIÉN HEMOS HABLADO -->
+        <section class="slide frame frame--light" id="slide-8" data-title="Con quién hemos hablado" data-section="LA SOLUCIÓN" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 07 · CON QUIÉN HEMOS HABLADO</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>ENTREVISTAS · NOVIEMBRE 2026</span>
+            </div>
+          </div>
+
+          <div class="frame-head" style="margin-bottom: 22px;">
+            <span class="editorial-kicker">VALIDACIÓN EN LA CARRETERA</span>
+            <h2 class="editorial-title">HEMOS HABLADO CON 2 CAMIONEROS Y UNA EMPRESA DE TRANSPORTE.</h2>
+          </div>
+
+          <div class="grid-editorial-3" style="min-height: 0;">
+            <div class="card-clean" style="justify-content: flex-start; padding: 0; overflow: hidden;">
+              <div class="photo-frame" style="height: 220px; border-radius: 0;">
+                <img src="assets/drivers/miguel.jpg" alt="Miguel en su cabina" style="object-fit: cover; object-position: center 25%;">
+              </div>
+              <div style="padding: 20px 22px;">
+                <span class="editorial-kicker">CONDUCTOR ASALARIADO</span>
+                <h3 style="font-family: var(--font-display); font-size: 26px; font-weight: 700; margin: 6px 0 10px;">Miguel</h3>
+                <p style="font-size: 15px; color: var(--paper-text-main); line-height: 1.45;">Valora mucho poder reservar plaza. Hoy busca sitio con Google Maps.</p>
+              </div>
+            </div>
+
+            <div class="card-clean" style="justify-content: flex-start; padding: 0; overflow: hidden;">
+              <div class="photo-frame" style="height: 220px; border-radius: 0;">
+                <img src="assets/drivers/marius.jpg" alt="Marius en el escalón de su camión" style="object-fit: cover; object-position: center 20%;">
+              </div>
+              <div style="padding: 20px 22px;">
+                <span class="editorial-kicker">CONDUCTOR AUTÓNOMO</span>
+                <h3 style="font-family: var(--font-display); font-size: 26px; font-weight: 700; margin: 6px 0 10px;">Marius</h3>
+                <p style="font-size: 15px; color: var(--paper-text-main); line-height: 1.45;">Los aparcamientos se llenan de 20:00 a 2:00. Es cuando más falta saber dónde parar.</p>
+              </div>
+            </div>
+
+            <div class="card-clean" style="border: 2px solid var(--accent-warm); background: #FFFFFF; justify-content: center; align-items: center; text-align: center;">
+              <span class="editorial-kicker">EMPRESA DE TRANSPORTE</span>
+              <img src="assets/companies/catergest.png" alt="Catergest" style="width: 90%; max-width: 340px; aspect-ratio: 2.4 / 1; object-fit: cover; object-position: center 50%; margin-top: 10px;">
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             BLOQUE 3: EL NEGOCIO
+             ================================================================ -->
+
+        <!-- 3.1. MODELO ECONÓMICO -->
+        <section class="slide frame frame--light" id="slide-9" data-title="Modelo Económico" data-section="EL NEGOCIO" data-mood="Color">
+          <style>
+            #slide-9 .me-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 26px; flex: 1; min-height: 0; }
+            #slide-9 .me-ticket { position: relative; overflow: hidden; border-radius: 10px; padding: 32px 36px; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between;
+              background: radial-gradient(circle at 85% 15%, rgba(255,255,255,0.22) 0, rgba(255,255,255,0) 45%), linear-gradient(135deg, #FF8A5C 0%, #E26D46 55%, #B94B2A 100%);
+              box-shadow: 0 18px 40px -18px rgba(226, 109, 70, 0.65); }
+            #slide-9 .me-ticket::after { content: ""; position: absolute; right: -60px; bottom: -60px; width: 220px; height: 220px; border-radius: 50%; border: 28px solid rgba(255,255,255,0.10); }
+            #slide-9 .me-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; background: rgba(17,20,26,0.18); border: 1px solid rgba(255,255,255,0.35); padding: 6px 12px; border-radius: 999px; align-self: flex-start; }
+            #slide-9 .me-big { font-family: var(--font-display); font-weight: 800; font-size: 128px; line-height: 0.85; letter-spacing: -5px; white-space: nowrap; }
+            #slide-9 .me-unit { font-family: var(--font-display); font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: 1px; margin-top: 16px; }
+            #slide-9 .me-foot { display: flex; gap: 10px; position: relative; z-index: 1; }
+            #slide-9 .me-pill { background: #FFFFFF; color: #B94B2A; border-radius: 999px; padding: 7px 14px; font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+            #slide-9 .me-right { background: var(--paper-surface); border: 1px solid var(--paper-border); border-radius: 10px; padding: 28px 32px; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; }
+            #slide-9 .me-waffle { display: grid; grid-template-columns: repeat(10, 25px); grid-auto-rows: 25px; gap: 6px; }
+            #slide-9 .me-waffle span { border-radius: 5px; background: #11141A; }
+            #slide-9 .me-waffle span.on { background: #FF7A50; box-shadow: 0 0 0 3px rgba(255,122,80,0.25); }
+            #slide-9 .me-legend { display: flex; flex-direction: column; gap: 22px; }
+            #slide-9 .me-key { display: flex; gap: 12px; align-items: flex-start; }
+            #slide-9 .me-dot { width: 14px; height: 14px; border-radius: 4px; margin-top: 8px; flex-shrink: 0; }
+            #slide-9 .me-val { font-family: var(--font-display); font-weight: 800; font-size: 38px; letter-spacing: -1px; line-height: 1; white-space: nowrap; }
+            #slide-9 .me-lab { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--paper-text-muted); margin-top: 6px; }
+            #slide-9 .me-claim { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.25; text-transform: uppercase; border-top: 1px solid var(--paper-border); padding-top: 18px; }
+          </style>
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 08 · MODELO ECONÓMICO</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>SUSCRIPCIÓN B2B</span>
+            </div>
+          </div>
+
+          <div class="frame-head" style="margin-bottom: 20px;">
+            <span class="editorial-kicker">UN SOLO PRECIO</span>
+            <h2 class="editorial-title">PAGA LA EMPRESA. POR CAMIÓN, CADA MES.</h2>
+          </div>
+
+          <div class="me-grid">
+            <div class="me-ticket">
+              <span class="me-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="15" height="10" rx="2"/><path d="M16 10h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="19" cy="18" r="2"/></svg>
+                Suscripción de flota
+              </span>
+              <div style="position: relative; z-index: 1;">
+                <div class="me-big">15 €</div>
+                <div class="me-unit">Por camión / mes</div>
+              </div>
+              <div class="me-foot">
+                <span class="me-pill">180 € / AÑO</span>
+                <span class="me-pill">SIN COMISIONES</span>
+              </div>
+            </div>
+
+            <div class="me-right">
+              <div class="me-waffle" aria-label="98 casillas oscuras y 2 naranjas">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span class="on"></span>
+              </div>
+
+              <div class="me-legend">
+                <span class="editorial-kicker">AL AÑO, POR CAMIÓN</span>
+                <div class="me-key">
+                  <span class="me-dot" style="background: #11141A;"></span>
+                  <div><div class="me-val">8.400 €</div><div class="me-lab">Lo que pierde buscando sitio</div></div>
+                </div>
+                <div class="me-key">
+                  <span class="me-dot" style="background: #FF7A50;"></span>
+                  <div><div class="me-val" style="color: #FF7A50;">180 €</div><div class="me-lab">Lo que cuesta POSTA</div></div>
+                </div>
+                <div class="me-claim">De cada 100 € perdidos, POSTA cuesta <span style="color: #FF7A50;">2</span>.</div>
+              </div>
+            </div>
+          </div>
+          <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 12px; line-height: 1.35; font-style: italic;">Estimación POSTA: 30 min y 20 km extra al día durante 230 días (DEKRA 2026; Observatorio de costes del Ministerio de Transportes). 180 € son el 2,1 % de 8.400 €.</p>
+        </section>
+
+        <!-- 3.2. MERCADO -->
+        <section class="slide frame frame--light" id="slide-10" data-title="Mercado" data-section="EL NEGOCIO" data-mood="Color">
+          <style>
+            #slide-10 .mk-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 34px; flex: 1; min-height: 0; align-items: center; }
+            #slide-10 .mk-rings { position: relative; width: 100%; max-width: 440px; aspect-ratio: 1 / 1; margin: 0 auto; }
+            #slide-10 .mk-ring { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); border-radius: 50%; display: flex; justify-content: center; }
+            #slide-10 .mk-tam { width: 100%; height: 100%; background: radial-gradient(circle at 50% 30%, #F8FAFC 0, #E2E8F0 100%); border: 1px solid #CBD5E1; }
+            #slide-10 .mk-sam { width: 66%; height: 66%; background: radial-gradient(circle at 50% 30%, #FFE3D6 0, #FFC2A8 100%); border: 1px solid #FFAF8C; }
+            #slide-10 .mk-som { width: 30%; height: 30%; background: linear-gradient(135deg, #FF8A5C 0%, #E26D46 60%, #B94B2A 100%); box-shadow: 0 14px 30px -12px rgba(226,109,70,0.7); align-items: center; }
+            #slide-10 .mk-ring-label { font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 7%; }
+            #slide-10 .mk-tam .mk-ring-label { color: #64748B; margin-top: 9%; }
+            #slide-10 .mk-sam .mk-ring-label { color: #B94B2A; margin-top: 12%; }
+            #slide-10 .mk-som .mk-ring-label { color: #FFFFFF; margin-top: 0; font-size: 15px; }
+            #slide-10 .mk-rows { display: flex; flex-direction: column; gap: 14px; }
+            #slide-10 .mk-row { display: grid; grid-template-columns: 6px 1fr auto; gap: 18px; align-items: center; background: var(--paper-surface); border: 1px solid var(--paper-border); border-radius: 10px; padding: 18px 22px 18px 0; overflow: hidden; }
+            #slide-10 .mk-bar { align-self: stretch; margin: -18px 0; }
+            #slide-10 .mk-scope { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+            #slide-10 .mk-trucks { font-family: var(--font-display); font-weight: 700; font-size: 19px; margin-top: 4px; color: var(--paper-text-main); }
+            #slide-10 .mk-eur { font-family: var(--font-display); font-weight: 800; font-size: 46px; letter-spacing: -2px; white-space: nowrap; color: var(--paper-text-main); }
+            #slide-10 .mk-row.som { background: #FFF6F1; border-color: #FFC2A8; }
+          </style>
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 09 · MERCADO</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>DATOS: EUROSTAT 2024 · CABEZAS TRACTORAS</span>
+            </div>
+          </div>
+
+          <div class="frame-head" style="margin-bottom: 20px;">
+            <span class="editorial-kicker">SOLO QUIENES TIENEN QUE PARAR A DORMIR FUERA · 15 €/CAMIÓN/MES</span>
+            <h2 class="editorial-title">539.000 CAMIONES DE LARGA DISTANCIA BUSCAN DÓNDE DORMIR CADA NOCHE.</h2>
+          </div>
+
+          <div class="mk-grid">
+            <div class="mk-rings" aria-hidden="true">
+              <div class="mk-ring mk-tam"><span class="mk-ring-label">TAM</span></div>
+              <div class="mk-ring mk-sam"><span class="mk-ring-label">SAM</span></div>
+              <div class="mk-ring mk-som"><span class="mk-ring-label">SOM</span></div>
+            </div>
+
+            <div class="mk-rows">
+              <div class="mk-row">
+                <span class="mk-bar" style="background: #94A3B8;"></span>
+                <div>
+                  <div class="mk-scope" style="color: #64748B;">TAM · Unión Europea</div>
+                  <div class="mk-trucks">2,26 M camiones</div>
+                </div>
+                <div class="mk-eur">407 M€</div>
+              </div>
+
+              <div class="mk-row">
+                <span class="mk-bar" style="background: #FFAF8C;"></span>
+                <div>
+                  <div class="mk-scope" style="color: #B94B2A;">SAM · España, Francia, Portugal</div>
+                  <div class="mk-trucks">538.844 camiones</div>
+                </div>
+                <div class="mk-eur">97 M€</div>
+              </div>
+
+              <div class="mk-row som">
+                <span class="mk-bar" style="background: #E26D46;"></span>
+                <div>
+                  <div class="mk-scope" style="color: #E26D46;">SOM · España, 3 años</div>
+                  <div class="mk-trucks">6.750 camiones</div>
+                </div>
+                <div class="mk-eur" style="color: #E26D46;">1,2 M€</div>
+              </div>
+            </div>
+          </div>
+          <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 12px; line-height: 1.35; font-style: italic;">Fuente: Eurostat, tran_r_vehst, cabezas tractoras 2024 (UE 2.260.141; España 258.920; Francia 223.215; Portugal 56.709), el camión típico de la larga distancia. SOM: supuesto propio (15 flotas directas y 3 plataformas de flota). Círculos no a escala.</p>
+        </section>
+
+        <!-- 3.3. GO-TO-MARKET & ESCALA -->
+        <section class="slide frame frame--light" id="slide-11" data-title="Go-To-Market" data-section="EL NEGOCIO" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 10 · GO-TO-MARKET & ESCALA</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>ESTRATEGIA DE EXPANSIÓN & MOAT DEFENSIVO</span>
+            </div>
+          </div>
+
+          <div class="frame-head" style="margin-bottom: 4px;">
+            <span class="editorial-kicker">DEL DATO ABIERTO A LA BARRERA FÍSICA INEXPUGNABLE</span>
+            <h2 class="editorial-title">NUESTRA PIRÁMIDE DE CRECIMIENTO.</h2>
+          </div>
+
+          <div class="gtm-layout">
+            
+            <!-- Columna Izquierda: Diagrama Piramidal Isométrico -->
+            <div class="pyramid-visual-col">
+              <svg class="pyramid-svg-container" viewBox="0 0 280 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="deckGradP3" x1="140" y1="20" x2="140" y2="85" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#E26D46"/>
+                    <stop offset="100%" stop-color="#C2410C"/>
+                  </linearGradient>
+                  <linearGradient id="deckGradP2" x1="140" y1="95" x2="140" y2="175" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#0284C7"/>
+                    <stop offset="100%" stop-color="#0369A1"/>
+                  </linearGradient>
+                  <linearGradient id="deckGradP1" x1="140" y1="185" x2="140" y2="275" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#475569"/>
+                    <stop offset="100%" stop-color="#1E293B"/>
+                  </linearGradient>
+                  <linearGradient id="deckGradP3Dark" x1="140" y1="20" x2="220" y2="85" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#C2410C"/>
+                    <stop offset="100%" stop-color="#9A3412"/>
+                  </linearGradient>
+                  <linearGradient id="deckGradP2Dark" x1="140" y1="95" x2="245" y2="175" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#0369A1"/>
+                    <stop offset="100%" stop-color="#075985"/>
+                  </linearGradient>
+                  <linearGradient id="deckGradP1Dark" x1="140" y1="185" x2="270" y2="275" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#1E293B"/>
+                    <stop offset="100%" stop-color="#0F172A"/>
+                  </linearGradient>
+                  <filter id="deckShadowPyramid" x="-20" y="0" width="320" height="310" filterUnits="userSpaceOnUse">
+                    <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.14"/>
+                  </filter>
+                </defs>
+
+                <!-- Sombras proyectadas de base -->
+                <ellipse cx="140" cy="285" rx="120" ry="7" fill="#CBD5E1" opacity="0.6"/>
+
+                <!-- PISO 1: BASE ANCHA (APIs & Datos Abiertos) -->
+                <g filter="url(#deckShadowPyramid)">
+                  <polygon points="140,185 24,270 140,278" fill="url(#deckGradP1)"/>
+                  <polygon points="140,185 140,278 256,270" fill="url(#deckGradP1Dark)"/>
+                  <polygon points="140,185 82,192 140,198 198,192" fill="#64748B"/>
+                </g>
+
+                <!-- PISO 2: TRONCO INTERMEDIO (Red de Información / Concurrencia) -->
+                <g filter="url(#deckShadowPyramid)">
+                  <polygon points="140,96 60,175 140,182" fill="url(#deckGradP2)"/>
+                  <polygon points="140,96 140,182 220,175" fill="url(#deckGradP2Dark)"/>
+                  <polygon points="140,96 100,103 140,108 180,103" fill="#38BDF8"/>
+                </g>
+
+                <!-- PISO 3: CÚSPIDE (Presencia Física & Hardware) -->
+                <g filter="url(#deckShadowPyramid)">
+                  <polygon points="140,16 98,85 140,91" fill="url(#deckGradP3)"/>
+                  <polygon points="140,16 140,91 182,85" fill="url(#deckGradP3Dark)"/>
+                  <circle cx="140" cy="16" r="4.5" fill="#FFFFFF"/>
+                </g>
+
+                <!-- Rótulos exteriores -->
+                <line x1="140" y1="52" x2="242" y2="52" stroke="#E26D46" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <circle cx="242" cy="52" r="2.5" fill="#E26D46"/>
+                <rect x="180" y="32" width="92" height="18" rx="3" fill="#FFF1EE" stroke="#E26D46" stroke-width="0.8"/>
+                <text x="226" y="44" text-anchor="middle" fill="#C2410C" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700">03 · HARDWARE</text>
+
+                <line x1="140" y1="138" x2="252" y2="138" stroke="#0284C7" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <circle cx="252" cy="138" r="2.5" fill="#0284C7"/>
+                <rect x="180" y="118" width="92" height="18" rx="3" fill="#E0F2FE" stroke="#0284C7" stroke-width="0.8"/>
+                <text x="226" y="130" text-anchor="middle" fill="#0369A1" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700">02 · RED INFO</text>
+
+                <line x1="140" y1="230" x2="262" y2="230" stroke="#475569" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <circle cx="262" cy="230" r="2.5" fill="#475569"/>
+                <rect x="180" y="210" width="92" height="18" rx="3" fill="#F1F5F9" stroke="#475569" stroke-width="0.8"/>
+                <text x="226" y="222" text-anchor="middle" fill="#1E293B" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700">01 · TODAS APIs</text>
+
+                <!-- Iconos sobre las caras -->
+                <g transform="translate(133, 56) scale(0.65)" stroke="#FFFFFF" fill="none" stroke-width="2.5">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                  <circle cx="12" cy="13" r="4"/>
+                </g>
+                <g transform="translate(132, 142) scale(0.65)" stroke="#FFFFFF" fill="none" stroke-width="2.5">
+                  <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                  <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/>
+                </g>
+                <g transform="translate(132, 235) scale(0.65)" stroke="#FFFFFF" fill="none" stroke-width="2.5">
+                  <rect width="8" height="8" x="3" y="3" rx="1"/><rect width="8" height="8" x="13" y="3" rx="1"/>
+                  <rect width="8" height="8" x="13" y="13" rx="1"/><rect width="8" height="8" x="3" y="13" rx="1"/>
+                </g>
+              </svg>
+
+              <div class="pyramid-growth-flow">
+                <span>Software Ágil</span>
+                <span class="growth-arrow">➔</span>
+                <span>Efecto Red</span>
+                <span class="growth-arrow">➔</span>
+                <span style="color: var(--accent-warm); font-weight: 800;">Moat Físico</span>
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Tarjetas Escalonadas -->
+            <div class="pyramid-tiers-col">
+
+              <!-- PISO 3: CÚSPIDE -->
+              <div class="tier-card tier-card-p3">
+                <div>
+                  <div class="tier-header">
+                    <span class="tier-badge tier-badge-p3">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 2 8 8-8 8-8-8z"/><path d="m2 10 10-5 10 5"/></svg>
+                      PISO 3 · MÁXIMA EFICIENCIA & BARRERA DEFENSIVA
+                    </span>
+                    <span class="tier-moat-tag">MOAT INEXPUGNABLE · DATO MEDIDO</span>
+                  </div>
+                  <div class="tier-title-row">
+                    <h3 class="tier-title">Presencia Física y Despliegue de Hardware en el Mercado</h3>
+                  </div>
+                  <p class="tier-desc">
+                    Instalamos <strong>cámaras inteligentes con visión artificial (Edge AI)</strong> y sensores LPR en áreas convencionales y descampados donde hoy nadie mide la ocupación. Pasamos de la <strong>estimación probabilística al dato físico irrefutable</strong> en tiempo real.
+                  </p>
+                </div>
+                <div class="hardware-chips">
+                  <div class="hw-chip">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                    Cámaras Computer Vision
+                  </div>
+                  <div class="hw-chip">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    Lectores de Matrícula (LPR)
+                  </div>
+                  <div class="hw-chip">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                    Proveedor Oficial NAP (RD 450/2026)
+                  </div>
+                </div>
+              </div>
+
+              <!-- PISO 2: TRONCO -->
+              <div class="tier-card tier-card-p2">
+                <div>
+                  <div class="tier-header">
+                    <span class="tier-badge tier-badge-p2">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+                      PISO 2 · EL NÚCLEO DE NUESTRO NEGOCIO
+                    </span>
+                    <span class="tier-moat-tag">DEMANDA CONCURRENTE SIMULTÁNEA</span>
+                  </div>
+                  <div class="tier-title-row">
+                    <h3 class="tier-title">La Red de Información: Todos Consultan a POSTA a la Vez</h3>
+                  </div>
+                  <p class="tier-desc">
+                    Nuestro valor diferencial: centralizamos las consultas simultáneas de cientos de flotas en ruta. 
+                    Al saber <strong>quién va hacia dónde y con cuántas horas remanentes de tacógrafo</strong>, el algoritmo predice el colapso de un área <strong>90 minutos antes</strong> de que ocurra. Ninguna flota aislada puede ver esto.
+                  </p>
+                </div>
+                <div class="network-chips">
+                  <div class="net-chip">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Consultas Concurrentes de Flotas
+                  </div>
+                  <div class="net-chip">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Anticipación Predictiva 90 min
+                  </div>
+                  <div class="net-chip">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 9 20-5-5 20-4-8-11-7z"/></svg>
+                    Flywheel: + Flotas = + Precisión
+                  </div>
+                </div>
+              </div>
+
+              <!-- PISO 1: BASE -->
+              <div class="tier-card tier-card-p1">
+                <div>
+                  <div class="tier-header">
+                    <span class="tier-badge tier-badge-p1">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="8" height="8" x="3" y="3" rx="1"/><rect width="8" height="8" x="13" y="3" rx="1"/><rect width="8" height="8" x="13" y="13" rx="1"/><rect width="8" height="8" x="3" y="13" rx="1"/></svg>
+                      PISO 1 · LA BASE DEL ALGORITMO (DÍA 1)
+                    </span>
+                    <span class="tier-moat-tag">ZERO HARDWARE · ADOPCIÓN INMEDIATA</span>
+                  </div>
+                  <div class="tier-title-row">
+                    <h3 class="tier-title">Ingesta Universal de Todas las APIs del Ecosistema</h3>
+                  </div>
+                  <p class="tier-desc">
+                    Arrancamos sin fricción ni inversión física: integramos y cruzamos los datos abiertos del Estado, cartografía global, telemática de flotas y redes de aparcamiento ya existentes.
+                  </p>
+                </div>
+
+                <!-- Grilla de Logos de APIs Oficiales -->
+                <div class="apis-logo-grid">
+                  
+                  <!-- Google Maps -->
+                  <div class="api-logo-card">
+                    <div class="api-logo-icon">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#EA4335"/>
+                        <circle cx="12" cy="9" r="2.8" fill="#FFFFFF"/>
+                        <path d="M12 2C10.2 2 8.5 2.7 7.3 3.9l4.7 4.7 4.7-4.7C15.5 2.7 13.8 2 12 2z" fill="#4285F4"/>
+                        <path d="M5 9c0 1.9.8 3.7 2.1 5l4.9-4.9-4.9-4.9C5.8 5.4 5 7.1 5 9z" fill="#FBBC04"/>
+                        <path d="M12 14.1l-4.9 4.9C8.3 19.9 10 21.1 12 22c2-.9 3.7-2.1 4.9-3l-4.9-4.9z" fill="#34A853"/>
+                      </svg>
+                    </div>
+                    <div class="api-logo-text">
+                      <span class="api-logo-name">Google Maps</span>
+                      <span class="api-logo-sub">Tráfico & Rutas API</span>
+                    </div>
+                  </div>
+
+                  <!-- Gobierno de España / DGT -->
+                  <div class="api-logo-card">
+                    <div class="api-logo-icon">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <rect width="24" height="24" rx="4" fill="#B91C1C"/>
+                        <rect x="0" y="7" width="24" height="10" fill="#F59E0B"/>
+                        <rect x="0" y="10.5" width="24" height="3" fill="#DC2626"/>
+                        <circle cx="6" cy="12" r="2" fill="#FFFFFF"/>
+                        <text x="14" y="14" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="900" fill="#1E293B">DGT</text>
+                      </svg>
+                    </div>
+                    <div class="api-logo-text">
+                      <span class="api-logo-name">Gobierno / DGT</span>
+                      <span class="api-logo-sub">Cámaras & Aforos</span>
+                    </div>
+                  </div>
+
+                  <!-- Ayuntamientos & Open Data -->
+                  <div class="api-logo-card">
+                    <div class="api-logo-icon">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <circle cx="12" cy="12" r="10" fill="#0284C7"/>
+                        <path d="M12 6v6l4 2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="12" cy="12" r="2.2" fill="#FFFFFF"/>
+                        <path d="M4 12h3M17 12h3M12 4v3M12 17v3" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <div class="api-logo-text">
+                      <span class="api-logo-name">Ayuntamientos</span>
+                      <span class="api-logo-sub">Open Data Municipal</span>
+                    </div>
+                  </div>
+
+                  <!-- FMS / Webfleet -->
+                  <div class="api-logo-card">
+                    <div class="api-logo-icon">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <rect width="24" height="24" rx="4" fill="#0F172A"/>
+                        <circle cx="12" cy="12" r="7" stroke="#38BDF8" stroke-width="2"/>
+                        <path d="M12 8v4l3 3" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="12" cy="12" r="2" fill="#38BDF8"/>
+                      </svg>
+                    </div>
+                    <div class="api-logo-text">
+                      <span class="api-logo-name">FMS / Webfleet</span>
+                      <span class="api-logo-sub">Tacógrafo G2V2</span>
+                    </div>
+                  </div>
+
+                  <!-- Mowiz / Bosch SSTPA -->
+                  <div class="api-logo-card">
+                    <div class="api-logo-icon">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <rect width="24" height="24" rx="4" fill="#047857"/>
+                        <path d="M8 6h5a3 3 0 0 1 0 6H8v6H5V6h3zm0 4h5a1 1 0 0 0 0-2H8v2z" fill="#FFFFFF"/>
+                        <circle cx="17" cy="16" r="3" fill="#34D399"/>
+                      </svg>
+                    </div>
+                    <div class="api-logo-text">
+                      <span class="api-logo-name">Mowiz / Bosch</span>
+                      <span class="api-logo-sub">Parkings SSTPA</span>
+                    </div>
+                  </div>
+
+                  <!-- AEMET -->
+                  <div class="api-logo-card">
+                    <div class="api-logo-icon">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <rect width="24" height="24" rx="4" fill="#0284C7"/>
+                        <path d="M6 15a3.5 3.5 0 0 1-.2-7A4.5 4.5 0 0 1 14.5 6a4 4 0 0 1 3.5 5A3 3 0 0 1 17 17H6z" fill="#FFFFFF"/>
+                        <path d="M9 18l1.5 2.5M13 18l1.5 2.5" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <div class="api-logo-text">
+                      <span class="api-logo-name">AEMET</span>
+                      <span class="api-logo-sub">Alertas Climáticas</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Pie de Diapositiva -->
+          <div class="gtm-footer-bar">
+            <div class="flywheel-pill">
+              <span style="color: var(--accent-warm); font-weight: 800;">FLYWHEEL:</span>
+              <span>Entramos con <strong>software puro (cero capex)</strong> ➔ Capturamos la <strong>red de consultas</strong> ➔ Financiamos el <strong>hardware en campo</strong></span>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--paper-text-dim);">
+              VENTAJA DEFENSIVA FRENTE A BIG TECH (GOOGLE / TIMOCOM)
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             BLOQUE 4: LA EMPRESA
+             ================================================================ -->
+
+        <!-- 4.1. QUÉ HEMOS HECHO (RESEARCH) -->
+        <section class="slide frame frame--light" id="slide-12" data-title="Qué Hemos Hecho" data-section="LA EMPRESA" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA EMPRESA // 11 · QUÉ HEMOS HECHO</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>VALIDACIÓN REAL EN 48 HORAS</span>
+            </div>
+          </div>
+
+          <div class="frame-head" style="margin-bottom: 24px;">
+            <span class="editorial-kicker">DISCOVERY DE CAMPO</span>
+            <h2 class="editorial-title">HABLAR CON QUIENES VIVEN LA CARRETERA.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div class="card-clean">
+              <span class="editorial-kicker">ENTREVISTAS EN RUTA</span>
+              <div class="stat-hero-number">2</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Camioneros Internacionales</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                Validaron el miedo nocturno, la soledad y la necesidad absoluta de una plaza asegurada.
+              </p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">GESTIÓN DE FLOTA</span>
+              <div class="stat-hero-number">3</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Gerentes de Transporte</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                Confirmaron el terror a la inmovilización de camiones con carga en frío perecedera.
+              </p>
+            </div>
+
+            <div class="card-clean" style="border-left: 3px solid var(--accent-warm);">
+              <span class="editorial-kicker">INTENCIÓN DE COMPRA</span>
+              <div class="stat-hero-number" style="color: var(--accent-warm);">100%</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Disposición a Pagar</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                «Si me quitas la incertidumbre antes de Girona, pago la cuota sin pensarlo.»
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4.2. ROADMAP -->
+        <section class="slide frame frame--light" id="slide-13" data-title="Roadmap" data-section="LA EMPRESA" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA EMPRESA // 12 · ROADMAP</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>EJECUCIÓN A 12 MESES</span>
+            </div>
+          </div>
+
+          <div class="frame-head" style="margin-bottom: 24px;">
+            <span class="editorial-kicker">PLAN DE ACCIÓN</span>
+            <h2 class="editorial-title">DE STARTCAMP A LOS CORREDORES EUROPEOS.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div class="card-clean" style="border-top: 3px solid var(--accent-warm);">
+              <span class="editorial-kicker">Q4 2026 · INMEDIATO</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Piloto Alpha</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Pruebas con 120 camiones en la AP-7 y los primeros 2 parkings SSTPA asociados en Cataluña.
+              </p>
+            </div>
+
+            <div class="card-clean" style="border-top: 3px solid var(--accent-blue);">
+              <span class="editorial-kicker">Q1-Q2 2027</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Corredor Atlántico</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Integración de conectores FMS y apertura de plazas en el paso de Irún / Biriatou.
+              </p>
+            </div>
+
+            <div class="card-clean" style="border-top: 3px solid var(--paper-text-main);">
+              <span class="editorial-kicker">Q3-Q4 2027</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Escalado UE</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Expansión en el arco mediterráneo francés y aplicación a fondos europeos de transporte.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4.3. EQUIPO -->
+        <section class="slide frame frame--light" id="slide-14" data-title="Equipo" data-section="LA EMPRESA" data-mood="Color">
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA EMPRESA // 13 · EQUIPO</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>TALENTO COMPLEMENTARIO</span>
+            </div>
+          </div>
+
+          <div class="frame-head" style="margin-bottom: 24px;">
+            <span class="editorial-kicker">QUIÉNES SOMOS</span>
+            <h2 class="editorial-title">EL EQUIPO IDÓNEO PARA RESOLVERLO.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div class="card-clean">
+              <span class="editorial-kicker">NEGOCIO & LEGAL</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Estrategia & B2B</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Relación con flotas, unit economics y cumplimiento estricto del régimen sancionador LOTT.
+              </p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">TELEMÁTICA & IA</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Ingeniería & Datos</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Arquitectura del algoritmo EAS y conexión de flujos de tacógrafo satelital G2V2.
+              </p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">PRODUCTO & UX</span>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Diseño Humanista</h3>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
+                Interacción limpia en cabina para no distraer al conductor mientras conduce.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             BLOQUE 5: CONTRAPORTADA (ANIMACIÓN REAL DE ROSTROS)
+             Miguel & Marius en GRANDE (50/50) -> Retroceso a Mosaico Aleatorio -> POSTA + Eslogan
+             ================================================================ -->
+        <section class="slide" id="slide-15" data-title="Contraportada" data-section="CONTRAPORTADA" data-mood="Animation" style="padding: 0; background: #06080B;">
+          <div id="contraportada-stage">
+            
+            <!-- Mosaico masivo de 48 caras aleatorizadas de camioneros -->
+            <div class="faces-mosaic-wall" id="mosaic-wall">
+              <!-- Se inyectan 48 celdas vía JS aleatorizadas dinámicamente -->
+            </div>
+
+            <!-- Paso 1 y 2: Dúo de conductores (Miguel y Marius) en GRANDE a pantalla completa (Split 50/50) -->
+            <div class="duo-focus-container" id="duo-container">
+              
+              <!-- Mitad Izquierda: Miguel -->
+              <div class="split-driver-half" id="half-miguel">
+                <img src="assets/drivers/miguel.jpg" alt="Miguel" class="split-driver-img" style="object-position: center 25%;">
+                <div class="split-driver-overlay">
+                  <span class="split-driver-name">MIGUEL</span>
+                </div>
+              </div>
+
+              <!-- Mitad Derecha: Marius -->
+              <div class="split-driver-half" id="half-marius">
+                <img src="assets/drivers/marius.jpg" alt="Marius" class="split-driver-img" style="object-position: center 20%;">
+                <div class="split-driver-overlay">
+                  <span class="split-driver-name">MARIUS</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Paso 3 y 4: Frase y Logo Final (justo encima y en el centro con Scrim de Alto Contraste) -->
+            <div class="contraportada-finale" id="contra-finale">
+              <div class="contraportada-scrim"></div>
+              <div class="contra-posta-brand" style="display: flex; justify-content: center; align-items: center; margin-bottom: 22px;">
+                <img src="assets/logo/posta-logo-horizontal-dark.svg" alt="POSTA" class="contra-posta-logo" style="height: 84px; width: auto; max-width: 90%; object-fit: contain; filter: drop-shadow(0 4px 28px rgba(0, 0, 0, 0.95));">
+              </div>
+              <div class="contra-subtag">«LA RED DE INFORMACIÓN Y PREDICCIÓN AL SERVICIO DE PERSONAS»</div>
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Barra de Control Flotante -->
+  <aside id="toolbar">
+    <button class="tb-btn" id="btn-prev" title="Anterior (Flecha Izquierda / Espacio)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <div class="tb-indicator">
+      <span id="slide-num">01</span> / <span id="total-slides-num">14</span>
+    </div>
+    <span class="tb-section-label" id="section-label">LA IDEA</span>
+    <button class="tb-btn" id="btn-next" title="Siguiente (Flecha Derecha)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+    <button class="tb-btn" id="btn-overview" title="Vista General (O / Esc)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+    </button>
+  </aside>
+
+  <!-- Modal de Vista General -->
+  <div id="overview-modal">
+    <div style="margin-bottom: 20px; text-align: center;">
+      <h3 style="font-family: var(--font-display); font-size: 20px; color: #FFFFFF; text-transform: uppercase;">Estructura de la Presentación</h3>
+      <p style="font-size: 12px; color: #94A3B8; margin-top: 4px;">14 Diapositivas · Selecciona para saltar</p>
+    </div>
+    <div class="overview-grid" id="overview-grid-container"></div>
+  </div>
+
+  <!-- Script de Navegación, Auto-Escalado y Animación de Contraportada -->
+  <script>
+    (function() {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+
+      // Marco común: logo, marca y número se generan aquí para todas las diapositivas
+      slides.forEach((slide, i) => {
+        if (!slide.classList.contains('frame')) return;
+        slide.insertAdjacentHTML('beforeend', `
+          <svg class="frame-logo" aria-label="Posta" role="img"><use href="#posta-logo"></use></svg>
+          <div class="frame-footer"><span class="frame-brand">POSTA</span><span class="frame-num">${String(i + 1).padStart(2, '0')}</span></div>`);
+      });
+      const slideNum = document.getElementById('slide-num');
+      const totalSlides = document.getElementById('total-slides-num');
+      const sectionLabel = document.getElementById('section-label');
+      const stage = document.getElementById('presentation-stage');
+      const overviewModal = document.getElementById('overview-modal');
+      const overviewContainer = document.getElementById('overview-grid-container');
+
+      // Elementos de la Contraportada
+      const mosaicWall = document.getElementById('mosaic-wall');
+      const halfMiguel = document.getElementById('half-miguel');
+      const halfMarius = document.getElementById('half-marius');
+      const duoContainer = document.getElementById('duo-container');
+      const contraFinale = document.getElementById('contra-finale');
+
+      let current = 0;
+      const total = slides.length;
+      totalSlides.textContent = String(total).padStart(2, '0');
+
+      // 48 Fotos 100% ÚNICAS y DISTINTAS de camioneros (CERO repetición)
+      const uniqueMosaicPhotos = [];
+      for (let i = 1; i <= 48; i++) {
+        uniqueMosaicPhotos.push(`assets/drivers/unique/mosaic_face_${String(i).padStart(2, '0')}.jpg`);
+      }
+
+      // Algoritmo Fisher-Yates para aleatorizar completamente las fotos de fondo
+      function shuffleArray(arr) {
+        const a = [...arr];
+        for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+      }
+
+      function initMosaic() {
+        mosaicWall.innerHTML = '';
+        // Aleatorizamos para que fotos consecutivas o parecidas nunca queden contiguas
+        const shuffled = shuffleArray(uniqueMosaicPhotos);
+        for (let i = 0; i < shuffled.length; i++) {
+          const url = shuffled[i];
+          const cell = document.createElement('div');
+          cell.className = 'mosaic-cell';
+          cell.innerHTML = `<img src="${url}" loading="eager" alt="Camionero profesional">`;
+          mosaicWall.appendChild(cell);
+        }
+      }
+      initMosaic();
+
+      // Animación de Contraportada (Miguel & Marius en GRANDE -> Retroceso hacia el fondo -> POSTA + Eslogan)
+      let animTimeouts = [];
+      function clearAnimTimeouts() {
+        animTimeouts.forEach(t => clearTimeout(t));
+        animTimeouts = [];
+      }
+
+      function triggerContraportadaAnim() {
+        clearAnimTimeouts();
+        // Re-aleatorizamos el mosaico para máxima variedad cada vez
+        initMosaic();
+
+        // Estado inicial (reset limpio)
+        halfMiguel.classList.remove('show');
+        halfMarius.classList.remove('show');
+        duoContainer.classList.remove('receding');
+        mosaicWall.classList.remove('visible');
+        mosaicWall.classList.remove('dimmed');
+        contraFinale.classList.remove('show');
+
+        // Paso 1: Aparece Miguel en GRANDE comiéndose la mitad izquierda (300ms)
+        animTimeouts.push(setTimeout(() => {
+          halfMiguel.classList.add('show');
+        }, 300));
+
+        // Paso 2: Aparece Marius en GRANDE comiéndose la mitad derecha (1200ms)
+        animTimeouts.push(setTimeout(() => {
+          halfMarius.classList.add('show');
+        }, 1200));
+
+        // Paso 3: RETROCESO / ZOOM OUT: Todo se va hacia el fondo (3000ms)
+        // Miguel y Marius retroceden y se alejan mientras la pared aleatorizada inunda la pantalla
+        animTimeouts.push(setTimeout(() => {
+          mosaicWall.classList.add('visible');
+          duoContainer.classList.add('receding');
+        }, 3000));
+
+        // Paso 4: Aparece POSTA y el eslogan con scrim de máxima legibilidad (4400ms)
+        animTimeouts.push(setTimeout(() => {
+          mosaicWall.classList.add('dimmed');
+          contraFinale.classList.add('show');
+        }, 4400));
+      }
+
+      // Estado de Portada (Slide 1) por pasos controlados exclusivamente por el usuario (click, flecha o espacio):
+      // Paso 0: Inicio limpio (solo meta-bar)
+      // Paso 1: Sale Miguel (al pulsar flecha/espacio/click)
+      // Paso 2: Sale Marius (al pulsar flecha/espacio/click)
+      // Paso 3: Sale POSTA (al pulsar flecha/espacio/click)
+      let portadaStep = 0;
+
+      function setPortadaStep(step) {
+        portadaStep = Math.max(0, Math.min(3, step));
+        const elMiguel = document.getElementById('portada-miguel');
+        const elMarius = document.getElementById('portada-marius');
+        const elPosta = document.getElementById('portada-posta');
+
+        if (!elMiguel || !elMarius || !elPosta) return;
+
+        if (portadaStep === 0) {
+          elMiguel.classList.remove('show');
+          elMarius.classList.remove('show');
+          elPosta.classList.remove('show');
+        } else if (portadaStep === 1) {
+          elMiguel.classList.add('show');
+          elMarius.classList.remove('show');
+          elPosta.classList.remove('show');
+        } else if (portadaStep === 2) {
+          elMiguel.classList.add('show');
+          elMarius.classList.add('show');
+          elPosta.classList.remove('show');
+        } else if (portadaStep === 3) {
+          elMiguel.classList.add('show');
+          elMarius.classList.add('show');
+          elPosta.classList.add('show');
+        }
+      }
+
+      function updateSlide(idx) {
+        if (idx < 0) idx = 0;
+        if (idx >= total) idx = total - 1;
+
+        const previousIdx = current;
+
+        slides.forEach((s) => s.classList.remove('active'));
+
+        current = idx;
+        const activeSlide = slides[current];
+        activeSlide.classList.add('active');
+
+        // Actualizar barra de estado
+        slideNum.textContent = String(current + 1).padStart(2, '0');
+        const sec = activeSlide.getAttribute('data-section') || 'POSTA';
+        sectionLabel.textContent = sec;
+
+        // Configurar estado de portada (Slide 1): sin temporizador, controlado por el usuario
+        if (activeSlide.id === 'slide-1') {
+          if (previousIdx === 1) {
+            setPortadaStep(3); // Si retrocedemos desde la diapo 2, mostrar completa
+          } else {
+            setPortadaStep(0); // Al entrar o recargar, empezar desde el inicio
+          }
+        }
+
+        // Disparar animación si es la contraportada (Slide 14 / Última diapositiva)
+        if (activeSlide.id === 'slide-15' || current === total - 1) {
+          triggerContraportadaAnim();
+        } else {
+          clearAnimTimeouts();
+        }
+
+        // Si es la diapositiva del algoritmo (Slide 5: Cómo Funciona), recalcular lienzo y activar simulación
+        if (activeSlide.id === 'slide-6') {
+          if (previousIdx < 4) {
+            setSlideSimMode('conventional');
+          } else if (previousIdx > 4) {
+            setSlideSimMode('predictive');
+          }
+          setTimeout(() => {
+            resizeSpainCanvas();
+            resizeSimCanvas();
+            if (!simAnimId) renderSlideSim();
+          }, 30);
+        }
+      }
+
+      function next() {
+        // En Slide 1, cada pulsación de flecha/espacio/click avanza paso a paso: Miguel -> Marius -> POSTA
+        if (current === 0 && portadaStep < 3) {
+          setPortadaStep(portadaStep + 1);
+          return;
+        }
+
+        if (current === 4 && slideSimMode === 'conventional') {
+          setSlideSimMode('predictive');
+          return;
+        }
+        updateSlide(current + 1);
+      }
+
+      function prev() {
+        // En Slide 1, permite retroceder paso a paso
+        if (current === 0 && portadaStep > 0) {
+          setPortadaStep(portadaStep - 1);
+          return;
+        }
+
+        if (current === 4 && slideSimMode === 'predictive') {
+          setSlideSimMode('conventional');
+          return;
+        }
+        updateSlide(current - 1);
+      }
+
+      function buildOverview() {
+        overviewContainer.innerHTML = '';
+        slides.forEach((s, i) => {
+          const title = s.getAttribute('data-title') || `Slide ${i + 1}`;
+          const sec = s.getAttribute('data-section') || '';
+          const isBw = s.classList.contains('slide-mood-bw');
+          const item = document.createElement('div');
+          item.className = `overview-item ${isBw ? 'is-bw' : ''} ${i === current ? 'current' : ''}`;
+          item.innerHTML = `
+            <div class="ov-num">0${i + 1} // ${sec}</div>
+            <div class="ov-title">${title}</div>
+            <div style="font-size: 10px; color: #94A3B8;">Click para saltar</div>
+          `;
+          item.addEventListener('click', () => {
+            updateSlide(i);
+            toggleOverview(false);
+          });
+          overviewContainer.appendChild(item);
+        });
+      }
+
+      function toggleOverview(force) {
+        const isOpen = overviewModal.classList.contains('open');
+        const show = force !== undefined ? force : !isOpen;
+        if (show) {
+          buildOverview();
+          overviewModal.classList.add('open');
+        } else {
+          overviewModal.classList.remove('open');
+        }
+      }
+
+      // Atajos de Teclado
+      window.addEventListener('keydown', (e) => {
+        if (['ArrowRight', ' ', 'PageDown', 'l'].includes(e.key)) {
+          e.preventDefault();
+          next();
+        } else if (['ArrowLeft', 'PageUp', 'h'].includes(e.key)) {
+          e.preventDefault();
+          prev();
+        } else if (['o', 'O'].includes(e.key)) {
+          e.preventDefault();
+          toggleOverview();
+        } else if (e.key === 'Escape') {
+          if (overviewModal.classList.contains('open')) {
+            e.preventDefault();
+            toggleOverview(false);
+          }
+        } else if (['f', 'F'].includes(e.key)) {
+          e.preventDefault();
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(() => {});
+          } else {
+            document.exitFullscreen().catch(() => {});
+          }
+        }
+      });
+
+      document.getElementById('btn-next').addEventListener('click', next);
+      document.getElementById('btn-prev').addEventListener('click', prev);
+      document.getElementById('btn-overview').addEventListener('click', () => toggleOverview());
+      overviewModal.addEventListener('click', (e) => {
+        if (e.target === overviewModal) toggleOverview(false);
+      });
+
+      // Click directo en la Portada (Slide 1) para avanzar los pasos
+      const slide1El = document.getElementById('slide-1');
+      if (slide1El) {
+        slide1El.style.cursor = 'pointer';
+        slide1El.addEventListener('click', () => {
+          if (current === 0) next();
+        });
+      }
+
+      // =========================================================================
+      // =========================================================================
+      // SIMULADOR NATIVO SLIDE 4: MAPA DE ESPAÑA (GRANDE) + ZOOM HUB MEDINYÀ (PEQUEÑO)
+      // =========================================================================
+      let slideSimMode = 'conventional';
+      let simAnimId = null;
+
+      // 1. MAPA DE ESPAÑA (GRANDE - IZQUIERDA)
+      const spainCanvas = document.getElementById('slideSpainCanvas');
+      const spainCtx = spainCanvas ? spainCanvas.getContext('2d') : null;
+      let spainPulse = 0;
+
+      const spainCoastGeo = [
+        [-9.0, 42.9], [-9.3, 43.1], [-8.3, 43.7], [-7.7, 43.75], [-6.0, 43.6], [-4.5, 43.5], [-3.8, 43.5], [-1.8, 43.4],
+        [-1.0, 43.0], [0.5, 42.8], [2.0, 42.4], [3.15, 42.4], [3.32, 42.3],
+        [3.0, 41.8], [2.17, 41.38], [1.25, 41.1], [0.7, 40.7], [0.0, 39.9], [-0.37, 39.46], [0.2, 38.7], [-0.5, 38.35],
+        [-0.98, 37.6], [-1.8, 37.2], [-2.45, 36.8], [-3.7, 36.7], [-4.4, 36.7], [-5.4, 36.1], [-5.6, 36.0],
+        [-6.3, 36.5], [-6.9, 37.2], [-7.4, 37.15], [-8.9, 37.0],
+        [-8.8, 38.0], [-9.5, 38.8], [-9.0, 39.4], [-8.7, 40.6], [-8.7, 41.2], [-8.9, 41.9],
+        [-8.9, 42.2], [-9.0, 42.6], [-9.0, 42.9]
+      ];
+
+      const spainHubsGeo = [
+        { id: 'MAD', name: 'MADRID HUB (CTM)', lon: -3.7038, lat: 40.4168 },
+        { id: 'ZAZ', name: 'ZARAGOZA HUB (PLAZA)', lon: -0.8891, lat: 41.6488 },
+        { id: 'VLC', name: 'VALENCIA HUB (RIBAPEL)', lon: -0.3763, lat: 39.4699 },
+        { id: 'IRN', name: 'IRÚN HUB (FRONTERA)', lon: -1.7894, lat: 43.3390 },
+        { id: 'SEV', name: 'SEVILLA HUB', lon: -5.9845, lat: 37.3891 },
+        { id: 'BCN', name: 'BARCELONA HUB (ZAL)', lon: 2.1734, lat: 41.3851 },
+        { id: 'MED', name: 'EAS MEDINYÀ (GIRONA)', lon: 2.868, lat: 42.049, target: true }
+      ];
+
+      const spainCorridorsGeo = {
+        AP7: [
+          [-5.45, 36.14], [-4.42, 36.72], [-2.45, 36.84], [-0.98, 37.60],
+          [-0.50, 38.35], [-0.37, 39.46], [0.0, 39.98], [1.25, 41.11],
+          [2.17, 41.38], [2.868, 42.049], [2.88, 42.41]
+        ],
+        A2: [
+          [-3.70, 40.41], [-3.16, 40.63], [-0.88, 41.65], [0.62, 41.61],
+          [2.17, 41.38], [2.868, 42.049]
+        ],
+        A1: [
+          [-3.70, 40.41], [-3.70, 42.34], [-2.67, 42.85], [-1.78, 43.34]
+        ],
+        A3: [
+          [-3.70, 40.41], [-2.55, 39.75], [-0.37, 39.46]
+        ],
+        A4: [
+          [-3.70, 40.41], [-3.48, 39.00], [-4.77, 37.88], [-5.98, 37.38], [-5.45, 36.14]
+        ],
+        A6: [
+          [-3.70, 40.41], [-5.67, 42.00], [-7.55, 43.01], [-8.41, 43.36]
+        ]
+      };
+
+      // 36 camiones monitoreados por la red
+      const fleetRoutes = ['AP7', 'A2', 'AP7', 'A1', 'A4', 'AP7', 'A6', 'A2', 'A3', 'AP7'];
+      const fleetSpeeds = [0.0012, 0.0016, 0.0014, 0.0018, 0.0015];
+      const spainFleet = [];
+      for (let i = 0; i < 36; i++) {
+        spainFleet.push({
+          corridor: fleetRoutes[i % fleetRoutes.length],
+          t: (i * 0.081) % 1.0,
+          speed: fleetSpeeds[i % fleetSpeeds.length],
+          dir: i % 2 === 0 ? 1 : -1
+        });
+      }
+
+      function getPolylinePoint(pts, t) {
+        if (!pts || pts.length === 0) return [0, 0];
+        if (pts.length === 1) return pts[0];
+        if (t <= 0) return pts[0];
+        if (t >= 1) return pts[pts.length - 1];
+
+        let total = 0;
+        const lens = [];
+        for (let i = 0; i < pts.length - 1; i++) {
+          const d = Math.hypot(pts[i+1][0] - pts[i][0], pts[i+1][1] - pts[i][1]);
+          lens.push(d);
+          total += d;
+        }
+        const target = t * total;
+        let cur = 0;
+        for (let i = 0; i < lens.length; i++) {
+          if (cur + lens[i] >= target) {
+            const segT = (target - cur) / (lens[i] || 1);
+            return [
+              pts[i][0] + (pts[i+1][0] - pts[i][0]) * segT,
+              pts[i][1] + (pts[i+1][1] - pts[i][1]) * segT
+            ];
+          }
+          cur += lens[i];
+        }
+        return pts[pts.length - 1];
+      }
+
+      function resizeSpainCanvas() {
+        if (!spainCanvas || !spainCanvas.parentElement) return;
+        const w = spainCanvas.parentElement.clientWidth;
+        const h = spainCanvas.parentElement.clientHeight;
+        if (!w || !h) return;
+        spainCanvas.width = w;
+        spainCanvas.height = h;
+      }
+
+      // 2. ZOOM LOCAL: HUB MEDINYÀ (PEQUEÑO - DERECHA)
+      const simCanvas = document.getElementById('slideSimCanvas');
+      const simCtx = simCanvas ? simCanvas.getContext('2d') : null;
+      let simSweepAngle = 0;
+
+      // 5 camiones en el cruce de Medinyà (AP-7 y A-2)
+      const simTrucks = [
+        { id: "ES-4820", route: 0, t: 0.62, speed: 0.0011, slot: 3 },
+        { id: "PT-9104", route: 0, t: 0.35, speed: 0.0013, slot: 1 },
+        { id: "FR-3321", route: 1, t: 0.25, speed: 0.0010, slot: 5 },
+        { id: "DE-7719", route: 1, t: 0.70, speed: 0.0009, slot: 4 },
+        { id: "ES-1194", route: 0, t: 0.82, speed: 0.0014, slot: 2 }
+      ];
+
+      function resizeSimCanvas() {
+        if (!simCanvas || !simCanvas.parentElement) return;
+        const w = simCanvas.parentElement.clientWidth;
+        const h = simCanvas.parentElement.clientHeight;
+        if (!w || !h) return;
+        simCanvas.width = w;
+        simCanvas.height = h;
+        resizeSpainCanvas();
+      }
+
+      window.setSlideSimMode = function(m) {
+        slideSimMode = m;
+        const btnP = document.getElementById('slideBtnPred');
+        const btnC = document.getElementById('slideBtnConv');
+        const heroVal = document.getElementById('slideHeroVal');
+        const heroDesc = document.getElementById('slideHeroDesc');
+        const heroCard = document.getElementById('slideHeroCard');
+        const fineVal = document.getElementById('slideFineVal');
+        const fuelVal = document.getElementById('slideFuelVal');
+        const donutText = document.getElementById('slideDonutText');
+        const donutCircle = document.getElementById('slideDonutOcc');
+        const demandStatus = document.getElementById('slideDemandStatus');
+        const hubBadge = document.getElementById('slideHubStatusBadge');
+        const callout = document.getElementById('slideMedinyaCallout');
+        const calloutTitle = document.getElementById('slideMedinyaCalloutTitle');
+        const calloutSub = document.getElementById('slideMedinyaCalloutSub');
+        const networkPill = document.getElementById('slideNetworkPill');
+
+        if (m === 'predictive') {
+          if (btnP) {
+            btnP.style.background = 'rgba(2, 132, 199, 0.2)';
+            btnP.style.borderColor = 'var(--accent-blue)';
+            btnP.style.color = '#E0F2FE';
+            btnP.innerHTML = '● POSTA PREDICTIVO';
+          }
+          if (btnC) {
+            btnC.style.background = 'rgba(255,255,255,0.04)';
+            btnC.style.borderColor = 'rgba(255,255,255,0.12)';
+            btnC.style.color = '#A1A1AA';
+            btnC.innerHTML = 'A CIEGAS (SIN POSTA)';
+          }
+          if (callout) {
+            callout.style.borderColor = '#10B981';
+          }
+          if (calloutTitle) {
+            calloutTitle.style.color = '#34D399';
+            calloutTitle.innerText = '● NODO MEDINYÀ: OPTIMIZADO';
+          }
+          if (calloutSub) {
+            calloutSub.innerText = 'Entrada directa slot #3 · 0 min espera';
+          }
+          if (networkPill) {
+            networkPill.style.color = '#34D399';
+            networkPill.innerText = 'FLUJO REGULADO · SIN ESPERAS';
+          }
+          if (hubBadge) {
+            hubBadge.style.background = 'rgba(16, 185, 129, 0.15)';
+            hubBadge.style.borderColor = 'rgba(16, 185, 129, 0.35)';
+            hubBadge.style.color = '#34D399';
+            hubBadge.innerText = '8 SURTIDORES · FLUJO CONTINUO';
+          }
+          if (heroVal) {
+            heroVal.innerText = '0 MIN';
+            heroVal.style.color = '#34D399';
+          }
+          if (heroDesc) heroDesc.innerText = 'Reserva anticipada garantizada · Flujo continuo sin colas ni esperas';
+          if (heroCard) heroCard.style.borderLeftColor = '#10B981';
+          if (fineVal) {
+            fineVal.innerText = '0 € (Art. 12 UE)';
+            fineVal.style.color = '#34D399';
+          }
+          if (fuelVal) {
+            fuelVal.innerText = '0 L (Cero Espera)';
+            fuelVal.style.color = 'var(--accent-cyan)';
+          }
+          if (donutText) donutText.innerText = '37%';
+          if (donutCircle) {
+            donutCircle.setAttribute('stroke', '#10B981');
+            donutCircle.setAttribute('stroke-dashoffset', '150');
+          }
+          if (demandStatus) {
+            demandStatus.innerText = 'DEMANDA REGULADA';
+            demandStatus.style.color = '#34D399';
+          }
+          ['sd1','sd2','sd3','sd4','sd5'].forEach((id, i) => {
+            const el = document.getElementById(id);
+            if (el) {
+              el.style.background = 'var(--accent-blue)';
+              el.style.height = [30, 42, 45, 40, 35][i] + '%';
+            }
+          });
+        } else {
+          if (btnC) {
+            btnC.style.background = 'rgba(239, 68, 68, 0.2)';
+            btnC.style.borderColor = '#EF4444';
+            btnC.style.color = '#FEE2E2';
+            btnC.innerHTML = '● A CIEGAS (SIN POSTA)';
+          }
+          if (btnP) {
+            btnP.style.background = 'rgba(255,255,255,0.04)';
+            btnP.style.borderColor = 'rgba(255,255,255,0.12)';
+            btnP.style.color = '#A1A1AA';
+            btnP.innerHTML = 'POSTA PREDICTIVO';
+          }
+          if (callout) {
+            callout.style.borderColor = '#EF4444';
+          }
+          if (calloutTitle) {
+            calloutTitle.style.color = '#F87171';
+            calloutTitle.innerText = '● NODO MEDINYÀ: SATURADO';
+          }
+          if (calloutSub) {
+            calloutSub.innerText = 'Cola en acceso AP-7 · 38 min espera';
+          }
+          if (networkPill) {
+            networkPill.style.color = '#EF4444';
+            networkPill.innerText = 'CONGESTIÓN DETECTADA';
+          }
+          if (hubBadge) {
+            hubBadge.style.background = 'rgba(239, 68, 68, 0.15)';
+            hubBadge.style.borderColor = 'rgba(239, 68, 68, 0.35)';
+            hubBadge.style.color = '#F87171';
+            hubBadge.innerText = '8 SURTIDORES · COLAPSO';
+          }
+          if (heroVal) {
+            heroVal.innerText = '38 MIN';
+            heroVal.style.color = '#F87171';
+          }
+          if (heroDesc) heroDesc.innerText = 'Colapso por convergencia simultánea · Camiones esperando con motor al ralentí';
+          if (heroCard) heroCard.style.borderLeftColor = '#EF4444';
+          if (fineVal) {
+            fineVal.innerText = '2.001 € (LOTT)';
+            fineVal.style.color = '#EF4444';
+          }
+          if (fuelVal) {
+            fuelVal.innerText = '14,2 L / Camión';
+            fuelVal.style.color = 'var(--accent-amber)';
+          }
+          if (donutText) donutText.innerText = '100%+';
+          if (donutCircle) {
+            donutCircle.setAttribute('stroke', '#EF4444');
+            donutCircle.setAttribute('stroke-dashoffset', '119');
+          }
+          if (demandStatus) {
+            demandStatus.innerText = 'COLAPSO (+195%)';
+            demandStatus.style.color = '#EF4444';
+          }
+          ['sd1','sd2','sd3','sd4','sd5'].forEach((id, i) => {
+            const el = document.getElementById(id);
+            if (el) {
+              if (i === 2 || i === 3) {
+                el.style.background = '#EF4444';
+                el.style.height = '96%';
+              } else {
+                el.style.background = 'var(--accent-blue)';
+                el.style.height = [25, 35, 96, 96, 40][i] + '%';
+              }
+            }
+          });
+        }
+      };
+
+      // RENDERIZADO DEL MAPA DE ESPAÑA (GRANDE)
+      function renderSpainMap() {
+        if (!spainCanvas || !spainCtx) return;
+        const container = spainCanvas.parentElement;
+        if (!container) return;
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        if (!w || !h) return;
+
+        // Auto-sincronizar resolución de búfer si el contenedor acaba de hacerse visible
+        if (spainCanvas.width !== w || spainCanvas.height !== h) {
+          spainCanvas.width = w;
+          spainCanvas.height = h;
+        }
+
+        spainCtx.clearRect(0, 0, w, h);
+
+        const pad = 28;
+        const minLon = -9.8, maxLon = 3.8;
+        const minLat = 35.6, maxLat = 44.0;
+        const cosLat = 0.768;
+        const geoW = (maxLon - minLon) * cosLat;
+        const geoH = (maxLat - minLat);
+        const scale = Math.min((w - 2 * pad) / geoW, (h - 2 * pad) / geoH);
+        const offX = pad + (w - 2 * pad - geoW * scale) / 2;
+        const offY = pad + (h - 2 * pad - geoH * scale) / 2;
+
+        function project(lon, lat) {
+          return [
+            offX + (lon - minLon) * cosLat * scale,
+            h - (offY + (lat - minLat) * scale)
+          ];
+        }
+
+        // 1. Rejilla telemática sutil
+        spainCtx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+        spainCtx.lineWidth = 1;
+        for (let x = 0; x < w; x += 36) {
+          spainCtx.beginPath(); spainCtx.moveTo(x, 0); spainCtx.lineTo(x, h); spainCtx.stroke();
+        }
+        for (let y = 0; y < h; y += 36) {
+          spainCtx.beginPath(); spainCtx.moveTo(0, y); spainCtx.lineTo(w, y); spainCtx.stroke();
+        }
+
+        // 2. Silueta de la Península Ibérica
+        const poly = spainCoastGeo.map(p => project(p[0], p[1]));
+        spainCtx.beginPath();
+        poly.forEach((pt, i) => i === 0 ? spainCtx.moveTo(pt[0], pt[1]) : spainCtx.lineTo(pt[0], pt[1]));
+        spainCtx.closePath();
+        spainCtx.fillStyle = '#0E131E';
+        spainCtx.fill();
+        spainCtx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
+        spainCtx.lineWidth = 1.5;
+        spainCtx.stroke();
+
+        // Islas Baleares
+        const islMallorca = project(2.9, 39.6);
+        const islMenorca = project(4.1, 40.0);
+        const islIbiza = project(1.4, 38.9);
+        spainCtx.fillStyle = '#0E131E';
+        spainCtx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
+        [[islMallorca, 6], [islMenorca, 3.5], [islIbiza, 3.5]].forEach(([pt, r]) => {
+          spainCtx.beginPath();
+          spainCtx.arc(pt[0], pt[1], r, 0, Math.PI * 2);
+          spainCtx.fill();
+          spainCtx.stroke();
+        });
+
+        // 3. Corredores de transporte troncales
+        const projCorridors = {};
+        Object.keys(spainCorridorsGeo).forEach(k => {
+          const pts = spainCorridorsGeo[k].map(p => project(p[0], p[1]));
+          projCorridors[k] = pts;
+          spainCtx.beginPath();
+          pts.forEach((pt, i) => i === 0 ? spainCtx.moveTo(pt[0], pt[1]) : spainCtx.lineTo(pt[0], pt[1]));
+          spainCtx.strokeStyle = k === 'AP7' ? 'rgba(56, 189, 248, 0.65)' : 'rgba(255, 255, 255, 0.2)';
+          spainCtx.lineWidth = k === 'AP7' ? 2.5 : 1.5;
+          spainCtx.stroke();
+        });
+
+        // Etiquetas de corredores en el mapa
+        spainCtx.font = '700 8px "JetBrains Mono"';
+        spainCtx.fillStyle = 'rgba(56, 189, 248, 0.7)';
+        const ap7Mid = project(0.5, 40.4);
+        spainCtx.fillText("AP-7 MEDITERRÁNEO", ap7Mid[0] + 8, ap7Mid[1]);
+        const a2Mid = project(0.2, 41.6);
+        spainCtx.fillStyle = 'rgba(148, 163, 184, 0.6)';
+        spainCtx.fillText("A-2", a2Mid[0], a2Mid[1] - 6);
+
+        // 4. Camiones en tránsito (36 vehículos en movimiento continuo)
+        spainPulse += 0.035;
+        spainFleet.forEach((trk, idx) => {
+          trk.t += trk.speed * trk.dir;
+          if (trk.t > 1) { trk.t = 1; trk.dir = -1; }
+          if (trk.t < 0) { trk.t = 0; trk.dir = 1; }
+
+          const pts = projCorridors[trk.corridor];
+          if (!pts) return;
+          const pos = getPolylinePoint(pts, trk.t);
+
+          const isNearMedinya = trk.corridor === 'AP7' && trk.t > 0.82 && trk.t < 0.96;
+          const isBlocked = slideSimMode === 'conventional' && isNearMedinya;
+
+          spainCtx.beginPath();
+          spainCtx.arc(pos[0], pos[1], isBlocked ? 3.5 : 2.5, 0, Math.PI * 2);
+          spainCtx.fillStyle = isBlocked ? (Math.sin(Date.now() / 130 + idx) > 0 ? '#EF4444' : '#F59E0B') : (slideSimMode === 'predictive' ? '#38BDF8' : '#CBD5E1');
+          spainCtx.fill();
+        });
+
+        // 5. Nodos Logísticos de la Red
+        spainHubsGeo.forEach(hub => {
+          const pos = project(hub.lon, hub.lat);
+          if (hub.target) {
+            // Medinyà: Nodo focal con pulso radar
+            const pulseR = 6 + (Math.sin(spainPulse) + 1) * 7;
+            spainCtx.beginPath();
+            spainCtx.arc(pos[0], pos[1], pulseR, 0, Math.PI * 2);
+            spainCtx.strokeStyle = slideSimMode === 'predictive' ? 'rgba(16, 185, 129, 0.6)' : 'rgba(239, 68, 68, 0.6)';
+            spainCtx.lineWidth = 1.5;
+            spainCtx.stroke();
+
+            spainCtx.beginPath();
+            spainCtx.arc(pos[0], pos[1], 5, 0, Math.PI * 2);
+            spainCtx.fillStyle = slideSimMode === 'predictive' ? '#10B981' : '#EF4444';
+            spainCtx.fill();
+
+            spainCtx.font = '700 9px "JetBrains Mono"';
+            spainCtx.fillStyle = slideSimMode === 'predictive' ? '#34D399' : '#F87171';
+            spainCtx.fillText(hub.name, pos[0] - 110, pos[1] - 10);
+          } else {
+            spainCtx.beginPath();
+            spainCtx.arc(pos[0], pos[1], 3, 0, Math.PI * 2);
+            spainCtx.fillStyle = '#FFFFFF';
+            spainCtx.fill();
+
+            spainCtx.font = '600 8px "JetBrains Mono"';
+            spainCtx.fillStyle = 'rgba(255, 255, 255, 0.75)';
+            spainCtx.fillText(hub.id, pos[0] + 5, pos[1] + 3);
+          }
+        });
+      }
+
+      // RENDERIZADO DEL ZOOM DE NODO: EAS MEDINYÀ CON SU CRUCE VIAL
+      function renderHubZoom() {
+        if (!simCanvas || !simCtx) return;
+        const container = simCanvas.parentElement;
+        if (!container) return;
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        if (!w || !h) return;
+
+        // Auto-sincronizar búfer al tamaño de contenedor
+        if (simCanvas.width !== w || simCanvas.height !== h) {
+          simCanvas.width = w;
+          simCanvas.height = h;
+        }
+
+        simCtx.clearRect(0, 0, w, h);
+
+        const cx = w * 0.44;
+        const cy = h * 0.50;
+        const maxR = Math.min(w, h) * 0.42;
+
+        // 1. Rejilla telemática
+        simCtx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+        simCtx.lineWidth = 1;
+        for (let x = 0; x < w; x += 28) {
+          simCtx.beginPath(); simCtx.moveTo(x, 0); simCtx.lineTo(x, h); simCtx.stroke();
+        }
+        for (let y = 0; y < h; y += 28) {
+          simCtx.beginPath(); simCtx.moveTo(0, y); simCtx.lineTo(w, y); simCtx.stroke();
+        }
+
+        // 2. Anillos radar
+        [0.4, 0.7, 1.0].forEach((step, idx) => {
+          const r = maxR * step;
+          simCtx.beginPath();
+          simCtx.arc(cx, cy, r, 0, Math.PI * 2);
+          simCtx.strokeStyle = idx === 2 ? 'rgba(2, 132, 199, 0.35)' : 'rgba(255, 255, 255, 0.08)';
+          simCtx.lineWidth = 1;
+          simCtx.stroke();
+          simCtx.fillStyle = 'rgba(148, 163, 184, 0.4)';
+          simCtx.font = '500 7px "JetBrains Mono"';
+          simCtx.fillText(["20 KM", "40 KM", "60 KM"][idx], cx + 4, cy - r + 8);
+        });
+
+        // 3. Haz de barrido radar 360°
+        simSweepAngle += 0.024;
+        if (simSweepAngle > Math.PI * 2) simSweepAngle = 0;
+        const grad = simCtx.createRadialGradient(cx, cy, 0, cx, cy, maxR);
+        const sc = slideSimMode === 'predictive' ? 'rgba(2, 132, 199,' : 'rgba(239, 68, 68,';
+        grad.addColorStop(0, `${sc} 0.25)`);
+        grad.addColorStop(1, `${sc} 0)`);
+        simCtx.beginPath();
+        simCtx.moveTo(cx, cy);
+        simCtx.arc(cx, cy, maxR, simSweepAngle - 0.35, simSweepAngle, false);
+        simCtx.closePath();
+        simCtx.fillStyle = grad;
+        simCtx.fill();
+
+        // 4. EL CRUCE: DOS CORREDORES VIALES CRUZÁNDOSE EN EL NODO (AP-7 y A-2 / C-25)
+        const ap7_p1 = { x: cx - maxR * 1.15, y: cy + maxR * 0.70 };
+        const ap7_p2 = { x: cx + maxR * 1.15, y: cy - maxR * 0.70 };
+        const a2_p1  = { x: cx - maxR * 1.05, y: cy - maxR * 0.65 };
+        const a2_p2  = { x: cx + maxR * 1.05, y: cy + maxR * 0.65 };
+
+        function drawHwy(pA, pB, label, lx, ly) {
+          // Borde exterior
+          simCtx.strokeStyle = 'rgba(255, 255, 255, 0.14)';
+          simCtx.lineWidth = 5;
+          simCtx.beginPath();
+          simCtx.moveTo(pA.x, pA.y);
+          simCtx.lineTo(pB.x, pB.y);
+          simCtx.stroke();
+
+          // Asfalto interior
+          simCtx.strokeStyle = '#0B0F17';
+          simCtx.lineWidth = 2.5;
+          simCtx.beginPath();
+          simCtx.moveTo(pA.x, pA.y);
+          simCtx.lineTo(pB.x, pB.y);
+          simCtx.stroke();
+
+          // Rótulo del corredor
+          simCtx.fillStyle = 'rgba(148, 163, 184, 0.55)';
+          simCtx.font = '700 7px "JetBrains Mono"';
+          simCtx.fillText(label, lx, ly);
+        }
+
+        drawHwy(ap7_p1, ap7_p2, "AP-7 (CORREDOR MEDITERRÁNEO)", cx - maxR * 1.1, cy + maxR * 0.68 - 6);
+        drawHwy(a2_p1, a2_p2, "A-2 / C-25 (ENLACE)", cx - maxR * 1.0, cy - maxR * 0.60 + 10);
+
+        // 5. Estación Central en el centro del cruce
+        simCtx.fillStyle = '#0E131C';
+        simCtx.strokeStyle = slideSimMode === 'predictive' ? '#0284C7' : '#EF4444';
+        simCtx.lineWidth = 2;
+        simCtx.beginPath();
+        simCtx.arc(cx, cy, 14, 0, Math.PI * 2);
+        simCtx.fill();
+        simCtx.stroke();
+
+        simCtx.fillStyle = '#FFFFFF';
+        simCtx.fillRect(cx - 3, cy - 4, 5, 8);
+        simCtx.fillRect(cx + 2, cy - 2, 2, 6);
+
+        simCtx.fillStyle = '#FFFFFF';
+        simCtx.font = '700 9px "Syne"';
+        simCtx.textAlign = 'center';
+        simCtx.fillText("E.S. MEDINYÀ", cx, cy + 24);
+        simCtx.font = '600 7px "JetBrains Mono"';
+        simCtx.fillStyle = slideSimMode === 'predictive' ? '#38BDF8' : '#F87171';
+        simCtx.fillText(slideSimMode === 'predictive' ? "8 SURTIDORES · 0M ESPERA" : "8 SURTIDORES · COLAPSO", cx, cy + 33);
+        simCtx.textAlign = 'left';
+
+        // 6. Cola de camiones parados en modo convencional
+        if (slideSimMode === 'conventional') {
+          const blink = Math.sin(Date.now() / 150) > 0;
+          for (let q = 0; q < 4; q++) {
+            const qx = cx - 20 - (q * 10);
+            const qy = cy + 12 + (q * 5);
+            simCtx.fillStyle = '#EF4444';
+            simCtx.fillRect(qx - 2.5, qy - 2.5, 5, 5);
+            if (blink) {
+              simCtx.fillStyle = '#F59E0B';
+              simCtx.fillRect(qx - 3, qy - 3, 2, 2);
+              simCtx.fillRect(qx + 1, qy - 3, 2, 2);
+            }
+          }
+          simCtx.fillStyle = '#FCA5A5';
+          simCtx.font = '700 7px "JetBrains Mono"';
+          simCtx.fillText("COLA 4 TRUCKS (38M)", cx - 110, cy + 30);
+        }
+
+        // 7. Camiones aproximándose por ambos corredores del cruce
+        simTrucks.forEach((trk, idx) => {
+          trk.t += trk.speed;
+          if (trk.t > 1) trk.t = 0;
+
+          const pA = trk.route === 1 ? a2_p1 : ap7_p1;
+          const pB = trk.route === 1 ? a2_p2 : ap7_p2;
+          const tx = pA.x + (pB.x - pA.x) * trk.t;
+          const ty = pA.y + (pB.y - pA.y) * trk.t;
+
+          const dist = Math.hypot(tx - cx, ty - cy);
+          if (dist <= maxR) {
+            simCtx.strokeStyle = slideSimMode === 'predictive' ? 'rgba(56, 189, 248, 0.25)' : 'rgba(239, 68, 68, 0.22)';
+            simCtx.lineWidth = 1;
+            simCtx.setLineDash([2, 3]);
+            simCtx.beginPath();
+            simCtx.moveTo(cx, cy);
+            simCtx.lineTo(tx, ty);
+            simCtx.stroke();
+            simCtx.setLineDash([]);
+          }
+
+          simCtx.fillStyle = slideSimMode === 'predictive' ? '#38BDF8' : (idx === 0 ? '#EF4444' : '#F59E0B');
+          simCtx.beginPath();
+          simCtx.arc(tx, ty, 3.5, 0, Math.PI * 2);
+          simCtx.fill();
+
+          // Rótulo compacto del camión
+          simCtx.fillStyle = 'rgba(6, 8, 11, 0.88)';
+          simCtx.strokeStyle = 'rgba(255, 255, 255, 0.12)';
+          simCtx.lineWidth = 1;
+          simCtx.beginPath();
+          simCtx.roundRect(tx + 5, ty - 8, 46, 14, 2);
+          simCtx.fill();
+          simCtx.stroke();
+
+          simCtx.fillStyle = '#FFFFFF';
+          simCtx.font = '700 6px "JetBrains Mono"';
+          simCtx.fillText(trk.id, tx + 8, ty + 1);
+        });
+      }
+
+      function renderSlideSim() {
+        renderSpainMap();
+        renderHubZoom();
+        simAnimId = requestAnimationFrame(renderSlideSim);
+      }
+
+      // Auto-escalado de pantalla 16:9
+      function resize() {
+        const vw = window.innerWidth - 32;
+        const vh = window.innerHeight - 78; // deja libre la franja de la barra de navegación
+        const scale = Math.min(vw / 1366, vh / 768, 1.25);
+        stage.style.transform = `scale(${scale})`;
+        stage.style.transformOrigin = 'center center';
+        resizeSimCanvas();
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+
+      updateSlide(0);
+    })();
+  </script>
+</body>
+</html>
