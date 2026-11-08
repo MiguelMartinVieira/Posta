@@ -1423,6 +1423,28 @@
 
         <!-- 3.1. MODELO ECONÓMICO -->
         <section class="slide" id="slide-9" data-title="Modelo Económico" data-section="EL NEGOCIO" data-mood="Color">
+          <style>
+            #slide-9 .me-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 26px; flex: 1; min-height: 0; }
+            #slide-9 .me-ticket { position: relative; overflow: hidden; border-radius: 10px; padding: 32px 36px; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between;
+              background: radial-gradient(circle at 85% 15%, rgba(255,255,255,0.22) 0, rgba(255,255,255,0) 45%), linear-gradient(135deg, #FF8A5C 0%, #E26D46 55%, #B94B2A 100%);
+              box-shadow: 0 18px 40px -18px rgba(226, 109, 70, 0.65); }
+            #slide-9 .me-ticket::after { content: ""; position: absolute; right: -60px; bottom: -60px; width: 220px; height: 220px; border-radius: 50%; border: 28px solid rgba(255,255,255,0.10); }
+            #slide-9 .me-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; background: rgba(17,20,26,0.18); border: 1px solid rgba(255,255,255,0.35); padding: 6px 12px; border-radius: 999px; align-self: flex-start; }
+            #slide-9 .me-big { font-family: var(--font-display); font-weight: 800; font-size: 128px; line-height: 0.85; letter-spacing: -5px; white-space: nowrap; }
+            #slide-9 .me-unit { font-family: var(--font-display); font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: 1px; margin-top: 16px; }
+            #slide-9 .me-foot { display: flex; gap: 10px; position: relative; z-index: 1; }
+            #slide-9 .me-pill { background: #FFFFFF; color: #B94B2A; border-radius: 999px; padding: 7px 14px; font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+            #slide-9 .me-right { background: var(--paper-surface); border: 1px solid var(--paper-border); border-radius: 10px; padding: 28px 32px; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; }
+            #slide-9 .me-waffle { display: grid; grid-template-columns: repeat(10, 25px); grid-auto-rows: 25px; gap: 6px; }
+            #slide-9 .me-waffle span { border-radius: 5px; background: #11141A; }
+            #slide-9 .me-waffle span.on { background: #FF7A50; box-shadow: 0 0 0 3px rgba(255,122,80,0.25); }
+            #slide-9 .me-legend { display: flex; flex-direction: column; gap: 22px; }
+            #slide-9 .me-key { display: flex; gap: 12px; align-items: flex-start; }
+            #slide-9 .me-dot { width: 14px; height: 14px; border-radius: 4px; margin-top: 8px; flex-shrink: 0; }
+            #slide-9 .me-val { font-family: var(--font-display); font-weight: 800; font-size: 38px; letter-spacing: -1px; line-height: 1; white-space: nowrap; }
+            #slide-9 .me-lab { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--paper-text-muted); margin-top: 6px; }
+            #slide-9 .me-claim { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.25; text-transform: uppercase; border-top: 1px solid var(--paper-border); padding-top: 18px; }
+          </style>
           <div class="meta-bar">
             <div><span class="brand-bullet"></span>EL NEGOCIO // 08 · MODELO ECONÓMICO</div>
             <div style="display: flex; align-items: center; gap: 14px;">
@@ -1431,68 +1453,79 @@
             </div>
           </div>
 
-          <style>
-            #slide-9 .me-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 28px; flex: 1; min-height: 0; }
-            #slide-9 .me-price { background: #11141A; color: #FFFFFF; border-radius: 6px; padding: 34px 36px; display: flex; flex-direction: column; justify-content: space-between; }
-            #slide-9 .me-price .editorial-kicker { color: #FF7A50; }
-            #slide-9 .me-big { font-family: var(--font-display); font-weight: 800; font-size: 150px; line-height: 0.9; letter-spacing: -6px; color: #FF7A50; white-space: nowrap; }
-            #slide-9 .me-unit { font-family: var(--font-display); font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: 1px; margin-top: 14px; }
-            #slide-9 .me-pill { display: inline-block; border: 1px solid rgba(255,255,255,0.25); border-radius: 999px; padding: 6px 14px; font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: 0.5px; margin-right: 8px; }
-            #slide-9 .me-bars { display: flex; flex-direction: column; justify-content: center; gap: 26px; padding: 30px 34px; }
-            #slide-9 .me-row-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
-            #slide-9 .me-row-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--paper-text-main); }
-            #slide-9 .me-row-value { font-family: var(--font-display); font-weight: 800; font-size: 34px; letter-spacing: -1px; color: var(--paper-text-main); white-space: nowrap; }
-            #slide-9 .me-track { height: 14px; background: var(--paper-border); border-radius: 999px; overflow: hidden; }
-            #slide-9 .me-fill { height: 100%; border-radius: 999px; background: var(--paper-text-main); min-width: 10px; }
-            #slide-9 .me-posta .me-row-label, #slide-9 .me-posta .me-row-value { color: #FF7A50; }
-            #slide-9 .me-posta .me-fill { background: #FF7A50; }
-            #slide-9 .me-claim { font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 1.25; text-transform: uppercase; color: var(--paper-text-main); border-top: 1px solid var(--paper-border); padding-top: 20px; }
-          </style>
-
-          <div style="margin-bottom: 22px;">
+          <div style="margin-bottom: 20px;">
             <span class="editorial-kicker">UN SOLO PRECIO</span>
             <h2 class="editorial-title">PAGA LA EMPRESA. POR CAMIÓN, CADA MES.</h2>
           </div>
 
           <div class="me-grid">
-            <div class="me-price">
-              <span class="editorial-kicker">SUSCRIPCIÓN DE FLOTA</span>
-              <div>
+            <div class="me-ticket">
+              <span class="me-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="15" height="10" rx="2"/><path d="M16 10h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="19" cy="18" r="2"/></svg>
+                Suscripción de flota
+              </span>
+              <div style="position: relative; z-index: 1;">
                 <div class="me-big">15 €</div>
                 <div class="me-unit">Por camión / mes</div>
               </div>
-              <div>
+              <div class="me-foot">
                 <span class="me-pill">180 € / AÑO</span>
                 <span class="me-pill">SIN COMISIONES</span>
               </div>
             </div>
 
-            <div class="card-clean me-bars">
-              <span class="editorial-kicker">AL AÑO, POR CAMIÓN</span>
-
-              <div>
-                <div class="me-row-head"><span class="me-row-label">Lo que pierde buscando sitio</span><span class="me-row-value">8.400 €</span></div>
-                <div class="me-track"><div class="me-fill" style="width: 100%;"></div></div>
+            <div class="me-right">
+              <div class="me-waffle" aria-label="98 casillas oscuras y 2 naranjas">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span class="on"></span>
               </div>
 
-              <div>
-                <div class="me-row-head"><span class="me-row-label">Una multa leve</span><span class="me-row-value">300–400 €</span></div>
-                <div class="me-track"><div class="me-fill" style="width: 4.8%;"></div></div>
+              <div class="me-legend">
+                <span class="editorial-kicker">AL AÑO, POR CAMIÓN</span>
+                <div class="me-key">
+                  <span class="me-dot" style="background: #11141A;"></span>
+                  <div><div class="me-val">8.400 €</div><div class="me-lab">Lo que pierde buscando sitio</div></div>
+                </div>
+                <div class="me-key">
+                  <span class="me-dot" style="background: #FF7A50;"></span>
+                  <div><div class="me-val" style="color: #FF7A50;">180 €</div><div class="me-lab">Lo que cuesta POSTA</div></div>
+                </div>
+                <div class="me-claim">De cada 100 € perdidos, POSTA cuesta <span style="color: #FF7A50;">2</span>.</div>
               </div>
-
-              <div class="me-posta">
-                <div class="me-row-head"><span class="me-row-label">POSTA</span><span class="me-row-value">180 €</span></div>
-                <div class="me-track"><div class="me-fill" style="width: 2.1%;"></div></div>
-              </div>
-
-              <div class="me-claim">POSTA cuesta el <span style="color: #FF7A50;">2,1 %</span> de lo que se pierde buscando sitio.</div>
             </div>
           </div>
-          <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 12px; line-height: 1.35; font-style: italic;">Estimación POSTA: 30 min y 20 km extra al día durante 230 días (DEKRA 2026; Observatorio de costes del Ministerio de Transportes). Multa leve: LOTT, según prensa.</p>
+          <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 12px; line-height: 1.35; font-style: italic;">Estimación POSTA: 30 min y 20 km extra al día durante 230 días (DEKRA 2026; Observatorio de costes del Ministerio de Transportes). 180 € son el 2,1 % de 8.400 €.</p>
         </section>
 
         <!-- 3.2. MERCADO -->
         <section class="slide" id="slide-10" data-title="Mercado" data-section="EL NEGOCIO" data-mood="Color">
+          <style>
+            #slide-10 .mk-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 34px; flex: 1; min-height: 0; align-items: center; }
+            #slide-10 .mk-rings { position: relative; width: 100%; max-width: 440px; aspect-ratio: 1 / 1; margin: 0 auto; }
+            #slide-10 .mk-ring { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); border-radius: 50%; display: flex; justify-content: center; }
+            #slide-10 .mk-tam { width: 100%; height: 100%; background: radial-gradient(circle at 50% 30%, #F8FAFC 0, #E2E8F0 100%); border: 1px solid #CBD5E1; }
+            #slide-10 .mk-sam { width: 66%; height: 66%; background: radial-gradient(circle at 50% 30%, #FFE3D6 0, #FFC2A8 100%); border: 1px solid #FFAF8C; }
+            #slide-10 .mk-som { width: 30%; height: 30%; background: linear-gradient(135deg, #FF8A5C 0%, #E26D46 60%, #B94B2A 100%); box-shadow: 0 14px 30px -12px rgba(226,109,70,0.7); align-items: center; }
+            #slide-10 .mk-ring-label { font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 7%; }
+            #slide-10 .mk-tam .mk-ring-label { color: #64748B; margin-top: 9%; }
+            #slide-10 .mk-sam .mk-ring-label { color: #B94B2A; margin-top: 12%; }
+            #slide-10 .mk-som .mk-ring-label { color: #FFFFFF; margin-top: 0; font-size: 15px; }
+            #slide-10 .mk-rows { display: flex; flex-direction: column; gap: 14px; }
+            #slide-10 .mk-row { display: grid; grid-template-columns: 6px 1fr auto; gap: 18px; align-items: center; background: var(--paper-surface); border: 1px solid var(--paper-border); border-radius: 10px; padding: 18px 22px 18px 0; overflow: hidden; }
+            #slide-10 .mk-bar { align-self: stretch; margin: -18px 0; }
+            #slide-10 .mk-scope { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+            #slide-10 .mk-trucks { font-family: var(--font-display); font-weight: 700; font-size: 19px; margin-top: 4px; color: var(--paper-text-main); }
+            #slide-10 .mk-eur { font-family: var(--font-display); font-weight: 800; font-size: 46px; letter-spacing: -2px; white-space: nowrap; color: var(--paper-text-main); }
+            #slide-10 .mk-row.som { background: #FFF6F1; border-color: #FFC2A8; }
+          </style>
           <div class="meta-bar">
             <div><span class="brand-bullet"></span>EL NEGOCIO // 09 · MERCADO</div>
             <div style="display: flex; align-items: center; gap: 14px;">
@@ -1501,34 +1534,48 @@
             </div>
           </div>
 
-          <div style="margin-bottom: 24px;">
+          <div style="margin-bottom: 20px;">
             <span class="editorial-kicker">SOLO QUIENES TIENEN QUE PARAR A DORMIR FUERA · 15 €/CAMIÓN/MES</span>
             <h2 class="editorial-title">539.000 CAMIONES DE LARGA DISTANCIA BUSCAN DÓNDE DORMIR CADA NOCHE.</h2>
           </div>
 
-          <div class="grid-editorial-3">
-            <div class="card-clean">
-              <span class="editorial-kicker">TAM // UNIÓN EUROPEA</span>
-              <div class="stat-hero-number">407 M€</div>
-              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; margin-top: 8px;">2,26 M camiones de larga distancia</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px;">Todas las tractoras de la UE.</p>
+          <div class="mk-grid">
+            <div class="mk-rings" aria-hidden="true">
+              <div class="mk-ring mk-tam"><span class="mk-ring-label">TAM</span></div>
+              <div class="mk-ring mk-sam"><span class="mk-ring-label">SAM</span></div>
+              <div class="mk-ring mk-som"><span class="mk-ring-label">SOM</span></div>
             </div>
 
-            <div class="card-clean">
-              <span class="editorial-kicker">SAM // ESPAÑA · FRANCIA · PORTUGAL</span>
-              <div class="stat-hero-number">97 M€</div>
-              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; margin-top: 8px;">538.844 camiones de larga distancia</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px;">Los corredores donde empezamos.</p>
-            </div>
+            <div class="mk-rows">
+              <div class="mk-row">
+                <span class="mk-bar" style="background: #94A3B8;"></span>
+                <div>
+                  <div class="mk-scope" style="color: #64748B;">TAM · Unión Europea</div>
+                  <div class="mk-trucks">2,26 M camiones</div>
+                </div>
+                <div class="mk-eur">407 M€</div>
+              </div>
 
-            <div class="card-clean" style="border-left: 3px solid var(--accent-warm);">
-              <span class="editorial-kicker">SOM // ESPAÑA · 3 AÑOS</span>
-              <div class="stat-hero-number" style="color: var(--accent-warm);">1,2 M€</div>
-              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; margin-top: 8px;">6.750 camiones</div>
-              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px;">El 2,6 % de las tractoras de España: 15 flotas directas y 3 plataformas de flota.</p>
+              <div class="mk-row">
+                <span class="mk-bar" style="background: #FFAF8C;"></span>
+                <div>
+                  <div class="mk-scope" style="color: #B94B2A;">SAM · España, Francia, Portugal</div>
+                  <div class="mk-trucks">538.844 camiones</div>
+                </div>
+                <div class="mk-eur">97 M€</div>
+              </div>
+
+              <div class="mk-row som">
+                <span class="mk-bar" style="background: #E26D46;"></span>
+                <div>
+                  <div class="mk-scope" style="color: #E26D46;">SOM · España, 3 años</div>
+                  <div class="mk-trucks">6.750 camiones</div>
+                </div>
+                <div class="mk-eur" style="color: #E26D46;">1,2 M€</div>
+              </div>
             </div>
           </div>
-          <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 12px; line-height: 1.35; font-style: italic;">Fuente: Eurostat, tran_r_vehst, cabezas tractoras 2024 (UE 2.260.141; España 258.920; Francia 223.215; Portugal 56.709). Las tractoras son el camión típico de la larga distancia. El SOM es un supuesto propio.</p>
+          <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 12px; line-height: 1.35; font-style: italic;">Fuente: Eurostat, tran_r_vehst, cabezas tractoras 2024 (UE 2.260.141; España 258.920; Francia 223.215; Portugal 56.709), el camión típico de la larga distancia. SOM: supuesto propio (15 flotas directas y 3 plataformas de flota). Círculos no a escala.</p>
         </section>
 
         <!-- 3.3. GO-TO-MARKET & ESCALA -->
