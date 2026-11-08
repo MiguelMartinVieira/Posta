@@ -1557,7 +1557,231 @@
           </div>
         </section>
 
-        <!-- 2.3. POR QUÉ AHORA -->
+        <!-- 2.3. PROTOTIPO EN LOVABLE (CONTRUIDO CON LAVABLE) -->
+        <section class="slide" id="slide-lovable" data-title="Construido con Lovable" data-section="LA SOLUCIÓN" data-mood="Color" style="padding: 32px 50px 24px 50px;">
+          <style>
+            #slide-lovable .lv-container {
+              display: grid;
+              grid-template-columns: 830px 1fr;
+              gap: 26px;
+              flex: 1;
+              min-height: 0;
+              align-items: center;
+            }
+            #slide-lovable .lv-browser {
+              background: #FFFFFF;
+              border: 1px solid var(--paper-border);
+              border-radius: 10px;
+              box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.1), 0 0 0 1px rgba(0,0,0,0.03);
+              display: flex;
+              flex-direction: column;
+              overflow: hidden;
+              width: 830px;
+            }
+            #slide-lovable .lv-browser-bar {
+              height: 36px;
+              background: #F8FAFC;
+              border-bottom: 1px solid #E2E8F0;
+              padding: 0 14px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              flex-shrink: 0;
+            }
+            #slide-lovable .lv-browser-dots {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+            }
+            #slide-lovable .lv-dot {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+            }
+            #slide-lovable .lv-dot.red { background: #EF4444; }
+            #slide-lovable .lv-dot.amber { background: #F59E0B; }
+            #slide-lovable .lv-dot.green { background: #10B981; }
+            #slide-lovable .lv-url-pill {
+              background: #FFFFFF;
+              border: 1px solid #CBD5E1;
+              border-radius: 6px;
+              padding: 3px 12px;
+              font-family: var(--font-mono);
+              font-size: 11px;
+              color: #475569;
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              cursor: pointer;
+              transition: all 0.15s ease;
+            }
+            #slide-lovable .lv-url-pill:hover {
+              border-color: var(--accent-warm);
+              color: var(--paper-text-main);
+              background: #FFF9F6;
+            }
+            #slide-lovable .lv-viewport {
+              width: 100%;
+              position: relative;
+              background: #FFFFFF;
+              line-height: 0;
+              cursor: zoom-in;
+              overflow: hidden;
+            }
+            #slide-lovable .lv-img {
+              width: 100%;
+              height: auto;
+              display: block;
+              transition: transform 0.25s ease;
+            }
+            #slide-lovable .lv-viewport:hover .lv-img {
+              transform: scale(1.012);
+            }
+            #slide-lovable .lv-cards {
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              height: 100%;
+              max-height: 533px;
+              justify-content: space-between;
+            }
+            #slide-lovable .lv-card {
+              background: var(--paper-surface);
+              border: 1px solid var(--paper-border);
+              border-radius: 10px;
+              padding: 16px 20px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              flex: 1;
+              transition: border-color 0.2s, box-shadow 0.2s;
+            }
+            #slide-lovable .lv-card:hover {
+              border-color: #CBD5E1;
+              box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+            }
+            #slide-lovable .lv-card-head {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-bottom: 6px;
+            }
+            #slide-lovable .lv-card-kicker {
+              font-family: var(--font-mono);
+              font-size: 10px;
+              font-weight: 700;
+              letter-spacing: 1.2px;
+              text-transform: uppercase;
+            }
+            #slide-lovable .lv-card-badge {
+              font-family: var(--font-mono);
+              font-size: 9.5px;
+              font-weight: 700;
+              padding: 2px 7px;
+              border-radius: 4px;
+              letter-spacing: 0.5px;
+            }
+            #slide-lovable .lv-card-title {
+              font-family: var(--font-display);
+              font-size: 17px;
+              font-weight: 700;
+              letter-spacing: -0.4px;
+              color: var(--paper-text-main);
+              margin-bottom: 4px;
+              line-height: 1.2;
+            }
+            #slide-lovable .lv-card-desc {
+              font-size: 12.5px;
+              color: var(--paper-text-muted);
+              line-height: 1.45;
+            }
+            #slide-lovable .lv-card-desc strong {
+              color: var(--paper-text-main);
+            }
+          </style>
+
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 06 · CONSTRUIDO CON LOVABLE</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>LOVABLE AI · PROTOTIPO FUNCIONAL</span>
+              <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <span class="editorial-kicker">PROTOTIPO FUNCIONAL INTERACTIVO // STARTCAMP 2026</span>
+            <h2 class="editorial-title">CONSTRUIDO CON LOVABLE</h2>
+          </div>
+
+          <div class="lv-container">
+            <!-- Ventana del Navegador con la captura del Prototipo -->
+            <div class="lv-browser">
+              <div class="lv-browser-bar">
+                <div class="lv-browser-dots">
+                  <span class="lv-dot red"></span>
+                  <span class="lv-dot amber"></span>
+                  <span class="lv-dot green"></span>
+                  <span style="margin-left: 8px; font-family: var(--font-mono); font-size: 10px; color: #94A3B8; font-weight: 600;">posta.app // piloto</span>
+                </div>
+                <div class="lv-url-pill" onclick="openLovableModal()" title="Click para ampliar imagen">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>https://posta-demo.lovable.app</span>
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #10B981;"></span>
+                  <span style="font-family: var(--font-mono); font-size: 9px; font-weight: 700; color: #10B981; letter-spacing: 0.5px;">ONLINE</span>
+                </div>
+              </div>
+              <div class="lv-viewport" onclick="openLovableModal()" title="Click para ampliar el prototipo">
+                <img src="assets/posta-lovable-demo.png" alt="Prototipo interactivo de Posta construido con Lovable" class="lv-img">
+              </div>
+            </div>
+
+            <!-- Columnas de Validación & Funcionalidad -->
+            <div class="lv-cards">
+              
+              <!-- Tarjeta 1: Voz y Manos Libres -->
+              <div class="lv-card">
+                <div class="lv-card-head">
+                  <span class="lv-card-kicker" style="color: var(--accent-warm);">01 · VOZ EN RUTA</span>
+                  <span class="lv-card-badge" style="background: rgba(226,109,70,0.12); color: var(--accent-warm);">MANOS LIBRES</span>
+                </div>
+                <div class="lv-card-title">Interacción por Voz en Cabina</div>
+                <div class="lv-card-desc">
+                  El camionero consulta en lenguaje natural sin apartar las manos del volante: <em>"KM 425, ¿qué probabilidad tengo?"</em>. Posta sintetiza la respuesta hablada en segundos.
+                </div>
+              </div>
+
+              <!-- Tarjeta 2: Tacógrafo & Algoritmo -->
+              <div class="lv-card">
+                <div class="lv-card-head">
+                  <span class="lv-card-kicker" style="color: #0284C7;">02 · CRUCE TACÓGRAFO</span>
+                  <span class="lv-card-badge" style="background: rgba(2,132,199,0.12); color: #0284C7;">PREDICCIÓN VIAL</span>
+                </div>
+                <div class="lv-card-title">Cálculo de Riesgo vs. Límite Legal</div>
+                <div class="lv-card-desc">
+                  Cruza la hora restante de tacógrafo con la saturación en tiempo real: <strong>Fraga (2% libre / 98% riesgo)</strong> frente al desvío seguro en <strong>Lleida (23% plaza)</strong> a 35 km.
+                </div>
+              </div>
+
+              <!-- Tarjeta 3: Lovable y Velocidad StartCamp -->
+              <div class="lv-card">
+                <div class="lv-card-head">
+                  <span class="lv-card-kicker" style="color: #10B981;">03 · STACK DE VALIDACIÓN</span>
+                  <span class="lv-card-badge" style="background: rgba(16,185,129,0.12); color: #10B981;">LOVABLE AI</span>
+                </div>
+                <div class="lv-card-title">De la Lógica a la Interfaz en Minutos</div>
+                <div class="lv-card-desc">
+                  Prototipo funcional desplegado con <strong>Lovable</strong> en el marco de StartCamp 2026 para validar en directo la UX conversacional y la heurística de enrutamiento con chóferes reales.
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- 2.4. POR QUÉ AHORA -->
         <section class="slide" id="slide-ahora" data-title="Por qué ahora" data-section="LA SOLUCIÓN" data-mood="Color">
           <style>
             #slide-ahora .pa-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; flex: 1; min-height: 0; }
@@ -1578,7 +1802,7 @@
             #slide-ahora .pa-dark .pa-src { color: rgba(255,255,255,0.45); }
           </style>
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 06 · POR QUÉ AHORA</div>
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 07 · POR QUÉ AHORA</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>EL MOMENTO ES 2026</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1618,7 +1842,7 @@
           </div>
         </section>
 
-        <!-- 2.4. POR QUÉ POSTA (BENCHMARK) -->
+        <!-- 2.5. POR QUÉ POSTA (BENCHMARK) -->
         <section class="slide" id="slide-7" data-title="Por qué POSTA" data-section="LA SOLUCIÓN" data-mood="Color">
           <style>
             .bm-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; flex: 1; }
@@ -1638,7 +1862,7 @@
             .bm-price { color: #FF7A50; font-weight: 800; }
           </style>
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 07 · POR QUÉ POSTA</div>
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 08 · POR QUÉ POSTA</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>BENCHMARK DE COMPETIDORES</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1668,10 +1892,10 @@
           </p>
         </section>
 
-        <!-- 2.5. CON QUIÉN HEMOS HABLADO -->
+        <!-- 2.6. CON QUIÉN HEMOS HABLADO -->
         <section class="slide" id="slide-8" data-title="Con quién hemos hablado" data-section="LA SOLUCIÓN" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 08 · CON QUIÉN HEMOS HABLADO</div>
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 09 · CON QUIÉN HEMOS HABLADO</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>ENTREVISTAS · NOVIEMBRE 2026</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1746,7 +1970,7 @@
             #slide-10 .me-claim { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.25; text-transform: uppercase; border-top: 1px solid var(--paper-border); padding-top: 18px; }
           </style>
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>EL NEGOCIO // 09 · MODELO ECONÓMICO</div>
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 10 · MODELO ECONÓMICO</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>SUSCRIPCIÓN B2B</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1826,7 +2050,7 @@
             #slide-11 .mk-row.som { background: #FFF6F1; border-color: #FFC2A8; }
           </style>
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>EL NEGOCIO // 10 · MERCADO</div>
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 11 · MERCADO</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>DATOS: EUROSTAT 2024 · CABEZAS TRACTORAS</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1880,7 +2104,7 @@
         <!-- 3.3. GO-TO-MARKET & ESCALA -->
         <section class="slide" id="slide-12" data-title="Go-To-Market" data-section="EL NEGOCIO" data-mood="Color" style="padding: 34px 50px 28px 50px;">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>EL NEGOCIO // 11 · GO-TO-MARKET</div>
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 12 · GO-TO-MARKET</div>
             <div style="display: flex; align-items: center; gap: 12px;">
               <span>MODELO DE ESCALA & EFECTO RED</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -2010,7 +2234,7 @@
         <!-- 4.3. EQUIPO -->
         <section class="slide" id="slide-13" data-title="Equipo" data-section="LA EMPRESA" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA EMPRESA // 12 · EQUIPO</div>
+            <div><span class="brand-bullet"></span>LA EMPRESA // 13 · EQUIPO</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>TALENTO COMPLEMENTARIO</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -2399,6 +2623,24 @@
     <div class="overview-grid" id="overview-grid-container"></div>
   </div>
 
+  <!-- Lightbox de Zoom del Prototipo Lovable -->
+  <div id="lovable-lightbox" style="position: fixed; inset: 0; background: rgba(10, 12, 16, 0.94); backdrop-filter: blur(14px); z-index: 250; display: none; align-items: center; justify-content: center; padding: 30px; cursor: pointer;" onclick="closeLovableModal()">
+    <div style="position: relative; max-width: 1100px; width: 100%; max-height: 90vh; background: #FFFFFF; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.15); cursor: default;" onclick="event.stopPropagation()">
+      <div style="height: 42px; background: #F8FAFC; border-bottom: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: space-between; padding: 0 16px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444; display: inline-block;"></span>
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B; display: inline-block;"></span>
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
+          <span style="font-family: var(--font-mono); font-size: 11px; color: #475569; font-weight: 600; margin-left: 8px;">posta.app // Prototipo Interactivo Construido con Lovable</span>
+        </div>
+        <button onclick="closeLovableModal()" style="border: none; background: #E2E8F0; width: 26px; height: 26px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #475569;">✕</button>
+      </div>
+      <div style="overflow-y: auto; max-height: calc(90vh - 42px); background: #FFFFFF; padding: 12px;">
+        <img src="assets/posta-lovable-demo.png" alt="Prototipo Posta con Lovable a tamaño completo" style="width: 100%; height: auto; display: block; border-radius: 6px;">
+      </div>
+    </div>
+  </div>
+
   <!-- Script de Navegación, Auto-Escalado y Animación de Contraportada -->
   <script>
     (function() {
@@ -2647,6 +2889,15 @@
         }
       }
 
+      window.openLovableModal = function() {
+        const lb = document.getElementById('lovable-lightbox');
+        if (lb) lb.style.display = 'flex';
+      };
+      window.closeLovableModal = function() {
+        const lb = document.getElementById('lovable-lightbox');
+        if (lb) lb.style.display = 'none';
+      };
+
       // Atajos de Teclado
       window.addEventListener('keydown', (e) => {
         if (['ArrowRight', ' ', 'PageDown', 'l'].includes(e.key)) {
@@ -2659,6 +2910,12 @@
           e.preventDefault();
           toggleOverview();
         } else if (e.key === 'Escape') {
+          const lb = document.getElementById('lovable-lightbox');
+          if (lb && lb.style.display === 'flex') {
+            e.preventDefault();
+            closeLovableModal();
+            return;
+          }
           if (overviewModal.classList.contains('open')) {
             e.preventDefault();
             toggleOverview(false);
