@@ -1389,6 +1389,37 @@
 
         <!-- 2.3. PROPUESTA DE VALOR -->
         <section class="slide" id="slide-valor" data-title="Propuesta de valor" data-section="LA SOLUCIÓN" data-mood="Color">
+          <style>
+            #slide-valor .vx-grid { flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; min-height: 0; }
+            #slide-valor .vx-card { border-radius: 16px; padding: 28px 26px 26px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+            #slide-valor .vx-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+            #slide-valor .vx-photo { flex: 0 0 40%; margin: -28px -26px 20px; overflow: hidden; min-height: 0; }
+            #slide-valor .vx-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+            #slide-valor .vx-icon { width: 54px; height: 54px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+            #slide-valor .vx-icon svg { width: 28px; height: 28px; }
+            #slide-valor .vx-who { font-family: var(--font-display); font-weight: 800; font-size: 21px; line-height: 1.1; text-transform: uppercase; white-space: nowrap; }
+            #slide-valor .vx-num { font-family: var(--font-display); font-weight: 800; font-size: 60px; line-height: 0.95; letter-spacing: -2px; white-space: nowrap; margin-top: auto; }
+            #slide-valor .vx-num.is-word { font-size: 36px; letter-spacing: -1px; white-space: normal; line-height: 0.95; }
+            #slide-valor .vx-lab { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.2; text-transform: uppercase; margin-top: 12px; }
+            #slide-valor .vx-gain { font-size: 20px; font-weight: 600; line-height: 1.35; margin-top: 22px; padding-top: 18px; border-top: 2px solid; }
+
+            #slide-valor .vx-cam { background: #FFF6F1; border: 2px solid #FF7A50; color: #11141A; }
+            #slide-valor .vx-cam .vx-icon { background: #FF7A50; color: #FFFFFF; }
+            #slide-valor .vx-cam .vx-num { color: #E26D46; }
+            #slide-valor .vx-cam .vx-gain { border-color: rgba(255,122,80,0.35); }
+
+            #slide-valor .vx-emp { color: #FFFFFF;
+              background: linear-gradient(165deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.03) 28%, rgba(255,255,255,0) 42%), radial-gradient(120% 80% at 20% 110%, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0) 55%), linear-gradient(160deg, #1C1D21 0%, #0A0A0C 55%, #000000 100%);
+              border: 1px solid rgba(255,255,255,0.10); box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 24px 50px -22px rgba(0,0,0,0.75); }
+            #slide-valor .vx-emp .vx-icon { background: rgba(255,255,255,0.10); color: #FFFFFF; }
+            #slide-valor .vx-emp .vx-num { color: #FF7A50; }
+            #slide-valor .vx-emp .vx-gain { border-color: rgba(255,255,255,0.18); }
+
+            #slide-valor .vx-area { background: #FFF6F1; border: 2px solid #FF7A50; color: #11141A; }
+            #slide-valor .vx-area .vx-icon { background: #FF7A50; color: #FFFFFF; }
+            #slide-valor .vx-area .vx-num { color: #E26D46; }
+            #slide-valor .vx-area .vx-gain { border-color: rgba(255,122,80,0.35); }
+          </style>
           <div class="meta-bar">
             <div><span class="brand-bullet"></span>LA SOLUCIÓN // 06 · PROPUESTA DE VALOR</div>
             <div style="display: flex; align-items: center; gap: 14px;">
@@ -1397,68 +1428,43 @@
             </div>
           </div>
 
-          <div style="margin-bottom: 20px;">
+          <div style="margin-bottom: 22px;">
             <span class="editorial-kicker">QUIÉN GANA QUÉ</span>
             <h2 class="editorial-title">CERTEZA PARA LA EMPRESA. <span style="color: var(--accent-warm);">DIGNIDAD PARA EL CONDUCTOR.</span></h2>
           </div>
 
-          <div class="pv-grid">
-            <!-- CAMIONERO -->
-            <div class="pv-card">
-              <div class="pv-who">
-                <div class="pv-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
-                </div>
-                <div>
-                  <div class="pv-who-name">El camionero</div>
-                  <div class="pv-who-role">Quien lo usa</div>
-                </div>
+          <div class="vx-grid">
+            <div class="vx-card vx-cam">
+              <div class="vx-photo"><img src="assets/drivers/driver3.jpg" alt="Camionero al volante" style="object-position: 40% 35%;"></div>
+              <div class="vx-head">
+                <div class="vx-who">El camionero</div>
               </div>
-              <div class="pv-number">115 h</div>
-              <div class="pv-number-label">Al año que hoy pierde buscando sitio</div>
-              <p class="pv-line">Sabe dónde dormir <strong>antes de salir</strong>: ducha, cena y descanso, sin pasarse de horas.</p>
-              <p class="pv-source">Estimación POSTA con datos de DEKRA, informe de seguridad vial 2026</p>
+              <div class="vx-num">115 h</div>
+              <div class="vx-lab">perdidas al año<br>buscando sitio</div>
+              <div class="vx-gain">Sabe dónde dormir antes de salir.</div>
             </div>
 
-            <!-- EMPRESA -->
-            <div class="pv-card is-payer">
-              <div class="pv-who">
-                <div class="pv-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="12" height="9" rx="1"/><path d="M14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
-                </div>
-                <div>
-                  <div class="pv-who-name">La empresa de transporte</div>
-                  <div class="pv-who-role">Quien paga</div>
-                </div>
+            <div class="vx-card vx-emp">
+              <!-- Foto: Parking lot Autohof Schnaittach DE 2007-02-16, Wikimedia Commons, CC BY-SA 4.0 -->
+              <div class="vx-photo"><img src="assets/places/flota-empresa-schnaittach.jpg" alt="Flota de camiones de una empresa de transporte" style="object-position: 45% 45%;"></div>
+              <div class="vx-head">
+                <div class="vx-who">La empresa</div>
               </div>
-              <div class="pv-number">2.000 €</div>
-              <div class="pv-number-label">Máximo por cada multa de tiempos</div>
-              <p class="pv-line">Menos sanciones, <strong>menos km en vacío</strong> y conductores que no se van.</p>
-              <p class="pv-source">Ley de Ordenación de los Transportes Terrestres (LOTT): de 1.001 € a 2.000 € por infracción grave de tiempos</p>
+              <div class="vx-num">8.400 €</div>
+              <div class="vx-lab">perdidos al año<br>por camión</div>
+              <div class="vx-gain">Y multas de hasta 2.000 € que puede evitar.</div>
             </div>
 
-            <!-- ÁREA DE SERVICIO -->
-            <div class="pv-card">
-              <div class="pv-who">
-                <div class="pv-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>
-                </div>
-                <div>
-                  <div class="pv-who-name">El área de servicio</div>
-                  <div class="pv-who-role">Quien recibe al camión</div>
-                </div>
+            <div class="vx-card vx-area">
+              <!-- Foto: Lkw-Parkplatz A 2 Raststätte Lehrter See (2009), Wikimedia Commons, CC BY-SA 3.0 -->
+              <div class="vx-photo"><img src="assets/places/area-servicio-lehrter-see.jpg" alt="Aparcamiento de camiones en un área de servicio" style="object-position: 60% 60%;"></div>
+              <div class="vx-head">
+                <div class="vx-who">Área de servicio</div>
               </div>
-              <div class="pv-number is-word">Llenos previsibles</div>
-              <div class="pv-number-label">Sabe quién llega y cuándo</div>
-              <p class="pv-line">Menos colas en los accesos y <strong>más camiones que paran a cenar</strong>, no solo a aparcar.</p>
-              <p class="pv-source">Beneficio cualitativo: pendiente de validar con áreas piloto</p>
+              <div class="vx-num is-word">Llenos<br>previsibles</div>
+              <div class="vx-lab">sabe quién llega<br>y cuándo</div>
+              <div class="vx-gain">Más camiones que paran a cenar.</div>
             </div>
-          </div>
-
-          <div class="pv-strip">
-            <span class="pv-strip-tag">API</span>
-            <div class="pv-strip-text">Navegadores y plataformas de flota <span>· un dato que hoy no tiene nadie: la ocupación futura</span></div>
-            <div class="qp-pills"><span>Google Maps</span><span>TomTom</span><span>Webfleet</span></div>
           </div>
         </section>
 
