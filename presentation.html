@@ -1607,34 +1607,47 @@
             </div>
           </div>
 
-          <div style="margin-bottom: 24px;">
+          <style>
+            #slide-13 .tm-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; flex: 1; min-height: 0; }
+            #slide-13 .tm-card { display: flex; flex-direction: column; min-height: 0; }
+            #slide-13 .tm-photo { flex: 0 0 70%; min-height: 0; position: relative; border-radius: 10px; overflow: hidden; background: var(--paper-surface); border: 1px solid var(--paper-border); }
+            #slide-13 .tm-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
+            #slide-13 .tm-photo.tm-empty { display: flex; align-items: center; justify-content: center; border-style: dashed; color: var(--paper-text-dim); }
+            #slide-13 .tm-name { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-top: 14px; color: var(--paper-text-main); }
+            #slide-13 .tm-role { font-size: 13px; font-weight: 600; color: var(--paper-text-main); line-height: 1.4; margin-top: 4px; }
+            #slide-13 .tm-study { font-size: 12px; color: var(--paper-text-muted); line-height: 1.4; margin-top: 2px; }
+          </style>
+
+          <div style="margin-bottom: 20px;">
             <span class="editorial-kicker">QUIÉNES SOMOS</span>
             <h2 class="editorial-title">EL EQUIPO IDÓNEO PARA RESOLVERLO.</h2>
           </div>
 
-          <div class="grid-editorial-3">
-            <div class="card-clean">
-              <span class="editorial-kicker">NEGOCIO & LEGAL</span>
-              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Estrategia & B2B</h3>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
-                Relación con flotas, unit economics y cumplimiento estricto del régimen sancionador LOTT.
-              </p>
+          <div class="tm-grid">
+            <div class="tm-card">
+              <div class="tm-photo"><img src="assets/team/mateo-egea.png" alt="Mateo Egea"></div>
+              <div class="tm-name">Mateo Egea</div>
+              <div class="tm-role">Cofundador y presidente de The Startup Circle</div>
+              <div class="tm-study">Estudiante de Empresa y Tecnología</div>
             </div>
 
-            <div class="card-clean">
-              <span class="editorial-kicker">TELEMÁTICA & IA</span>
-              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Ingeniería & Datos</h3>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
-                Arquitectura del algoritmo EAS y conexión de flujos de tacógrafo satelital G2V2.
-              </p>
+            <div class="tm-card">
+              <div class="tm-photo"><img src="assets/team/miguel-martin.webp" alt="Miguel Martín" style="object-position: 30% 30%;"></div>
+              <div class="tm-name">Miguel Martín</div>
+              <div class="tm-role">Math engineer and previous founder</div>
             </div>
 
-            <div class="card-clean">
-              <span class="editorial-kicker">PRODUCTO & UX</span>
-              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Diseño Humanista</h3>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
-                Interacción limpia en cabina para no distraer al conductor mientras conduce.
-              </p>
+            <div class="tm-card">
+              <div class="tm-photo"><img src="assets/team/jaime-estebaranz.png" alt="Jaime Estebaranz" style="object-position: 52% 15%;"></div>
+              <div class="tm-name">Jaime Estebaranz</div>
+              <div class="tm-role">Cofundador y vicepresidente de The Startup Circle</div>
+              <div class="tm-study">Estudiante de Gestión de Empresas y Emprendimiento</div>
+            </div>
+
+            <div class="tm-card">
+              <div class="tm-photo"><img src="assets/team/pablo-carreras.webp" alt="Pablo Carreras" style="object-position: 49% 35%; transform: scale(1.8); transform-origin: 49% 38%;"></div>
+              <div class="tm-name">Pablo Carreras</div>
+              <div class="tm-role">Data and AI Engineer en Accenture</div>
             </div>
           </div>
         </section>
