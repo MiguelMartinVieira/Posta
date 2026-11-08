@@ -321,19 +321,19 @@
       transform: scale(1.2);
       transition: opacity 1200ms cubic-bezier(0.16, 1, 0.3, 1), transform 1600ms cubic-bezier(0.16, 1, 0.3, 1), filter 1000ms ease;
       pointer-events: none;
-      filter: grayscale(85%) contrast(110%) brightness(0.65);
+      filter: grayscale(40%) contrast(108%) brightness(0.85);
       background: #06080B;
     }
 
     .faces-mosaic-wall.visible {
-      opacity: 0.45;
+      opacity: 0.75;
       transform: scale(1);
     }
 
     .faces-mosaic-wall.dimmed {
-      opacity: 0.22;
-      filter: grayscale(90%) contrast(115%) brightness(0.3);
-      transform: scale(0.98);
+      opacity: 0.58;
+      filter: grayscale(50%) contrast(112%) brightness(0.62);
+      transform: scale(0.99);
     }
 
     .mosaic-cell {
@@ -344,7 +344,7 @@
       border-radius: 6px;
       overflow: hidden;
       background: #0D1117;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .mosaic-cell img {
@@ -441,15 +441,15 @@
       justify-content: center;
     }
 
-    /* Scrim radial de máximo contraste para legibilidad absoluta */
+    /* Scrim radial sutil y centrado de máximo contraste para legibilidad absoluta */
     .contraportada-scrim {
       position: absolute;
-      inset: -60px -80px;
+      inset: -40px -60px;
       z-index: -1;
       border-radius: 50%;
-      background: radial-gradient(ellipse 70% 65% at 50% 50%, rgba(6, 8, 11, 0.96) 0%, rgba(6, 8, 11, 0.88) 45%, rgba(6, 8, 11, 0.45) 75%, rgba(6, 8, 11, 0) 100%);
+      background: radial-gradient(ellipse 65% 60% at 50% 50%, rgba(6, 8, 11, 0.94) 0%, rgba(6, 8, 11, 0.80) 42%, rgba(6, 8, 11, 0.32) 72%, rgba(6, 8, 11, 0) 100%);
       pointer-events: none;
-      filter: blur(14px);
+      filter: blur(16px);
     }
 
     .contraportada-finale.show {
@@ -465,7 +465,7 @@
       letter-spacing: -6px;
       line-height: 0.92;
       color: #FFFFFF;
-      margin: 0 0 20px 0;
+      margin: 0 0 16px 0;
       text-shadow: 0 10px 50px rgba(0, 0, 0, 0.98), 0 3px 12px rgba(0, 0, 0, 0.85);
     }
 
@@ -474,11 +474,11 @@
       font-size: 22px;
       font-weight: 700;
       letter-spacing: 3px;
-      color: #F1F5F9;
+      color: #FF7A50; /* Naranja cálido vibrante de Posta */
       text-transform: uppercase;
       max-width: 960px;
       line-height: 1.35;
-      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.95);
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.98), 0 2px 10px rgba(255, 122, 80, 0.4);
     }
 
     /* ==========================================================================
