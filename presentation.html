@@ -658,42 +658,56 @@
         <section class="slide" id="slide-2" data-title="El Problema" data-section="LA IDEA" data-mood="Color">
           <div class="meta-bar">
             <div><span class="brand-bullet"></span>LA IDEA // 01 · EL PROBLEMA</div>
-            <div>LA JONQUERA · 23.000 CAMIONES/DÍA</div>
+            <div>DATOS: COMISIÓN EUROPEA · DEKRA 2026</div>
           </div>
 
           <div style="margin-bottom: 24px;">
-            <span class="editorial-kicker">LA ASIMETRÍA CRÍTICA</span>
-            <h2 class="editorial-title">DORMIR EN UN DESCAMPADO O JUGARSE 1.000 € DE MULTA.</h2>
+            <span class="editorial-kicker">EL PROBLEMA EN CIFRAS</span>
+            <h2 class="editorial-title">NO HAY SITIO PARA PARAR, Y BUSCARLO CUESTA TIEMPO, KILÓMETROS Y MULTAS.</h2>
           </div>
 
-          <div class="grid-editorial-3">
+          <div class="grid-editorial-3" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
             <div class="card-clean">
-              <span class="editorial-kicker">INSEGURIDAD</span>
-              <div class="stat-hero-number">93%</div>
-              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Robos Nocturnos</div>
+              <span class="editorial-kicker">FALTAN PLAZAS</span>
+              <div class="stat-hero-number" style="color: var(--accent-warm); font-size: 46px; white-space: nowrap;">43.500</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Camiones sin plaza cada noche</div>
               <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
-                Ocurren mientras duermen en polígonos y arcenes sin vigilancia.
+                Es el déficit de plazas en España y Portugal. En toda la UE faltan 390.000.
               </p>
+              <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 8px; line-height: 1.35; font-style: italic;">Fuente: Comisión Europea, informe sobre aparcamientos seguros (2025)</p>
             </div>
 
             <div class="card-clean">
-              <span class="editorial-kicker">DÉFICIT EUROPEO</span>
-              <div class="stat-hero-number" style="color: var(--accent-warm);">390K</div>
-              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Plazas Seguras Faltantes</div>
+              <span class="editorial-kicker">TIEMPO PERDIDO</span>
+              <div class="stat-hero-number" style="font-size: 46px; white-space: nowrap;">2 de 3</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Tardan más de 30 min en aparcar</div>
               <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
-                En España solo hay 13 parkings SSTPA certificados para 296.000 camiones.
+                El 43 % tarda de 30 a 60 minutos y el 24 %, más de una hora.
               </p>
+              <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 8px; line-height: 1.35; font-style: italic;">Fuente: DEKRA, informe de seguridad vial 2026 (encuesta a ~100 conductores)</p>
             </div>
 
             <div class="card-clean">
-              <span class="editorial-kicker">SANCIÓN INMINENTE</span>
-              <div class="stat-hero-number">75%</div>
-              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Denuncias en Ruta</div>
+              <span class="editorial-kicker">KILÓMETROS Y GASÓLEO</span>
+              <div class="stat-hero-number" style="font-size: 46px; white-space: nowrap;">+20 km</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Extra solo para encontrar sitio</div>
               <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
-                Causadas por superar escasos minutos buscando dónde meter el tráiler.
+                Le pasa con frecuencia a más de la mitad. Son unos 6 litros de gasóleo por búsqueda.
               </p>
+              <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 8px; line-height: 1.35; font-style: italic;">Fuente: DEKRA, informe de seguridad vial 2026. Litros: estimación propia (30 l/100 km)</p>
+            </div>
+
+            <div class="card-clean">
+              <span class="editorial-kicker">MULTAS</span>
+              <div class="stat-hero-number" style="font-size: 46px; white-space: nowrap;">83.600</div>
+              <div style="font-size: 13px; font-weight: 700; text-transform: uppercase;">Infracciones de tiempos al año</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); margin-top: 6px; line-height: 1.4;">
+                Por conducción, pausas y descansos en España. Van de 401 € a 6.000 € cada una.
+              </p>
+              <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 8px; line-height: 1.35; font-style: italic;">Fuente: Comisión Europea, SWD(2024) 215 (media 2021–2022); importes: LOTT</p>
             </div>
           </div>
+
         </section>
 
         <!-- 1.3. ¿POR QUÉ AHORA? -->
@@ -746,24 +760,48 @@
             <div>POSTA TECHNOLOGIES</div>
           </div>
 
-          <div class="grid-editorial-split">
-            <div>
-              <span class="editorial-kicker">PLATAFORMA PREDICTIVA B2B</span>
-              <h2 class="editorial-title" style="margin-bottom: 16px;">
-                LA RED DE PERNOCTA CONECTADA AL TACÓGRAFO.
-              </h2>
-              <p class="editorial-lead" style="margin-bottom: 20px;">
-                Conectamos la telemetría de flotas para anticipar el colapso de los parkings y asegurar la parada antes de iniciar la marcha.
+          <div style="margin-bottom: 24px;">
+            <span class="editorial-kicker">QUÉ ES POSTA</span>
+            <h2 class="editorial-title">LA RED DE INFORMACIÓN QUE PREDICE SI HABRÁ SITIO CUANDO LLEGUES.</h2>
+          </div>
+
+          <div class="grid-editorial-3">
+            <div class="card-clean" style="justify-content: flex-start;">
+              <span class="editorial-kicker">01 · QUÉ HACE</span>
+              <div style="font-size: 17px; font-weight: 700; margin: 10px 0 8px; line-height: 1.3;">Ocupación ahora y a tu hora de llegada</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5;">
+                Mostramos en tiempo real cuánta demanda tiene cada área de servicio y predecimos cuántas plazas libres habrá cuando llegue cada camión.
               </p>
-              
-              <div class="editorial-quote">
-                «No instalamos hardware nuevo. Le damos inteligencia a los tacógrafos que los camiones ya llevan.»
-              </div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5; margin-top: 8px;">
+                No damos certezas: gestionamos la incertidumbre y decimos qué probabilidad hay de encontrar sitio.
+              </p>
             </div>
 
-            <div class="photo-frame" style="height: 100%; max-height: 520px;">
-              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop" alt="Plataforma Posta">
+            <div class="card-clean" style="justify-content: flex-start;">
+              <span class="editorial-kicker">02 · POR QUÉ MEJORA SOLA</span>
+              <div style="font-size: 17px; font-weight: 700; margin: 10px 0 8px; line-height: 1.3;">Cada consulta es un dato de demanda futura</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5;">
+                Cuando un camión nos pregunta dónde parar, también nos dice cuándo va a llegar. Más consultas, mejor predicción; mejor predicción, más usuarios.
+              </p>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5; margin-top: 8px;">
+                Empezamos con datos de las áreas, de la DGT y de las primeras flotas.
+              </p>
             </div>
+
+            <div class="card-clean" style="justify-content: flex-start;">
+              <span class="editorial-kicker">03 · CÓMO LLEGA</span>
+              <div style="font-size: 17px; font-weight: 700; margin: 10px 0 8px; line-height: 1.3;">Una API y una app</div>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5;">
+                <strong style="color: var(--paper-text-main);">API</strong> para navegadores y plataformas de flota, como Google Maps, TomTom o Webfleet.
+              </p>
+              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.5; margin-top: 8px;">
+                <strong style="color: var(--paper-text-main);">App</strong> para transitarios, empresas de logística con flota y autónomos.
+              </p>
+            </div>
+          </div>
+
+          <div class="editorial-quote" style="margin-top: 20px;">
+            «Respondemos a una pregunta que hasta hoy no tenía respuesta: ¿habrá sitio cuando llegue?»
           </div>
         </section>
 
