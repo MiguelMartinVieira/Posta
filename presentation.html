@@ -1140,11 +1140,11 @@
             .bm-table thead th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--paper-text-muted); line-height: 1.3; }
             .bm-table .bm-row { text-align: left; font-size: 13px; font-weight: 700; color: var(--paper-text-main); width: 190px; }
             .bm-sub { font-weight: 500; color: var(--paper-text-dim); }
-            .bm-y { color: #16A34A; font-size: 20px; font-weight: 800; }
-            .bm-n { color: var(--paper-text-dim); font-size: 18px; }
-            .bm-h { color: var(--accent-amber); font-size: 18px; }
-            .bm-dash { color: var(--paper-text-dim); }
-            .bm-note { display: block; font-size: 10px; color: var(--paper-text-muted); margin-top: 2px; line-height: 1.25; }
+            .bm-y { color: #16A34A; font-size: 28px; font-weight: 800; line-height: 1; }
+            .bm-n { color: var(--paper-text-dim); font-size: 25px; line-height: 1; }
+            .bm-h { color: var(--accent-amber); font-size: 25px; line-height: 1; }
+            .bm-dash { color: var(--paper-text-dim); font-size: 22px; line-height: 1; }
+            .bm-note { display: block; font-size: 10px; color: var(--paper-text-muted); margin-top: 4px; line-height: 1.25; }
             .bm-txt { font-size: 12px; font-weight: 600; color: var(--paper-text-main); line-height: 1.3; }
             .bm-table .bm-posta { background: rgba(255, 122, 80, 0.10); border-left: 2px solid #FF7A50; border-right: 2px solid #FF7A50; }
             .bm-table thead .bm-posta { color: #FF7A50; font-family: var(--font-display); font-size: 18px; border-top: 2px solid #FF7A50; border-radius: 6px 6px 0 0; }
@@ -1231,35 +1231,111 @@
              BLOQUE 3: EL NEGOCIO
              ================================================================ -->
 
-        <!-- 3.1. MODELO ECONÓMICO -->
-        <section class="slide" id="slide-9" data-title="Modelo Económico" data-section="EL NEGOCIO" data-mood="Color">
+        <!-- 3.0. MODELO DE NEGOCIO -->
+        <section class="slide" id="slide-9" data-title="Modelo de negocio" data-section="EL NEGOCIO" data-mood="Color">
           <style>
-            #slide-9 .me-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 26px; flex: 1; min-height: 0; }
-            #slide-9 .me-ticket { position: relative; overflow: hidden; border-radius: 10px; padding: 32px 36px; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between;
+            #slide-9 .mn-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 26px; flex: 1; min-height: 0; }
+            #slide-9 .mn-box { background: #11141A; color: #FFFFFF; border-radius: 10px; padding: 26px 28px; display: flex; flex-direction: column; gap: 18px; }
+            #slide-9 .mn-chip { align-self: flex-start; background: #FF7A50; color: #11141A; font-family: var(--font-display); font-weight: 800; font-size: 30px; letter-spacing: -0.5px; padding: 8px 18px; border-radius: 8px; }
+            #slide-9 .mn-two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; flex: 1; }
+            #slide-9 .mn-card { border-radius: 8px; padding: 18px 20px; }
+            #slide-9 .mn-k { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.7; margin-bottom: 8px; }
+            #slide-9 .mn-v { font-family: var(--font-display); font-weight: 800; font-size: 22px; line-height: 1.15; text-transform: uppercase; }
+            #slide-9 .mn-t { font-size: 13px; line-height: 1.45; margin-top: 8px; }
+            #slide-9 .mn-right { display: flex; flex-direction: column; gap: 14px; }
+            #slide-9 .mn-panel { background: var(--paper-surface); border: 1px solid var(--paper-border); border-radius: 10px; padding: 20px 24px; }
+            #slide-9 .mn-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 10px; }
+            #slide-9 .mn-num { font-family: var(--font-display); font-weight: 800; font-size: 40px; letter-spacing: -1.5px; line-height: 1; white-space: nowrap; }
+            #slide-9 .mn-lab { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--paper-text-muted); margin-top: 6px; }
+            #slide-9 .mn-row { display: grid; grid-template-columns: 82px 1fr; gap: 10px; padding: 9px 0; border-top: 1px solid var(--paper-border); font-size: 13px; line-height: 1.4; }
+            #slide-9 .mn-row:first-of-type { border-top: none; }
+            #slide-9 .mn-when { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding-top: 2px; }
+          </style>
+          <div class="meta-bar">
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 08 · MODELO DE NEGOCIO</div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span>SAAS B2B2C</span>
+              <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <span class="editorial-kicker">CÓMO GANAMOS DINERO</span>
+            <h2 class="editorial-title">COBRAMOS A LA EMPRESA. AYUDAMOS AL CAMIONERO.</h2>
+          </div>
+
+          <div class="mn-grid">
+            <div class="mn-box">
+              <span class="mn-chip">B2B2C</span>
+              <p style="font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.85);">
+                Vendemos a <strong style="color: #FFFFFF;">la empresa de transporte</strong> (B2B), que es quien paga las multas y el tiempo perdido. Quien usa POSTA cada noche es <strong style="color: #FFFFFF;">el camionero</strong> (C).
+              </p>
+              <div class="mn-two">
+                <div class="mn-card" style="background: #FFFFFF; color: #11141A;">
+                  <div class="mn-k">Modelo</div>
+                  <div class="mn-v">SaaS<br>por suscripción</div>
+                  <div class="mn-t" style="color: var(--paper-text-muted);">Software en la nube, sin instalar nada en el camión.</div>
+                </div>
+                <div class="mn-card" style="background: #1E2A44; color: #FFFFFF;">
+                  <div class="mn-k">Precio</div>
+                  <div class="mn-v" style="color: #FF7A50;">Fijo: 15 €<br>camión / mes</div>
+                  <div class="mn-t" style="color: rgba(255,255,255,0.8);">Sin planes ni comisiones. El ingreso crece con cada camión que se suma.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mn-right">
+              <div class="mn-panel">
+                <span class="editorial-kicker">IMPACTO · OBJETIVO A 3 AÑOS</span>
+                <div class="mn-metrics">
+                  <div><div class="mn-num">≈ 101.000 €</div><div class="mn-lab">MRR (ingreso al mes)</div></div>
+                  <div><div class="mn-num" style="color: #FF7A50;">≈ 1,2 M€</div><div class="mn-lab">ARR (ingreso al año)</div></div>
+                </div>
+                <p style="font-size: 12px; color: var(--paper-text-muted); margin-top: 12px; line-height: 1.4;">Con 6.750 camiones en España: 15 flotas directas de 50 camiones y 3 plataformas de flota con 2.000 cada una (SOM).</p>
+              </div>
+
+              <div class="mn-panel" style="flex: 1;">
+                <span class="editorial-kicker">FUENTES DE INGRESO</span>
+                <div style="margin-top: 6px;">
+                  <div class="mn-row"><span class="mn-when" style="color: #FF7A50;">Hoy</span><span><strong>Suscripción por camión</strong> a flotas, transitarios y autónomos.</span></div>
+                  <div class="mn-row"><span class="mn-when" style="color: var(--paper-text-muted);">Futuro</span><span><strong>API</strong> para navegadores y plataformas de flota.</span></div>
+                  <div class="mn-row"><span class="mn-when" style="color: var(--paper-text-muted);">Futuro</span><span><strong>Datos</strong> para administraciones y concesionarias de autopista.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 12px; line-height: 1.35; font-style: italic;">MRR y ARR: objetivo a 3 años (6.750 camiones × 15 € al mes). Es un supuesto que hay que validar con las primeras flotas.</p>
+        </section>
+
+        <!-- 3.1. MODELO ECONÓMICO -->
+        <section class="slide" id="slide-10" data-title="Modelo Económico" data-section="EL NEGOCIO" data-mood="Color">
+          <style>
+            #slide-10 .me-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 26px; flex: 1; min-height: 0; }
+            #slide-10 .me-ticket { position: relative; overflow: hidden; border-radius: 10px; padding: 32px 36px; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between;
               background:
                 linear-gradient(165deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.03) 28%, rgba(255,255,255,0) 42%),
                 radial-gradient(120% 80% at 20% 110%, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0) 55%),
                 linear-gradient(160deg, #1C1D21 0%, #0A0A0C 55%, #000000 100%);
               border: 1px solid rgba(255,255,255,0.10);
               box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -20px 40px rgba(0,0,0,0.6), 0 22px 44px -18px rgba(0,0,0,0.75); }
-            #slide-9 .me-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7DD3FC; background: rgba(2,132,199,0.16); border: 1px solid rgba(56,189,248,0.45); padding: 6px 12px; border-radius: 999px; align-self: flex-start; }
-            #slide-9 .me-big { font-family: var(--font-display); font-weight: 800; font-size: 128px; line-height: 0.85; letter-spacing: -5px; white-space: nowrap; color: #FF7A50; }
-            #slide-9 .me-unit { font-family: var(--font-display); font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: 1px; margin-top: 16px; color: #FFFFFF; }
-            #slide-9 .me-foot { display: flex; gap: 10px; position: relative; z-index: 1; }
-            #slide-9 .me-pill { background: rgba(255,255,255,0.08); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.28); border-radius: 999px; padding: 7px 14px; font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
-            #slide-9 .me-right { background: linear-gradient(90deg, rgba(2, 132, 199, 0.05) 0%, var(--paper-surface) 45%); border: 1px solid var(--paper-border); border-left: 4px solid #0284C7; border-radius: 10px; padding: 28px 32px; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; }
-            #slide-9 .me-waffle { display: grid; grid-template-columns: repeat(10, 25px); grid-auto-rows: 25px; gap: 6px; }
-            #slide-9 .me-waffle span { border-radius: 5px; background: #1E293B; }
-            #slide-9 .me-waffle span.on { background: #FF7A50; box-shadow: 0 0 0 3px rgba(255,122,80,0.25); }
-            #slide-9 .me-legend { display: flex; flex-direction: column; gap: 22px; }
-            #slide-9 .me-key { display: flex; gap: 12px; align-items: flex-start; }
-            #slide-9 .me-dot { width: 14px; height: 14px; border-radius: 4px; margin-top: 8px; flex-shrink: 0; }
-            #slide-9 .me-val { font-family: var(--font-display); font-weight: 800; font-size: 38px; letter-spacing: -1px; line-height: 1; white-space: nowrap; }
-            #slide-9 .me-lab { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--paper-text-muted); margin-top: 6px; }
-            #slide-9 .me-claim { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.25; text-transform: uppercase; border-top: 1px solid var(--paper-border); padding-top: 18px; }
+            #slide-10 .me-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7DD3FC; background: rgba(2,132,199,0.16); border: 1px solid rgba(56,189,248,0.45); padding: 6px 12px; border-radius: 999px; align-self: flex-start; }
+            #slide-10 .me-big { font-family: var(--font-display); font-weight: 800; font-size: 128px; line-height: 0.85; letter-spacing: -5px; white-space: nowrap; color: #FF7A50; }
+            #slide-10 .me-unit { font-family: var(--font-display); font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: 1px; margin-top: 16px; color: #FFFFFF; }
+            #slide-10 .me-foot { display: flex; gap: 10px; position: relative; z-index: 1; }
+            #slide-10 .me-pill { background: rgba(255,255,255,0.08); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.28); border-radius: 999px; padding: 7px 14px; font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+            #slide-10 .me-right { background: linear-gradient(90deg, rgba(2, 132, 199, 0.05) 0%, var(--paper-surface) 45%); border: 1px solid var(--paper-border); border-left: 4px solid #0284C7; border-radius: 10px; padding: 28px 32px; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; }
+            #slide-10 .me-waffle { display: grid; grid-template-columns: repeat(10, 25px); grid-auto-rows: 25px; gap: 6px; }
+            #slide-10 .me-waffle span { border-radius: 5px; background: #1E293B; }
+            #slide-10 .me-waffle span.on { background: #FF7A50; box-shadow: 0 0 0 3px rgba(255,122,80,0.25); }
+            #slide-10 .me-legend { display: flex; flex-direction: column; gap: 22px; }
+            #slide-10 .me-key { display: flex; gap: 12px; align-items: flex-start; }
+            #slide-10 .me-dot { width: 14px; height: 14px; border-radius: 4px; margin-top: 8px; flex-shrink: 0; }
+            #slide-10 .me-val { font-family: var(--font-display); font-weight: 800; font-size: 38px; letter-spacing: -1px; line-height: 1; white-space: nowrap; }
+            #slide-10 .me-lab { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--paper-text-muted); margin-top: 6px; }
+            #slide-10 .me-claim { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.25; text-transform: uppercase; border-top: 1px solid var(--paper-border); padding-top: 18px; }
           </style>
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>EL NEGOCIO // 08 · MODELO ECONÓMICO</div>
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 09 · MODELO ECONÓMICO</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>SUSCRIPCIÓN B2B</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1319,28 +1395,28 @@
         </section>
 
         <!-- 3.2. MERCADO -->
-        <section class="slide" id="slide-10" data-title="Mercado" data-section="EL NEGOCIO" data-mood="Color">
+        <section class="slide" id="slide-11" data-title="Mercado" data-section="EL NEGOCIO" data-mood="Color">
           <style>
-            #slide-10 .mk-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 34px; flex: 1; min-height: 0; align-items: center; }
-            #slide-10 .mk-rings { position: relative; width: 100%; max-width: 440px; aspect-ratio: 1 / 1; margin: 0 auto; }
-            #slide-10 .mk-ring { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); border-radius: 50%; display: flex; justify-content: center; }
-            #slide-10 .mk-tam { width: 100%; height: 100%; background: radial-gradient(circle at 50% 30%, #F8FAFC 0, #E2E8F0 100%); border: 1px solid #CBD5E1; }
-            #slide-10 .mk-sam { width: 66%; height: 66%; background: radial-gradient(circle at 50% 30%, #FFE3D6 0, #FFC2A8 100%); border: 1px solid #FFAF8C; }
-            #slide-10 .mk-som { width: 30%; height: 30%; background: linear-gradient(135deg, #FF8A5C 0%, #E26D46 60%, #B94B2A 100%); box-shadow: 0 14px 30px -12px rgba(226,109,70,0.7); align-items: center; }
-            #slide-10 .mk-ring-label { font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 7%; }
-            #slide-10 .mk-tam .mk-ring-label { color: #64748B; margin-top: 9%; }
-            #slide-10 .mk-sam .mk-ring-label { color: #B94B2A; margin-top: 12%; }
-            #slide-10 .mk-som .mk-ring-label { color: #FFFFFF; margin-top: 0; font-size: 15px; }
-            #slide-10 .mk-rows { display: flex; flex-direction: column; gap: 14px; }
-            #slide-10 .mk-row { display: grid; grid-template-columns: 6px 1fr auto; gap: 18px; align-items: center; background: var(--paper-surface); border: 1px solid var(--paper-border); border-radius: 10px; padding: 18px 22px 18px 0; overflow: hidden; }
-            #slide-10 .mk-bar { align-self: stretch; margin: -18px 0; }
-            #slide-10 .mk-scope { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
-            #slide-10 .mk-trucks { font-family: var(--font-display); font-weight: 700; font-size: 19px; margin-top: 4px; color: var(--paper-text-main); }
-            #slide-10 .mk-eur { font-family: var(--font-display); font-weight: 800; font-size: 46px; letter-spacing: -2px; white-space: nowrap; color: var(--paper-text-main); }
-            #slide-10 .mk-row.som { background: #FFF6F1; border-color: #FFC2A8; }
+            #slide-11 .mk-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 34px; flex: 1; min-height: 0; align-items: center; }
+            #slide-11 .mk-rings { position: relative; width: 100%; max-width: 440px; aspect-ratio: 1 / 1; margin: 0 auto; }
+            #slide-11 .mk-ring { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); border-radius: 50%; display: flex; justify-content: center; }
+            #slide-11 .mk-tam { width: 100%; height: 100%; background: radial-gradient(circle at 50% 30%, #F8FAFC 0, #E2E8F0 100%); border: 1px solid #CBD5E1; }
+            #slide-11 .mk-sam { width: 66%; height: 66%; background: radial-gradient(circle at 50% 30%, #FFE3D6 0, #FFC2A8 100%); border: 1px solid #FFAF8C; }
+            #slide-11 .mk-som { width: 30%; height: 30%; background: linear-gradient(135deg, #FF8A5C 0%, #E26D46 60%, #B94B2A 100%); box-shadow: 0 14px 30px -12px rgba(226,109,70,0.7); align-items: center; }
+            #slide-11 .mk-ring-label { font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 7%; }
+            #slide-11 .mk-tam .mk-ring-label { color: #64748B; margin-top: 9%; }
+            #slide-11 .mk-sam .mk-ring-label { color: #B94B2A; margin-top: 12%; }
+            #slide-11 .mk-som .mk-ring-label { color: #FFFFFF; margin-top: 0; font-size: 15px; }
+            #slide-11 .mk-rows { display: flex; flex-direction: column; gap: 14px; }
+            #slide-11 .mk-row { display: grid; grid-template-columns: 6px 1fr auto; gap: 18px; align-items: center; background: var(--paper-surface); border: 1px solid var(--paper-border); border-radius: 10px; padding: 18px 22px 18px 0; overflow: hidden; }
+            #slide-11 .mk-bar { align-self: stretch; margin: -18px 0; }
+            #slide-11 .mk-scope { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+            #slide-11 .mk-trucks { font-family: var(--font-display); font-weight: 700; font-size: 19px; margin-top: 4px; color: var(--paper-text-main); }
+            #slide-11 .mk-eur { font-family: var(--font-display); font-weight: 800; font-size: 46px; letter-spacing: -2px; white-space: nowrap; color: var(--paper-text-main); }
+            #slide-11 .mk-row.som { background: #FFF6F1; border-color: #FFC2A8; }
           </style>
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>EL NEGOCIO // 09 · MERCADO</div>
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 10 · MERCADO</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>DATOS: EUROSTAT 2024 · CABEZAS TRACTORAS</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1392,9 +1468,9 @@
         </section>
 
         <!-- 3.3. GO-TO-MARKET & ESCALA -->
-        <section class="slide" id="slide-11" data-title="Go-To-Market" data-section="EL NEGOCIO" data-mood="Color" style="padding: 34px 50px 28px 50px;">
+        <section class="slide" id="slide-12" data-title="Go-To-Market" data-section="EL NEGOCIO" data-mood="Color" style="padding: 34px 50px 28px 50px;">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>EL NEGOCIO // 10 · GO-TO-MARKET</div>
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 11 · GO-TO-MARKET</div>
             <div style="display: flex; align-items: center; gap: 12px;">
               <span>MODELO DE ESCALA & EFECTO RED</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1522,9 +1598,9 @@
              ================================================================ -->
 
         <!-- 4.3. EQUIPO -->
-        <section class="slide" id="slide-12" data-title="Equipo" data-section="LA EMPRESA" data-mood="Color">
+        <section class="slide" id="slide-13" data-title="Equipo" data-section="LA EMPRESA" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA EMPRESA // 11 · EQUIPO</div>
+            <div><span class="brand-bullet"></span>LA EMPRESA // 12 · EQUIPO</div>
             <div style="display: flex; align-items: center; gap: 14px;">
               <span>TALENTO COMPLEMENTARIO</span>
               <img src="assets/logo/posta-logo-horizontal.svg" alt="POSTA" class="slide-logo-brand" style="height: 16px; width: auto;">
@@ -1567,7 +1643,7 @@
              BLOQUE 5: CONTRAPORTADA (ANIMACIÓN REAL DE ROSTROS)
              Miguel & Marius en GRANDE (50/50) -> Retroceso a Mosaico Aleatorio -> POSTA + Eslogan
              ================================================================ -->
-        <section class="slide" id="slide-13" data-title="Contraportada" data-section="CONTRAPORTADA" data-mood="Animation" style="padding: 0; background: #06080B;">
+        <section class="slide" id="slide-14" data-title="Contraportada" data-section="CONTRAPORTADA" data-mood="Animation" style="padding: 0; background: #06080B;">
           <div id="contraportada-stage">
             
             <!-- Mosaico masivo de 48 caras aleatorizadas de camioneros -->
@@ -1800,7 +1876,7 @@
         }
 
         // Disparar animación si es la contraportada (Slide 14 / Última diapositiva)
-        if (activeSlide.id === 'slide-13' || current === total - 1) {
+        if (activeSlide.id === 'slide-14' || current === total - 1) {
           triggerContraportadaAnim();
         } else {
           clearAnimTimeouts();
