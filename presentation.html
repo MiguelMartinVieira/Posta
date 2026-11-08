@@ -703,53 +703,14 @@
 
         </section>
 
-        <!-- 1.3. ¿POR QUÉ AHORA? -->
-        <section class="slide" id="slide-3" data-title="¿Por qué ahora?" data-section="LA IDEA" data-mood="Color">
-          <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA IDEA // 02 · EL MOMENTO</div>
-            <div>PAQUETE DE MOVILIDAD I · REGLAMENTO UE 2020/1054</div>
-          </div>
-
-          <div style="margin-bottom: 24px;">
-            <span class="editorial-kicker">LA TORMENTA REGULATORIA DE 2026</span>
-            <h2 class="editorial-title">EL TACÓGRAFO G2V2 HA ELIMINADO EL MARGEN DE TOLERANCIA.</h2>
-          </div>
-
-          <div class="grid-editorial-3">
-            <div class="card-clean">
-              <span class="editorial-kicker">CONTROL SATELITAL</span>
-              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Tacógrafo G2V2</h3>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
-                Obligatorio ya en toda la flota internacional. Registra cruces de frontera por satélite en tiempo real.
-              </p>
-            </div>
-
-            <div class="card-clean">
-              <span class="editorial-kicker">INSPECCIÓN RETROACTIVA</span>
-              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">56 Días de Control</h3>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
-                La Guardia Civil revisa casi dos meses hacia atrás. Cualquier exceso pasado se sanciona hoy.
-              </p>
-            </div>
-
-            <div class="card-clean">
-              <span class="editorial-kicker">EMBUDO PIRENAICO</span>
-              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Saturación Diaria</h3>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
-                23.455 camiones al día cruzan por La Jonquera e Irún. Las plazas colapsan cada atardecer.
-              </p>
-            </div>
-          </div>
-        </section>
-
         <!-- ================================================================
              BLOQUE 2: LA SOLUCIÓN
              ================================================================ -->
 
         <!-- 2.1. PRODUCTO -->
-        <section class="slide" id="slide-4" data-title="Producto" data-section="LA SOLUCIÓN" data-mood="Color">
+        <section class="slide" id="slide-3" data-title="Producto" data-section="LA SOLUCIÓN" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 03 · EL PRODUCTO</div>
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 02 · EL PRODUCTO</div>
             <div>POSTA TECHNOLOGIES</div>
           </div>
 
@@ -799,9 +760,9 @@
         </section>
 
         <!-- 2.2. CÓMO FUNCIONA (DEMO) -> CAMBIO DE MOOD B&W -->
-        <section class="slide slide-mood-bw" id="slide-5" data-title="Cómo Funciona" data-section="LA SOLUCIÓN" data-mood="B&W" style="padding: 26px 44px 20px 44px;">
+        <section class="slide slide-mood-bw" id="slide-4" data-title="Cómo Funciona" data-section="LA SOLUCIÓN" data-mood="B&W" style="padding: 26px 44px 20px 44px;">
           <div class="meta-bar" style="margin-bottom: 8px;">
-            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 04 · CÓMO FUNCIONA (DEMO)</div>
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 03 · CÓMO FUNCIONA (DEMO)</div>
             <div>POSTA TECHNOLOGIES</div>
           </div>
 
@@ -936,43 +897,51 @@
           </div>
         </section>
 
-        <!-- 2.3. PROPUESTA DE VALOR -->
-        <section class="slide" id="slide-6" data-title="Propuesta de Valor" data-section="LA SOLUCIÓN" data-mood="Color">
+        <!-- 2.3. POR QUÉ POSTA (BENCHMARK) -->
+        <section class="slide" id="slide-5" data-title="Por qué POSTA" data-section="LA SOLUCIÓN" data-mood="Color">
+          <style>
+            .bm-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; flex: 1; }
+            .bm-table th, .bm-table td { padding: 10px 8px; text-align: center; vertical-align: middle; border-bottom: 1px solid var(--paper-border); }
+            .bm-table thead th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--paper-text-muted); line-height: 1.3; }
+            .bm-table .bm-row { text-align: left; font-size: 13px; font-weight: 700; color: var(--paper-text-main); width: 190px; }
+            .bm-sub { font-weight: 500; color: var(--paper-text-dim); }
+            .bm-y { color: #16A34A; font-size: 20px; font-weight: 800; }
+            .bm-n { color: var(--paper-text-dim); font-size: 18px; }
+            .bm-h { color: var(--accent-amber); font-size: 18px; }
+            .bm-dash { color: var(--paper-text-dim); }
+            .bm-note { display: block; font-size: 10px; color: var(--paper-text-muted); margin-top: 2px; line-height: 1.25; }
+            .bm-txt { font-size: 12px; font-weight: 600; color: var(--paper-text-main); line-height: 1.3; }
+            .bm-table .bm-posta { background: rgba(255, 122, 80, 0.10); border-left: 2px solid #FF7A50; border-right: 2px solid #FF7A50; }
+            .bm-table thead .bm-posta { color: #FF7A50; font-family: var(--font-display); font-size: 18px; border-top: 2px solid #FF7A50; border-radius: 6px 6px 0 0; }
+            .bm-table tbody tr:last-child .bm-posta { border-bottom: 2px solid #FF7A50; }
+            .bm-price { color: #FF7A50; font-weight: 800; }
+          </style>
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 05 · PROPUESTA DE VALOR</div>
-            <div>IMPACTO INTEGRAL</div>
+            <div><span class="brand-bullet"></span>LA SOLUCIÓN // 04 · POR QUÉ POSTA</div>
+            <div>BENCHMARK DE COMPETIDORES</div>
           </div>
 
-          <div style="margin-bottom: 24px;">
-            <span class="editorial-kicker">TRIPLE IMPACTO</span>
-            <h2 class="editorial-title">CERTEZA PARA LA EMPRESA. DIGNIDAD PARA EL CONDUCTOR.</h2>
+          <div style="margin-bottom: 18px;">
+            <span class="editorial-kicker">POR QUÉ NOSOTROS Y NO OTROS</span>
+            <h2 class="editorial-title">SOLO POSTA MIDE ESPAÑA Y PREDICE SI HABRÁ SITIO CUANDO LLEGUES.</h2>
           </div>
 
-          <div class="grid-editorial-3">
-            <div class="card-clean" style="border-left: 3px solid var(--accent-warm);">
-              <span class="editorial-kicker">EL CONDUCTOR</span>
-              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Cero Ansiedad</h3>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
-                Sabe con horas de antelación dónde dormirá, con ducha caliente y vallas vigiladas.
-              </p>
-            </div>
+          <table class="bm-table">
+            <thead>
+              <tr><th></th><th>LKW.APP<br><span class='bm-sub'>TIMOCOM</span></th><th>Bosch Secure<br>Truck Parking</th><th>TRAVIS /<br>Mowiz Truck</th><th>Toll Collect<br>+ HERE</th><th>Webfleet /<br>Frotcom</th><th>Google Maps /<br>TomTom</th><th class="bm-posta">POSTA</th></tr>
+            </thead>
+            <tbody>
+              <tr><th class="bm-row">Ocupación medida en España</th><td><span class="bm-n">✕</span><span class="bm-note">La estima</span></td><td><span class="bm-h">◐</span><span class="bm-note">Solo sus plazas</span></td><td><span class="bm-h">◐</span><span class="bm-note">Solo sus plazas</span></td><td><span class="bm-n">✕</span><span class="bm-note">Solo Alemania</span></td><td><span class="bm-n">✕</span></td><td><span class="bm-n">✕</span></td><td class="bm-posta"><span class="bm-y">✓</span></td></tr>
+              <tr><th class="bm-row">Predicción a la hora de llegada</th><td><span class="bm-y">✓</span><span class="bm-note">Hasta 15 h</span></td><td><span class="bm-n">✕</span></td><td><span class="bm-n">✕</span></td><td><span class="bm-n">✕</span></td><td><span class="bm-n">✕</span></td><td><span class="bm-n">✕</span></td><td class="bm-posta"><span class="bm-y">✓</span></td></tr>
+              <tr><th class="bm-row">API para otras plataformas</th><td><span class="bm-y">✓</span></td><td><span class="bm-y">✓</span><span class="bm-note">Bosch L.OS</span></td><td><span class="bm-h">◐</span><span class="bm-note">TRAVIS sí, Mowiz no</span></td><td><span class="bm-y">✓</span><span class="bm-note">Vía HERE</span></td><td><span class="bm-y">✓</span></td><td><span class="bm-dash">—</span></td><td class="bm-posta"><span class="bm-y">✓</span></td></tr>
+              <tr><th class="bm-row">Reserva de plaza</th><td><span class="bm-y">✓</span><span class="bm-note">Con TRAVIS</span></td><td><span class="bm-y">✓</span></td><td><span class="bm-y">✓</span></td><td><span class="bm-n">✕</span></td><td><span class="bm-h">◐</span><span class="bm-note">Webfleet, con Bosch</span></td><td><span class="bm-n">✕</span></td><td class="bm-posta"><span class="bm-h">◐</span><span class="bm-note">Con socios</span></td></tr>
+              <tr><th class="bm-row">Precio</th><td><span class="bm-txt">Gratis</span></td><td><span class="bm-txt">Por noche</span></td><td><span class="bm-txt">Por noche</span></td><td><span class="bm-txt">Gratis</span></td><td><span class="bm-txt">15–35 €<br>vehículo/mes</span></td><td><span class="bm-txt">Gratis</span></td><td class="bm-posta"><span class="bm-txt bm-price">15 €<br>camión/mes</span></td></tr>
+            </tbody>
+          </table>
 
-            <div class="card-clean" style="border-left: 3px solid var(--accent-blue);">
-              <span class="editorial-kicker">LA FLOTA</span>
-              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Cero Sanciones</h3>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
-                Evita multas de 1.001 € a 2.000 € y la pérdida del requisito de honorabilidad empresarial.
-              </p>
-            </div>
-
-            <div class="card-clean">
-              <span class="editorial-kicker">LOS PARKINGS</span>
-              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 8px 0;">Lleno Predecible</h3>
-              <p style="font-size: 13px; color: var(--paper-text-muted); line-height: 1.45;">
-                Monetización anticipada y eliminación de colapsos caóticos en las vías de acceso.
-              </p>
-            </div>
-          </div>
+          <p style="font-size: 10px; color: var(--paper-text-dim); margin-top: 12px; line-height: 1.4;">
+            ✓ sí · ◐ en parte · ✕ no. POSTA: producto en desarrollo, piloto en la AP-7 en el cuarto trimestre de 2026. Fuentes: webs y notas de prensa de cada empresa (2024–2026), transport-online.de, VerkehrsRundschau, ERTICO, subger.com (precios de Webfleet).
+          </p>
         </section>
 
         <!-- ================================================================
@@ -980,9 +949,9 @@
              ================================================================ -->
 
         <!-- 3.1. MODELO ECONÓMICO -->
-        <section class="slide" id="slide-7" data-title="Modelo Económico" data-section="EL NEGOCIO" data-mood="Color">
+        <section class="slide" id="slide-6" data-title="Modelo Económico" data-section="EL NEGOCIO" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>EL NEGOCIO // 06 · MODELO ECONÓMICO</div>
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 05 · MODELO ECONÓMICO</div>
             <div>B2B SAAS + COMISIÓN POR TRANSACCIÓN</div>
           </div>
 
@@ -1013,9 +982,9 @@
         </section>
 
         <!-- 3.2. MERCADO -->
-        <section class="slide" id="slide-8" data-title="Mercado" data-section="EL NEGOCIO" data-mood="Color">
+        <section class="slide" id="slide-7" data-title="Mercado" data-section="EL NEGOCIO" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>EL NEGOCIO // 07 · MERCADO</div>
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 06 · MERCADO</div>
             <div>TAMAÑO DE MERCADO</div>
           </div>
 
@@ -1049,9 +1018,9 @@
         </section>
 
         <!-- 3.3. COMPETENCIA -->
-        <section class="slide" id="slide-9" data-title="Competencia" data-section="EL NEGOCIO" data-mood="Color">
+        <section class="slide" id="slide-8" data-title="Competencia" data-section="EL NEGOCIO" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>EL NEGOCIO // 08 · COMPETENCIA</div>
+            <div><span class="brand-bullet"></span>EL NEGOCIO // 07 · COMPETENCIA</div>
             <div>VENTAJA COMPETITIVA DEFENDIBLE</div>
           </div>
 
@@ -1092,9 +1061,9 @@
              ================================================================ -->
 
         <!-- 4.1. QUÉ HEMOS HECHO (RESEARCH) -->
-        <section class="slide" id="slide-10" data-title="Qué Hemos Hecho" data-section="LA EMPRESA" data-mood="Color">
+        <section class="slide" id="slide-9" data-title="Qué Hemos Hecho" data-section="LA EMPRESA" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA EMPRESA // 09 · QUÉ HEMOS HECHO</div>
+            <div><span class="brand-bullet"></span>LA EMPRESA // 08 · QUÉ HEMOS HECHO</div>
             <div>VALIDACIÓN REAL EN 48 HORAS</div>
           </div>
 
@@ -1134,9 +1103,9 @@
         </section>
 
         <!-- 4.2. ROADMAP -->
-        <section class="slide" id="slide-11" data-title="Roadmap" data-section="LA EMPRESA" data-mood="Color">
+        <section class="slide" id="slide-10" data-title="Roadmap" data-section="LA EMPRESA" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA EMPRESA // 10 · ROADMAP</div>
+            <div><span class="brand-bullet"></span>LA EMPRESA // 09 · ROADMAP</div>
             <div>EJECUCIÓN A 12 MESES</div>
           </div>
 
@@ -1173,9 +1142,9 @@
         </section>
 
         <!-- 4.3. EQUIPO -->
-        <section class="slide" id="slide-12" data-title="Equipo" data-section="LA EMPRESA" data-mood="Color">
+        <section class="slide" id="slide-11" data-title="Equipo" data-section="LA EMPRESA" data-mood="Color">
           <div class="meta-bar">
-            <div><span class="brand-bullet"></span>LA EMPRESA // 11 · EQUIPO</div>
+            <div><span class="brand-bullet"></span>LA EMPRESA // 10 · EQUIPO</div>
             <div>TALENTO COMPLEMENTARIO</div>
           </div>
 
@@ -1219,7 +1188,7 @@
              BLOQUE 5: CONTRAPORTADA (ANIMACIÓN REAL DE ROSTROS)
              Miguel & Marius en GRANDE (50/50) -> Retroceso a Mosaico Aleatorio -> POSTA + Eslogan
              ================================================================ -->
-        <section class="slide" id="slide-13" data-title="Contraportada" data-section="CONTRAPORTADA" data-mood="Animation" style="padding: 0; background: #06080B;">
+        <section class="slide" id="slide-12" data-title="Contraportada" data-section="CONTRAPORTADA" data-mood="Animation" style="padding: 0; background: #06080B;">
           <div id="contraportada-stage">
             
             <!-- Mosaico masivo de 48 caras aleatorizadas de camioneros -->
@@ -1403,14 +1372,14 @@
         sectionLabel.textContent = sec;
 
         // Disparar animación si es la contraportada (Slide 13)
-        if (activeSlide.id === 'slide-13') {
+        if (activeSlide.id === 'slide-12') {
           triggerContraportadaAnim();
         } else {
           clearAnimTimeouts();
         }
 
         // Si es la diapositiva del algoritmo (Slide 5), recalcular lienzo y activar simulación
-        if (activeSlide.id === 'slide-5') {
+        if (activeSlide.id === 'slide-4') {
           if (previousIdx < 4) {
             setSlideSimMode('conventional');
           } else if (previousIdx > 4) {
