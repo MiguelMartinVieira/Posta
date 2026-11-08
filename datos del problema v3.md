@@ -47,55 +47,23 @@ Buscar sitio cuesta **unas 7 veces más que las multas**.
 
 ## 4. TAM, SAM y SOM (a 15 €/camión/mes)
 
-El mercado son los clientes que pagarían por información predictiva de ocupación de áreas de servicio para camiones. No es lo que se paga en multas ni lo que se pierde buscando sitio, sino lo que esos clientes gastarían en una solución como POSTA.
+El mercado son **solo los camiones que tienen el problema**: los de larga distancia, que tienen que parar a dormir fuera y buscar área. No cuenta todo el parque de camiones (repartos urbanos y regionales vuelven a casa cada noche), ni áreas de servicio ni plataformas. Un único precio: **15 €/camión/mes (180 €/año)**, que paga la empresa.
 
-**Precios usados.** Son supuestos propios basados en comparables; no hay precios públicos de una API de ocupación de aparcamientos.
+**Cómo se cuentan los camiones de larga distancia.** Se usan las **cabezas tractoras** (camión articulado con semirremolque), el vehículo típico de la larga distancia. Es el dato oficial más cercano: Eurostat lo publica por país y año. Es una aproximación, ya que algunas tractoras hacen trayectos regionales.
 
-| Cliente | Qué paga | Precio |
-| --- | --- | --- |
-| Empresa de transporte | Plan Pro por camión | 15 €/camión/mes (180 €/año) |
-| Operador de área de servicio | Cámaras, panel y publicación en el Punto de Acceso Nacional (NAP) | 1.200 €/área/año (supuesto) |
-| Plataforma de navegación, de flotas o logística | Licencia de datos o API | 100.000 €/año (supuesto; rango 50.000–150.000) |
+| | Ámbito | Camiones con el problema | × 180 €/año |
+| --- | --- | --- | --- |
+| **TAM** | Unión Europea (27) | 2.260.141 tractoras (Eurostat 2024; Irlanda, 2023) | **unos 407 M€** |
+| **SAM** | España, Francia y Portugal | 538.844 tractoras (España 258.920, Francia 223.215, Portugal 56.709; Eurostat 2024) | **unos 97 M€** |
+| **SOM** | España, unos 3 años | 6.750 camiones (supuesto: 15 flotas directas de 50 camiones + 3 plataformas de flota con 2.000 camiones cada una) | **unos 1,2 M€** |
 
-### TAM – Mercado total (Unión Europea)
-
-Todas las empresas que podrían necesitar POSTA, sin límite geográfico ni comercial. Se toma la UE porque fuera de ella (EE. UU., por ejemplo) cambian la normativa, el tacógrafo y los competidores, y no hay datos comparables.
-
-| Cliente | Cálculo | Valor al año |
-| --- | --- | --- |
-| Empresas de transporte | 6,2 M camiones medios y pesados × 180 € | 1.116 M€ |
-| Operadores de áreas de servicio | 6.500 áreas × 1.200 € | 7,8 M€ |
-| Plataformas de navegación, flotas y logísticas | unas 100 plataformas (supuesto) × 100.000 € | 10 M€ |
-| **TAM** | | **unos 1.134 M€** |
-
-### SAM – Mercado accesible (España, Francia y Portugal)
-
-La parte del TAM a la que POSTA puede llegar con su producto en estos tres países. Solo cuentan los camiones de larga distancia, que son los que duermen fuera y buscan área.
-
-| Cliente | Cálculo | Valor al año |
-| --- | --- | --- |
-| Empresas de transporte | 1,32 M camiones medios y pesados (Francia 616.467, España 571.927, Portugal 135.000) × 40 % de larga distancia (supuesto) = 529.000 camiones × 180 € | 95,3 M€ |
-| Operadores de áreas de servicio | unas 1.340 áreas (supuesto: la misma proporción que los camiones, el 20,6 % de la UE) × 1.200 € | 1,6 M€ |
-| Plataformas que operan en los tres países | unas 40 (supuesto) × 100.000 € | 4 M€ |
-| **SAM** | | **unos 101 M€** |
-
-### SOM – Mercado capturable (España, unos 3 años)
-
-Lo que POSTA puede conseguir de verdad, teniendo en cuenta a la competencia (LKW.APP, Bosch, TRAVIS, SNAP, Mowiz) y a un equipo pequeño.
-
-| Cliente | Supuesto | Valor al año |
-| --- | --- | --- |
-| 15 empresas de transporte en directo | 50 camiones de media = 750 camiones × 180 € | 135.000 € |
-| 3 plataformas de flota o logísticas integradas | Licencia de 100.000 € cada una | 300.000 € |
-| Camiones que llegan a través de esas 3 plataformas | 2.000 camiones por plataforma = 6.000 × 180 € | 1.080.000 € |
-| 10 operadores de áreas de servicio | 5 áreas cada uno = 50 áreas × 1.200 € | 60.000 € |
-| **SOM** | | **unos 1,58 M€** (alrededor del 1,6 % del SAM) |
+El SOM es el **2,6 % de las tractoras de España** y el 1,3 % del SAM.
 
 **Lectura.**
 
-- **Los camiones que llegan por plataformas** son casi el 70 % del SOM, así que la prioridad son las integraciones y no vender flota a flota.
-- **Para llegar a unos 3 M€** harían falta unos 14.000 camiones a través de plataformas, en vez de 6.000.
-- **Este cálculo da por hecho que se consiguen los mismos clientes que a 5 €.** Con el triple de precio, lo normal es que entren menos. Además, si la plataforma se queda, por ejemplo, el 30 % del precio, el SOM baja. Hay que validarlo con las primeras flotas.
+- **Los camiones que llegan por plataformas** (Webfleet, Frotcom…) son casi el 90 % del SOM, así que la prioridad son las integraciones y no vender flota a flota.
+- **Para llegar a unos 3 M€** harían falta unos 16.700 camiones, el 6,4 % de las tractoras de España.
+- **El SOM es un supuesto** que hay que validar con las primeras flotas; si la plataforma se queda parte del precio, baja.
 
 ## 5. Ejemplo: un autónomo
 
@@ -113,5 +81,5 @@ Lo que POSTA puede conseguir de verdad, teniendo en cuenta a la competencia (LKW
 - [Comisión Europea: estudio sobre aparcamiento seguro (2025)](https://transport.ec.europa.eu/news-events/news/more-safe-and-secure-parking-professional-drivers-needed-eu-study-reveals-2025-04-11_en)
 - [Observatorio de costes del Ministerio de Transportes](https://cdn.transportes.gob.es/portal-web-transportes/transporte-terrestre/actividades-servicios/observatorios-costes-transporte-mercancias/2026/Observatorio%20Costes%20Mercanc%C3%ADas_2026-01%20Enero.pdf)
 - [LOTT, Ley 16/1987](https://www.boe.es/buscar/act.php?id=BOE-A-1987-16760)
-- [ACEA, Vehicles in use 2023](https://www1.pzpm.org.pl/pl/content/download/15673/108016/file/ACEA-report-vehicles-in-use-europe-2023.pdf)
+- [Eurostat, tran_r_vehst (Road tractors)](https://ec.europa.eu/eurostat/databrowser/view/tran_r_vehst/default/table?lang=en): parque de cabezas tractoras por país, 2024
 - [Precios de Webfleet (subger.com)](https://subger.com/en/service/webfleet-solutions)

@@ -99,18 +99,17 @@
 
 #### 07. Modelo Económico
 * **Kicker**: `EL NEGOCIO // 06 · MODELO ECONÓMICO`
-* **Titular**: **«DOS VÍAS CLARAS DE MONETIZACIÓN.»**
-* **2 Cifras gigantes**:
-  * **`15 €` / camión / mes**: Suscripción SaaS para flotas (Fleet Predict).
-  * **`2,50 €` por noche confirmada**: Take rate facturado al parking sobre ticket medio de 25 €–35 €.
+* **Titular**: **«PAGA LA EMPRESA. POR CAMIÓN, CADA MES.»**
+* **Una sola cifra gigante**: **`15 €` / camión / mes** (suscripción B2B para flotas). Sin comisión por reserva.
+* **Apoyos**: `180 €` al año · `1,8 %` de los 10.123 € que pierde un camión al año buscando sitio · una multa leve evitada (`300–400 €`) paga casi 2 años.
 
 #### 08. Mercado
 * **Kicker**: `EL NEGOCIO // 07 · MERCADO`
-* **Titular**: **«UN MERCADO DE 6 MILLONES DE CAMIONES EN LA UE.»**
-* **TAM / SAM / SOM**:
-  * **TAM**: `6,2M` camiones pesados en la UE-27.
-  * **SAM**: `296K` camiones de servicio público en España.
-  * **SOM Inicial**: `68K` camiones en flotas internacionales de >40 vehículos.
+* **Titular**: **«539.000 CAMIONES DE LARGA DISTANCIA BUSCAN DÓNDE DORMIR CADA NOCHE.»**
+* **TAM / SAM / SOM**: solo camiones de larga distancia (cabezas tractoras, Eurostat 2024) × 15 €/camión/mes. Cálculo completo en `datos del problema v3.md`.
+  * **TAM**: `407 M€` · 2,26 M tractoras en la UE.
+  * **SAM**: `97 M€` · 538.844 tractoras en España, Francia y Portugal.
+  * **SOM**: `1,2 M€` · 6.750 camiones en España a 3 años (15 flotas directas + 3 plataformas).
 
 #### 09. Competencia
 * **Kicker**: `EL NEGOCIO // 08 · COMPETENCIA`
